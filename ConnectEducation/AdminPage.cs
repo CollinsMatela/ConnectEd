@@ -24,7 +24,28 @@ namespace ConnectEducation
         {
             InitializeComponent();
         }
-        
+        private void checkAvailabilityOfSubjectForInstructors()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+            var filter = Builders<TeacherInformationModal>.Filter.And(
+                         Builders<TeacherInformationModal>.Filter.Eq(z => z.Subject, SubjectCb.Text),
+                         Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, ClassSectionsCb.Text)
+                );
+            var existing = collection.Find(filter).FirstOrDefault();
+
+            if (existing != null)
+            {
+                SubjectCb.Text = string.Empty;
+                //SubjectCb.SelectedItem = null;   
+                MessageBox.Show("The selected subject is already assigned to another instructor");
+                SubjectCb.Focus();
+                return;
+            }
+
+        }
         private void UpdateSectionComboBox()
         {
             SectionCb.Text = "";
@@ -81,18 +102,176 @@ namespace ConnectEducation
         }
         private void displaySubjects()
         {
-            SubjectCb.Items.Clear();
+            //SubjectCb.Items.Clear();
 
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<SubjectModal>("Subjects");
-            var result = collection.Find(_ => true).ToList(); // all subjects in database
+            //var connectionString = "mongodb://localhost:27017";
+            //var client = new MongoClient(connectionString);
+            //var database = client.GetDatabase("ConnectED");
+            //var collection = database.GetCollection<SubjectModal>("Subjects");
+            //var result = collection.Find(_ => true).ToList(); // all subjects in database
 
 
-            foreach (var item in result)
+            //foreach (var item in result)
+            //{
+            //    SubjectCb.Items.Add(item.Title);
+            //}
+            if (StrandAndGradeCb.SelectedItem == null || SelectSemesterCb.SelectedItem == null)
             {
-                SubjectCb.Items.Add(item.Title);
+                return;
+            }
+            SubjectCb.Items.Clear();
+            // STEM - Grade 11
+            if (StrandAndGradeCb.SelectedItem.ToString() == "STEM - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("Pre-Calculus");
+                SubjectCb.Items.Add("General Biology 1");
+                SubjectCb.Items.Add("General Chemistry 1");
+                SubjectCb.Items.Add("General Physics 1");
+                SubjectCb.Items.Add("Practical Research 1");
+                SubjectCb.Items.Add("Filipino sa Piling Larang");
+                SubjectCb.Items.Add("Earth and Life Science");
+                SubjectCb.Items.Add("Personal Development");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "STEM - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Basic-Calculus");
+                SubjectCb.Items.Add("General Biology 2");
+                SubjectCb.Items.Add("General Chemistry 2");
+                SubjectCb.Items.Add("General Physics 2");
+                SubjectCb.Items.Add("Practical Research 2");
+                SubjectCb.Items.Add("21st Century Literature");
+                SubjectCb.Items.Add("Oral Communication");
+                SubjectCb.Items.Add("Physical Education and Health");
+            }
+            // STEM - Grade 12
+            if (StrandAndGradeCb.SelectedItem.ToString() == "STEM - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("English for Academic and Professional Purposes");
+                SubjectCb.Items.Add("Entrepreneurship");
+                SubjectCb.Items.Add("General Mathematics 1");
+                SubjectCb.Items.Add("Media and Information Literacy");
+                SubjectCb.Items.Add("Work Immersion 1");
+                SubjectCb.Items.Add("Physical Education and Health 1");
+                SubjectCb.Items.Add("Komunikasyon at Pananaliksik");
+                SubjectCb.Items.Add("Empowerment Technologies");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "STEM - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Calculus");
+                SubjectCb.Items.Add("Technopreneurship");
+                SubjectCb.Items.Add("General Mathematics 2");
+                SubjectCb.Items.Add("Inquiries, Investigations, and Immersion");
+                SubjectCb.Items.Add("Work Immersion 2");
+                SubjectCb.Items.Add("Physical Education and Health 2");
+                SubjectCb.Items.Add("Understanding Culture, Society and Politics");
+                SubjectCb.Items.Add("Physical Science");
+            }
+
+            // ABM - Grade 11
+            if (StrandAndGradeCb.SelectedItem.ToString() == "ABM - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("Oral Communication");
+                SubjectCb.Items.Add("General Mathematics");
+                SubjectCb.Items.Add("Earth and Life Science");
+                SubjectCb.Items.Add("Empowerment Technologies");
+                SubjectCb.Items.Add("Business Mathematics");
+                SubjectCb.Items.Add("Organization and Management");
+                SubjectCb.Items.Add("21st Century Literature");
+                SubjectCb.Items.Add("Physical Education and Health 1");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "ABM - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Komunikasyon at Pananaliksik");
+                SubjectCb.Items.Add("Statistics and Probability");
+                SubjectCb.Items.Add("Physical Science");
+                SubjectCb.Items.Add("Filipino sa Piling Larang");
+                SubjectCb.Items.Add("Principles of Marketing");
+                SubjectCb.Items.Add("Business Ethics and Social Responsibility");
+                SubjectCb.Items.Add("Understanding Culture, Society and Politics");
+                SubjectCb.Items.Add("Physical Education and Health 2");
+            }
+            // ABM - Grade 12
+            if (StrandAndGradeCb.SelectedItem.ToString() == "ABM - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("Applied Economics");
+                SubjectCb.Items.Add("Business Finance");
+                SubjectCb.Items.Add("Practical Research");
+                SubjectCb.Items.Add("Inquiries, Investigations and Immersion");
+                SubjectCb.Items.Add("English for Academic and Professional Purposes");
+                SubjectCb.Items.Add("Philosophy of the Human Person");
+                SubjectCb.Items.Add("Media and Information Literacy");
+                SubjectCb.Items.Add("Physical Education and Health 3");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "ABM - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Fundamentals of Accounting 1");
+                SubjectCb.Items.Add("Fundamentals of Accounting 2");
+                SubjectCb.Items.Add("Business Enterprise Simulation");
+                SubjectCb.Items.Add("Work Immersion");
+                SubjectCb.Items.Add("Entrepreneurship");
+                SubjectCb.Items.Add("Contemporary Philippine Arts from the Regions");
+                SubjectCb.Items.Add("Introduction to World Religions");
+                SubjectCb.Items.Add("Physical Education and Health 4");
+            }
+
+            // HUMSS - Grade 11
+            if (StrandAndGradeCb.SelectedItem.ToString() == "HUMSS - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("Oral Communication");
+                SubjectCb.Items.Add("Komunikasyon at Pananaliksik");
+                SubjectCb.Items.Add("General Mathematics");
+                SubjectCb.Items.Add("Earth and Life Science");
+                SubjectCb.Items.Add("Creative Writing");
+                SubjectCb.Items.Add("Introduction to World Religions and Belief Systems");
+                SubjectCb.Items.Add("21st Century Literature");
+                SubjectCb.Items.Add("Physical Education and Health 1");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "HUMSS - Grade 11" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Reading and Writing");
+                SubjectCb.Items.Add("Statistics and Probability");
+                SubjectCb.Items.Add("Physical Science");
+                SubjectCb.Items.Add("Filipino sa Piling Larang");
+                SubjectCb.Items.Add("Discipline and Ideas in the Social Sciences (DISS)");
+                SubjectCb.Items.Add("Discipline and Ideas in the Applied Social Sciences (DIASS)");
+                SubjectCb.Items.Add("Understanding Culture, Society and Politics");
+                SubjectCb.Items.Add("Physical Education and Health 2");
+            }
+            // HUMSS - Grade 12
+            if (StrandAndGradeCb.SelectedItem.ToString() == "HUMSS - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "First semester")
+            {
+
+                SubjectCb.Items.Add("Creative Nonfiction");
+                SubjectCb.Items.Add("Trends, Networks, and Critical Thinking");
+                SubjectCb.Items.Add("Philippine Politics and Governance");
+                SubjectCb.Items.Add("Community Engagement, Solidarity and Citizenship");
+                SubjectCb.Items.Add("Entrepreneurship / Applied Economics");
+                SubjectCb.Items.Add("English for Academic and Professional Purposes");
+                SubjectCb.Items.Add("Practical Research 1");
+                SubjectCb.Items.Add("Physical Education and Health 3");
+            }
+            if (StrandAndGradeCb.SelectedItem.ToString() == "HUMSS - Grade 12" && SelectSemesterCb.SelectedItem.ToString() == "Second semester")
+            {
+
+                SubjectCb.Items.Add("Work Immersion / Culminating Activity");
+                SubjectCb.Items.Add("Practical Research 2");
+                SubjectCb.Items.Add("Inquiries, Investigations, and Immersion");
+                SubjectCb.Items.Add("Contemporary Philippine Arts from the Regions");
+                SubjectCb.Items.Add("Philosophy of the Human Person");
+                SubjectCb.Items.Add("Media and Information Literacy");
+                SubjectCb.Items.Add("Personal Development");
+                SubjectCb.Items.Add("Physical Education and Health 4");
+
             }
         }
 
@@ -425,7 +604,7 @@ namespace ConnectEducation
                 MessageBox.Show("Auto - Generated Account for " + StudentFullname + "\n\n" + "Username: " + StudentID + "\n" + "Password: " + StudentPass);
                 MessageBox.Show("Successfully added a student");
 
-                
+
 
                 StudentLastnameTxt.Clear();
                 StudentFirstnameTxt.Clear();
@@ -915,6 +1094,9 @@ namespace ConnectEducation
             ClassSectionsCb.Text = "";
             ClassSectionsCb.Items.Clear();
 
+            SubjectCb.Text = "";
+            SubjectCb.Items.Clear();
+
             if (StrandAndGradeCb.SelectedItem == null)
                 return;
 
@@ -945,17 +1127,19 @@ namespace ConnectEducation
             {
                 ClassSectionsCb.Items.Add(item.Section);
             }
+            displaySubjects();
+
         }
 
         private void AdminPage_Load(object sender, EventArgs e)
         {
             displayRegisteredInstructor();
-            displaySubjects();
+
         }
 
         private void AssignBtn_Click(object sender, EventArgs e)
         {
-            if(StrandAndGradeCb.SelectedItem == null)
+            if (StrandAndGradeCb.SelectedItem == null)
             {
                 MessageBox.Show("Please select strand and grade level.");
                 return;
@@ -979,11 +1163,27 @@ namespace ConnectEducation
             string strandAndGrade = StrandAndGradeCb.Text;
             string classSection = ClassSectionsCb.Text;
             string Instructor = InstructorCb.Text; // fullname
-            string Subject = SubjectCb.Text; 
+            string Subject = SubjectCb.Text;
 
             var connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ConnectED");
+
+            var teacherCollection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+
+            var filter = Builders<TeacherInformationModal>.Filter.And(
+                Builders<TeacherInformationModal>.Filter.Eq(z => z.Subject, Subject),
+                Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, classSection)
+            );
+
+            bool exists = teacherCollection.Find(filter).Any();
+
+            if (exists)
+            {
+                MessageBox.Show("The selected subject is already assigned to another instructor.");
+                SubjectCb.Focus();
+                return;
+            }
 
             string nameOfTable = "";
 
@@ -993,7 +1193,8 @@ namespace ConnectEducation
             else if (strandAndGrade == "ABM - Grade 12") { nameOfTable = "Grade12_ABM"; }
             else if (strandAndGrade == "HUMSS - Grade 11") { nameOfTable = "Grade11_HUMSS"; }
             else if (strandAndGrade == "HUMSS - Grade 12") { nameOfTable = "Grade12_HUMSS"; }
-            else { return; };
+            else { return; }
+            ;
 
             var collection2 = database.GetCollection<ClassInformationModal>(nameOfTable);
             var sectionFilter = Builders<ClassInformationModal>.Filter.Eq(x => x.Section, classSection); // find the object same as the section of student
@@ -1019,7 +1220,7 @@ namespace ConnectEducation
                 MessageBox.Show("Instructor did not found in database.");
                 return;
             }
-            var updateSection = Builders<TeacherInformationModal>.Update.Set(x => x.Section, classSection); 
+            var updateSection = Builders<TeacherInformationModal>.Update.Set(x => x.Section, classSection);
             var results = collection4.UpdateOneAsync(teacher_filter, updateSection);
 
             var collection3 = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
@@ -1030,7 +1231,7 @@ namespace ConnectEducation
             {
                 if (!string.IsNullOrEmpty(teacher.Subject))
                 {
-                   
+
                     MessageBox.Show("Instructor " + teacher.Fullname + " is already assigned to subject: " + teacher.Subject + "\n" + "Please select other instructor.");
                     InstructorCb.Focus();
                     return;
@@ -1041,7 +1242,7 @@ namespace ConnectEducation
                 MessageBox.Show("Instructor did not found in database.");
                 return;
             }
-            var updateSubject = Builders<TeacherInformationModal>.Update.Set(x => x.Subject, Subject); 
+            var updateSubject = Builders<TeacherInformationModal>.Update.Set(x => x.Subject, Subject);
             var executeUpdateTeacherSubject = collection3.UpdateOneAsync(teacherFilter, updateSubject);
 
             MessageBox.Show("Instructor " + Instructor + " is successfully appointed as one of instructors of class " + classSection + " as " + Subject + " instructor.");
@@ -1051,6 +1252,21 @@ namespace ConnectEducation
             ClassSectionsCb.Items.Clear();
             InstructorCb.Text = "";
             SubjectCb.Text = "";
+        }
+
+        private void SubjectCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectSemesterCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displaySubjects();
+        }
+
+        private void ClassSectionsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 
