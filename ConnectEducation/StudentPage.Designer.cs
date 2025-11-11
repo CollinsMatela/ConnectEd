@@ -119,54 +119,54 @@
             asd = new Label();
             LinkOfHandout5 = new LinkLabel();
             GradingSystemPanel = new Panel();
-            comboBox1 = new ComboBox();
+            QuarterSelectionCb = new ComboBox();
             label57 = new Label();
             panel22 = new Panel();
             TeacherNameLabel8 = new Label();
-            label41 = new Label();
+            GradeLabel8 = new Label();
             label42 = new Label();
             Sub8Label = new Label();
             label44 = new Label();
             panel21 = new Panel();
             TeacherNameLabel4 = new Label();
-            label37 = new Label();
+            GradeLabel4 = new Label();
             label38 = new Label();
             Sub4Label = new Label();
             label40 = new Label();
             panel23 = new Panel();
             TeacherNameLabel7 = new Label();
-            label45 = new Label();
+            GradeLabel7 = new Label();
             label46 = new Label();
             Sub7Label = new Label();
             label48 = new Label();
             panel19 = new Panel();
             TeacherNameLabel3 = new Label();
-            label33 = new Label();
+            GradeLabel3 = new Label();
             label34 = new Label();
             Sub3Label = new Label();
             label36 = new Label();
             panel24 = new Panel();
             TeacherNameLabel6 = new Label();
-            label49 = new Label();
+            GradeLabel6 = new Label();
             label50 = new Label();
             Sub6Label = new Label();
             label52 = new Label();
             panel3 = new Panel();
             TeacherNameLabel2 = new Label();
-            label29 = new Label();
+            GradeLabel2 = new Label();
             label30 = new Label();
             Sub2Label = new Label();
             label32 = new Label();
             panel25 = new Panel();
             TeacherNameLabel5 = new Label();
-            label53 = new Label();
+            GradeLabel5 = new Label();
             label54 = new Label();
             Sub5Label = new Label();
             label56 = new Label();
             label21 = new Label();
             panel20 = new Panel();
             TeacherNameLabel1 = new Label();
-            label26 = new Label();
+            GradeLabel1 = new Label();
             label24 = new Label();
             Sub1Label = new Label();
             label28 = new Label();
@@ -1393,7 +1393,7 @@
             // GradingSystemPanel
             // 
             GradingSystemPanel.BackColor = Color.White;
-            GradingSystemPanel.Controls.Add(comboBox1);
+            GradingSystemPanel.Controls.Add(QuarterSelectionCb);
             GradingSystemPanel.Controls.Add(label57);
             GradingSystemPanel.Controls.Add(panel22);
             GradingSystemPanel.Controls.Add(panel21);
@@ -1410,18 +1410,19 @@
             GradingSystemPanel.Size = new Size(1369, 740);
             GradingSystemPanel.TabIndex = 8;
             // 
-            // comboBox1
+            // QuarterSelectionCb
             // 
-            comboBox1.BackColor = Color.WhiteSmoke;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.ForeColor = Color.DimGray;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "First Quarter", "Second Quarter", "Third Quarter", "Fourth Quarter" });
-            comboBox1.Location = new Point(1085, 42);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 24);
-            comboBox1.TabIndex = 10;
+            QuarterSelectionCb.BackColor = Color.WhiteSmoke;
+            QuarterSelectionCb.FlatStyle = FlatStyle.Flat;
+            QuarterSelectionCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            QuarterSelectionCb.ForeColor = Color.DimGray;
+            QuarterSelectionCb.FormattingEnabled = true;
+            QuarterSelectionCb.Items.AddRange(new object[] { "First Grade", "Second Grade" });
+            QuarterSelectionCb.Location = new Point(1085, 42);
+            QuarterSelectionCb.Name = "QuarterSelectionCb";
+            QuarterSelectionCb.Size = new Size(200, 24);
+            QuarterSelectionCb.TabIndex = 10;
+            QuarterSelectionCb.SelectedIndexChanged += QuarterSelectionCb_SelectedIndexChanged;
             // 
             // label57
             // 
@@ -1438,7 +1439,7 @@
             // 
             panel22.BackColor = Color.White;
             panel22.Controls.Add(TeacherNameLabel8);
-            panel22.Controls.Add(label41);
+            panel22.Controls.Add(GradeLabel8);
             panel22.Controls.Add(label42);
             panel22.Controls.Add(Sub8Label);
             panel22.Controls.Add(label44);
@@ -1459,16 +1460,16 @@
             TeacherNameLabel8.TabIndex = 12;
             TeacherNameLabel8.Text = "N/A";
             // 
-            // label41
+            // GradeLabel8
             // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label41.ForeColor = Color.DimGray;
-            label41.Location = new Point(1108, 39);
-            label41.Name = "label41";
-            label41.Size = new Size(44, 19);
-            label41.TabIndex = 4;
-            label41.Text = "00.00";
+            GradeLabel8.AutoSize = true;
+            GradeLabel8.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel8.ForeColor = Color.DimGray;
+            GradeLabel8.Location = new Point(1108, 39);
+            GradeLabel8.Name = "GradeLabel8";
+            GradeLabel8.Size = new Size(44, 19);
+            GradeLabel8.TabIndex = 4;
+            GradeLabel8.Text = "00.00";
             // 
             // label42
             // 
@@ -1507,7 +1508,7 @@
             // 
             panel21.BackColor = Color.White;
             panel21.Controls.Add(TeacherNameLabel4);
-            panel21.Controls.Add(label37);
+            panel21.Controls.Add(GradeLabel4);
             panel21.Controls.Add(label38);
             panel21.Controls.Add(Sub4Label);
             panel21.Controls.Add(label40);
@@ -1528,16 +1529,16 @@
             TeacherNameLabel4.TabIndex = 8;
             TeacherNameLabel4.Text = "N/A";
             // 
-            // label37
+            // GradeLabel4
             // 
-            label37.AutoSize = true;
-            label37.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label37.ForeColor = Color.DimGray;
-            label37.Location = new Point(1108, 42);
-            label37.Name = "label37";
-            label37.Size = new Size(44, 19);
-            label37.TabIndex = 4;
-            label37.Text = "00.00";
+            GradeLabel4.AutoSize = true;
+            GradeLabel4.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel4.ForeColor = Color.DimGray;
+            GradeLabel4.Location = new Point(1108, 42);
+            GradeLabel4.Name = "GradeLabel4";
+            GradeLabel4.Size = new Size(44, 19);
+            GradeLabel4.TabIndex = 4;
+            GradeLabel4.Text = "00.00";
             // 
             // label38
             // 
@@ -1576,7 +1577,7 @@
             // 
             panel23.BackColor = Color.WhiteSmoke;
             panel23.Controls.Add(TeacherNameLabel7);
-            panel23.Controls.Add(label45);
+            panel23.Controls.Add(GradeLabel7);
             panel23.Controls.Add(label46);
             panel23.Controls.Add(Sub7Label);
             panel23.Controls.Add(label48);
@@ -1597,16 +1598,16 @@
             TeacherNameLabel7.TabIndex = 11;
             TeacherNameLabel7.Text = "N/A";
             // 
-            // label45
+            // GradeLabel7
             // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label45.ForeColor = Color.DimGray;
-            label45.Location = new Point(1108, 42);
-            label45.Name = "label45";
-            label45.Size = new Size(44, 19);
-            label45.TabIndex = 4;
-            label45.Text = "00.00";
+            GradeLabel7.AutoSize = true;
+            GradeLabel7.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel7.ForeColor = Color.DimGray;
+            GradeLabel7.Location = new Point(1108, 42);
+            GradeLabel7.Name = "GradeLabel7";
+            GradeLabel7.Size = new Size(44, 19);
+            GradeLabel7.TabIndex = 4;
+            GradeLabel7.Text = "00.00";
             // 
             // label46
             // 
@@ -1645,7 +1646,7 @@
             // 
             panel19.BackColor = Color.WhiteSmoke;
             panel19.Controls.Add(TeacherNameLabel3);
-            panel19.Controls.Add(label33);
+            panel19.Controls.Add(GradeLabel3);
             panel19.Controls.Add(label34);
             panel19.Controls.Add(Sub3Label);
             panel19.Controls.Add(label36);
@@ -1666,16 +1667,16 @@
             TeacherNameLabel3.TabIndex = 7;
             TeacherNameLabel3.Text = "N/A";
             // 
-            // label33
+            // GradeLabel3
             // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label33.ForeColor = Color.DimGray;
-            label33.Location = new Point(1108, 42);
-            label33.Name = "label33";
-            label33.Size = new Size(44, 19);
-            label33.TabIndex = 4;
-            label33.Text = "00.00";
+            GradeLabel3.AutoSize = true;
+            GradeLabel3.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel3.ForeColor = Color.DimGray;
+            GradeLabel3.Location = new Point(1108, 42);
+            GradeLabel3.Name = "GradeLabel3";
+            GradeLabel3.Size = new Size(44, 19);
+            GradeLabel3.TabIndex = 4;
+            GradeLabel3.Text = "00.00";
             // 
             // label34
             // 
@@ -1714,7 +1715,7 @@
             // 
             panel24.BackColor = Color.White;
             panel24.Controls.Add(TeacherNameLabel6);
-            panel24.Controls.Add(label49);
+            panel24.Controls.Add(GradeLabel6);
             panel24.Controls.Add(label50);
             panel24.Controls.Add(Sub6Label);
             panel24.Controls.Add(label52);
@@ -1735,16 +1736,16 @@
             TeacherNameLabel6.TabIndex = 10;
             TeacherNameLabel6.Text = "N/A";
             // 
-            // label49
+            // GradeLabel6
             // 
-            label49.AutoSize = true;
-            label49.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label49.ForeColor = Color.DimGray;
-            label49.Location = new Point(1108, 42);
-            label49.Name = "label49";
-            label49.Size = new Size(44, 19);
-            label49.TabIndex = 4;
-            label49.Text = "00.00";
+            GradeLabel6.AutoSize = true;
+            GradeLabel6.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel6.ForeColor = Color.DimGray;
+            GradeLabel6.Location = new Point(1108, 42);
+            GradeLabel6.Name = "GradeLabel6";
+            GradeLabel6.Size = new Size(44, 19);
+            GradeLabel6.TabIndex = 4;
+            GradeLabel6.Text = "00.00";
             // 
             // label50
             // 
@@ -1783,7 +1784,7 @@
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(TeacherNameLabel2);
-            panel3.Controls.Add(label29);
+            panel3.Controls.Add(GradeLabel2);
             panel3.Controls.Add(label30);
             panel3.Controls.Add(Sub2Label);
             panel3.Controls.Add(label32);
@@ -1803,17 +1804,18 @@
             TeacherNameLabel2.Size = new Size(24, 13);
             TeacherNameLabel2.TabIndex = 6;
             TeacherNameLabel2.Text = "N/A";
+            TeacherNameLabel2.Click += TeacherNameLabel2_Click;
             // 
-            // label29
+            // GradeLabel2
             // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label29.ForeColor = Color.DimGray;
-            label29.Location = new Point(1108, 42);
-            label29.Name = "label29";
-            label29.Size = new Size(44, 19);
-            label29.TabIndex = 4;
-            label29.Text = "00.00";
+            GradeLabel2.AutoSize = true;
+            GradeLabel2.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel2.ForeColor = Color.DimGray;
+            GradeLabel2.Location = new Point(1108, 42);
+            GradeLabel2.Name = "GradeLabel2";
+            GradeLabel2.Size = new Size(44, 19);
+            GradeLabel2.TabIndex = 4;
+            GradeLabel2.Text = "00.00";
             // 
             // label30
             // 
@@ -1852,7 +1854,7 @@
             // 
             panel25.BackColor = Color.WhiteSmoke;
             panel25.Controls.Add(TeacherNameLabel5);
-            panel25.Controls.Add(label53);
+            panel25.Controls.Add(GradeLabel5);
             panel25.Controls.Add(label54);
             panel25.Controls.Add(Sub5Label);
             panel25.Controls.Add(label56);
@@ -1873,16 +1875,16 @@
             TeacherNameLabel5.TabIndex = 9;
             TeacherNameLabel5.Text = "N/A";
             // 
-            // label53
+            // GradeLabel5
             // 
-            label53.AutoSize = true;
-            label53.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label53.ForeColor = Color.DimGray;
-            label53.Location = new Point(1108, 39);
-            label53.Name = "label53";
-            label53.Size = new Size(44, 19);
-            label53.TabIndex = 4;
-            label53.Text = "00.00";
+            GradeLabel5.AutoSize = true;
+            GradeLabel5.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel5.ForeColor = Color.DimGray;
+            GradeLabel5.Location = new Point(1108, 39);
+            GradeLabel5.Name = "GradeLabel5";
+            GradeLabel5.Size = new Size(44, 19);
+            GradeLabel5.TabIndex = 4;
+            GradeLabel5.Text = "00.00";
             // 
             // label54
             // 
@@ -1932,7 +1934,7 @@
             // 
             panel20.BackColor = Color.WhiteSmoke;
             panel20.Controls.Add(TeacherNameLabel1);
-            panel20.Controls.Add(label26);
+            panel20.Controls.Add(GradeLabel1);
             panel20.Controls.Add(label24);
             panel20.Controls.Add(Sub1Label);
             panel20.Controls.Add(label28);
@@ -1954,16 +1956,16 @@
             TeacherNameLabel1.Text = "N/A";
             TeacherNameLabel1.Click += TeacherNameLabel1_Click;
             // 
-            // label26
+            // GradeLabel1
             // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
-            label26.ForeColor = Color.DimGray;
-            label26.Location = new Point(1108, 41);
-            label26.Name = "label26";
-            label26.Size = new Size(44, 19);
-            label26.TabIndex = 4;
-            label26.Text = "00.00";
+            GradeLabel1.AutoSize = true;
+            GradeLabel1.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
+            GradeLabel1.ForeColor = Color.DimGray;
+            GradeLabel1.Location = new Point(1108, 41);
+            GradeLabel1.Name = "GradeLabel1";
+            GradeLabel1.Size = new Size(44, 19);
+            GradeLabel1.TabIndex = 4;
+            GradeLabel1.Text = "00.00";
             // 
             // label24
             // 
@@ -2166,45 +2168,45 @@
         private Label Sub1Label;
         private Label label28;
         private Button SubjectsBtn;
-        private Label label26;
+        private Label GradeLabel1;
         private Label label24;
         private Panel panel22;
-        private Label label41;
+        private Label GradeLabel8;
         private Label label42;
         private Label Sub8Label;
         private Label label44;
         private Panel panel21;
-        private Label label37;
+        private Label GradeLabel4;
         private Label label38;
         private Label Sub4Label;
         private Label label40;
         private Panel panel23;
-        private Label label45;
+        private Label GradeLabel7;
         private Label label46;
         private Label Sub7Label;
         private Label label48;
         private Panel panel19;
-        private Label label33;
+        private Label GradeLabel3;
         private Label label34;
         private Label Sub3Label;
         private Label label36;
         private Panel panel24;
-        private Label label49;
+        private Label GradeLabel6;
         private Label label50;
         private Label Sub6Label;
         private Label label52;
         private Panel panel3;
-        private Label label29;
+        private Label GradeLabel2;
         private Label label30;
         private Label Sub2Label;
         private Label label32;
         private Panel panel25;
-        private Label label53;
+        private Label GradeLabel5;
         private Label label54;
         private Label Sub5Label;
         private Label label56;
         private Label label57;
-        private ComboBox comboBox1;
+        private ComboBox QuarterSelectionCb;
         private Label TeacherNameLabel2;
         private Label TeacherNameLabel1;
         private Label TeacherNameLabel8;

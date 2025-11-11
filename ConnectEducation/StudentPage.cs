@@ -64,68 +64,55 @@ namespace ConnectEducation
 
         private void displayGrades()
         {
-            // Assign subjects to labels
-            Sub1Label.Text = FirstSubject;
-            Sub2Label.Text = SecondSubject;
-            Sub3Label.Text = ThirdSubject;
-            Sub4Label.Text = FourthSubject;
-            Sub5Label.Text = FifthSubject;
-            Sub6Label.Text = SixthSubject;
-            Sub7Label.Text = SeventhSubject;
-            Sub8Label.Text = EightSubject;
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<StudentGrades>("StudentGrades");
+            var filter = Builders<StudentGrades>.Filter.And(
+                         Builders<StudentGrades>.Filter.Eq(z => z.StudentID, IdOfStudent),
+                         Builders<StudentGrades>.Filter.Eq(z => z.StudentFullname, FullnameOfStudent),
+                         Builders<StudentGrades>.Filter.Eq(z => z.StudentSection, SectionOfStudent)
+                         );
+            var gradeRecord = collection.Find(filter).FirstOrDefault();
+            if (gradeRecord != null)
+            {
 
-            // MongoDB setup
-            //var connectionString = "mongodb://localhost:27017";
-            //var client = new MongoClient(connectionString);
-            //var database = client.GetDatabase("ConnectED");
-            //var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
 
-            //Label[] SubjectLabels = { Sub1Label, Sub2Label, Sub3Label, Sub4Label, Sub5Label, Sub6Label, Sub7Label, Sub8Label };
-            //Label[] TeacherLabels = { TeacherNameLabel1, TeacherNameLabel2, TeacherNameLabel3, TeacherNameLabel4, TeacherNameLabel5, TeacherNameLabel6, TeacherNameLabel7, TeacherNameLabel8 };
+                Label[] nameOfSubjectLabels = { Sub1Label, Sub2Label, Sub3Label, Sub4Label, Sub5Label, Sub6Label, Sub7Label, Sub8Label };
+                Label[] nameOfInstructorLabels = { TeacherNameLabel1, TeacherNameLabel2, TeacherNameLabel3, TeacherNameLabel4, TeacherNameLabel5, TeacherNameLabel6, TeacherNameLabel7, TeacherNameLabel8 };
+                Label[] GradeLabels = { GradeLabel1, GradeLabel2, GradeLabel3, GradeLabel4, GradeLabel5, GradeLabel6, GradeLabel7, GradeLabel8 };
 
-            //for (int i = 0; i < SubjectLabels.Length; i++)
-            //{
-            //    var subLabel = SubjectLabels[i];
-            //    var teacherLabel = TeacherLabels[i];
+                if(QuarterSelectionCb.Text == "First Grade" ||  QuarterSelectionCb.Text == string.Empty)
+                {
+                    foreach (var item in gradeRecord.SubjectList)
+                    {
+                        int i = 0;
+                        nameOfSubjectLabels[i].Text = item.Subject;
+                        nameOfInstructorLabels[i].Text = item.TeacherFullname;
+                        GradeLabels[i].Text = item.FinalGrade1;
+                        i++;
+                    }
+                }
+                if (QuarterSelectionCb.Text == "Second Grade")
+                {
+                    foreach (var item in gradeRecord.SubjectList)
+                    {
+                        int i = 0;
+                        nameOfSubjectLabels[i].Text = item.Subject;
+                        nameOfInstructorLabels[i].Text = item.TeacherFullname;
+                        GradeLabels[i].Text = item.FinalGrade2;
+                        i++;
+                    }
+                }
 
-            //    // Get text values (trim + ignore case)
-            //    string subjectValue = subLabel.Text?.Trim();
-            //    string sectionValue = SectionOfStudent?.Trim();
-
-            //    if (string.IsNullOrEmpty(subjectValue))
-            //    {
-            //        teacherLabel.Text = "No subject.";
-            //        continue;
-            //    }
-
-            //    // Use regex for more flexible matching
-            //    var filter = Builders<TeacherInformationModal>.Filter.And(
-            //        Builders<TeacherInformationModal>.Filter.Regex(z => z.Subject, new BsonRegularExpression($"^{subjectValue}$", "i")),
-            //        Builders<TeacherInformationModal>.Filter.Regex(z => z.Section, new BsonRegularExpression($"^{sectionValue}$", "i"))
-            //    );
-
-            //    var instructor = collection.Find(filter).FirstOrDefault();
-
-            //    if (instructor != null)
-            //    {
-            //        // Same logic: if subject matches, show teacher
-            //        if (string.Equals(instructor.Subject?.Trim(), subjectValue, StringComparison.OrdinalIgnoreCase))
-            //        {
-            //            teacherLabel.Text = instructor.Fullname;
-            //        }
-            //        else
-            //        {
-            //            teacherLabel.Text = "No matching instructor.";
-            //        }
-            //    }
-            //    else
-            //    {
-            //        teacherLabel.Text = "No registered instructor.";
-            //    }
-            //}
+            }
+            else
+            {
+                MessageBox.Show("Student record have not found in database");
+            }
         }
 
-        
+
 
 
         private void RoundPanel(Panel panel, int radius)
@@ -195,14 +182,14 @@ namespace ConnectEducation
             EightSubject = schoolCurriculum._Subject8;
 
             // Grades panel
-            Sub1Label.Text = FirstSubject;
-            Sub2Label.Text = SecondSubject;
-            Sub3Label.Text = ThirdSubject;
-            Sub4Label.Text = FourthSubject;
-            Sub5Label.Text = FifthSubject;
-            Sub6Label.Text = SixthSubject;
-            Sub7Label.Text = SeventhSubject;
-            Sub8Label.Text = EightSubject;
+            //Sub1Label.Text = FirstSubject;
+            //Sub2Label.Text = SecondSubject;
+            //Sub3Label.Text = ThirdSubject;
+            //Sub4Label.Text = FourthSubject;
+            //Sub5Label.Text = FifthSubject;
+            //Sub6Label.Text = SixthSubject;
+            //Sub7Label.Text = SeventhSubject;
+            //Sub8Label.Text = EightSubject;
         }
 
         public StudentPage(string studID, string studFullname, string studStrand, string studGradeLevel, string studSemester, string studSection)
@@ -216,6 +203,7 @@ namespace ConnectEducation
             this.StrandOfStudent = studStrand;
             this.GradeLevelOfStudent = studGradeLevel;
             this.SemesterOfStudent = studSemester;
+            this.SectionOfStudent = studSection;
 
         }
         private void StudentPage_Load(object sender, EventArgs e)
@@ -257,7 +245,10 @@ namespace ConnectEducation
                 MessageBox.Show("No Registered Student :(");
             }
 
-            displayGrades();
+            MessageBox.Show(IdOfStudent);
+            MessageBox.Show(FullnameOfStudent);
+            MessageBox.Show(SectionOfStudent);
+
 
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;
@@ -423,7 +414,8 @@ namespace ConnectEducation
         {
             GradingSystemPanel.Visible = true;
             SubjectsPanel.Visible = false;
-            displayNameOfSubjectsInGradesPanel();
+            //displayNameOfSubjectsInGradesPanel();
+            displayGrades();
 
         }
 
@@ -1314,45 +1306,63 @@ namespace ConnectEducation
 
         private void TeacherNameLabel1_Click(object sender, EventArgs e)
         {
-            string subject = Sub1Label.Text.Trim();
-            string section = SectionOfStudent.Trim();
+            //string subject = Sub1Label.Text.Trim();
+            //string section = SectionOfStudent.Trim();
 
-            if (string.IsNullOrEmpty(subject))
+            //if (string.IsNullOrEmpty(subject))
+            //{
+            //    MessageBox.Show("No subject assigned for this label.");
+            //    return;
+            //}
+
+            //var connectionString = "mongodb://localhost:27017";
+            //var client = new MongoClient(connectionString);
+            //var database = client.GetDatabase("ConnectED");
+            //var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+
+            //// Create filter to find the teacher
+            //var filter = Builders<TeacherInformationModal>.Filter.And(
+            //    Builders<TeacherInformationModal>.Filter.Regex(z => z.Subject, new BsonRegularExpression($"^{subject}$", "i")),
+            //    Builders<TeacherInformationModal>.Filter.Regex(z => z.Section, new BsonRegularExpression($"^{section}$", "i"))
+            //);
+
+            //var instructor = collection.Find(filter).FirstOrDefault();
+
+            //if (instructor != null)
+            //{
+            //    // Display found teacher info
+            //    MessageBox.Show(
+            //        $"Teacher found!\n\n" +
+            //        $"Name: {instructor.Fullname}\n" +
+            //        $"Subject: {instructor.Subject}\n" +
+            //        $"Section: {instructor.Section}",
+            //        "Instructor Information",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Information
+            //    );
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No instructor found for this subject and section.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+        }
+
+        private void TeacherNameLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuarterSelectionCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (QuarterSelectionCb.Text == "First Grade")
             {
-                MessageBox.Show("No subject assigned for this label.");
-                return;
+                displayGrades();
+            }
+            if (QuarterSelectionCb.Text == "Second Grade")
+            {
+                displayGrades();
             }
 
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-
-            // Create filter to find the teacher
-            var filter = Builders<TeacherInformationModal>.Filter.And(
-                Builders<TeacherInformationModal>.Filter.Regex(z => z.Subject, new BsonRegularExpression($"^{subject}$", "i")),
-                Builders<TeacherInformationModal>.Filter.Regex(z => z.Section, new BsonRegularExpression($"^{section}$", "i"))
-            );
-
-            var instructor = collection.Find(filter).FirstOrDefault();
-
-            if (instructor != null)
-            {
-                // Display found teacher info
-                MessageBox.Show(
-                    $"Teacher found!\n\n" +
-                    $"Name: {instructor.Fullname}\n" +
-                    $"Subject: {instructor.Subject}\n" +
-                    $"Section: {instructor.Section}",
-                    "Instructor Information",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-            }
-            else
-            {
-                MessageBox.Show("No instructor found for this subject and section.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
     }
 }

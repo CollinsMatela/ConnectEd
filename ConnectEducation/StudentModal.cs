@@ -116,6 +116,9 @@ namespace ConnectEducation
 
     public class StudentGrades 
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public string recordID { get; set; }
         public string StudentID { get; set; }
         public string StudentFullname { get; set; }
