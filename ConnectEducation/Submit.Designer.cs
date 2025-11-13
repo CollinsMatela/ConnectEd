@@ -28,75 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             panel3 = new Panel();
-            btnAddFile = new Button();
+            panel1 = new Panel();
+            HandoutNoLabel = new Label();
+            InstructorLabel = new Label();
             label3 = new Label();
+            label1 = new Label();
+            btnSubmit = new Button();
+            btnAddFile = new Button();
             ListBoxFiles = new ListBox();
             label2 = new Label();
-            richTextBox1 = new RichTextBox();
-            panel2 = new Panel();
-            label1 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            btnSubmit = new Button();
-            panel1.SuspendLayout();
+            AnswerTxt = new RichTextBox();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Location = new Point(-1, -1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(806, 543);
-            panel1.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(panel1);
+            panel3.Controls.Add(HandoutNoLabel);
+            panel3.Controls.Add(InstructorLabel);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label1);
             panel3.Controls.Add(btnSubmit);
             panel3.Controls.Add(btnAddFile);
-            panel3.Controls.Add(label3);
             panel3.Controls.Add(ListBoxFiles);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(richTextBox1);
-            panel3.Location = new Point(13, 69);
+            panel3.Controls.Add(AnswerTxt);
+            panel3.Location = new Point(-1, -2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(776, 463);
+            panel3.Size = new Size(1465, 742);
             panel3.TabIndex = 3;
             // 
-            // btnAddFile
+            // panel1
             // 
-            btnAddFile.Location = new Point(671, 216);
-            btnAddFile.Name = "btnAddFile";
-            btnAddFile.Size = new Size(93, 27);
-            btnAddFile.TabIndex = 7;
-            btnAddFile.Text = "Add File";
-            btnAddFile.UseVisualStyleBackColor = true;
-            btnAddFile.Click += btnAddFile_Click;
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(0, 1);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1465, 50);
+            panel1.TabIndex = 14;
+            // 
+            // HandoutNoLabel
+            // 
+            HandoutNoLabel.AutoSize = true;
+            HandoutNoLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HandoutNoLabel.ForeColor = Color.Gray;
+            HandoutNoLabel.Location = new Point(206, 112);
+            HandoutNoLabel.Name = "HandoutNoLabel";
+            HandoutNoLabel.Size = new Size(87, 15);
+            HandoutNoLabel.TabIndex = 12;
+            HandoutNoLabel.Text = "Type of activity";
+            // 
+            // InstructorLabel
+            // 
+            InstructorLabel.AutoSize = true;
+            InstructorLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            InstructorLabel.ForeColor = Color.Gray;
+            InstructorLabel.Location = new Point(1139, 85);
+            InstructorLabel.Name = "InstructorLabel";
+            InstructorLabel.Size = new Size(91, 15);
+            InstructorLabel.TabIndex = 11;
+            InstructorLabel.Text = "Subject Teacher";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(16, 225);
+            label3.Location = new Point(1093, 85);
             label3.Name = "label3";
-            label3.Size = new Size(76, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Inserted Files";
+            label3.Size = new Size(23, 15);
+            label3.TabIndex = 10;
+            label3.Text = "To:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Bahnschrift SemiBold SemiConden", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Gray;
+            label1.Location = new Point(206, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(170, 23);
+            label1.TabIndex = 9;
+            label1.Text = "Submission of Activity";
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.BackColor = Color.DodgerBlue;
+            btnSubmit.FlatAppearance.BorderSize = 0;
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Bahnschrift SemiCondensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(1164, 556);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(93, 38);
+            btnSubmit.TabIndex = 8;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
+            // btnAddFile
+            // 
+            btnAddFile.BackColor = Color.WhiteSmoke;
+            btnAddFile.FlatAppearance.BorderSize = 0;
+            btnAddFile.FlatStyle = FlatStyle.Flat;
+            btnAddFile.Font = new Font("Bahnschrift SemiCondensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddFile.ForeColor = Color.DimGray;
+            btnAddFile.Location = new Point(1209, 191);
+            btnAddFile.Name = "btnAddFile";
+            btnAddFile.Size = new Size(48, 27);
+            btnAddFile.TabIndex = 7;
+            btnAddFile.Text = "File";
+            btnAddFile.UseVisualStyleBackColor = false;
+            btnAddFile.Click += btnAddFile_Click;
             // 
             // ListBoxFiles
             // 
+            ListBoxFiles.BackColor = Color.White;
+            ListBoxFiles.BorderStyle = BorderStyle.None;
+            ListBoxFiles.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ListBoxFiles.ForeColor = Color.DimGray;
             ListBoxFiles.FormattingEnabled = true;
-            ListBoxFiles.ItemHeight = 15;
-            ListBoxFiles.Location = new Point(15, 249);
+            ListBoxFiles.Location = new Point(206, 392);
             ListBoxFiles.Name = "ListBoxFiles";
-            ListBoxFiles.Size = new Size(749, 154);
+            ListBoxFiles.Size = new Size(1051, 144);
             ListBoxFiles.TabIndex = 5;
             // 
             // label2
@@ -104,100 +160,49 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Gray;
-            label2.Location = new Point(15, 18);
+            label2.Location = new Point(206, 197);
             label2.Name = "label2";
             label2.Size = new Size(101, 15);
             label2.TabIndex = 4;
             label2.Text = "Type your Answer";
             // 
-            // richTextBox1
+            // AnswerTxt
             // 
-            richTextBox1.Location = new Point(15, 45);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(749, 162);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
-            panel2.Location = new Point(13, 14);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(776, 49);
-            panel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Gray;
-            label1.Location = new Point(15, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(102, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Submit your work";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Type of Activity", "Seatwork / Assignment", "Performance Task" });
-            comboBox2.Location = new Point(597, 14);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(167, 23);
-            comboBox2.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Select a Week", "Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8" });
-            comboBox1.Location = new Point(499, 14);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(92, 23);
-            comboBox1.TabIndex = 1;
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.Location = new Point(671, 418);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(93, 27);
-            btnSubmit.TabIndex = 8;
-            btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
-            btnSubmit.Click += btnSubmit_Click;
+            AnswerTxt.BackColor = Color.WhiteSmoke;
+            AnswerTxt.BorderStyle = BorderStyle.None;
+            AnswerTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AnswerTxt.Location = new Point(206, 224);
+            AnswerTxt.Name = "AnswerTxt";
+            AnswerTxt.Size = new Size(1051, 162);
+            AnswerTxt.TabIndex = 0;
+            AnswerTxt.Text = "";
             // 
             // Submit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 543);
-            Controls.Add(panel1);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(1463, 738);
+            Controls.Add(panel3);
             Name = "Submit";
             Text = "Submit";
-            panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private RichTextBox richTextBox1;
-        private ComboBox comboBox1;
-        private Panel panel2;
-        private ComboBox comboBox2;
+        private RichTextBox AnswerTxt;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Label label1;
         private Panel panel3;
         private ListBox ListBoxFiles;
         private Label label2;
-        private Label label3;
         private Button btnAddFile;
         private Button btnSubmit;
+        private Label InstructorLabel;
+        private Label label3;
+        private Label label1;
+        private Panel panel1;
+        private Label HandoutNoLabel;
     }
 }

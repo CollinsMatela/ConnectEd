@@ -71,7 +71,7 @@
             label22 = new Label();
             LinkOfHandout2 = new LinkLabel();
             SubjectsPanel = new Panel();
-            btnSubmit1 = new Button();
+            SubmissionCb = new ComboBox();
             subjectNameHeader = new Label();
             panel17 = new Panel();
             panel18 = new Panel();
@@ -279,10 +279,10 @@
             btnSubject.FlatStyle = FlatStyle.Flat;
             btnSubject.Font = new Font("Segoe Fluent Icons", 9.75F);
             btnSubject.ForeColor = Color.Gray;
-            btnSubject.Location = new Point(1205, 44);
+            btnSubject.Location = new Point(1220, 44);
             btnSubject.Margin = new Padding(0);
             btnSubject.Name = "btnSubject";
-            btnSubject.Size = new Size(50, 33);
+            btnSubject.Size = new Size(35, 24);
             btnSubject.TabIndex = 2;
             btnSubject.Text = "V";
             btnSubject.UseVisualStyleBackColor = false;
@@ -299,7 +299,7 @@
             SubjectsPopUpPanel.Controls.Add(subject3);
             SubjectsPopUpPanel.Controls.Add(subject2);
             SubjectsPopUpPanel.Controls.Add(subject1);
-            SubjectsPopUpPanel.Location = new Point(957, 43);
+            SubjectsPopUpPanel.Location = new Point(957, 81);
             SubjectsPopUpPanel.Margin = new Padding(0);
             SubjectsPopUpPanel.Name = "SubjectsPopUpPanel";
             SubjectsPopUpPanel.Size = new Size(297, 267);
@@ -482,9 +482,9 @@
             label14.Location = new Point(15, 12);
             label14.Margin = new Padding(0);
             label14.Name = "label14";
-            label14.Size = new Size(64, 17);
+            label14.Size = new Size(72, 17);
             label14.TabIndex = 6;
-            label14.Text = "Activities";
+            label14.Text = "Worksheet";
             // 
             // PerformanceTask4
             // 
@@ -595,9 +595,9 @@
             label17.Location = new Point(15, 12);
             label17.Margin = new Padding(0);
             label17.Name = "label17";
-            label17.Size = new Size(64, 17);
+            label17.Size = new Size(72, 17);
             label17.TabIndex = 6;
-            label17.Text = "Activities";
+            label17.Text = "Worksheet";
             // 
             // PerformanceTask3
             // 
@@ -708,9 +708,9 @@
             label20.Location = new Point(15, 12);
             label20.Margin = new Padding(0);
             label20.Name = "label20";
-            label20.Size = new Size(64, 17);
+            label20.Size = new Size(72, 17);
             label20.TabIndex = 6;
-            label20.Text = "Activities";
+            label20.Text = "Worksheet";
             // 
             // PerformanceTask2
             // 
@@ -779,8 +779,8 @@
             // SubjectsPanel
             // 
             SubjectsPanel.BackColor = Color.White;
+            SubjectsPanel.Controls.Add(SubmissionCb);
             SubjectsPanel.Controls.Add(SubjectsPopUpPanel);
-            SubjectsPanel.Controls.Add(btnSubmit1);
             SubjectsPanel.Controls.Add(subjectNameHeader);
             SubjectsPanel.Controls.Add(btnSubject);
             SubjectsPanel.Controls.Add(panel17);
@@ -798,21 +798,19 @@
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
-            // btnSubmit1
+            // SubmissionCb
             // 
-            btnSubmit1.BackColor = Color.White;
-            btnSubmit1.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            btnSubmit1.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            btnSubmit1.FlatStyle = FlatStyle.Flat;
-            btnSubmit1.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSubmit1.ForeColor = Color.DimGray;
-            btnSubmit1.Location = new Point(1113, 43);
-            btnSubmit1.Name = "btnSubmit1";
-            btnSubmit1.Size = new Size(89, 34);
-            btnSubmit1.TabIndex = 7;
-            btnSubmit1.Text = "SUBMIT";
-            btnSubmit1.UseVisualStyleBackColor = false;
-            btnSubmit1.Click += btnSubmit1_Click;
+            SubmissionCb.BackColor = Color.White;
+            SubmissionCb.FlatStyle = FlatStyle.Flat;
+            SubmissionCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubmissionCb.ForeColor = Color.DimGray;
+            SubmissionCb.FormattingEnabled = true;
+            SubmissionCb.Items.AddRange(new object[] { "Handout 1: Worksheet", "Handout 1: Performance Task", "Handout 2: Worksheet", "Handout 2: Performance Task", "Handout 3: Worksheet", "Handout 3: Performance Task", "Handout 4: Worksheet", "Handout 4: Performance Task", "Handout 5: Worksheet", "Handout 5: Performance Task", "Handout 6: Worksheet", "Handout 6: Performance Task", "Handout 7: Worksheet", "Handout 7: Performance Task", "Handout 8: Worksheet", "Handout 8: Performance Task" });
+            SubmissionCb.Location = new Point(998, 44);
+            SubmissionCb.Name = "SubmissionCb";
+            SubmissionCb.Size = new Size(210, 24);
+            SubmissionCb.TabIndex = 10;
+            SubmissionCb.SelectedIndexChanged += SubmissionCb_SelectedIndexChanged;
             // 
             // subjectNameHeader
             // 
@@ -884,9 +882,9 @@
             label23.Location = new Point(15, 12);
             label23.Margin = new Padding(0);
             label23.Name = "label23";
-            label23.Size = new Size(64, 17);
+            label23.Size = new Size(72, 17);
             label23.TabIndex = 6;
-            label23.Text = "Activities";
+            label23.Text = "Worksheet";
             // 
             // Assignment1
             // 
@@ -983,9 +981,9 @@
             label11.Location = new Point(15, 12);
             label11.Margin = new Padding(0);
             label11.Name = "label11";
-            label11.Size = new Size(64, 17);
+            label11.Size = new Size(72, 17);
             label11.TabIndex = 6;
-            label11.Text = "Activities";
+            label11.Text = "Worksheet";
             // 
             // PerformanceTask8
             // 
@@ -1096,9 +1094,9 @@
             label8.Location = new Point(15, 12);
             label8.Margin = new Padding(0);
             label8.Name = "label8";
-            label8.Size = new Size(64, 17);
+            label8.Size = new Size(72, 17);
             label8.TabIndex = 6;
-            label8.Text = "Activities";
+            label8.Text = "Worksheet";
             // 
             // PerformanceTask7
             // 
@@ -1209,9 +1207,9 @@
             label4.Location = new Point(15, 12);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(64, 17);
+            label4.Size = new Size(72, 17);
             label4.TabIndex = 6;
-            label4.Text = "Activities";
+            label4.Text = "Worksheet";
             // 
             // PerformanceTask6
             // 
@@ -1322,9 +1320,9 @@
             label5.Location = new Point(15, 12);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(64, 17);
+            label5.Size = new Size(72, 17);
             label5.TabIndex = 6;
-            label5.Text = "Activities";
+            label5.Text = "Worksheet";
             // 
             // PerformanceTask5
             // 
@@ -2007,8 +2005,8 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1463, 738);
             Controls.Add(panel1);
-            Controls.Add(GradingSystemPanel);
             Controls.Add(SubjectsPanel);
+            Controls.Add(GradingSystemPanel);
             Name = "StudentPage";
             Text = "Student Page";
             Load += StudentPage_Load;
@@ -2095,7 +2093,6 @@
         private Label label5;
         private Panel panel17;
         private Panel panel18;
-        private Button btnSubmit1;
         private Label label23;
         private LinkLabel PT1;
         private LinkLabel linkLabel30;
@@ -2215,5 +2212,6 @@
         private Label TeacherNameLabel3;
         private Label TeacherNameLabel6;
         private Label TeacherNameLabel5;
+        private ComboBox SubmissionCb;
     }
 }

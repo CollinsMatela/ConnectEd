@@ -14,6 +14,127 @@ namespace ConnectEducation
         private string IdOfStudent, FullnameOfStudent, StrandOfStudent, GradeLevelOfStudent, SemesterOfStudent, SectionOfStudent;
         private string link;
 
+        private void submission()
+        {
+            if (subjectNameHeader.Text == "Select Subject")
+            {
+                MessageBox.Show("Please select a subject!");
+                return;
+            }
+
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+            var filter = Builders<TeacherInformationModal>.Filter.And(
+                         Builders<TeacherInformationModal>.Filter.Eq(z => z.Subject, subjectNameHeader.Text),
+                         Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, SectionOfStudent)
+                         );
+            var result = collection.Find(filter).FirstOrDefault();
+            if (result != null)
+            {
+                string subject = subjectNameHeader.Text;
+                string instructor = result.Fullname;
+                string student = FullnameOfStudent;
+                string section = SectionOfStudent;
+
+                if (SubmissionCb.Text == "Handout 1: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 1", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 1: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 1", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 2: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 2", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 2: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 2", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 3: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 3", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 3: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 3", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 4: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 4", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 4: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 4", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 5: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 5", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 5: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 5", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 6: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 6", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 6: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 6", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 7: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 7", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 7: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 7", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                if (SubmissionCb.Text == "Handout 8: Worksheet")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 8", "Worksheet", student, section);
+                    submitForm.Show();
+                }
+                if (SubmissionCb.Text == "Handout 8: Performance Task")
+                {
+                    Submit submitForm = new Submit(subject, instructor, "Handout 8", "Performance Task", student, section);
+                    submitForm.Show();
+                }
+
+                
+            }
+         
+
+
+
+
+        }
+
+
         //var connectionString = "mongodb://localhost:27017";
         //var client = new MongoClient(connectionString);
         //var database = client.GetDatabase("ConnectED");
@@ -82,7 +203,7 @@ namespace ConnectEducation
                 Label[] nameOfInstructorLabels = { TeacherNameLabel1, TeacherNameLabel2, TeacherNameLabel3, TeacherNameLabel4, TeacherNameLabel5, TeacherNameLabel6, TeacherNameLabel7, TeacherNameLabel8 };
                 Label[] GradeLabels = { GradeLabel1, GradeLabel2, GradeLabel3, GradeLabel4, GradeLabel5, GradeLabel6, GradeLabel7, GradeLabel8 };
 
-                if(QuarterSelectionCb.Text == "First Grade" ||  QuarterSelectionCb.Text == string.Empty)
+                if (QuarterSelectionCb.Text == "First Grade" || QuarterSelectionCb.Text == string.Empty)
                 {
                     foreach (var item in gradeRecord.SubjectList)
                     {
@@ -1286,8 +1407,7 @@ namespace ConnectEducation
         }
         private void btnSubmit1_Click(object sender, EventArgs e)
         {
-            Submit submitForm = new Submit();
-            submitForm.Show();
+            
         }
 
         private void StudentLogoutBtn_Click(object sender, EventArgs e)
@@ -1363,6 +1483,11 @@ namespace ConnectEducation
                 displayGrades();
             }
 
+        }
+
+        private void SubmissionCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            submission();
         }
     }
 }
