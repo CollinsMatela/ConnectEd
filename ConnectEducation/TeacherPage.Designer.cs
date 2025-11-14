@@ -36,6 +36,34 @@
             label2 = new Label();
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
+            ViewSubmissionPanel = new Panel();
+            SubmissionListView = new ListView();
+            HandoutsPanel = new Panel();
+            SubjectLabel = new Label();
+            panel40 = new Panel();
+            FileOfHandout8 = new LinkLabel();
+            NameOfHandout8 = new Label();
+            panel39 = new Panel();
+            FileOfHandout4 = new LinkLabel();
+            NameOfHandout4 = new Label();
+            panel41 = new Panel();
+            FileOfHandout7 = new LinkLabel();
+            NameOfHandout7 = new Label();
+            panel38 = new Panel();
+            FileOfHandout3 = new LinkLabel();
+            NameOfHandout3 = new Label();
+            panel42 = new Panel();
+            FileOfHandout6 = new LinkLabel();
+            NameOfHandout6 = new Label();
+            panel37 = new Panel();
+            FileOfHandout2 = new LinkLabel();
+            NameOfHandout2 = new Label();
+            panel43 = new Panel();
+            FileOfHandout5 = new LinkLabel();
+            NameOfHandout5 = new Label();
+            panel34 = new Panel();
+            FileOfHandout1 = new LinkLabel();
+            NameOfHandout1 = new Label();
             StudentManagePanel = new Panel();
             panel6 = new Panel();
             label87 = new Label();
@@ -113,49 +141,6 @@
             label70 = new Label();
             textBox13 = new TextBox();
             label71 = new Label();
-            ClassAttendancePanel = new Panel();
-            AttendanceUpdatePanel = new Panel();
-            label84 = new Label();
-            SelectAttendanceCb = new ComboBox();
-            AttendanceCloseBtn = new Button();
-            SelectWeeksCb = new ComboBox();
-            AttendanceUpdateBtn = new Button();
-            label86 = new Label();
-            AttendanceUpdateDropDownBtn = new Button();
-            panel23 = new Panel();
-            DisplayAttendance8 = new Label();
-            label79 = new Label();
-            panel24 = new Panel();
-            panel21 = new Panel();
-            DisplayAttendance4 = new Label();
-            label77 = new Label();
-            panel22 = new Panel();
-            panel25 = new Panel();
-            DisplayAttendance7 = new Label();
-            label81 = new Label();
-            panel26 = new Panel();
-            panel27 = new Panel();
-            DisplayAttendance6 = new Label();
-            label83 = new Label();
-            panel28 = new Panel();
-            panel19 = new Panel();
-            DisplayAttendance3 = new Label();
-            label75 = new Label();
-            panel20 = new Panel();
-            panel29 = new Panel();
-            DisplayAttendance5 = new Label();
-            label85 = new Label();
-            panel30 = new Panel();
-            panel16 = new Panel();
-            DisplayAttendance2 = new Label();
-            label73 = new Label();
-            panel18 = new Panel();
-            panel15 = new Panel();
-            DisplayAttendance1 = new Label();
-            label65 = new Label();
-            panel17 = new Panel();
-            label102 = new Label();
-            button6 = new Button();
             InputGradesPanel = new Panel();
             StatusLabel = new Label();
             label88 = new Label();
@@ -282,34 +267,62 @@
             label112 = new Label();
             label140 = new Label();
             UpdatePanelBtn = new Button();
-            HandoutsPanel = new Panel();
-            SubjectLabel = new Label();
-            panel40 = new Panel();
-            FileOfHandout8 = new LinkLabel();
-            NameOfHandout8 = new Label();
-            panel39 = new Panel();
-            FileOfHandout4 = new LinkLabel();
-            NameOfHandout4 = new Label();
-            panel41 = new Panel();
-            FileOfHandout7 = new LinkLabel();
-            NameOfHandout7 = new Label();
-            panel38 = new Panel();
-            FileOfHandout3 = new LinkLabel();
-            NameOfHandout3 = new Label();
-            panel42 = new Panel();
-            FileOfHandout6 = new LinkLabel();
-            NameOfHandout6 = new Label();
-            panel37 = new Panel();
-            FileOfHandout2 = new LinkLabel();
-            NameOfHandout2 = new Label();
-            panel43 = new Panel();
-            FileOfHandout5 = new LinkLabel();
-            NameOfHandout5 = new Label();
-            panel34 = new Panel();
-            FileOfHandout1 = new LinkLabel();
-            NameOfHandout1 = new Label();
+            ClassAttendancePanel = new Panel();
+            AttendanceUpdatePanel = new Panel();
+            label84 = new Label();
+            SelectAttendanceCb = new ComboBox();
+            AttendanceCloseBtn = new Button();
+            SelectWeeksCb = new ComboBox();
+            AttendanceUpdateBtn = new Button();
+            label86 = new Label();
+            AttendanceUpdateDropDownBtn = new Button();
+            panel23 = new Panel();
+            DisplayAttendance8 = new Label();
+            label79 = new Label();
+            panel24 = new Panel();
+            panel21 = new Panel();
+            DisplayAttendance4 = new Label();
+            label77 = new Label();
+            panel22 = new Panel();
+            panel25 = new Panel();
+            DisplayAttendance7 = new Label();
+            label81 = new Label();
+            panel26 = new Panel();
+            panel27 = new Panel();
+            DisplayAttendance6 = new Label();
+            label83 = new Label();
+            panel28 = new Panel();
+            panel19 = new Panel();
+            DisplayAttendance3 = new Label();
+            label75 = new Label();
+            panel20 = new Panel();
+            panel29 = new Panel();
+            DisplayAttendance5 = new Label();
+            label85 = new Label();
+            panel30 = new Panel();
+            panel16 = new Panel();
+            DisplayAttendance2 = new Label();
+            label73 = new Label();
+            panel18 = new Panel();
+            panel15 = new Panel();
+            DisplayAttendance1 = new Label();
+            label65 = new Label();
+            panel17 = new Panel();
+            label102 = new Label();
+            button6 = new Button();
+            label89 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ViewSubmissionPanel.SuspendLayout();
+            HandoutsPanel.SuspendLayout();
+            panel40.SuspendLayout();
+            panel39.SuspendLayout();
+            panel41.SuspendLayout();
+            panel38.SuspendLayout();
+            panel42.SuspendLayout();
+            panel37.SuspendLayout();
+            panel43.SuspendLayout();
+            panel34.SuspendLayout();
             StudentManagePanel.SuspendLayout();
             panel6.SuspendLayout();
             panel33.SuspendLayout();
@@ -319,16 +332,6 @@
             panel31.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ClassAttendancePanel.SuspendLayout();
-            AttendanceUpdatePanel.SuspendLayout();
-            panel23.SuspendLayout();
-            panel21.SuspendLayout();
-            panel25.SuspendLayout();
-            panel27.SuspendLayout();
-            panel19.SuspendLayout();
-            panel29.SuspendLayout();
-            panel16.SuspendLayout();
-            panel15.SuspendLayout();
             InputGradesPanel.SuspendLayout();
             StudentRecordPanel.SuspendLayout();
             UpdatePanel.SuspendLayout();
@@ -340,15 +343,16 @@
             panel9.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
-            HandoutsPanel.SuspendLayout();
-            panel40.SuspendLayout();
-            panel39.SuspendLayout();
-            panel41.SuspendLayout();
-            panel38.SuspendLayout();
-            panel42.SuspendLayout();
-            panel37.SuspendLayout();
-            panel43.SuspendLayout();
-            panel34.SuspendLayout();
+            ClassAttendancePanel.SuspendLayout();
+            AttendanceUpdatePanel.SuspendLayout();
+            panel23.SuspendLayout();
+            panel21.SuspendLayout();
+            panel25.SuspendLayout();
+            panel27.SuspendLayout();
+            panel19.SuspendLayout();
+            panel29.SuspendLayout();
+            panel16.SuspendLayout();
+            panel15.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -377,8 +381,9 @@
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(ActionCb);
             panel3.Controls.Add(SubjectNameLabel);
-            panel3.Controls.Add(StudentManagePanel);
+            panel3.Controls.Add(ViewSubmissionPanel);
             panel3.Controls.Add(HandoutsPanel);
+            panel3.Controls.Add(StudentManagePanel);
             panel3.Location = new Point(0, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(1465, 740);
@@ -424,7 +429,7 @@
             ActionCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ActionCb.ForeColor = Color.DimGray;
             ActionCb.FormattingEnabled = true;
-            ActionCb.Items.AddRange(new object[] { "Handouts", "Manage Students", "Logout" });
+            ActionCb.Items.AddRange(new object[] { "Handouts", "Manage Students", "Submission", "Logout" });
             ActionCb.Location = new Point(1261, 25);
             ActionCb.Name = "ActionCb";
             ActionCb.Size = new Size(152, 24);
@@ -441,6 +446,336 @@
             SubjectNameLabel.Size = new Size(36, 12);
             SubjectNameLabel.TabIndex = 1;
             SubjectNameLabel.Text = "Subject";
+            // 
+            // ViewSubmissionPanel
+            // 
+            ViewSubmissionPanel.BackColor = Color.White;
+            ViewSubmissionPanel.Controls.Add(label89);
+            ViewSubmissionPanel.Controls.Add(SubmissionListView);
+            ViewSubmissionPanel.Location = new Point(2, 84);
+            ViewSubmissionPanel.Name = "ViewSubmissionPanel";
+            ViewSubmissionPanel.Size = new Size(1463, 588);
+            ViewSubmissionPanel.TabIndex = 10;
+            // 
+            // SubmissionListView
+            // 
+            SubmissionListView.BackColor = Color.White;
+            SubmissionListView.BorderStyle = BorderStyle.None;
+            SubmissionListView.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubmissionListView.ForeColor = Color.DimGray;
+            SubmissionListView.Location = new Point(261, 72);
+            SubmissionListView.Name = "SubmissionListView";
+            SubmissionListView.Size = new Size(1150, 407);
+            SubmissionListView.TabIndex = 0;
+            SubmissionListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // HandoutsPanel
+            // 
+            HandoutsPanel.BackColor = Color.White;
+            HandoutsPanel.Controls.Add(SubjectLabel);
+            HandoutsPanel.Controls.Add(panel40);
+            HandoutsPanel.Controls.Add(panel39);
+            HandoutsPanel.Controls.Add(panel41);
+            HandoutsPanel.Controls.Add(panel38);
+            HandoutsPanel.Controls.Add(panel42);
+            HandoutsPanel.Controls.Add(panel37);
+            HandoutsPanel.Controls.Add(panel43);
+            HandoutsPanel.Controls.Add(panel34);
+            HandoutsPanel.Location = new Point(0, 88);
+            HandoutsPanel.Name = "HandoutsPanel";
+            HandoutsPanel.Size = new Size(1465, 587);
+            HandoutsPanel.TabIndex = 8;
+            // 
+            // SubjectLabel
+            // 
+            SubjectLabel.AutoSize = true;
+            SubjectLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubjectLabel.ForeColor = Color.DimGray;
+            SubjectLabel.Location = new Point(257, 20);
+            SubjectLabel.Name = "SubjectLabel";
+            SubjectLabel.Size = new Size(55, 19);
+            SubjectLabel.TabIndex = 10;
+            SubjectLabel.Text = "SUBJECT";
+            // 
+            // panel40
+            // 
+            panel40.BackColor = Color.White;
+            panel40.Controls.Add(FileOfHandout8);
+            panel40.Controls.Add(NameOfHandout8);
+            panel40.Location = new Point(259, 516);
+            panel40.Margin = new Padding(0);
+            panel40.Name = "panel40";
+            panel40.Size = new Size(1155, 60);
+            panel40.TabIndex = 14;
+            // 
+            // FileOfHandout8
+            // 
+            FileOfHandout8.AutoSize = true;
+            FileOfHandout8.DisabledLinkColor = Color.DimGray;
+            FileOfHandout8.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout8.LinkColor = Color.DimGray;
+            FileOfHandout8.Location = new Point(33, 38);
+            FileOfHandout8.Name = "FileOfHandout8";
+            FileOfHandout8.Size = new Size(59, 12);
+            FileOfHandout8.TabIndex = 19;
+            FileOfHandout8.TabStop = true;
+            FileOfHandout8.Text = "Handout File";
+            // 
+            // NameOfHandout8
+            // 
+            NameOfHandout8.AutoSize = true;
+            NameOfHandout8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout8.ForeColor = Color.DimGray;
+            NameOfHandout8.Location = new Point(31, 12);
+            NameOfHandout8.Name = "NameOfHandout8";
+            NameOfHandout8.Size = new Size(60, 19);
+            NameOfHandout8.TabIndex = 11;
+            NameOfHandout8.Text = "Handout 1";
+            // 
+            // panel39
+            // 
+            panel39.BackColor = Color.White;
+            panel39.Controls.Add(FileOfHandout4);
+            panel39.Controls.Add(NameOfHandout4);
+            panel39.Location = new Point(258, 252);
+            panel39.Margin = new Padding(0);
+            panel39.Name = "panel39";
+            panel39.Size = new Size(1155, 60);
+            panel39.TabIndex = 12;
+            // 
+            // FileOfHandout4
+            // 
+            FileOfHandout4.AutoSize = true;
+            FileOfHandout4.DisabledLinkColor = Color.DimGray;
+            FileOfHandout4.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout4.LinkColor = Color.DimGray;
+            FileOfHandout4.Location = new Point(34, 36);
+            FileOfHandout4.Name = "FileOfHandout4";
+            FileOfHandout4.Size = new Size(59, 12);
+            FileOfHandout4.TabIndex = 15;
+            FileOfHandout4.TabStop = true;
+            FileOfHandout4.Text = "Handout File";
+            // 
+            // NameOfHandout4
+            // 
+            NameOfHandout4.AutoSize = true;
+            NameOfHandout4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout4.ForeColor = Color.DimGray;
+            NameOfHandout4.Location = new Point(31, 12);
+            NameOfHandout4.Name = "NameOfHandout4";
+            NameOfHandout4.Size = new Size(60, 19);
+            NameOfHandout4.TabIndex = 11;
+            NameOfHandout4.Text = "Handout 1";
+            // 
+            // panel41
+            // 
+            panel41.BackColor = Color.WhiteSmoke;
+            panel41.Controls.Add(FileOfHandout7);
+            panel41.Controls.Add(NameOfHandout7);
+            panel41.Location = new Point(260, 450);
+            panel41.Margin = new Padding(0);
+            panel41.Name = "panel41";
+            panel41.Size = new Size(1155, 60);
+            panel41.TabIndex = 15;
+            // 
+            // FileOfHandout7
+            // 
+            FileOfHandout7.AutoSize = true;
+            FileOfHandout7.DisabledLinkColor = Color.DimGray;
+            FileOfHandout7.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout7.LinkColor = Color.DimGray;
+            FileOfHandout7.Location = new Point(32, 34);
+            FileOfHandout7.Name = "FileOfHandout7";
+            FileOfHandout7.Size = new Size(59, 12);
+            FileOfHandout7.TabIndex = 18;
+            FileOfHandout7.TabStop = true;
+            FileOfHandout7.Text = "Handout File";
+            // 
+            // NameOfHandout7
+            // 
+            NameOfHandout7.AutoSize = true;
+            NameOfHandout7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout7.ForeColor = Color.DimGray;
+            NameOfHandout7.Location = new Point(31, 12);
+            NameOfHandout7.Name = "NameOfHandout7";
+            NameOfHandout7.Size = new Size(60, 19);
+            NameOfHandout7.TabIndex = 11;
+            NameOfHandout7.Text = "Handout 1";
+            // 
+            // panel38
+            // 
+            panel38.BackColor = Color.WhiteSmoke;
+            panel38.Controls.Add(FileOfHandout3);
+            panel38.Controls.Add(NameOfHandout3);
+            panel38.Location = new Point(259, 186);
+            panel38.Margin = new Padding(0);
+            panel38.Name = "panel38";
+            panel38.Size = new Size(1155, 60);
+            panel38.TabIndex = 12;
+            // 
+            // FileOfHandout3
+            // 
+            FileOfHandout3.AutoSize = true;
+            FileOfHandout3.DisabledLinkColor = Color.DimGray;
+            FileOfHandout3.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout3.LinkColor = Color.DimGray;
+            FileOfHandout3.Location = new Point(33, 34);
+            FileOfHandout3.Name = "FileOfHandout3";
+            FileOfHandout3.Size = new Size(59, 12);
+            FileOfHandout3.TabIndex = 14;
+            FileOfHandout3.TabStop = true;
+            FileOfHandout3.Text = "Handout File";
+            // 
+            // NameOfHandout3
+            // 
+            NameOfHandout3.AutoSize = true;
+            NameOfHandout3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout3.ForeColor = Color.DimGray;
+            NameOfHandout3.Location = new Point(31, 12);
+            NameOfHandout3.Name = "NameOfHandout3";
+            NameOfHandout3.Size = new Size(60, 19);
+            NameOfHandout3.TabIndex = 11;
+            NameOfHandout3.Text = "Handout 1";
+            // 
+            // panel42
+            // 
+            panel42.BackColor = Color.White;
+            panel42.Controls.Add(FileOfHandout6);
+            panel42.Controls.Add(NameOfHandout6);
+            panel42.Location = new Point(260, 384);
+            panel42.Margin = new Padding(0);
+            panel42.Name = "panel42";
+            panel42.Size = new Size(1155, 60);
+            panel42.TabIndex = 16;
+            // 
+            // FileOfHandout6
+            // 
+            FileOfHandout6.AutoSize = true;
+            FileOfHandout6.DisabledLinkColor = Color.DimGray;
+            FileOfHandout6.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout6.LinkColor = Color.DimGray;
+            FileOfHandout6.Location = new Point(32, 33);
+            FileOfHandout6.Name = "FileOfHandout6";
+            FileOfHandout6.Size = new Size(59, 12);
+            FileOfHandout6.TabIndex = 17;
+            FileOfHandout6.TabStop = true;
+            FileOfHandout6.Text = "Handout File";
+            // 
+            // NameOfHandout6
+            // 
+            NameOfHandout6.AutoSize = true;
+            NameOfHandout6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout6.ForeColor = Color.DimGray;
+            NameOfHandout6.Location = new Point(31, 12);
+            NameOfHandout6.Name = "NameOfHandout6";
+            NameOfHandout6.Size = new Size(60, 19);
+            NameOfHandout6.TabIndex = 11;
+            NameOfHandout6.Text = "Handout 1";
+            // 
+            // panel37
+            // 
+            panel37.BackColor = Color.White;
+            panel37.Controls.Add(FileOfHandout2);
+            panel37.Controls.Add(NameOfHandout2);
+            panel37.Location = new Point(259, 120);
+            panel37.Margin = new Padding(0);
+            panel37.Name = "panel37";
+            panel37.Size = new Size(1155, 60);
+            panel37.TabIndex = 12;
+            // 
+            // FileOfHandout2
+            // 
+            FileOfHandout2.AutoSize = true;
+            FileOfHandout2.DisabledLinkColor = Color.DimGray;
+            FileOfHandout2.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout2.LinkColor = Color.DimGray;
+            FileOfHandout2.Location = new Point(32, 34);
+            FileOfHandout2.Name = "FileOfHandout2";
+            FileOfHandout2.Size = new Size(59, 12);
+            FileOfHandout2.TabIndex = 13;
+            FileOfHandout2.TabStop = true;
+            FileOfHandout2.Text = "Handout File";
+            // 
+            // NameOfHandout2
+            // 
+            NameOfHandout2.AutoSize = true;
+            NameOfHandout2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout2.ForeColor = Color.DimGray;
+            NameOfHandout2.Location = new Point(31, 12);
+            NameOfHandout2.Name = "NameOfHandout2";
+            NameOfHandout2.Size = new Size(60, 19);
+            NameOfHandout2.TabIndex = 11;
+            NameOfHandout2.Text = "Handout 1";
+            // 
+            // panel43
+            // 
+            panel43.BackColor = Color.WhiteSmoke;
+            panel43.Controls.Add(FileOfHandout5);
+            panel43.Controls.Add(NameOfHandout5);
+            panel43.Location = new Point(259, 318);
+            panel43.Margin = new Padding(0);
+            panel43.Name = "panel43";
+            panel43.Size = new Size(1155, 60);
+            panel43.TabIndex = 13;
+            // 
+            // FileOfHandout5
+            // 
+            FileOfHandout5.AutoSize = true;
+            FileOfHandout5.DisabledLinkColor = Color.DimGray;
+            FileOfHandout5.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout5.LinkColor = Color.DimGray;
+            FileOfHandout5.Location = new Point(33, 34);
+            FileOfHandout5.Name = "FileOfHandout5";
+            FileOfHandout5.Size = new Size(59, 12);
+            FileOfHandout5.TabIndex = 16;
+            FileOfHandout5.TabStop = true;
+            FileOfHandout5.Text = "Handout File";
+            // 
+            // NameOfHandout5
+            // 
+            NameOfHandout5.AutoSize = true;
+            NameOfHandout5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout5.ForeColor = Color.DimGray;
+            NameOfHandout5.Location = new Point(31, 12);
+            NameOfHandout5.Name = "NameOfHandout5";
+            NameOfHandout5.Size = new Size(60, 19);
+            NameOfHandout5.TabIndex = 11;
+            NameOfHandout5.Text = "Handout 1";
+            // 
+            // panel34
+            // 
+            panel34.BackColor = Color.WhiteSmoke;
+            panel34.Controls.Add(FileOfHandout1);
+            panel34.Controls.Add(NameOfHandout1);
+            panel34.Location = new Point(258, 54);
+            panel34.Margin = new Padding(0);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(1155, 60);
+            panel34.TabIndex = 0;
+            // 
+            // FileOfHandout1
+            // 
+            FileOfHandout1.AutoSize = true;
+            FileOfHandout1.DisabledLinkColor = Color.DimGray;
+            FileOfHandout1.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FileOfHandout1.LinkColor = Color.DimGray;
+            FileOfHandout1.Location = new Point(34, 34);
+            FileOfHandout1.Name = "FileOfHandout1";
+            FileOfHandout1.Size = new Size(59, 12);
+            FileOfHandout1.TabIndex = 12;
+            FileOfHandout1.TabStop = true;
+            FileOfHandout1.Text = "Handout File";
+            // 
+            // NameOfHandout1
+            // 
+            NameOfHandout1.AutoSize = true;
+            NameOfHandout1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameOfHandout1.ForeColor = Color.DimGray;
+            NameOfHandout1.Location = new Point(31, 12);
+            NameOfHandout1.Name = "NameOfHandout1";
+            NameOfHandout1.Size = new Size(60, 19);
+            NameOfHandout1.TabIndex = 11;
+            NameOfHandout1.Text = "Handout 1";
             // 
             // StudentManagePanel
             // 
@@ -1370,494 +1705,6 @@
             label71.Size = new Size(121, 16);
             label71.TabIndex = 32;
             label71.Text = "Performance Task 4";
-            // 
-            // ClassAttendancePanel
-            // 
-            ClassAttendancePanel.BackColor = Color.White;
-            ClassAttendancePanel.Controls.Add(AttendanceUpdatePanel);
-            ClassAttendancePanel.Controls.Add(AttendanceUpdateDropDownBtn);
-            ClassAttendancePanel.Controls.Add(panel23);
-            ClassAttendancePanel.Controls.Add(panel21);
-            ClassAttendancePanel.Controls.Add(panel25);
-            ClassAttendancePanel.Controls.Add(panel27);
-            ClassAttendancePanel.Controls.Add(panel19);
-            ClassAttendancePanel.Controls.Add(panel29);
-            ClassAttendancePanel.Controls.Add(panel16);
-            ClassAttendancePanel.Controls.Add(panel15);
-            ClassAttendancePanel.Controls.Add(label102);
-            ClassAttendancePanel.Controls.Add(button6);
-            ClassAttendancePanel.Location = new Point(714, 1);
-            ClassAttendancePanel.Margin = new Padding(0);
-            ClassAttendancePanel.Name = "ClassAttendancePanel";
-            ClassAttendancePanel.Size = new Size(751, 586);
-            ClassAttendancePanel.TabIndex = 62;
-            // 
-            // AttendanceUpdatePanel
-            // 
-            AttendanceUpdatePanel.BackColor = Color.White;
-            AttendanceUpdatePanel.BorderStyle = BorderStyle.FixedSingle;
-            AttendanceUpdatePanel.Controls.Add(label84);
-            AttendanceUpdatePanel.Controls.Add(SelectAttendanceCb);
-            AttendanceUpdatePanel.Controls.Add(AttendanceCloseBtn);
-            AttendanceUpdatePanel.Controls.Add(SelectWeeksCb);
-            AttendanceUpdatePanel.Controls.Add(AttendanceUpdateBtn);
-            AttendanceUpdatePanel.Controls.Add(label86);
-            AttendanceUpdatePanel.Location = new Point(446, 48);
-            AttendanceUpdatePanel.Margin = new Padding(0);
-            AttendanceUpdatePanel.Name = "AttendanceUpdatePanel";
-            AttendanceUpdatePanel.Size = new Size(252, 168);
-            AttendanceUpdatePanel.TabIndex = 66;
-            // 
-            // label84
-            // 
-            label84.AutoSize = true;
-            label84.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label84.ForeColor = Color.DimGray;
-            label84.Location = new Point(17, 65);
-            label84.Name = "label84";
-            label84.Size = new Size(111, 12);
-            label84.TabIndex = 67;
-            label84.Text = "Select attendance status";
-            // 
-            // SelectAttendanceCb
-            // 
-            SelectAttendanceCb.BackColor = Color.White;
-            SelectAttendanceCb.FlatStyle = FlatStyle.Popup;
-            SelectAttendanceCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SelectAttendanceCb.ForeColor = Color.DimGray;
-            SelectAttendanceCb.FormattingEnabled = true;
-            SelectAttendanceCb.Items.AddRange(new object[] { "Present", "Absent", "Late", "Excuse" });
-            SelectAttendanceCb.Location = new Point(156, 60);
-            SelectAttendanceCb.Name = "SelectAttendanceCb";
-            SelectAttendanceCb.Size = new Size(81, 24);
-            SelectAttendanceCb.TabIndex = 66;
-            // 
-            // AttendanceCloseBtn
-            // 
-            AttendanceCloseBtn.BackColor = Color.Transparent;
-            AttendanceCloseBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            AttendanceCloseBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            AttendanceCloseBtn.FlatStyle = FlatStyle.Flat;
-            AttendanceCloseBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AttendanceCloseBtn.ForeColor = Color.DimGray;
-            AttendanceCloseBtn.Location = new Point(17, 127);
-            AttendanceCloseBtn.Margin = new Padding(0);
-            AttendanceCloseBtn.Name = "AttendanceCloseBtn";
-            AttendanceCloseBtn.Size = new Size(220, 30);
-            AttendanceCloseBtn.TabIndex = 65;
-            AttendanceCloseBtn.Text = "Close";
-            AttendanceCloseBtn.UseVisualStyleBackColor = false;
-            AttendanceCloseBtn.Click += AttendanceCloseBtn_Click;
-            // 
-            // SelectWeeksCb
-            // 
-            SelectWeeksCb.BackColor = Color.White;
-            SelectWeeksCb.FlatStyle = FlatStyle.Popup;
-            SelectWeeksCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SelectWeeksCb.ForeColor = Color.DimGray;
-            SelectWeeksCb.FormattingEnabled = true;
-            SelectWeeksCb.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
-            SelectWeeksCb.Location = new Point(159, 26);
-            SelectWeeksCb.Name = "SelectWeeksCb";
-            SelectWeeksCb.Size = new Size(78, 24);
-            SelectWeeksCb.TabIndex = 45;
-            // 
-            // AttendanceUpdateBtn
-            // 
-            AttendanceUpdateBtn.BackColor = Color.DodgerBlue;
-            AttendanceUpdateBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            AttendanceUpdateBtn.FlatAppearance.BorderSize = 0;
-            AttendanceUpdateBtn.FlatStyle = FlatStyle.Flat;
-            AttendanceUpdateBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AttendanceUpdateBtn.ForeColor = Color.White;
-            AttendanceUpdateBtn.Location = new Point(17, 90);
-            AttendanceUpdateBtn.Margin = new Padding(0);
-            AttendanceUpdateBtn.Name = "AttendanceUpdateBtn";
-            AttendanceUpdateBtn.Size = new Size(220, 30);
-            AttendanceUpdateBtn.TabIndex = 62;
-            AttendanceUpdateBtn.Text = "Update";
-            AttendanceUpdateBtn.UseVisualStyleBackColor = false;
-            AttendanceUpdateBtn.Click += AttendanceUpdateBtn_Click;
-            // 
-            // label86
-            // 
-            label86.AutoSize = true;
-            label86.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label86.ForeColor = Color.DimGray;
-            label86.Location = new Point(17, 31);
-            label86.Name = "label86";
-            label86.Size = new Size(94, 12);
-            label86.TabIndex = 64;
-            label86.Text = "Select No. of weeks";
-            // 
-            // AttendanceUpdateDropDownBtn
-            // 
-            AttendanceUpdateDropDownBtn.BackColor = Color.WhiteSmoke;
-            AttendanceUpdateDropDownBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            AttendanceUpdateDropDownBtn.FlatStyle = FlatStyle.Flat;
-            AttendanceUpdateDropDownBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AttendanceUpdateDropDownBtn.ForeColor = Color.DimGray;
-            AttendanceUpdateDropDownBtn.Location = new Point(653, 49);
-            AttendanceUpdateDropDownBtn.Margin = new Padding(0);
-            AttendanceUpdateDropDownBtn.Name = "AttendanceUpdateDropDownBtn";
-            AttendanceUpdateDropDownBtn.Size = new Size(46, 30);
-            AttendanceUpdateDropDownBtn.TabIndex = 67;
-            AttendanceUpdateDropDownBtn.Text = "V";
-            AttendanceUpdateDropDownBtn.UseVisualStyleBackColor = false;
-            AttendanceUpdateDropDownBtn.Click += AttendanceUpdateDropDownBtn_Click;
-            // 
-            // panel23
-            // 
-            panel23.BackColor = Color.White;
-            panel23.Controls.Add(DisplayAttendance8);
-            panel23.Controls.Add(label79);
-            panel23.Controls.Add(panel24);
-            panel23.Location = new Point(550, 236);
-            panel23.Name = "panel23";
-            panel23.Size = new Size(150, 124);
-            panel23.TabIndex = 51;
-            // 
-            // DisplayAttendance8
-            // 
-            DisplayAttendance8.AutoSize = true;
-            DisplayAttendance8.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance8.ForeColor = Color.DimGray;
-            DisplayAttendance8.Location = new Point(13, 59);
-            DisplayAttendance8.Name = "DisplayAttendance8";
-            DisplayAttendance8.Size = new Size(26, 16);
-            DisplayAttendance8.TabIndex = 48;
-            DisplayAttendance8.Text = "N/A";
-            // 
-            // label79
-            // 
-            label79.AutoSize = true;
-            label79.Font = new Font("Bahnschrift Condensed", 12F);
-            label79.ForeColor = Color.DimGray;
-            label79.Location = new Point(13, 17);
-            label79.Name = "label79";
-            label79.Size = new Size(47, 19);
-            label79.TabIndex = 47;
-            label79.Text = "WEEK 8";
-            // 
-            // panel24
-            // 
-            panel24.BackColor = Color.WhiteSmoke;
-            panel24.Location = new Point(1, 108);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(149, 15);
-            panel24.TabIndex = 46;
-            // 
-            // panel21
-            // 
-            panel21.BackColor = Color.White;
-            panel21.Controls.Add(DisplayAttendance4);
-            panel21.Controls.Add(label77);
-            panel21.Controls.Add(panel22);
-            panel21.Location = new Point(549, 92);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(150, 124);
-            panel21.TabIndex = 49;
-            // 
-            // DisplayAttendance4
-            // 
-            DisplayAttendance4.AutoSize = true;
-            DisplayAttendance4.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance4.ForeColor = Color.DimGray;
-            DisplayAttendance4.Location = new Point(13, 59);
-            DisplayAttendance4.Name = "DisplayAttendance4";
-            DisplayAttendance4.Size = new Size(26, 16);
-            DisplayAttendance4.TabIndex = 48;
-            DisplayAttendance4.Text = "N/A";
-            // 
-            // label77
-            // 
-            label77.AutoSize = true;
-            label77.Font = new Font("Bahnschrift Condensed", 12F);
-            label77.ForeColor = Color.DimGray;
-            label77.Location = new Point(13, 17);
-            label77.Name = "label77";
-            label77.Size = new Size(47, 19);
-            label77.TabIndex = 47;
-            label77.Text = "WEEK 4";
-            // 
-            // panel22
-            // 
-            panel22.BackColor = Color.WhiteSmoke;
-            panel22.Location = new Point(1, 108);
-            panel22.Name = "panel22";
-            panel22.Size = new Size(149, 15);
-            panel22.TabIndex = 46;
-            // 
-            // panel25
-            // 
-            panel25.BackColor = Color.White;
-            panel25.Controls.Add(DisplayAttendance7);
-            panel25.Controls.Add(label81);
-            panel25.Controls.Add(panel26);
-            panel25.Location = new Point(387, 236);
-            panel25.Name = "panel25";
-            panel25.Size = new Size(150, 124);
-            panel25.TabIndex = 52;
-            // 
-            // DisplayAttendance7
-            // 
-            DisplayAttendance7.AutoSize = true;
-            DisplayAttendance7.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance7.ForeColor = Color.DimGray;
-            DisplayAttendance7.Location = new Point(13, 59);
-            DisplayAttendance7.Name = "DisplayAttendance7";
-            DisplayAttendance7.Size = new Size(26, 16);
-            DisplayAttendance7.TabIndex = 48;
-            DisplayAttendance7.Text = "N/A";
-            // 
-            // label81
-            // 
-            label81.AutoSize = true;
-            label81.Font = new Font("Bahnschrift Condensed", 12F);
-            label81.ForeColor = Color.DimGray;
-            label81.Location = new Point(13, 17);
-            label81.Name = "label81";
-            label81.Size = new Size(46, 19);
-            label81.TabIndex = 47;
-            label81.Text = "WEEK 7";
-            // 
-            // panel26
-            // 
-            panel26.BackColor = Color.WhiteSmoke;
-            panel26.Location = new Point(1, 108);
-            panel26.Name = "panel26";
-            panel26.Size = new Size(149, 15);
-            panel26.TabIndex = 46;
-            // 
-            // panel27
-            // 
-            panel27.BackColor = Color.White;
-            panel27.Controls.Add(DisplayAttendance6);
-            panel27.Controls.Add(label83);
-            panel27.Controls.Add(panel28);
-            panel27.Location = new Point(220, 236);
-            panel27.Name = "panel27";
-            panel27.Size = new Size(150, 124);
-            panel27.TabIndex = 53;
-            // 
-            // DisplayAttendance6
-            // 
-            DisplayAttendance6.AutoSize = true;
-            DisplayAttendance6.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance6.ForeColor = Color.DimGray;
-            DisplayAttendance6.Location = new Point(13, 59);
-            DisplayAttendance6.Name = "DisplayAttendance6";
-            DisplayAttendance6.Size = new Size(26, 16);
-            DisplayAttendance6.TabIndex = 48;
-            DisplayAttendance6.Text = "N/A";
-            // 
-            // label83
-            // 
-            label83.AutoSize = true;
-            label83.Font = new Font("Bahnschrift Condensed", 12F);
-            label83.ForeColor = Color.DimGray;
-            label83.Location = new Point(13, 17);
-            label83.Name = "label83";
-            label83.Size = new Size(46, 19);
-            label83.TabIndex = 47;
-            label83.Text = "WEEK 6";
-            // 
-            // panel28
-            // 
-            panel28.BackColor = Color.WhiteSmoke;
-            panel28.Location = new Point(1, 108);
-            panel28.Name = "panel28";
-            panel28.Size = new Size(149, 15);
-            panel28.TabIndex = 46;
-            // 
-            // panel19
-            // 
-            panel19.BackColor = Color.White;
-            panel19.Controls.Add(DisplayAttendance3);
-            panel19.Controls.Add(label75);
-            panel19.Controls.Add(panel20);
-            panel19.Location = new Point(386, 92);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(150, 124);
-            panel19.TabIndex = 49;
-            // 
-            // DisplayAttendance3
-            // 
-            DisplayAttendance3.AutoSize = true;
-            DisplayAttendance3.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance3.ForeColor = Color.DimGray;
-            DisplayAttendance3.Location = new Point(13, 59);
-            DisplayAttendance3.Name = "DisplayAttendance3";
-            DisplayAttendance3.Size = new Size(26, 16);
-            DisplayAttendance3.TabIndex = 48;
-            DisplayAttendance3.Text = "N/A";
-            // 
-            // label75
-            // 
-            label75.AutoSize = true;
-            label75.Font = new Font("Bahnschrift Condensed", 12F);
-            label75.ForeColor = Color.DimGray;
-            label75.Location = new Point(13, 17);
-            label75.Name = "label75";
-            label75.Size = new Size(46, 19);
-            label75.TabIndex = 47;
-            label75.Text = "WEEK 3";
-            // 
-            // panel20
-            // 
-            panel20.BackColor = Color.WhiteSmoke;
-            panel20.Location = new Point(1, 108);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(149, 15);
-            panel20.TabIndex = 46;
-            // 
-            // panel29
-            // 
-            panel29.BackColor = Color.White;
-            panel29.Controls.Add(DisplayAttendance5);
-            panel29.Controls.Add(label85);
-            panel29.Controls.Add(panel30);
-            panel29.Location = new Point(55, 236);
-            panel29.Name = "panel29";
-            panel29.Size = new Size(150, 124);
-            panel29.TabIndex = 50;
-            // 
-            // DisplayAttendance5
-            // 
-            DisplayAttendance5.AutoSize = true;
-            DisplayAttendance5.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance5.ForeColor = Color.DimGray;
-            DisplayAttendance5.Location = new Point(13, 59);
-            DisplayAttendance5.Name = "DisplayAttendance5";
-            DisplayAttendance5.Size = new Size(26, 16);
-            DisplayAttendance5.TabIndex = 48;
-            DisplayAttendance5.Text = "N/A";
-            // 
-            // label85
-            // 
-            label85.AutoSize = true;
-            label85.Font = new Font("Bahnschrift Condensed", 12F);
-            label85.ForeColor = Color.DimGray;
-            label85.Location = new Point(13, 17);
-            label85.Name = "label85";
-            label85.Size = new Size(47, 19);
-            label85.TabIndex = 47;
-            label85.Text = "WEEK 5";
-            // 
-            // panel30
-            // 
-            panel30.BackColor = Color.WhiteSmoke;
-            panel30.Location = new Point(1, 108);
-            panel30.Name = "panel30";
-            panel30.Size = new Size(149, 15);
-            panel30.TabIndex = 46;
-            // 
-            // panel16
-            // 
-            panel16.BackColor = Color.White;
-            panel16.Controls.Add(DisplayAttendance2);
-            panel16.Controls.Add(label73);
-            panel16.Controls.Add(panel18);
-            panel16.Location = new Point(219, 92);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(150, 124);
-            panel16.TabIndex = 49;
-            // 
-            // DisplayAttendance2
-            // 
-            DisplayAttendance2.AutoSize = true;
-            DisplayAttendance2.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance2.ForeColor = Color.DimGray;
-            DisplayAttendance2.Location = new Point(13, 59);
-            DisplayAttendance2.Name = "DisplayAttendance2";
-            DisplayAttendance2.Size = new Size(26, 16);
-            DisplayAttendance2.TabIndex = 48;
-            DisplayAttendance2.Text = "N/A";
-            // 
-            // label73
-            // 
-            label73.AutoSize = true;
-            label73.Font = new Font("Bahnschrift Condensed", 12F);
-            label73.ForeColor = Color.DimGray;
-            label73.Location = new Point(13, 17);
-            label73.Name = "label73";
-            label73.Size = new Size(46, 19);
-            label73.TabIndex = 47;
-            label73.Text = "WEEK 2";
-            // 
-            // panel18
-            // 
-            panel18.BackColor = Color.WhiteSmoke;
-            panel18.Location = new Point(1, 108);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(149, 15);
-            panel18.TabIndex = 46;
-            // 
-            // panel15
-            // 
-            panel15.BackColor = Color.White;
-            panel15.Controls.Add(DisplayAttendance1);
-            panel15.Controls.Add(label65);
-            panel15.Controls.Add(panel17);
-            panel15.Location = new Point(54, 92);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(150, 124);
-            panel15.TabIndex = 40;
-            // 
-            // DisplayAttendance1
-            // 
-            DisplayAttendance1.AutoSize = true;
-            DisplayAttendance1.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayAttendance1.ForeColor = Color.DimGray;
-            DisplayAttendance1.Location = new Point(13, 59);
-            DisplayAttendance1.Name = "DisplayAttendance1";
-            DisplayAttendance1.Size = new Size(26, 16);
-            DisplayAttendance1.TabIndex = 48;
-            DisplayAttendance1.Text = "N/A";
-            // 
-            // label65
-            // 
-            label65.AutoSize = true;
-            label65.Font = new Font("Bahnschrift Condensed", 12F);
-            label65.ForeColor = Color.DimGray;
-            label65.Location = new Point(13, 17);
-            label65.Name = "label65";
-            label65.Size = new Size(44, 19);
-            label65.TabIndex = 47;
-            label65.Text = "WEEK 1";
-            // 
-            // panel17
-            // 
-            panel17.BackColor = Color.WhiteSmoke;
-            panel17.Location = new Point(1, 108);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(149, 15);
-            panel17.TabIndex = 46;
-            // 
-            // label102
-            // 
-            label102.AutoSize = true;
-            label102.Font = new Font("Bahnschrift Condensed", 12F);
-            label102.ForeColor = Color.DimGray;
-            label102.Location = new Point(54, 48);
-            label102.Name = "label102";
-            label102.Size = new Size(113, 19);
-            label102.TabIndex = 39;
-            label102.Text = "Student Attendance";
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.WhiteSmoke;
-            button6.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.DimGray;
-            button6.Location = new Point(910, 432);
-            button6.Name = "button6";
-            button6.Size = new Size(152, 30);
-            button6.TabIndex = 36;
-            button6.Text = "Save";
-            button6.UseVisualStyleBackColor = false;
             // 
             // InputGradesPanel
             // 
@@ -3481,313 +3328,505 @@
             UpdatePanelBtn.UseVisualStyleBackColor = false;
             UpdatePanelBtn.Click += UpdatePanelBtn_Click;
             // 
-            // HandoutsPanel
+            // ClassAttendancePanel
             // 
-            HandoutsPanel.BackColor = Color.White;
-            HandoutsPanel.Controls.Add(SubjectLabel);
-            HandoutsPanel.Controls.Add(panel40);
-            HandoutsPanel.Controls.Add(panel39);
-            HandoutsPanel.Controls.Add(panel41);
-            HandoutsPanel.Controls.Add(panel38);
-            HandoutsPanel.Controls.Add(panel42);
-            HandoutsPanel.Controls.Add(panel37);
-            HandoutsPanel.Controls.Add(panel43);
-            HandoutsPanel.Controls.Add(panel34);
-            HandoutsPanel.Location = new Point(0, 88);
-            HandoutsPanel.Name = "HandoutsPanel";
-            HandoutsPanel.Size = new Size(1465, 587);
-            HandoutsPanel.TabIndex = 8;
+            ClassAttendancePanel.BackColor = Color.White;
+            ClassAttendancePanel.Controls.Add(AttendanceUpdatePanel);
+            ClassAttendancePanel.Controls.Add(AttendanceUpdateDropDownBtn);
+            ClassAttendancePanel.Controls.Add(panel23);
+            ClassAttendancePanel.Controls.Add(panel21);
+            ClassAttendancePanel.Controls.Add(panel25);
+            ClassAttendancePanel.Controls.Add(panel27);
+            ClassAttendancePanel.Controls.Add(panel19);
+            ClassAttendancePanel.Controls.Add(panel29);
+            ClassAttendancePanel.Controls.Add(panel16);
+            ClassAttendancePanel.Controls.Add(panel15);
+            ClassAttendancePanel.Controls.Add(label102);
+            ClassAttendancePanel.Controls.Add(button6);
+            ClassAttendancePanel.Location = new Point(714, 1);
+            ClassAttendancePanel.Margin = new Padding(0);
+            ClassAttendancePanel.Name = "ClassAttendancePanel";
+            ClassAttendancePanel.Size = new Size(751, 586);
+            ClassAttendancePanel.TabIndex = 62;
             // 
-            // SubjectLabel
+            // AttendanceUpdatePanel
             // 
-            SubjectLabel.AutoSize = true;
-            SubjectLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SubjectLabel.ForeColor = Color.DimGray;
-            SubjectLabel.Location = new Point(257, 20);
-            SubjectLabel.Name = "SubjectLabel";
-            SubjectLabel.Size = new Size(55, 19);
-            SubjectLabel.TabIndex = 10;
-            SubjectLabel.Text = "SUBJECT";
+            AttendanceUpdatePanel.BackColor = Color.White;
+            AttendanceUpdatePanel.BorderStyle = BorderStyle.FixedSingle;
+            AttendanceUpdatePanel.Controls.Add(label84);
+            AttendanceUpdatePanel.Controls.Add(SelectAttendanceCb);
+            AttendanceUpdatePanel.Controls.Add(AttendanceCloseBtn);
+            AttendanceUpdatePanel.Controls.Add(SelectWeeksCb);
+            AttendanceUpdatePanel.Controls.Add(AttendanceUpdateBtn);
+            AttendanceUpdatePanel.Controls.Add(label86);
+            AttendanceUpdatePanel.Location = new Point(446, 48);
+            AttendanceUpdatePanel.Margin = new Padding(0);
+            AttendanceUpdatePanel.Name = "AttendanceUpdatePanel";
+            AttendanceUpdatePanel.Size = new Size(252, 168);
+            AttendanceUpdatePanel.TabIndex = 66;
             // 
-            // panel40
+            // label84
             // 
-            panel40.BackColor = Color.White;
-            panel40.Controls.Add(FileOfHandout8);
-            panel40.Controls.Add(NameOfHandout8);
-            panel40.Location = new Point(259, 516);
-            panel40.Margin = new Padding(0);
-            panel40.Name = "panel40";
-            panel40.Size = new Size(1155, 60);
-            panel40.TabIndex = 14;
+            label84.AutoSize = true;
+            label84.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label84.ForeColor = Color.DimGray;
+            label84.Location = new Point(17, 65);
+            label84.Name = "label84";
+            label84.Size = new Size(111, 12);
+            label84.TabIndex = 67;
+            label84.Text = "Select attendance status";
             // 
-            // FileOfHandout8
+            // SelectAttendanceCb
             // 
-            FileOfHandout8.AutoSize = true;
-            FileOfHandout8.DisabledLinkColor = Color.DimGray;
-            FileOfHandout8.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout8.LinkColor = Color.DimGray;
-            FileOfHandout8.Location = new Point(33, 38);
-            FileOfHandout8.Name = "FileOfHandout8";
-            FileOfHandout8.Size = new Size(59, 12);
-            FileOfHandout8.TabIndex = 19;
-            FileOfHandout8.TabStop = true;
-            FileOfHandout8.Text = "Handout File";
+            SelectAttendanceCb.BackColor = Color.White;
+            SelectAttendanceCb.FlatStyle = FlatStyle.Popup;
+            SelectAttendanceCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectAttendanceCb.ForeColor = Color.DimGray;
+            SelectAttendanceCb.FormattingEnabled = true;
+            SelectAttendanceCb.Items.AddRange(new object[] { "Present", "Absent", "Late", "Excuse" });
+            SelectAttendanceCb.Location = new Point(156, 60);
+            SelectAttendanceCb.Name = "SelectAttendanceCb";
+            SelectAttendanceCb.Size = new Size(81, 24);
+            SelectAttendanceCb.TabIndex = 66;
             // 
-            // NameOfHandout8
+            // AttendanceCloseBtn
             // 
-            NameOfHandout8.AutoSize = true;
-            NameOfHandout8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout8.ForeColor = Color.DimGray;
-            NameOfHandout8.Location = new Point(31, 12);
-            NameOfHandout8.Name = "NameOfHandout8";
-            NameOfHandout8.Size = new Size(60, 19);
-            NameOfHandout8.TabIndex = 11;
-            NameOfHandout8.Text = "Handout 1";
+            AttendanceCloseBtn.BackColor = Color.Transparent;
+            AttendanceCloseBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            AttendanceCloseBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            AttendanceCloseBtn.FlatStyle = FlatStyle.Flat;
+            AttendanceCloseBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AttendanceCloseBtn.ForeColor = Color.DimGray;
+            AttendanceCloseBtn.Location = new Point(17, 127);
+            AttendanceCloseBtn.Margin = new Padding(0);
+            AttendanceCloseBtn.Name = "AttendanceCloseBtn";
+            AttendanceCloseBtn.Size = new Size(220, 30);
+            AttendanceCloseBtn.TabIndex = 65;
+            AttendanceCloseBtn.Text = "Close";
+            AttendanceCloseBtn.UseVisualStyleBackColor = false;
+            AttendanceCloseBtn.Click += AttendanceCloseBtn_Click;
             // 
-            // panel39
+            // SelectWeeksCb
             // 
-            panel39.BackColor = Color.White;
-            panel39.Controls.Add(FileOfHandout4);
-            panel39.Controls.Add(NameOfHandout4);
-            panel39.Location = new Point(258, 252);
-            panel39.Margin = new Padding(0);
-            panel39.Name = "panel39";
-            panel39.Size = new Size(1155, 60);
-            panel39.TabIndex = 12;
+            SelectWeeksCb.BackColor = Color.White;
+            SelectWeeksCb.FlatStyle = FlatStyle.Popup;
+            SelectWeeksCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SelectWeeksCb.ForeColor = Color.DimGray;
+            SelectWeeksCb.FormattingEnabled = true;
+            SelectWeeksCb.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
+            SelectWeeksCb.Location = new Point(159, 26);
+            SelectWeeksCb.Name = "SelectWeeksCb";
+            SelectWeeksCb.Size = new Size(78, 24);
+            SelectWeeksCb.TabIndex = 45;
             // 
-            // FileOfHandout4
+            // AttendanceUpdateBtn
             // 
-            FileOfHandout4.AutoSize = true;
-            FileOfHandout4.DisabledLinkColor = Color.DimGray;
-            FileOfHandout4.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout4.LinkColor = Color.DimGray;
-            FileOfHandout4.Location = new Point(34, 36);
-            FileOfHandout4.Name = "FileOfHandout4";
-            FileOfHandout4.Size = new Size(59, 12);
-            FileOfHandout4.TabIndex = 15;
-            FileOfHandout4.TabStop = true;
-            FileOfHandout4.Text = "Handout File";
+            AttendanceUpdateBtn.BackColor = Color.DodgerBlue;
+            AttendanceUpdateBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            AttendanceUpdateBtn.FlatAppearance.BorderSize = 0;
+            AttendanceUpdateBtn.FlatStyle = FlatStyle.Flat;
+            AttendanceUpdateBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AttendanceUpdateBtn.ForeColor = Color.White;
+            AttendanceUpdateBtn.Location = new Point(17, 90);
+            AttendanceUpdateBtn.Margin = new Padding(0);
+            AttendanceUpdateBtn.Name = "AttendanceUpdateBtn";
+            AttendanceUpdateBtn.Size = new Size(220, 30);
+            AttendanceUpdateBtn.TabIndex = 62;
+            AttendanceUpdateBtn.Text = "Update";
+            AttendanceUpdateBtn.UseVisualStyleBackColor = false;
+            AttendanceUpdateBtn.Click += AttendanceUpdateBtn_Click;
             // 
-            // NameOfHandout4
+            // label86
             // 
-            NameOfHandout4.AutoSize = true;
-            NameOfHandout4.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout4.ForeColor = Color.DimGray;
-            NameOfHandout4.Location = new Point(31, 12);
-            NameOfHandout4.Name = "NameOfHandout4";
-            NameOfHandout4.Size = new Size(60, 19);
-            NameOfHandout4.TabIndex = 11;
-            NameOfHandout4.Text = "Handout 1";
+            label86.AutoSize = true;
+            label86.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label86.ForeColor = Color.DimGray;
+            label86.Location = new Point(17, 31);
+            label86.Name = "label86";
+            label86.Size = new Size(94, 12);
+            label86.TabIndex = 64;
+            label86.Text = "Select No. of weeks";
             // 
-            // panel41
+            // AttendanceUpdateDropDownBtn
             // 
-            panel41.BackColor = Color.WhiteSmoke;
-            panel41.Controls.Add(FileOfHandout7);
-            panel41.Controls.Add(NameOfHandout7);
-            panel41.Location = new Point(260, 450);
-            panel41.Margin = new Padding(0);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(1155, 60);
-            panel41.TabIndex = 15;
+            AttendanceUpdateDropDownBtn.BackColor = Color.WhiteSmoke;
+            AttendanceUpdateDropDownBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            AttendanceUpdateDropDownBtn.FlatStyle = FlatStyle.Flat;
+            AttendanceUpdateDropDownBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AttendanceUpdateDropDownBtn.ForeColor = Color.DimGray;
+            AttendanceUpdateDropDownBtn.Location = new Point(653, 49);
+            AttendanceUpdateDropDownBtn.Margin = new Padding(0);
+            AttendanceUpdateDropDownBtn.Name = "AttendanceUpdateDropDownBtn";
+            AttendanceUpdateDropDownBtn.Size = new Size(46, 30);
+            AttendanceUpdateDropDownBtn.TabIndex = 67;
+            AttendanceUpdateDropDownBtn.Text = "V";
+            AttendanceUpdateDropDownBtn.UseVisualStyleBackColor = false;
+            AttendanceUpdateDropDownBtn.Click += AttendanceUpdateDropDownBtn_Click;
             // 
-            // FileOfHandout7
+            // panel23
             // 
-            FileOfHandout7.AutoSize = true;
-            FileOfHandout7.DisabledLinkColor = Color.DimGray;
-            FileOfHandout7.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout7.LinkColor = Color.DimGray;
-            FileOfHandout7.Location = new Point(32, 34);
-            FileOfHandout7.Name = "FileOfHandout7";
-            FileOfHandout7.Size = new Size(59, 12);
-            FileOfHandout7.TabIndex = 18;
-            FileOfHandout7.TabStop = true;
-            FileOfHandout7.Text = "Handout File";
+            panel23.BackColor = Color.White;
+            panel23.Controls.Add(DisplayAttendance8);
+            panel23.Controls.Add(label79);
+            panel23.Controls.Add(panel24);
+            panel23.Location = new Point(550, 236);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(150, 124);
+            panel23.TabIndex = 51;
             // 
-            // NameOfHandout7
+            // DisplayAttendance8
             // 
-            NameOfHandout7.AutoSize = true;
-            NameOfHandout7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout7.ForeColor = Color.DimGray;
-            NameOfHandout7.Location = new Point(31, 12);
-            NameOfHandout7.Name = "NameOfHandout7";
-            NameOfHandout7.Size = new Size(60, 19);
-            NameOfHandout7.TabIndex = 11;
-            NameOfHandout7.Text = "Handout 1";
+            DisplayAttendance8.AutoSize = true;
+            DisplayAttendance8.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance8.ForeColor = Color.DimGray;
+            DisplayAttendance8.Location = new Point(13, 59);
+            DisplayAttendance8.Name = "DisplayAttendance8";
+            DisplayAttendance8.Size = new Size(26, 16);
+            DisplayAttendance8.TabIndex = 48;
+            DisplayAttendance8.Text = "N/A";
             // 
-            // panel38
+            // label79
             // 
-            panel38.BackColor = Color.WhiteSmoke;
-            panel38.Controls.Add(FileOfHandout3);
-            panel38.Controls.Add(NameOfHandout3);
-            panel38.Location = new Point(259, 186);
-            panel38.Margin = new Padding(0);
-            panel38.Name = "panel38";
-            panel38.Size = new Size(1155, 60);
-            panel38.TabIndex = 12;
+            label79.AutoSize = true;
+            label79.Font = new Font("Bahnschrift Condensed", 12F);
+            label79.ForeColor = Color.DimGray;
+            label79.Location = new Point(13, 17);
+            label79.Name = "label79";
+            label79.Size = new Size(47, 19);
+            label79.TabIndex = 47;
+            label79.Text = "WEEK 8";
             // 
-            // FileOfHandout3
+            // panel24
             // 
-            FileOfHandout3.AutoSize = true;
-            FileOfHandout3.DisabledLinkColor = Color.DimGray;
-            FileOfHandout3.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout3.LinkColor = Color.DimGray;
-            FileOfHandout3.Location = new Point(33, 34);
-            FileOfHandout3.Name = "FileOfHandout3";
-            FileOfHandout3.Size = new Size(59, 12);
-            FileOfHandout3.TabIndex = 14;
-            FileOfHandout3.TabStop = true;
-            FileOfHandout3.Text = "Handout File";
+            panel24.BackColor = Color.WhiteSmoke;
+            panel24.Location = new Point(1, 108);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(149, 15);
+            panel24.TabIndex = 46;
             // 
-            // NameOfHandout3
+            // panel21
             // 
-            NameOfHandout3.AutoSize = true;
-            NameOfHandout3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout3.ForeColor = Color.DimGray;
-            NameOfHandout3.Location = new Point(31, 12);
-            NameOfHandout3.Name = "NameOfHandout3";
-            NameOfHandout3.Size = new Size(60, 19);
-            NameOfHandout3.TabIndex = 11;
-            NameOfHandout3.Text = "Handout 1";
+            panel21.BackColor = Color.White;
+            panel21.Controls.Add(DisplayAttendance4);
+            panel21.Controls.Add(label77);
+            panel21.Controls.Add(panel22);
+            panel21.Location = new Point(549, 92);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(150, 124);
+            panel21.TabIndex = 49;
             // 
-            // panel42
+            // DisplayAttendance4
             // 
-            panel42.BackColor = Color.White;
-            panel42.Controls.Add(FileOfHandout6);
-            panel42.Controls.Add(NameOfHandout6);
-            panel42.Location = new Point(260, 384);
-            panel42.Margin = new Padding(0);
-            panel42.Name = "panel42";
-            panel42.Size = new Size(1155, 60);
-            panel42.TabIndex = 16;
+            DisplayAttendance4.AutoSize = true;
+            DisplayAttendance4.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance4.ForeColor = Color.DimGray;
+            DisplayAttendance4.Location = new Point(13, 59);
+            DisplayAttendance4.Name = "DisplayAttendance4";
+            DisplayAttendance4.Size = new Size(26, 16);
+            DisplayAttendance4.TabIndex = 48;
+            DisplayAttendance4.Text = "N/A";
             // 
-            // FileOfHandout6
+            // label77
             // 
-            FileOfHandout6.AutoSize = true;
-            FileOfHandout6.DisabledLinkColor = Color.DimGray;
-            FileOfHandout6.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout6.LinkColor = Color.DimGray;
-            FileOfHandout6.Location = new Point(32, 33);
-            FileOfHandout6.Name = "FileOfHandout6";
-            FileOfHandout6.Size = new Size(59, 12);
-            FileOfHandout6.TabIndex = 17;
-            FileOfHandout6.TabStop = true;
-            FileOfHandout6.Text = "Handout File";
+            label77.AutoSize = true;
+            label77.Font = new Font("Bahnschrift Condensed", 12F);
+            label77.ForeColor = Color.DimGray;
+            label77.Location = new Point(13, 17);
+            label77.Name = "label77";
+            label77.Size = new Size(47, 19);
+            label77.TabIndex = 47;
+            label77.Text = "WEEK 4";
             // 
-            // NameOfHandout6
+            // panel22
             // 
-            NameOfHandout6.AutoSize = true;
-            NameOfHandout6.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout6.ForeColor = Color.DimGray;
-            NameOfHandout6.Location = new Point(31, 12);
-            NameOfHandout6.Name = "NameOfHandout6";
-            NameOfHandout6.Size = new Size(60, 19);
-            NameOfHandout6.TabIndex = 11;
-            NameOfHandout6.Text = "Handout 1";
+            panel22.BackColor = Color.WhiteSmoke;
+            panel22.Location = new Point(1, 108);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(149, 15);
+            panel22.TabIndex = 46;
             // 
-            // panel37
+            // panel25
             // 
-            panel37.BackColor = Color.White;
-            panel37.Controls.Add(FileOfHandout2);
-            panel37.Controls.Add(NameOfHandout2);
-            panel37.Location = new Point(259, 120);
-            panel37.Margin = new Padding(0);
-            panel37.Name = "panel37";
-            panel37.Size = new Size(1155, 60);
-            panel37.TabIndex = 12;
+            panel25.BackColor = Color.White;
+            panel25.Controls.Add(DisplayAttendance7);
+            panel25.Controls.Add(label81);
+            panel25.Controls.Add(panel26);
+            panel25.Location = new Point(387, 236);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(150, 124);
+            panel25.TabIndex = 52;
             // 
-            // FileOfHandout2
+            // DisplayAttendance7
             // 
-            FileOfHandout2.AutoSize = true;
-            FileOfHandout2.DisabledLinkColor = Color.DimGray;
-            FileOfHandout2.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout2.LinkColor = Color.DimGray;
-            FileOfHandout2.Location = new Point(32, 34);
-            FileOfHandout2.Name = "FileOfHandout2";
-            FileOfHandout2.Size = new Size(59, 12);
-            FileOfHandout2.TabIndex = 13;
-            FileOfHandout2.TabStop = true;
-            FileOfHandout2.Text = "Handout File";
+            DisplayAttendance7.AutoSize = true;
+            DisplayAttendance7.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance7.ForeColor = Color.DimGray;
+            DisplayAttendance7.Location = new Point(13, 59);
+            DisplayAttendance7.Name = "DisplayAttendance7";
+            DisplayAttendance7.Size = new Size(26, 16);
+            DisplayAttendance7.TabIndex = 48;
+            DisplayAttendance7.Text = "N/A";
             // 
-            // NameOfHandout2
+            // label81
             // 
-            NameOfHandout2.AutoSize = true;
-            NameOfHandout2.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout2.ForeColor = Color.DimGray;
-            NameOfHandout2.Location = new Point(31, 12);
-            NameOfHandout2.Name = "NameOfHandout2";
-            NameOfHandout2.Size = new Size(60, 19);
-            NameOfHandout2.TabIndex = 11;
-            NameOfHandout2.Text = "Handout 1";
+            label81.AutoSize = true;
+            label81.Font = new Font("Bahnschrift Condensed", 12F);
+            label81.ForeColor = Color.DimGray;
+            label81.Location = new Point(13, 17);
+            label81.Name = "label81";
+            label81.Size = new Size(46, 19);
+            label81.TabIndex = 47;
+            label81.Text = "WEEK 7";
             // 
-            // panel43
+            // panel26
             // 
-            panel43.BackColor = Color.WhiteSmoke;
-            panel43.Controls.Add(FileOfHandout5);
-            panel43.Controls.Add(NameOfHandout5);
-            panel43.Location = new Point(259, 318);
-            panel43.Margin = new Padding(0);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1155, 60);
-            panel43.TabIndex = 13;
+            panel26.BackColor = Color.WhiteSmoke;
+            panel26.Location = new Point(1, 108);
+            panel26.Name = "panel26";
+            panel26.Size = new Size(149, 15);
+            panel26.TabIndex = 46;
             // 
-            // FileOfHandout5
+            // panel27
             // 
-            FileOfHandout5.AutoSize = true;
-            FileOfHandout5.DisabledLinkColor = Color.DimGray;
-            FileOfHandout5.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout5.LinkColor = Color.DimGray;
-            FileOfHandout5.Location = new Point(33, 34);
-            FileOfHandout5.Name = "FileOfHandout5";
-            FileOfHandout5.Size = new Size(59, 12);
-            FileOfHandout5.TabIndex = 16;
-            FileOfHandout5.TabStop = true;
-            FileOfHandout5.Text = "Handout File";
+            panel27.BackColor = Color.White;
+            panel27.Controls.Add(DisplayAttendance6);
+            panel27.Controls.Add(label83);
+            panel27.Controls.Add(panel28);
+            panel27.Location = new Point(220, 236);
+            panel27.Name = "panel27";
+            panel27.Size = new Size(150, 124);
+            panel27.TabIndex = 53;
             // 
-            // NameOfHandout5
+            // DisplayAttendance6
             // 
-            NameOfHandout5.AutoSize = true;
-            NameOfHandout5.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout5.ForeColor = Color.DimGray;
-            NameOfHandout5.Location = new Point(31, 12);
-            NameOfHandout5.Name = "NameOfHandout5";
-            NameOfHandout5.Size = new Size(60, 19);
-            NameOfHandout5.TabIndex = 11;
-            NameOfHandout5.Text = "Handout 1";
+            DisplayAttendance6.AutoSize = true;
+            DisplayAttendance6.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance6.ForeColor = Color.DimGray;
+            DisplayAttendance6.Location = new Point(13, 59);
+            DisplayAttendance6.Name = "DisplayAttendance6";
+            DisplayAttendance6.Size = new Size(26, 16);
+            DisplayAttendance6.TabIndex = 48;
+            DisplayAttendance6.Text = "N/A";
             // 
-            // panel34
+            // label83
             // 
-            panel34.BackColor = Color.WhiteSmoke;
-            panel34.Controls.Add(FileOfHandout1);
-            panel34.Controls.Add(NameOfHandout1);
-            panel34.Location = new Point(258, 54);
-            panel34.Margin = new Padding(0);
-            panel34.Name = "panel34";
-            panel34.Size = new Size(1155, 60);
-            panel34.TabIndex = 0;
+            label83.AutoSize = true;
+            label83.Font = new Font("Bahnschrift Condensed", 12F);
+            label83.ForeColor = Color.DimGray;
+            label83.Location = new Point(13, 17);
+            label83.Name = "label83";
+            label83.Size = new Size(46, 19);
+            label83.TabIndex = 47;
+            label83.Text = "WEEK 6";
             // 
-            // FileOfHandout1
+            // panel28
             // 
-            FileOfHandout1.AutoSize = true;
-            FileOfHandout1.DisabledLinkColor = Color.DimGray;
-            FileOfHandout1.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FileOfHandout1.LinkColor = Color.DimGray;
-            FileOfHandout1.Location = new Point(34, 34);
-            FileOfHandout1.Name = "FileOfHandout1";
-            FileOfHandout1.Size = new Size(59, 12);
-            FileOfHandout1.TabIndex = 12;
-            FileOfHandout1.TabStop = true;
-            FileOfHandout1.Text = "Handout File";
+            panel28.BackColor = Color.WhiteSmoke;
+            panel28.Location = new Point(1, 108);
+            panel28.Name = "panel28";
+            panel28.Size = new Size(149, 15);
+            panel28.TabIndex = 46;
             // 
-            // NameOfHandout1
+            // panel19
             // 
-            NameOfHandout1.AutoSize = true;
-            NameOfHandout1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameOfHandout1.ForeColor = Color.DimGray;
-            NameOfHandout1.Location = new Point(31, 12);
-            NameOfHandout1.Name = "NameOfHandout1";
-            NameOfHandout1.Size = new Size(60, 19);
-            NameOfHandout1.TabIndex = 11;
-            NameOfHandout1.Text = "Handout 1";
+            panel19.BackColor = Color.White;
+            panel19.Controls.Add(DisplayAttendance3);
+            panel19.Controls.Add(label75);
+            panel19.Controls.Add(panel20);
+            panel19.Location = new Point(386, 92);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(150, 124);
+            panel19.TabIndex = 49;
+            // 
+            // DisplayAttendance3
+            // 
+            DisplayAttendance3.AutoSize = true;
+            DisplayAttendance3.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance3.ForeColor = Color.DimGray;
+            DisplayAttendance3.Location = new Point(13, 59);
+            DisplayAttendance3.Name = "DisplayAttendance3";
+            DisplayAttendance3.Size = new Size(26, 16);
+            DisplayAttendance3.TabIndex = 48;
+            DisplayAttendance3.Text = "N/A";
+            // 
+            // label75
+            // 
+            label75.AutoSize = true;
+            label75.Font = new Font("Bahnschrift Condensed", 12F);
+            label75.ForeColor = Color.DimGray;
+            label75.Location = new Point(13, 17);
+            label75.Name = "label75";
+            label75.Size = new Size(46, 19);
+            label75.TabIndex = 47;
+            label75.Text = "WEEK 3";
+            // 
+            // panel20
+            // 
+            panel20.BackColor = Color.WhiteSmoke;
+            panel20.Location = new Point(1, 108);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(149, 15);
+            panel20.TabIndex = 46;
+            // 
+            // panel29
+            // 
+            panel29.BackColor = Color.White;
+            panel29.Controls.Add(DisplayAttendance5);
+            panel29.Controls.Add(label85);
+            panel29.Controls.Add(panel30);
+            panel29.Location = new Point(55, 236);
+            panel29.Name = "panel29";
+            panel29.Size = new Size(150, 124);
+            panel29.TabIndex = 50;
+            // 
+            // DisplayAttendance5
+            // 
+            DisplayAttendance5.AutoSize = true;
+            DisplayAttendance5.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance5.ForeColor = Color.DimGray;
+            DisplayAttendance5.Location = new Point(13, 59);
+            DisplayAttendance5.Name = "DisplayAttendance5";
+            DisplayAttendance5.Size = new Size(26, 16);
+            DisplayAttendance5.TabIndex = 48;
+            DisplayAttendance5.Text = "N/A";
+            // 
+            // label85
+            // 
+            label85.AutoSize = true;
+            label85.Font = new Font("Bahnschrift Condensed", 12F);
+            label85.ForeColor = Color.DimGray;
+            label85.Location = new Point(13, 17);
+            label85.Name = "label85";
+            label85.Size = new Size(47, 19);
+            label85.TabIndex = 47;
+            label85.Text = "WEEK 5";
+            // 
+            // panel30
+            // 
+            panel30.BackColor = Color.WhiteSmoke;
+            panel30.Location = new Point(1, 108);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(149, 15);
+            panel30.TabIndex = 46;
+            // 
+            // panel16
+            // 
+            panel16.BackColor = Color.White;
+            panel16.Controls.Add(DisplayAttendance2);
+            panel16.Controls.Add(label73);
+            panel16.Controls.Add(panel18);
+            panel16.Location = new Point(219, 92);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(150, 124);
+            panel16.TabIndex = 49;
+            // 
+            // DisplayAttendance2
+            // 
+            DisplayAttendance2.AutoSize = true;
+            DisplayAttendance2.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance2.ForeColor = Color.DimGray;
+            DisplayAttendance2.Location = new Point(13, 59);
+            DisplayAttendance2.Name = "DisplayAttendance2";
+            DisplayAttendance2.Size = new Size(26, 16);
+            DisplayAttendance2.TabIndex = 48;
+            DisplayAttendance2.Text = "N/A";
+            // 
+            // label73
+            // 
+            label73.AutoSize = true;
+            label73.Font = new Font("Bahnschrift Condensed", 12F);
+            label73.ForeColor = Color.DimGray;
+            label73.Location = new Point(13, 17);
+            label73.Name = "label73";
+            label73.Size = new Size(46, 19);
+            label73.TabIndex = 47;
+            label73.Text = "WEEK 2";
+            // 
+            // panel18
+            // 
+            panel18.BackColor = Color.WhiteSmoke;
+            panel18.Location = new Point(1, 108);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(149, 15);
+            panel18.TabIndex = 46;
+            // 
+            // panel15
+            // 
+            panel15.BackColor = Color.White;
+            panel15.Controls.Add(DisplayAttendance1);
+            panel15.Controls.Add(label65);
+            panel15.Controls.Add(panel17);
+            panel15.Location = new Point(54, 92);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(150, 124);
+            panel15.TabIndex = 40;
+            // 
+            // DisplayAttendance1
+            // 
+            DisplayAttendance1.AutoSize = true;
+            DisplayAttendance1.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayAttendance1.ForeColor = Color.DimGray;
+            DisplayAttendance1.Location = new Point(13, 59);
+            DisplayAttendance1.Name = "DisplayAttendance1";
+            DisplayAttendance1.Size = new Size(26, 16);
+            DisplayAttendance1.TabIndex = 48;
+            DisplayAttendance1.Text = "N/A";
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new Font("Bahnschrift Condensed", 12F);
+            label65.ForeColor = Color.DimGray;
+            label65.Location = new Point(13, 17);
+            label65.Name = "label65";
+            label65.Size = new Size(44, 19);
+            label65.TabIndex = 47;
+            label65.Text = "WEEK 1";
+            // 
+            // panel17
+            // 
+            panel17.BackColor = Color.WhiteSmoke;
+            panel17.Location = new Point(1, 108);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(149, 15);
+            panel17.TabIndex = 46;
+            // 
+            // label102
+            // 
+            label102.AutoSize = true;
+            label102.Font = new Font("Bahnschrift Condensed", 12F);
+            label102.ForeColor = Color.DimGray;
+            label102.Location = new Point(54, 48);
+            label102.Name = "label102";
+            label102.Size = new Size(113, 19);
+            label102.TabIndex = 39;
+            label102.Text = "Student Attendance";
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.WhiteSmoke;
+            button6.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.DimGray;
+            button6.Location = new Point(910, 432);
+            button6.Name = "button6";
+            button6.Size = new Size(152, 30);
+            button6.TabIndex = 36;
+            button6.Text = "Save";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // label89
+            // 
+            label89.AutoSize = true;
+            label89.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label89.ForeColor = Color.DimGray;
+            label89.Location = new Point(255, 34);
+            label89.Name = "label89";
+            label89.Size = new Size(134, 19);
+            label89.TabIndex = 11;
+            label89.Text = "Submission of activities";
+            label89.Click += label89_Click;
             // 
             // TeacherPage
             // 
@@ -3802,6 +3841,26 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ViewSubmissionPanel.ResumeLayout(false);
+            ViewSubmissionPanel.PerformLayout();
+            HandoutsPanel.ResumeLayout(false);
+            HandoutsPanel.PerformLayout();
+            panel40.ResumeLayout(false);
+            panel40.PerformLayout();
+            panel39.ResumeLayout(false);
+            panel39.PerformLayout();
+            panel41.ResumeLayout(false);
+            panel41.PerformLayout();
+            panel38.ResumeLayout(false);
+            panel38.PerformLayout();
+            panel42.ResumeLayout(false);
+            panel42.PerformLayout();
+            panel37.ResumeLayout(false);
+            panel37.PerformLayout();
+            panel43.ResumeLayout(false);
+            panel43.PerformLayout();
+            panel34.ResumeLayout(false);
+            panel34.PerformLayout();
             StudentManagePanel.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -3818,26 +3877,6 @@
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ClassAttendancePanel.ResumeLayout(false);
-            ClassAttendancePanel.PerformLayout();
-            AttendanceUpdatePanel.ResumeLayout(false);
-            AttendanceUpdatePanel.PerformLayout();
-            panel23.ResumeLayout(false);
-            panel23.PerformLayout();
-            panel21.ResumeLayout(false);
-            panel21.PerformLayout();
-            panel25.ResumeLayout(false);
-            panel25.PerformLayout();
-            panel27.ResumeLayout(false);
-            panel27.PerformLayout();
-            panel19.ResumeLayout(false);
-            panel19.PerformLayout();
-            panel29.ResumeLayout(false);
-            panel29.PerformLayout();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
             InputGradesPanel.ResumeLayout(false);
             InputGradesPanel.PerformLayout();
             StudentRecordPanel.ResumeLayout(false);
@@ -3860,24 +3899,26 @@
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            HandoutsPanel.ResumeLayout(false);
-            HandoutsPanel.PerformLayout();
-            panel40.ResumeLayout(false);
-            panel40.PerformLayout();
-            panel39.ResumeLayout(false);
-            panel39.PerformLayout();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            panel38.ResumeLayout(false);
-            panel38.PerformLayout();
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
-            panel37.ResumeLayout(false);
-            panel37.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel34.ResumeLayout(false);
-            panel34.PerformLayout();
+            ClassAttendancePanel.ResumeLayout(false);
+            ClassAttendancePanel.PerformLayout();
+            AttendanceUpdatePanel.ResumeLayout(false);
+            AttendanceUpdatePanel.PerformLayout();
+            panel23.ResumeLayout(false);
+            panel23.PerformLayout();
+            panel21.ResumeLayout(false);
+            panel21.PerformLayout();
+            panel25.ResumeLayout(false);
+            panel25.PerformLayout();
+            panel27.ResumeLayout(false);
+            panel27.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel19.PerformLayout();
+            panel29.ResumeLayout(false);
+            panel29.PerformLayout();
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -4164,5 +4205,8 @@
         private LinkLabel FileOfHandout2;
         private LinkLabel FileOfHandout5;
         private LinkLabel FileOfHandout1;
+        private Panel ViewSubmissionPanel;
+        private ListView SubmissionListView;
+        private Label label89;
     }
 }
