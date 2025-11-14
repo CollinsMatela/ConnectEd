@@ -119,7 +119,7 @@ namespace ConnectEducation
                         TypeOfActivity = selectedActivity,
                         AnswerTextField = AnswerTxt.Text,
                         Files = fileIds,
-                        Time = DateTime.UtcNow,
+                        Time = DateTime.Now,
                     };
 
                     submissions.InsertOne(submissionCollection);

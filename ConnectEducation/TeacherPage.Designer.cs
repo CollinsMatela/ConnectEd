@@ -37,6 +37,7 @@
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
             ViewSubmissionPanel = new Panel();
+            label89 = new Label();
             SubmissionListView = new ListView();
             HandoutsPanel = new Panel();
             SubjectLabel = new Label();
@@ -310,7 +311,6 @@
             panel17 = new Panel();
             label102 = new Label();
             button6 = new Button();
-            label89 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ViewSubmissionPanel.SuspendLayout();
@@ -452,20 +452,33 @@
             ViewSubmissionPanel.BackColor = Color.White;
             ViewSubmissionPanel.Controls.Add(label89);
             ViewSubmissionPanel.Controls.Add(SubmissionListView);
-            ViewSubmissionPanel.Location = new Point(2, 84);
+            ViewSubmissionPanel.Location = new Point(2, 88);
             ViewSubmissionPanel.Name = "ViewSubmissionPanel";
             ViewSubmissionPanel.Size = new Size(1463, 588);
             ViewSubmissionPanel.TabIndex = 10;
+            // 
+            // label89
+            // 
+            label89.AutoSize = true;
+            label89.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label89.ForeColor = Color.DimGray;
+            label89.Location = new Point(255, 34);
+            label89.Name = "label89";
+            label89.Size = new Size(134, 19);
+            label89.TabIndex = 11;
+            label89.Text = "Submission of activities";
+            label89.Click += label89_Click;
             // 
             // SubmissionListView
             // 
             SubmissionListView.BackColor = Color.White;
             SubmissionListView.BorderStyle = BorderStyle.None;
             SubmissionListView.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SubmissionListView.ForeColor = Color.DimGray;
+            SubmissionListView.ForeColor = Color.Black;
+            SubmissionListView.GridLines = true;
             SubmissionListView.Location = new Point(261, 72);
             SubmissionListView.Name = "SubmissionListView";
-            SubmissionListView.Size = new Size(1150, 407);
+            SubmissionListView.Size = new Size(1150, 443);
             SubmissionListView.TabIndex = 0;
             SubmissionListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -3815,18 +3828,6 @@
             button6.TabIndex = 36;
             button6.Text = "Save";
             button6.UseVisualStyleBackColor = false;
-            // 
-            // label89
-            // 
-            label89.AutoSize = true;
-            label89.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label89.ForeColor = Color.DimGray;
-            label89.Location = new Point(255, 34);
-            label89.Name = "label89";
-            label89.Size = new Size(134, 19);
-            label89.TabIndex = 11;
-            label89.Text = "Submission of activities";
-            label89.Click += label89_Click;
             // 
             // TeacherPage
             // 
