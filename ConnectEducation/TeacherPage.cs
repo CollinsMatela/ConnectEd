@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ConnectEducation
@@ -275,8 +276,10 @@ namespace ConnectEducation
             SubmissionListView.Columns.Add("Date", 100, HorizontalAlignment.Center);
 
         }
-        private void displaySubmissions() 
+        private void displaySubmissions()
         {
+            SubmissionListView.Items.Clear();
+
             var connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ConnectED");
@@ -300,6 +303,40 @@ namespace ConnectEducation
 
                     SubmissionListView.Items.Add(listView);
                 }
+            }
+        }
+
+        private void doubleClickSubmissionRow()
+        {
+            ListViewItem item = SubmissionListView.SelectedItems[0];
+
+            string SubmissionId = item.SubItems[0].Text;
+
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+            var filter = Builders<ActivitySubmission>.Filter.Eq(z => z.SubmissionId, SubmissionId);
+            var result = collection.Find(filter).FirstOrDefault();
+
+            if (result != null)
+            {
+                string teacherIdentification = teacherID;
+                string studentIdentification = result.StudentId;
+                string submissionID = result.SubmissionId;
+                string subject = result.Subject;
+                string name = result.Student;
+                string section = result.Section;
+                string handout = result.Handout;
+                string type = result.TypeOfActivity;
+                string text = result.AnswerTextField;
+                string[] files = result.Files.Select(x => x.ToString()).ToArray();
+                string time = result.Time.ToString();
+
+                ViewSubmission viewSubmission = new ViewSubmission(submissionID, teacherIdentification, studentIdentification, subject, name, section, handout, type, text, files, time);
+
+                viewSubmission.Show();
+
             }
         }
 
@@ -347,6 +384,11 @@ namespace ConnectEducation
             this.teacherFullname = teacherFullname;
             this.teacherSubject = teacherSubject;
             this.teacherSection = teacherSection;
+
+            UpdateTimer = new System.Windows.Forms.Timer();
+            UpdateTimer.Interval = 10000; 
+            UpdateTimer.Tick += UpdateTimer_Tick;
+            UpdateTimer.Start();
 
         }
 
@@ -1040,6 +1082,18 @@ namespace ConnectEducation
         private void label89_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SubmissionListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            doubleClickSubmissionRow();
+
+
+        }
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            displaySubmissions();
         }
     }
 }

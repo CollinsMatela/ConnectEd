@@ -17,6 +17,8 @@ namespace ConnectEducation
     {
         private string nameOfSubjectTeacher;
         private string nameOfSubject;
+        private string IdOfStudent;
+        private string IdOfInstructor;
         private string nameOfStudent;
         private string sectionOfStudent;
         private string selectedHandout;
@@ -29,11 +31,13 @@ namespace ConnectEducation
         //    this.nameOfStudent = student;
         //    this.gradeAndSection = gradeSection;
         //}
-        public Submit(string subject, string instructor, string handout, string typeOfActivity, string student, string section)
+        public Submit(string subject, string instructor, string instructorId, string handout, string typeOfActivity, string studentId, string student, string section)
         {
             InitializeComponent();
             this.nameOfSubjectTeacher = instructor;
+            this.IdOfInstructor = instructorId;
             this.nameOfSubject = subject;
+            this.IdOfStudent = studentId;
             this.nameOfStudent = student;
             this.sectionOfStudent = section;
             this.selectedHandout = handout;
@@ -113,6 +117,8 @@ namespace ConnectEducation
                         SubmissionId = Guid.NewGuid().ToString(),
                         Subject = nameOfSubject,
                         Instructor = nameOfSubjectTeacher,
+                        InstructorId = IdOfInstructor,
+                        StudentId = IdOfStudent,
                         Student = nameOfStudent,
                         Section = sectionOfStudent,
                         Handout = selectedHandout,

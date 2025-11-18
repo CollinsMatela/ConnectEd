@@ -13,6 +13,8 @@ namespace ConnectEducation
         public string SubmissionId { get; set; }
         public string Subject { get; set; }
         public string Instructor {  get; set; }
+        public string InstructorId { get; set; }
+        public string StudentId { get; set; }
         public string Student { get; set; }
         public string Section { get; set; }
         public string Handout { get; set; }

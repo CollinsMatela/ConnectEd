@@ -35,93 +35,95 @@ namespace ConnectEducation
             {
                 string subject = subjectNameHeader.Text;
                 string instructor = result.Fullname;
+                string instructorId = result.TeacherID;
+                string studentId = IdOfStudent;
                 string student = FullnameOfStudent;
                 string section = SectionOfStudent;
 
                 if (SubmissionCb.Text == "Handout 1: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 1", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 1", "WorkSheet 1", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 1: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 1", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 1", "Performance Task 1", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 2: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 2", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 2", "WorkSheet 2", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 2: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 2", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 2", "Performance Task 2", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 3: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 3", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 3", "WorkSheet 3", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 3: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 3", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 3", "Performance Task 3", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 4: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 4", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 4", "WorkSheet 4", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 4: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 4", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 4", "Performance Task 4", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 5: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 5", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 5", "WorkSheet 5", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 5: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 5", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 5", "Performance Task 5", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 6: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 6", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 6", "WorkSheet 6", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 6: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 6", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 6", "Performance Task 6", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 7: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 7", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 7", "WorkSheet 7", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 7: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 7", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 7", "Performance Task 7", studentId, student, section);
                     submitForm.Show();
                 }
 
                 if (SubmissionCb.Text == "Handout 8: Worksheet")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 8", "Worksheet", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 8", "WorkSheet 8", studentId, student, section);
                     submitForm.Show();
                 }
                 if (SubmissionCb.Text == "Handout 8: Performance Task")
                 {
-                    Submit submitForm = new Submit(subject, instructor, "Handout 8", "Performance Task", student, section);
+                    Submit submitForm = new Submit(subject, instructor, instructorId, "Handout 8", "Performance Task 8", studentId, student, section);
                     submitForm.Show();
                 }
 
