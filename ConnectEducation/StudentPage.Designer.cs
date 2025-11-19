@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentPage));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             SubjectsBtn = new Button();
             button1 = new Button();
             btnGrades = new Button();
@@ -171,6 +173,7 @@
             Sub1Label = new Label();
             label28 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
@@ -203,6 +206,7 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(SubjectsBtn);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnGrades);
@@ -212,6 +216,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(96, 740);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(78, 72);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
             // 
             // SubjectsBtn
             // 
@@ -299,7 +312,7 @@
             SubjectsPopUpPanel.Controls.Add(subject3);
             SubjectsPopUpPanel.Controls.Add(subject2);
             SubjectsPopUpPanel.Controls.Add(subject1);
-            SubjectsPopUpPanel.Location = new Point(957, 81);
+            SubjectsPopUpPanel.Location = new Point(957, 45);
             SubjectsPopUpPanel.Margin = new Padding(0);
             SubjectsPopUpPanel.Name = "SubjectsPopUpPanel";
             SubjectsPopUpPanel.Size = new Size(297, 267);
@@ -779,8 +792,8 @@
             // SubjectsPanel
             // 
             SubjectsPanel.BackColor = Color.White;
-            SubjectsPanel.Controls.Add(SubmissionCb);
             SubjectsPanel.Controls.Add(SubjectsPopUpPanel);
+            SubjectsPanel.Controls.Add(SubmissionCb);
             SubjectsPanel.Controls.Add(subjectNameHeader);
             SubjectsPanel.Controls.Add(btnSubject);
             SubjectsPanel.Controls.Add(panel17);
@@ -2011,6 +2024,7 @@
             Text = "Student Page";
             Load += StudentPage_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             SubjectsPopUpPanel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
@@ -2213,5 +2227,6 @@
         private Label TeacherNameLabel6;
         private Label TeacherNameLabel5;
         private ComboBox SubmissionCb;
+        private PictureBox pictureBox1;
     }
 }

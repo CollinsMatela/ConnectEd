@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherPage));
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -37,6 +38,8 @@
             label2 = new Label();
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
+            CreateQuizPanel = new Panel();
+            label106 = new Label();
             ProfilePanel = new Panel();
             panel44 = new Panel();
             button1 = new Button();
@@ -346,10 +349,10 @@
             ExamScore = new TextBox();
             label17 = new Label();
             UpdateTimer = new System.Windows.Forms.Timer(components);
-            CreateQuizPanel = new Panel();
-            label106 = new Label();
+            pictureBox1 = new PictureBox();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            CreateQuizPanel.SuspendLayout();
             ProfilePanel.SuspendLayout();
             panel44.SuspendLayout();
             ViewSubmissionPanel.SuspendLayout();
@@ -392,7 +395,7 @@
             panel16.SuspendLayout();
             panel15.SuspendLayout();
             InputGradesPanel.SuspendLayout();
-            CreateQuizPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -415,6 +418,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(TeachernameLabel);
             panel3.Controls.Add(SectionHandleLabel);
             panel3.Controls.Add(label2);
@@ -436,7 +440,7 @@
             TeachernameLabel.AutoSize = true;
             TeachernameLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TeachernameLabel.ForeColor = Color.DimGray;
-            TeachernameLabel.Location = new Point(257, 28);
+            TeachernameLabel.Location = new Point(363, 28);
             TeachernameLabel.Name = "TeachernameLabel";
             TeachernameLabel.Size = new Size(84, 19);
             TeachernameLabel.TabIndex = 9;
@@ -447,7 +451,7 @@
             SectionHandleLabel.AutoSize = true;
             SectionHandleLabel.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SectionHandleLabel.ForeColor = Color.DimGray;
-            SectionHandleLabel.Location = new Point(377, 53);
+            SectionHandleLabel.Location = new Point(465, 54);
             SectionHandleLabel.Name = "SectionHandleLabel";
             SectionHandleLabel.Size = new Size(39, 12);
             SectionHandleLabel.TabIndex = 5;
@@ -483,11 +487,31 @@
             SubjectNameLabel.AutoSize = true;
             SubjectNameLabel.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubjectNameLabel.ForeColor = Color.DimGray;
-            SubjectNameLabel.Location = new Point(258, 53);
+            SubjectNameLabel.Location = new Point(363, 54);
             SubjectNameLabel.Name = "SubjectNameLabel";
             SubjectNameLabel.Size = new Size(36, 12);
             SubjectNameLabel.TabIndex = 1;
             SubjectNameLabel.Text = "Subject";
+            // 
+            // CreateQuizPanel
+            // 
+            CreateQuizPanel.BackColor = Color.White;
+            CreateQuizPanel.Controls.Add(label106);
+            CreateQuizPanel.Location = new Point(0, 88);
+            CreateQuizPanel.Name = "CreateQuizPanel";
+            CreateQuizPanel.Size = new Size(1465, 588);
+            CreateQuizPanel.TabIndex = 14;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label106.ForeColor = Color.DimGray;
+            label106.Location = new Point(258, 47);
+            label106.Name = "label106";
+            label106.Size = new Size(70, 19);
+            label106.TabIndex = 15;
+            label106.Text = "Create Quiz";
             // 
             // ProfilePanel
             // 
@@ -4267,25 +4291,14 @@
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
             // 
-            // CreateQuizPanel
+            // pictureBox1
             // 
-            CreateQuizPanel.BackColor = Color.White;
-            CreateQuizPanel.Controls.Add(label106);
-            CreateQuizPanel.Location = new Point(0, 88);
-            CreateQuizPanel.Name = "CreateQuizPanel";
-            CreateQuizPanel.Size = new Size(1465, 588);
-            CreateQuizPanel.TabIndex = 14;
-            // 
-            // label106
-            // 
-            label106.AutoSize = true;
-            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label106.ForeColor = Color.DimGray;
-            label106.Location = new Point(258, 47);
-            label106.Name = "label106";
-            label106.Size = new Size(70, 19);
-            label106.TabIndex = 15;
-            label106.Text = "Create Quiz";
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(260, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 72);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // TeacherPage
             // 
@@ -4300,6 +4313,8 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            CreateQuizPanel.ResumeLayout(false);
+            CreateQuizPanel.PerformLayout();
             ProfilePanel.ResumeLayout(false);
             ProfilePanel.PerformLayout();
             panel44.ResumeLayout(false);
@@ -4382,8 +4397,7 @@
             panel15.PerformLayout();
             InputGradesPanel.ResumeLayout(false);
             InputGradesPanel.PerformLayout();
-            CreateQuizPanel.ResumeLayout(false);
-            CreateQuizPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -4709,5 +4723,6 @@
         private Label ProfileEducationalAttainmentLabel;
         private Panel CreateQuizPanel;
         private Label label106;
+        private PictureBox pictureBox1;
     }
 }
