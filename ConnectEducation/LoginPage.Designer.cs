@@ -170,6 +170,7 @@
             Controls.Add(panel2);
             Name = "LoginPage";
             Text = "Login";
+            Load += LoginPage_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);

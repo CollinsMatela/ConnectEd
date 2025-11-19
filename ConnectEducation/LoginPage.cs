@@ -38,7 +38,7 @@ namespace ConnectEducation
                 PasswordTxt.Focus();
                 return;
             }
-            
+
             String Username = UsernameTxt.Text;
             String Password = PasswordTxt.Text;
             String User = typeOfUserCb.SelectedItem.ToString();
@@ -99,12 +99,13 @@ namespace ConnectEducation
                     this.Close();
 
 
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Student's Identification (ID) did not recognize!");
                     return;
                 }
-                
+
 
             }
             // Teacher condintion
@@ -149,6 +150,11 @@ namespace ConnectEducation
                 }
             }
 
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+            PasswordTxt.UseSystemPasswordChar = true;
         }
     }
 }

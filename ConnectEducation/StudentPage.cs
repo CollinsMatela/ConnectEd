@@ -368,11 +368,6 @@ namespace ConnectEducation
                 MessageBox.Show("No Registered Student :(");
             }
 
-            MessageBox.Show(IdOfStudent);
-            MessageBox.Show(FullnameOfStudent);
-            MessageBox.Show(SectionOfStudent);
-
-
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;
             ThirdSubject = schoolCurriculum._Subject3;

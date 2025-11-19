@@ -434,9 +434,12 @@ namespace ConnectEducation
             StudentRecordPanel.Visible = false;
             InputGradesPanel.Visible = false;
             ViewSubmissionPanel.Visible = false;
+            ProfilePanel.Visible = false;
+            CreateQuizPanel.Visible = false;
 
             UpdatePanel.Visible = false;
             AttendanceUpdatePanel.Visible = false;
+            
 
             displayRegisteredStudents();
             diplaySubjectsAndProperties();
@@ -456,6 +459,7 @@ namespace ConnectEducation
                 StudentManagePanel.Visible = false;
                 ViewSubmissionPanel.Visible = false;
                 ProfilePanel.Visible = false;
+                CreateQuizPanel.Visible = false;
             }
             if (ActionCb.SelectedItem == "Manage Students")
             {
@@ -464,10 +468,20 @@ namespace ConnectEducation
                 StudentManagePanel.Visible = true;
                 ViewSubmissionPanel.Visible = false;
                 ProfilePanel.Visible = false;
+                CreateQuizPanel.Visible = false;
             }
             if (ActionCb.SelectedItem == "Submission")
             {
                 ViewSubmissionPanel.Visible = true;
+                HandoutsPanel.Visible = false;
+                StudentManagePanel.Visible = false;
+                ProfilePanel.Visible = false;
+                CreateQuizPanel.Visible = false;
+            }
+            if (ActionCb.SelectedItem == "Create Quiz")
+            {
+                CreateQuizPanel.Visible = true;
+                ViewSubmissionPanel.Visible = false;
                 HandoutsPanel.Visible = false;
                 StudentManagePanel.Visible = false;
                 ProfilePanel.Visible = false;
@@ -478,6 +492,7 @@ namespace ConnectEducation
                 ViewSubmissionPanel.Visible = false;
                 HandoutsPanel.Visible = false;
                 StudentManagePanel.Visible = false;
+                CreateQuizPanel.Visible = false;
             }
             if (ActionCb.SelectedItem == "Logout")
             {

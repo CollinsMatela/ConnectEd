@@ -346,6 +346,8 @@
             ExamScore = new TextBox();
             label17 = new Label();
             UpdateTimer = new System.Windows.Forms.Timer(components);
+            CreateQuizPanel = new Panel();
+            label106 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ProfilePanel.SuspendLayout();
@@ -390,6 +392,7 @@
             panel16.SuspendLayout();
             panel15.SuspendLayout();
             InputGradesPanel.SuspendLayout();
+            CreateQuizPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -418,6 +421,7 @@
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(ActionCb);
             panel3.Controls.Add(SubjectNameLabel);
+            panel3.Controls.Add(CreateQuizPanel);
             panel3.Controls.Add(ProfilePanel);
             panel3.Controls.Add(ViewSubmissionPanel);
             panel3.Controls.Add(HandoutsPanel);
@@ -467,7 +471,7 @@
             ActionCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ActionCb.ForeColor = Color.DimGray;
             ActionCb.FormattingEnabled = true;
-            ActionCb.Items.AddRange(new object[] { "Handouts", "Manage Students", "Submission", "Profile", "Logout" });
+            ActionCb.Items.AddRange(new object[] { "Handouts", "Manage Students", "Submission", "Create Quiz", "Profile", "Logout" });
             ActionCb.Location = new Point(1261, 25);
             ActionCb.Name = "ActionCb";
             ActionCb.Size = new Size(152, 24);
@@ -4263,6 +4267,26 @@
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
             // 
+            // CreateQuizPanel
+            // 
+            CreateQuizPanel.BackColor = Color.White;
+            CreateQuizPanel.Controls.Add(label106);
+            CreateQuizPanel.Location = new Point(0, 88);
+            CreateQuizPanel.Name = "CreateQuizPanel";
+            CreateQuizPanel.Size = new Size(1465, 588);
+            CreateQuizPanel.TabIndex = 14;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label106.ForeColor = Color.DimGray;
+            label106.Location = new Point(258, 47);
+            label106.Name = "label106";
+            label106.Size = new Size(70, 19);
+            label106.TabIndex = 15;
+            label106.Text = "Create Quiz";
+            // 
             // TeacherPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -4358,6 +4382,8 @@
             panel15.PerformLayout();
             InputGradesPanel.ResumeLayout(false);
             InputGradesPanel.PerformLayout();
+            CreateQuizPanel.ResumeLayout(false);
+            CreateQuizPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -4681,5 +4707,7 @@
         private Label ProfileCourseLabel;
         private Label ProfilePRCIDLabel;
         private Label ProfileEducationalAttainmentLabel;
+        private Panel CreateQuizPanel;
+        private Label label106;
     }
 }
