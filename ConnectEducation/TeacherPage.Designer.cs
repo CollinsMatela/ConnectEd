@@ -33,17 +33,18 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            pictureBox1 = new PictureBox();
             TeachernameLabel = new Label();
             SectionHandleLabel = new Label();
             label2 = new Label();
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
-            CreateQuizPanel = new Panel();
-            label106 = new Label();
             ProfilePanel = new Panel();
             panel44 = new Panel();
-            button1 = new Button();
-            textBox14 = new TextBox();
+            ProfileAccountPasswordTxt = new TextBox();
+            label118 = new Label();
+            ChangePasswordBtn = new Button();
+            ChangePasswordTxt = new TextBox();
             ProfileAccountIDLabel = new Label();
             ProfileUniversityLabel = new Label();
             ProfileCourseLabel = new Label();
@@ -348,11 +349,14 @@
             label16 = new Label();
             ExamScore = new TextBox();
             label17 = new Label();
+            CreateQuizPanel = new Panel();
+            label106 = new Label();
             UpdateTimer = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new PictureBox();
+            ConfirmPasswordTxt = new TextBox();
+            label119 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            CreateQuizPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ProfilePanel.SuspendLayout();
             panel44.SuspendLayout();
             ViewSubmissionPanel.SuspendLayout();
@@ -395,7 +399,7 @@
             panel16.SuspendLayout();
             panel15.SuspendLayout();
             InputGradesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            CreateQuizPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -425,15 +429,24 @@
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(ActionCb);
             panel3.Controls.Add(SubjectNameLabel);
-            panel3.Controls.Add(CreateQuizPanel);
             panel3.Controls.Add(ProfilePanel);
             panel3.Controls.Add(ViewSubmissionPanel);
             panel3.Controls.Add(HandoutsPanel);
             panel3.Controls.Add(StudentManagePanel);
+            panel3.Controls.Add(CreateQuizPanel);
             panel3.Location = new Point(0, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(1465, 740);
             panel3.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(260, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 72);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // TeachernameLabel
             // 
@@ -493,26 +506,6 @@
             SubjectNameLabel.TabIndex = 1;
             SubjectNameLabel.Text = "Subject";
             // 
-            // CreateQuizPanel
-            // 
-            CreateQuizPanel.BackColor = Color.White;
-            CreateQuizPanel.Controls.Add(label106);
-            CreateQuizPanel.Location = new Point(0, 88);
-            CreateQuizPanel.Name = "CreateQuizPanel";
-            CreateQuizPanel.Size = new Size(1465, 588);
-            CreateQuizPanel.TabIndex = 14;
-            // 
-            // label106
-            // 
-            label106.AutoSize = true;
-            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label106.ForeColor = Color.DimGray;
-            label106.Location = new Point(258, 47);
-            label106.Name = "label106";
-            label106.Size = new Size(70, 19);
-            label106.TabIndex = 15;
-            label106.Text = "Create Quiz";
-            // 
             // ProfilePanel
             // 
             ProfilePanel.BackColor = Color.White;
@@ -526,8 +519,12 @@
             // panel44
             // 
             panel44.BackColor = Color.White;
-            panel44.Controls.Add(button1);
-            panel44.Controls.Add(textBox14);
+            panel44.Controls.Add(ConfirmPasswordTxt);
+            panel44.Controls.Add(label119);
+            panel44.Controls.Add(ProfileAccountPasswordTxt);
+            panel44.Controls.Add(label118);
+            panel44.Controls.Add(ChangePasswordBtn);
+            panel44.Controls.Add(ChangePasswordTxt);
             panel44.Controls.Add(ProfileAccountIDLabel);
             panel44.Controls.Add(ProfileUniversityLabel);
             panel44.Controls.Add(ProfileCourseLabel);
@@ -561,29 +558,52 @@
             panel44.Size = new Size(1155, 510);
             panel44.TabIndex = 13;
             // 
-            // button1
+            // ProfileAccountPasswordTxt
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(746, 96);
-            button1.Name = "button1";
-            button1.Size = new Size(62, 23);
-            button1.TabIndex = 43;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
+            ProfileAccountPasswordTxt.BackColor = Color.White;
+            ProfileAccountPasswordTxt.BorderStyle = BorderStyle.None;
+            ProfileAccountPasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileAccountPasswordTxt.ForeColor = Color.DimGray;
+            ProfileAccountPasswordTxt.Location = new Point(593, 95);
+            ProfileAccountPasswordTxt.Name = "ProfileAccountPasswordTxt";
+            ProfileAccountPasswordTxt.Size = new Size(146, 16);
+            ProfileAccountPasswordTxt.TabIndex = 45;
             // 
-            // textBox14
+            // label118
             // 
-            textBox14.BackColor = Color.White;
-            textBox14.BorderStyle = BorderStyle.FixedSingle;
-            textBox14.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox14.ForeColor = Color.DimGray;
-            textBox14.Location = new Point(594, 97);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(146, 23);
-            textBox14.TabIndex = 42;
+            label118.AutoSize = true;
+            label118.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label118.ForeColor = Color.DimGray;
+            label118.Location = new Point(474, 97);
+            label118.Name = "label118";
+            label118.Size = new Size(89, 12);
+            label118.TabIndex = 44;
+            label118.Text = "Account Password:";
+            // 
+            // ChangePasswordBtn
+            // 
+            ChangePasswordBtn.BackColor = Color.DodgerBlue;
+            ChangePasswordBtn.FlatStyle = FlatStyle.Flat;
+            ChangePasswordBtn.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ChangePasswordBtn.ForeColor = Color.White;
+            ChangePasswordBtn.Location = new Point(745, 165);
+            ChangePasswordBtn.Name = "ChangePasswordBtn";
+            ChangePasswordBtn.Size = new Size(62, 23);
+            ChangePasswordBtn.TabIndex = 43;
+            ChangePasswordBtn.Text = "Update";
+            ChangePasswordBtn.UseVisualStyleBackColor = false;
+            ChangePasswordBtn.Click += ChangePasswordBtn_Click;
+            // 
+            // ChangePasswordTxt
+            // 
+            ChangePasswordTxt.BackColor = Color.White;
+            ChangePasswordTxt.BorderStyle = BorderStyle.FixedSingle;
+            ChangePasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ChangePasswordTxt.ForeColor = Color.DimGray;
+            ChangePasswordTxt.Location = new Point(593, 165);
+            ChangePasswordTxt.Name = "ChangePasswordTxt";
+            ChangePasswordTxt.Size = new Size(146, 23);
+            ChangePasswordTxt.TabIndex = 42;
             // 
             // ProfileAccountIDLabel
             // 
@@ -722,7 +742,7 @@
             label108.AutoSize = true;
             label108.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label108.ForeColor = Color.DimGray;
-            label108.Location = new Point(474, 98);
+            label108.Location = new Point(474, 163);
             label108.Name = "label108";
             label108.Size = new Size(86, 12);
             label108.TabIndex = 28;
@@ -4287,18 +4307,51 @@
             label17.TabIndex = 32;
             label17.Text = "Performance Task 4";
             // 
+            // CreateQuizPanel
+            // 
+            CreateQuizPanel.BackColor = Color.White;
+            CreateQuizPanel.Controls.Add(label106);
+            CreateQuizPanel.Location = new Point(0, 88);
+            CreateQuizPanel.Name = "CreateQuizPanel";
+            CreateQuizPanel.Size = new Size(1465, 588);
+            CreateQuizPanel.TabIndex = 14;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label106.ForeColor = Color.DimGray;
+            label106.Location = new Point(258, 47);
+            label106.Name = "label106";
+            label106.Size = new Size(70, 19);
+            label106.TabIndex = 15;
+            label106.Text = "Create Quiz";
+            // 
             // UpdateTimer
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
             // 
-            // pictureBox1
+            // ConfirmPasswordTxt
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(260, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(75, 72);
-            pictureBox1.TabIndex = 15;
-            pictureBox1.TabStop = false;
+            ConfirmPasswordTxt.BackColor = Color.White;
+            ConfirmPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
+            ConfirmPasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmPasswordTxt.ForeColor = Color.DimGray;
+            ConfirmPasswordTxt.Location = new Point(593, 127);
+            ConfirmPasswordTxt.Name = "ConfirmPasswordTxt";
+            ConfirmPasswordTxt.Size = new Size(146, 23);
+            ConfirmPasswordTxt.TabIndex = 47;
+            // 
+            // label119
+            // 
+            label119.AutoSize = true;
+            label119.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label119.ForeColor = Color.DimGray;
+            label119.Location = new Point(473, 128);
+            label119.Name = "label119";
+            label119.Size = new Size(107, 12);
+            label119.TabIndex = 46;
+            label119.Text = "Confirmation Password:";
             // 
             // TeacherPage
             // 
@@ -4313,8 +4366,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            CreateQuizPanel.ResumeLayout(false);
-            CreateQuizPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ProfilePanel.ResumeLayout(false);
             ProfilePanel.PerformLayout();
             panel44.ResumeLayout(false);
@@ -4397,7 +4449,8 @@
             panel15.PerformLayout();
             InputGradesPanel.ResumeLayout(false);
             InputGradesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            CreateQuizPanel.ResumeLayout(false);
+            CreateQuizPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -4714,8 +4767,8 @@
         private Label ProfileNameLabel;
         private Label label108;
         private Label label107;
-        private Button button1;
-        private TextBox textBox14;
+        private Button ChangePasswordBtn;
+        private TextBox ChangePasswordTxt;
         private Label ProfileAccountIDLabel;
         private Label ProfileUniversityLabel;
         private Label ProfileCourseLabel;
@@ -4724,5 +4777,9 @@
         private Panel CreateQuizPanel;
         private Label label106;
         private PictureBox pictureBox1;
+        private TextBox ProfileAccountPasswordTxt;
+        private Label label118;
+        private TextBox ConfirmPasswordTxt;
+        private Label label119;
     }
 }

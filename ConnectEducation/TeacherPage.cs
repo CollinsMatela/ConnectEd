@@ -44,7 +44,8 @@ namespace ConnectEducation
                 ProfileUniversityLabel.Text = instructor.School;
 
                 ProfileAccountIDLabel.Text = instructor.TeacherID;
-                
+                ProfileAccountPasswordTxt.Text = instructor.TeacherPassword;
+
             }
         }
         private void sendEmailMessage()
@@ -414,7 +415,7 @@ namespace ConnectEducation
             this.teacherSection = teacherSection;
 
             UpdateTimer = new System.Windows.Forms.Timer();
-            UpdateTimer.Interval = 10000; 
+            UpdateTimer.Interval = 10000;
             UpdateTimer.Tick += UpdateTimer_Tick;
             UpdateTimer.Start();
 
@@ -439,7 +440,11 @@ namespace ConnectEducation
 
             UpdatePanel.Visible = false;
             AttendanceUpdatePanel.Visible = false;
-            
+
+            ProfileAccountPasswordTxt.UseSystemPasswordChar = true;
+            ChangePasswordTxt.UseSystemPasswordChar = true;
+            ConfirmPasswordTxt.UseSystemPasswordChar = true;
+
 
             displayRegisteredStudents();
             diplaySubjectsAndProperties();
@@ -1149,6 +1154,37 @@ namespace ConnectEducation
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
             displaySubmissions();
+        }
+
+        private void ChangePasswordBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ConfirmPasswordTxt.Text))
+            {
+                MessageBox.Show("PLease enter your previous password.");
+                return;
+            }
+            if (ConfirmPasswordTxt.Text != ProfileAccountPasswordTxt.Text)
+            {
+                MessageBox.Show("Confirmation password is incorrect.");
+                return;
+            }
+            if (string.IsNullOrEmpty(ChangePasswordTxt.Text))
+            {
+                MessageBox.Show("PLease enter your new password.");
+                return;
+            }
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+            var filter = Builders<TeacherInformationModal>.Filter.Eq(z => z.TeacherID, teacherID);
+            var update = Builders<TeacherInformationModal>.Update.Set(z => z.TeacherPassword, ChangePasswordTxt.Text);
+
+            collection.UpdateOne(filter, update);
+            MessageBox.Show("Successfully updated a new password");
+            displayProfileInformation();
+            ConfirmPasswordTxt.Text = "";
+            ChangePasswordTxt.Text = "";
         }
     }
 }
