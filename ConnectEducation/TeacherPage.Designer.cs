@@ -41,6 +41,8 @@
             SubjectNameLabel = new Label();
             ProfilePanel = new Panel();
             panel44 = new Panel();
+            ConfirmPasswordTxt = new TextBox();
+            label119 = new Label();
             ProfileAccountPasswordTxt = new TextBox();
             label118 = new Label();
             ChangePasswordBtn = new Button();
@@ -352,8 +354,6 @@
             CreateQuizPanel = new Panel();
             label106 = new Label();
             UpdateTimer = new System.Windows.Forms.Timer(components);
-            ConfirmPasswordTxt = new TextBox();
-            label119 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -429,11 +429,11 @@
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(ActionCb);
             panel3.Controls.Add(SubjectNameLabel);
+            panel3.Controls.Add(CreateQuizPanel);
             panel3.Controls.Add(ProfilePanel);
             panel3.Controls.Add(ViewSubmissionPanel);
             panel3.Controls.Add(HandoutsPanel);
             panel3.Controls.Add(StudentManagePanel);
-            panel3.Controls.Add(CreateQuizPanel);
             panel3.Location = new Point(0, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(1465, 740);
@@ -557,6 +557,28 @@
             panel44.Name = "panel44";
             panel44.Size = new Size(1155, 510);
             panel44.TabIndex = 13;
+            // 
+            // ConfirmPasswordTxt
+            // 
+            ConfirmPasswordTxt.BackColor = Color.White;
+            ConfirmPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
+            ConfirmPasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmPasswordTxt.ForeColor = Color.DimGray;
+            ConfirmPasswordTxt.Location = new Point(593, 127);
+            ConfirmPasswordTxt.Name = "ConfirmPasswordTxt";
+            ConfirmPasswordTxt.Size = new Size(146, 23);
+            ConfirmPasswordTxt.TabIndex = 47;
+            // 
+            // label119
+            // 
+            label119.AutoSize = true;
+            label119.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label119.ForeColor = Color.DimGray;
+            label119.Location = new Point(473, 128);
+            label119.Name = "label119";
+            label119.Size = new Size(107, 12);
+            label119.TabIndex = 46;
+            label119.Text = "Confirmation Password:";
             // 
             // ProfileAccountPasswordTxt
             // 
@@ -4323,35 +4345,13 @@
             label106.ForeColor = Color.DimGray;
             label106.Location = new Point(258, 47);
             label106.Name = "label106";
-            label106.Size = new Size(70, 19);
+            label106.Size = new Size(96, 19);
             label106.TabIndex = 15;
-            label106.Text = "Create Quiz";
+            label106.Text = "Create your quiz";
             // 
             // UpdateTimer
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
-            // 
-            // ConfirmPasswordTxt
-            // 
-            ConfirmPasswordTxt.BackColor = Color.White;
-            ConfirmPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
-            ConfirmPasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ConfirmPasswordTxt.ForeColor = Color.DimGray;
-            ConfirmPasswordTxt.Location = new Point(593, 127);
-            ConfirmPasswordTxt.Name = "ConfirmPasswordTxt";
-            ConfirmPasswordTxt.Size = new Size(146, 23);
-            ConfirmPasswordTxt.TabIndex = 47;
-            // 
-            // label119
-            // 
-            label119.AutoSize = true;
-            label119.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label119.ForeColor = Color.DimGray;
-            label119.Location = new Point(473, 128);
-            label119.Name = "label119";
-            label119.Size = new Size(107, 12);
-            label119.TabIndex = 46;
-            label119.Text = "Confirmation Password:";
             // 
             // TeacherPage
             // 
