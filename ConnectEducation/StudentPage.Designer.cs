@@ -32,7 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             SubjectsBtn = new Button();
-            button1 = new Button();
+            ProfileBtn = new Button();
             btnGrades = new Button();
             StudentLogoutBtn = new Button();
             btnSubject = new Button();
@@ -172,6 +172,51 @@
             label24 = new Label();
             Sub1Label = new Label();
             label28 = new Label();
+            StudentProfilePanel = new Panel();
+            PasswordUpdateBtn = new Button();
+            NewPasswordTxt = new TextBox();
+            ConfirmPasswordTxt = new TextBox();
+            AccountPasswordTxt = new TextBox();
+            ProfileGuardianEmail = new Label();
+            ProfileGuardianContactNumber = new Label();
+            ProfileGuardianRelationship = new Label();
+            ProfileGuardianName = new Label();
+            ProfileAccountIdentification = new Label();
+            ProfileSection = new Label();
+            ProfileSemester = new Label();
+            ProfileStrand = new Label();
+            ProfileGradeLevel = new Label();
+            ProfileStudentEmail = new Label();
+            ProfileContactNumber = new Label();
+            ProfileHomeAddress = new Label();
+            ProfileBirthday = new Label();
+            ProfileGender = new Label();
+            ProfileAge = new Label();
+            ProfileStudentName = new Label();
+            label62 = new Label();
+            label63 = new Label();
+            label64 = new Label();
+            label65 = new Label();
+            label66 = new Label();
+            label58 = new Label();
+            label59 = new Label();
+            label60 = new Label();
+            label61 = new Label();
+            label47 = new Label();
+            label49 = new Label();
+            label51 = new Label();
+            label53 = new Label();
+            label55 = new Label();
+            label37 = new Label();
+            label39 = new Label();
+            label41 = new Label();
+            label43 = new Label();
+            label35 = new Label();
+            label33 = new Label();
+            label31 = new Label();
+            label29 = new Label();
+            label27 = new Label();
+            label26 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
@@ -201,6 +246,7 @@
             panel3.SuspendLayout();
             panel25.SuspendLayout();
             panel20.SuspendLayout();
+            StudentProfilePanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -208,7 +254,7 @@
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(SubjectsBtn);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(ProfileBtn);
             panel1.Controls.Add(btnGrades);
             panel1.Controls.Add(StudentLogoutBtn);
             panel1.Location = new Point(-2, 0);
@@ -241,19 +287,20 @@
             SubjectsBtn.UseVisualStyleBackColor = false;
             SubjectsBtn.Click += SubjectsBtn_Click;
             // 
-            // button1
+            // ProfileBtn
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe Fluent Icons", 9.75F);
-            button1.ForeColor = Color.Gray;
-            button1.Location = new Point(0, 194);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 53);
-            button1.TabIndex = 5;
-            button1.Text = "Profile";
-            button1.UseVisualStyleBackColor = false;
+            ProfileBtn.BackColor = Color.Transparent;
+            ProfileBtn.FlatAppearance.BorderSize = 0;
+            ProfileBtn.FlatStyle = FlatStyle.Flat;
+            ProfileBtn.Font = new Font("Segoe Fluent Icons", 9.75F);
+            ProfileBtn.ForeColor = Color.Gray;
+            ProfileBtn.Location = new Point(0, 194);
+            ProfileBtn.Name = "ProfileBtn";
+            ProfileBtn.Size = new Size(95, 53);
+            ProfileBtn.TabIndex = 5;
+            ProfileBtn.Text = "Profile";
+            ProfileBtn.UseVisualStyleBackColor = false;
+            ProfileBtn.Click += ProfileBtn_Click;
             // 
             // btnGrades
             // 
@@ -807,7 +854,7 @@
             SubjectsPanel.Location = new Point(94, 0);
             SubjectsPanel.Margin = new Padding(0);
             SubjectsPanel.Name = "SubjectsPanel";
-            SubjectsPanel.Size = new Size(1369, 731);
+            SubjectsPanel.Size = new Size(1369, 740);
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
@@ -2011,13 +2058,550 @@
             label28.TabIndex = 0;
             label28.Text = "Subject 01";
             // 
+            // StudentProfilePanel
+            // 
+            StudentProfilePanel.BackColor = Color.White;
+            StudentProfilePanel.Controls.Add(PasswordUpdateBtn);
+            StudentProfilePanel.Controls.Add(NewPasswordTxt);
+            StudentProfilePanel.Controls.Add(ConfirmPasswordTxt);
+            StudentProfilePanel.Controls.Add(AccountPasswordTxt);
+            StudentProfilePanel.Controls.Add(ProfileGuardianEmail);
+            StudentProfilePanel.Controls.Add(ProfileGuardianContactNumber);
+            StudentProfilePanel.Controls.Add(ProfileGuardianRelationship);
+            StudentProfilePanel.Controls.Add(ProfileGuardianName);
+            StudentProfilePanel.Controls.Add(ProfileAccountIdentification);
+            StudentProfilePanel.Controls.Add(ProfileSection);
+            StudentProfilePanel.Controls.Add(ProfileSemester);
+            StudentProfilePanel.Controls.Add(ProfileStrand);
+            StudentProfilePanel.Controls.Add(ProfileGradeLevel);
+            StudentProfilePanel.Controls.Add(ProfileStudentEmail);
+            StudentProfilePanel.Controls.Add(ProfileContactNumber);
+            StudentProfilePanel.Controls.Add(ProfileHomeAddress);
+            StudentProfilePanel.Controls.Add(ProfileBirthday);
+            StudentProfilePanel.Controls.Add(ProfileGender);
+            StudentProfilePanel.Controls.Add(ProfileAge);
+            StudentProfilePanel.Controls.Add(ProfileStudentName);
+            StudentProfilePanel.Controls.Add(label62);
+            StudentProfilePanel.Controls.Add(label63);
+            StudentProfilePanel.Controls.Add(label64);
+            StudentProfilePanel.Controls.Add(label65);
+            StudentProfilePanel.Controls.Add(label66);
+            StudentProfilePanel.Controls.Add(label58);
+            StudentProfilePanel.Controls.Add(label59);
+            StudentProfilePanel.Controls.Add(label60);
+            StudentProfilePanel.Controls.Add(label61);
+            StudentProfilePanel.Controls.Add(label47);
+            StudentProfilePanel.Controls.Add(label49);
+            StudentProfilePanel.Controls.Add(label51);
+            StudentProfilePanel.Controls.Add(label53);
+            StudentProfilePanel.Controls.Add(label55);
+            StudentProfilePanel.Controls.Add(label37);
+            StudentProfilePanel.Controls.Add(label39);
+            StudentProfilePanel.Controls.Add(label41);
+            StudentProfilePanel.Controls.Add(label43);
+            StudentProfilePanel.Controls.Add(label35);
+            StudentProfilePanel.Controls.Add(label33);
+            StudentProfilePanel.Controls.Add(label31);
+            StudentProfilePanel.Controls.Add(label29);
+            StudentProfilePanel.Controls.Add(label27);
+            StudentProfilePanel.Controls.Add(label26);
+            StudentProfilePanel.Location = new Point(94, 0);
+            StudentProfilePanel.Name = "StudentProfilePanel";
+            StudentProfilePanel.Size = new Size(1370, 740);
+            StudentProfilePanel.TabIndex = 11;
+            // 
+            // PasswordUpdateBtn
+            // 
+            PasswordUpdateBtn.BackColor = Color.DodgerBlue;
+            PasswordUpdateBtn.FlatStyle = FlatStyle.Flat;
+            PasswordUpdateBtn.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordUpdateBtn.ForeColor = Color.White;
+            PasswordUpdateBtn.Location = new Point(1232, 276);
+            PasswordUpdateBtn.Name = "PasswordUpdateBtn";
+            PasswordUpdateBtn.Size = new Size(53, 23);
+            PasswordUpdateBtn.TabIndex = 50;
+            PasswordUpdateBtn.Text = "Update";
+            PasswordUpdateBtn.UseVisualStyleBackColor = false;
+            PasswordUpdateBtn.Click += PasswordUpdateBtn_Click;
+            // 
+            // NewPasswordTxt
+            // 
+            NewPasswordTxt.BackColor = Color.White;
+            NewPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
+            NewPasswordTxt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NewPasswordTxt.ForeColor = Color.Black;
+            NewPasswordTxt.Location = new Point(1075, 276);
+            NewPasswordTxt.Name = "NewPasswordTxt";
+            NewPasswordTxt.Size = new Size(151, 23);
+            NewPasswordTxt.TabIndex = 49;
+            // 
+            // ConfirmPasswordTxt
+            // 
+            ConfirmPasswordTxt.BackColor = Color.White;
+            ConfirmPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
+            ConfirmPasswordTxt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmPasswordTxt.ForeColor = Color.Black;
+            ConfirmPasswordTxt.Location = new Point(1075, 228);
+            ConfirmPasswordTxt.Name = "ConfirmPasswordTxt";
+            ConfirmPasswordTxt.Size = new Size(151, 23);
+            ConfirmPasswordTxt.TabIndex = 48;
+            // 
+            // AccountPasswordTxt
+            // 
+            AccountPasswordTxt.BorderStyle = BorderStyle.None;
+            AccountPasswordTxt.Location = new Point(1075, 178);
+            AccountPasswordTxt.Name = "AccountPasswordTxt";
+            AccountPasswordTxt.Size = new Size(151, 16);
+            AccountPasswordTxt.TabIndex = 47;
+            // 
+            // ProfileGuardianEmail
+            // 
+            ProfileGuardianEmail.AutoSize = true;
+            ProfileGuardianEmail.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGuardianEmail.ForeColor = Color.DimGray;
+            ProfileGuardianEmail.Location = new Point(629, 501);
+            ProfileGuardianEmail.Name = "ProfileGuardianEmail";
+            ProfileGuardianEmail.Size = new Size(42, 16);
+            ProfileGuardianEmail.TabIndex = 46;
+            ProfileGuardianEmail.Text = "Email:";
+            // 
+            // ProfileGuardianContactNumber
+            // 
+            ProfileGuardianContactNumber.AutoSize = true;
+            ProfileGuardianContactNumber.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGuardianContactNumber.ForeColor = Color.DimGray;
+            ProfileGuardianContactNumber.Location = new Point(629, 454);
+            ProfileGuardianContactNumber.Name = "ProfileGuardianContactNumber";
+            ProfileGuardianContactNumber.Size = new Size(101, 16);
+            ProfileGuardianContactNumber.TabIndex = 45;
+            ProfileGuardianContactNumber.Text = "Contact Number:";
+            // 
+            // ProfileGuardianRelationship
+            // 
+            ProfileGuardianRelationship.AutoSize = true;
+            ProfileGuardianRelationship.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGuardianRelationship.ForeColor = Color.DimGray;
+            ProfileGuardianRelationship.Location = new Point(629, 407);
+            ProfileGuardianRelationship.Name = "ProfileGuardianRelationship";
+            ProfileGuardianRelationship.Size = new Size(79, 16);
+            ProfileGuardianRelationship.TabIndex = 44;
+            ProfileGuardianRelationship.Text = "Relationship:";
+            // 
+            // ProfileGuardianName
+            // 
+            ProfileGuardianName.AutoSize = true;
+            ProfileGuardianName.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGuardianName.ForeColor = Color.DimGray;
+            ProfileGuardianName.Location = new Point(629, 364);
+            ProfileGuardianName.Name = "ProfileGuardianName";
+            ProfileGuardianName.Size = new Size(44, 16);
+            ProfileGuardianName.TabIndex = 43;
+            ProfileGuardianName.Text = "Name:";
+            // 
+            // ProfileAccountIdentification
+            // 
+            ProfileAccountIdentification.AutoSize = true;
+            ProfileAccountIdentification.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileAccountIdentification.ForeColor = Color.DimGray;
+            ProfileAccountIdentification.Location = new Point(1075, 137);
+            ProfileAccountIdentification.Name = "ProfileAccountIdentification";
+            ProfileAccountIdentification.Size = new Size(127, 16);
+            ProfileAccountIdentification.TabIndex = 42;
+            ProfileAccountIdentification.Text = "Account Identification:";
+            // 
+            // ProfileSection
+            // 
+            ProfileSection.AutoSize = true;
+            ProfileSection.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileSection.ForeColor = Color.DimGray;
+            ProfileSection.Location = new Point(615, 271);
+            ProfileSection.Name = "ProfileSection";
+            ProfileSection.Size = new Size(51, 16);
+            ProfileSection.TabIndex = 40;
+            ProfileSection.Text = "Section:";
+            // 
+            // ProfileSemester
+            // 
+            ProfileSemester.AutoSize = true;
+            ProfileSemester.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileSemester.ForeColor = Color.DimGray;
+            ProfileSemester.Location = new Point(615, 224);
+            ProfileSemester.Name = "ProfileSemester";
+            ProfileSemester.Size = new Size(63, 16);
+            ProfileSemester.TabIndex = 39;
+            ProfileSemester.Text = "Semester:";
+            // 
+            // ProfileStrand
+            // 
+            ProfileStrand.AutoSize = true;
+            ProfileStrand.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileStrand.ForeColor = Color.DimGray;
+            ProfileStrand.Location = new Point(615, 177);
+            ProfileStrand.Name = "ProfileStrand";
+            ProfileStrand.Size = new Size(46, 16);
+            ProfileStrand.TabIndex = 38;
+            ProfileStrand.Text = "Strand:";
+            // 
+            // ProfileGradeLevel
+            // 
+            ProfileGradeLevel.AutoSize = true;
+            ProfileGradeLevel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGradeLevel.ForeColor = Color.DimGray;
+            ProfileGradeLevel.Location = new Point(615, 134);
+            ProfileGradeLevel.Name = "ProfileGradeLevel";
+            ProfileGradeLevel.Size = new Size(78, 16);
+            ProfileGradeLevel.TabIndex = 37;
+            ProfileGradeLevel.Text = "Grade Level:";
+            // 
+            // ProfileStudentEmail
+            // 
+            ProfileStudentEmail.AutoSize = true;
+            ProfileStudentEmail.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileStudentEmail.ForeColor = Color.DimGray;
+            ProfileStudentEmail.Location = new Point(209, 412);
+            ProfileStudentEmail.Name = "ProfileStudentEmail";
+            ProfileStudentEmail.Size = new Size(42, 16);
+            ProfileStudentEmail.TabIndex = 36;
+            ProfileStudentEmail.Text = "Email:";
+            // 
+            // ProfileContactNumber
+            // 
+            ProfileContactNumber.AutoSize = true;
+            ProfileContactNumber.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileContactNumber.ForeColor = Color.DimGray;
+            ProfileContactNumber.Location = new Point(209, 365);
+            ProfileContactNumber.Name = "ProfileContactNumber";
+            ProfileContactNumber.Size = new Size(101, 16);
+            ProfileContactNumber.TabIndex = 35;
+            ProfileContactNumber.Text = "Contact Number:";
+            // 
+            // ProfileHomeAddress
+            // 
+            ProfileHomeAddress.AutoSize = true;
+            ProfileHomeAddress.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileHomeAddress.ForeColor = Color.DimGray;
+            ProfileHomeAddress.Location = new Point(209, 322);
+            ProfileHomeAddress.Name = "ProfileHomeAddress";
+            ProfileHomeAddress.Size = new Size(93, 16);
+            ProfileHomeAddress.TabIndex = 34;
+            ProfileHomeAddress.Text = "Home Address:";
+            // 
+            // ProfileBirthday
+            // 
+            ProfileBirthday.AutoSize = true;
+            ProfileBirthday.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileBirthday.ForeColor = Color.DimGray;
+            ProfileBirthday.Location = new Point(209, 274);
+            ProfileBirthday.Name = "ProfileBirthday";
+            ProfileBirthday.Size = new Size(54, 16);
+            ProfileBirthday.TabIndex = 33;
+            ProfileBirthday.Text = "Birthday:";
+            // 
+            // ProfileGender
+            // 
+            ProfileGender.AutoSize = true;
+            ProfileGender.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileGender.ForeColor = Color.DimGray;
+            ProfileGender.Location = new Point(209, 227);
+            ProfileGender.Name = "ProfileGender";
+            ProfileGender.Size = new Size(51, 16);
+            ProfileGender.TabIndex = 32;
+            ProfileGender.Text = "Gender:";
+            // 
+            // ProfileAge
+            // 
+            ProfileAge.AutoSize = true;
+            ProfileAge.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileAge.ForeColor = Color.DimGray;
+            ProfileAge.Location = new Point(209, 180);
+            ProfileAge.Name = "ProfileAge";
+            ProfileAge.Size = new Size(31, 16);
+            ProfileAge.TabIndex = 31;
+            ProfileAge.Text = "Age:";
+            // 
+            // ProfileStudentName
+            // 
+            ProfileStudentName.AutoSize = true;
+            ProfileStudentName.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileStudentName.ForeColor = Color.DimGray;
+            ProfileStudentName.Location = new Point(209, 137);
+            ProfileStudentName.Name = "ProfileStudentName";
+            ProfileStudentName.Size = new Size(44, 16);
+            ProfileStudentName.TabIndex = 30;
+            ProfileStudentName.Text = "Name:";
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label62.ForeColor = Color.DimGray;
+            label62.Location = new Point(934, 274);
+            label62.Name = "label62";
+            label62.Size = new Size(76, 13);
+            label62.TabIndex = 29;
+            label62.Text = "New Password:";
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label63.ForeColor = Color.DimGray;
+            label63.Location = new Point(934, 227);
+            label63.Name = "label63";
+            label63.Size = new Size(89, 13);
+            label63.TabIndex = 28;
+            label63.Text = "Confirm Password:";
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label64.ForeColor = Color.DimGray;
+            label64.Location = new Point(934, 180);
+            label64.Name = "label64";
+            label64.Size = new Size(91, 13);
+            label64.TabIndex = 27;
+            label64.Text = "Account Password:";
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label65.ForeColor = Color.DimGray;
+            label65.Location = new Point(934, 137);
+            label65.Name = "label65";
+            label65.Size = new Size(102, 13);
+            label65.TabIndex = 26;
+            label65.Text = "Account Identification:";
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label66.ForeColor = Color.DimGray;
+            label66.Location = new Point(934, 94);
+            label66.Name = "label66";
+            label66.Size = new Size(117, 16);
+            label66.TabIndex = 25;
+            label66.Text = "Account Information";
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label58.ForeColor = Color.DimGray;
+            label58.Location = new Point(508, 504);
+            label58.Name = "label58";
+            label58.Size = new Size(33, 13);
+            label58.TabIndex = 24;
+            label58.Text = "Email:";
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label59.ForeColor = Color.DimGray;
+            label59.Location = new Point(508, 457);
+            label59.Name = "label59";
+            label59.Size = new Size(80, 13);
+            label59.TabIndex = 23;
+            label59.Text = "Contact Number:";
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label60.ForeColor = Color.DimGray;
+            label60.Location = new Point(508, 410);
+            label60.Name = "label60";
+            label60.Size = new Size(61, 13);
+            label60.TabIndex = 22;
+            label60.Text = "Relationship:";
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label61.ForeColor = Color.DimGray;
+            label61.Location = new Point(508, 367);
+            label61.Name = "label61";
+            label61.Size = new Size(35, 13);
+            label61.TabIndex = 21;
+            label61.Text = "Name:";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label47.ForeColor = Color.DimGray;
+            label47.Location = new Point(506, 274);
+            label47.Name = "label47";
+            label47.Size = new Size(41, 13);
+            label47.TabIndex = 19;
+            label47.Text = "Section:";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label49.ForeColor = Color.DimGray;
+            label49.Location = new Point(506, 227);
+            label49.Name = "label49";
+            label49.Size = new Size(50, 13);
+            label49.TabIndex = 18;
+            label49.Text = "Semester:";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label51.ForeColor = Color.DimGray;
+            label51.Location = new Point(506, 180);
+            label51.Name = "label51";
+            label51.Size = new Size(37, 13);
+            label51.TabIndex = 17;
+            label51.Text = "Strand:";
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label53.ForeColor = Color.DimGray;
+            label53.Location = new Point(506, 137);
+            label53.Name = "label53";
+            label53.Size = new Size(62, 13);
+            label53.TabIndex = 16;
+            label53.Text = "Grade Level:";
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label55.ForeColor = Color.DimGray;
+            label55.Location = new Point(506, 94);
+            label55.Name = "label55";
+            label55.Size = new Size(128, 16);
+            label55.TabIndex = 15;
+            label55.Text = "Academic Information";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label37.ForeColor = Color.DimGray;
+            label37.Location = new Point(508, 319);
+            label37.Name = "label37";
+            label37.Size = new Size(170, 16);
+            label37.TabIndex = 14;
+            label37.Text = "Parents/Guardian Information";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label39.ForeColor = Color.DimGray;
+            label39.Location = new Point(92, 412);
+            label39.Name = "label39";
+            label39.Size = new Size(33, 13);
+            label39.TabIndex = 13;
+            label39.Text = "Email:";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label41.ForeColor = Color.DimGray;
+            label41.Location = new Point(92, 365);
+            label41.Name = "label41";
+            label41.Size = new Size(80, 13);
+            label41.TabIndex = 12;
+            label41.Text = "Contact Number:";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label43.ForeColor = Color.DimGray;
+            label43.Location = new Point(92, 322);
+            label43.Name = "label43";
+            label43.Size = new Size(74, 13);
+            label43.TabIndex = 11;
+            label43.Text = "Home Address:";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label35.ForeColor = Color.DimGray;
+            label35.Location = new Point(92, 274);
+            label35.Name = "label35";
+            label35.Size = new Size(44, 13);
+            label35.TabIndex = 10;
+            label35.Text = "Birthday:";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label33.ForeColor = Color.DimGray;
+            label33.Location = new Point(92, 227);
+            label33.Name = "label33";
+            label33.Size = new Size(40, 13);
+            label33.TabIndex = 9;
+            label33.Text = "Gender:";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label31.ForeColor = Color.DimGray;
+            label31.Location = new Point(92, 180);
+            label31.Name = "label31";
+            label31.Size = new Size(27, 13);
+            label31.TabIndex = 8;
+            label31.Text = "Age:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Segoe Fluent Icons", 9.75F);
+            label29.ForeColor = Color.DimGray;
+            label29.Location = new Point(92, 137);
+            label29.Name = "label29";
+            label29.Size = new Size(35, 13);
+            label29.TabIndex = 7;
+            label29.Text = "Name:";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.DimGray;
+            label27.Location = new Point(92, 94);
+            label27.Name = "label27";
+            label27.Size = new Size(123, 16);
+            label27.TabIndex = 6;
+            label27.Text = "Personal Information";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label26.ForeColor = Color.DimGray;
+            label26.Location = new Point(92, 41);
+            label26.Name = "label26";
+            label26.Size = new Size(73, 25);
+            label26.TabIndex = 5;
+            label26.Text = "Profile";
+            // 
             // StudentPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(1463, 738);
+            ClientSize = new Size(1463, 739);
             Controls.Add(panel1);
+            Controls.Add(StudentProfilePanel);
             Controls.Add(SubjectsPanel);
             Controls.Add(GradingSystemPanel);
             Name = "StudentPage";
@@ -2078,6 +2662,8 @@
             panel25.PerformLayout();
             panel20.ResumeLayout(false);
             panel20.PerformLayout();
+            StudentProfilePanel.ResumeLayout(false);
+            StudentProfilePanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2172,7 +2758,7 @@
         private Label label15;
         private Label label12;
         private Label subjectNameHeader;
-        private Button button1;
+        private Button ProfileBtn;
         private Panel GradingSystemPanel;
         private Label label21;
         private Panel panel20;
@@ -2228,5 +2814,57 @@
         private Label TeacherNameLabel5;
         private ComboBox SubmissionCb;
         private PictureBox pictureBox1;
+        private Panel StudentProfilePanel;
+        private Label label35;
+        private Label label33;
+        private Label label31;
+        private Label label29;
+        private Label label27;
+        private Label label26;
+        private Label label45;
+        private Label label47;
+        private Label label49;
+        private Label label51;
+        private Label label53;
+        private Label label55;
+        private Label label37;
+        private Label label39;
+        private Label label41;
+        private Label label43;
+        private Label label62;
+        private Label label63;
+        private Label label64;
+        private Label label65;
+        private Label label66;
+        private Label label58;
+        private Label label59;
+        private Label label60;
+        private Label label61;
+        private Label label74;
+        private Label ProfileSection;
+        private Label ProfileSemester;
+        private Label ProfileStrand;
+        private Label ProfileGradeLevel;
+        private Label ProfileStudentEmail;
+        private Label ProfileContactNumber;
+        private Label ProfileHomeAddress;
+        private Label ProfileBirthday;
+        private Label ProfileGender;
+        private Label ProfileAge;
+        private Label ProfileStudentName;
+        private Label label81;
+        private Label label82;
+        private Label label83;
+        private Label label84;
+        private Label label79;
+        private Label ProfileAccountIdentification;
+        private Label ProfileGuardianEmail;
+        private Label ProfileGuardianContactNumber;
+        private Label ProfileGuardianRelationship;
+        private Label ProfileGuardianName;
+        private TextBox AccountPasswordTxt;
+        private Button PasswordUpdateBtn;
+        private TextBox NewPasswordTxt;
+        private TextBox ConfirmPasswordTxt;
     }
 }

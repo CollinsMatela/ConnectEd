@@ -14,6 +14,39 @@ namespace ConnectEducation
         private string IdOfStudent, FullnameOfStudent, StrandOfStudent, GradeLevelOfStudent, SemesterOfStudent, SectionOfStudent;
         private string link;
 
+        private void displayProfileInformation()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<StudentModal>("StudentModal");
+            var filter = Builders<StudentModal>.Filter.Eq(z => z.StudentId, IdOfStudent);
+            var result = collection.Find(filter).FirstOrDefault();
+
+            if (result != null)
+            {
+                ProfileStudentName.Text = result.Fullname;
+                ProfileAge.Text = result.Age;
+                ProfileGender.Text = result.Gender;
+                ProfileBirthday.Text = result.DateOfBirth.ToString("MMMM/dd/yyyy");
+                ProfileHomeAddress.Text = result.HomeAddress;
+                ProfileContactNumber.Text = result.Contact;
+                ProfileStudentEmail.Text = result.Email;
+
+                ProfileGuardianName.Text = result.GuardianLastname + " " + result.GuardianFirstname + " " + result.GuardianMiddleInitial;
+                ProfileGuardianRelationship.Text = result.GuardianRelationship;
+                ProfileGuardianContactNumber.Text = result.GuardianContact;
+                ProfileGuardianEmail.Text = result.GuardianEmail;
+
+                ProfileGradeLevel.Text = result.GradeLevel;
+                ProfileStrand.Text = result.Strand;
+                ProfileSemester.Text = result.Semester;
+                ProfileSection.Text = result.Section;
+
+                ProfileAccountIdentification.Text = result.StudentId;
+                AccountPasswordTxt.Text = result.StudentPassword;
+            }
+        }
         private void submission()
         {
             if (subjectNameHeader.Text == "Select Subject")
@@ -127,9 +160,9 @@ namespace ConnectEducation
                     submitForm.Show();
                 }
 
-                
+
             }
-         
+
 
 
 
@@ -338,6 +371,7 @@ namespace ConnectEducation
 
             SubjectsPanel.Visible = false;
             GradingSystemPanel.Visible = false;
+            StudentProfilePanel.Visible = false;
 
             SchoolCurriculum schoolCurriculum = new SchoolCurriculum();
 
@@ -367,6 +401,11 @@ namespace ConnectEducation
             {
                 MessageBox.Show("No Registered Student :(");
             }
+
+            AccountPasswordTxt.UseSystemPasswordChar = true;
+            ConfirmPasswordTxt.UseSystemPasswordChar = true;
+            NewPasswordTxt.UseSystemPasswordChar = true;
+            displayProfileInformation();
 
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;
@@ -532,6 +571,7 @@ namespace ConnectEducation
         {
             GradingSystemPanel.Visible = true;
             SubjectsPanel.Visible = false;
+            StudentProfilePanel.Visible = false;
             //displayNameOfSubjectsInGradesPanel();
             displayGrades();
 
@@ -1404,7 +1444,7 @@ namespace ConnectEducation
         }
         private void btnSubmit1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void StudentLogoutBtn_Click(object sender, EventArgs e)
@@ -1419,6 +1459,7 @@ namespace ConnectEducation
         {
             SubjectsPanel.Visible = true;
             GradingSystemPanel.Visible = false;
+            StudentProfilePanel.Visible = false;
         }
 
         private void TeacherNameLabel1_Click(object sender, EventArgs e)
@@ -1486,5 +1527,46 @@ namespace ConnectEducation
         {
             submission();
         }
-    }
+
+        private void ProfileBtn_Click(object sender, EventArgs e)
+        {
+            StudentProfilePanel.Visible = true;
+            SubjectsPanel.Visible = false;
+            GradingSystemPanel.Visible = false;
+
+        }
+
+        private void PasswordUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ConfirmPasswordTxt.Text))
+            {
+                MessageBox.Show("PLease enter your previous password.");
+                return;
+            }
+            if (ConfirmPasswordTxt.Text != AccountPasswordTxt.Text)
+            {
+                MessageBox.Show("Confirmation password is incorrect.");
+                return;
+            }
+            if (string.IsNullOrEmpty(NewPasswordTxt.Text))
+            {
+                MessageBox.Show("PLease enter your new password.");
+                return;
+            }
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<StudentModal>("StudentModal");
+            var filter = Builders<StudentModal>.Filter.Eq(z => z.StudentId, IdOfStudent);
+            var update = Builders<StudentModal>.Update.Set(z => z.StudentPassword, NewPasswordTxt.Text);
+
+            collection.UpdateOne(filter, update);
+            MessageBox.Show("Successfully updated a new password");
+            displayProfileInformation();
+            ConfirmPasswordTxt.Text = "";
+            NewPasswordTxt.Text = "";
+        }
+    
+    
+}
 }
