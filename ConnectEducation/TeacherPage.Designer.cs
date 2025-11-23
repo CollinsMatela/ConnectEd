@@ -39,6 +39,8 @@
             label2 = new Label();
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
+            CreateQuizPanel = new Panel();
+            label106 = new Label();
             ProfilePanel = new Panel();
             panel44 = new Panel();
             ConfirmPasswordTxt = new TextBox();
@@ -351,12 +353,11 @@
             label16 = new Label();
             ExamScore = new TextBox();
             label17 = new Label();
-            CreateQuizPanel = new Panel();
-            label106 = new Label();
             UpdateTimer = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            CreateQuizPanel.SuspendLayout();
             ProfilePanel.SuspendLayout();
             panel44.SuspendLayout();
             ViewSubmissionPanel.SuspendLayout();
@@ -399,7 +400,6 @@
             panel16.SuspendLayout();
             panel15.SuspendLayout();
             InputGradesPanel.SuspendLayout();
-            CreateQuizPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -505,6 +505,26 @@
             SubjectNameLabel.Size = new Size(36, 12);
             SubjectNameLabel.TabIndex = 1;
             SubjectNameLabel.Text = "Subject";
+            // 
+            // CreateQuizPanel
+            // 
+            CreateQuizPanel.BackColor = Color.White;
+            CreateQuizPanel.Controls.Add(label106);
+            CreateQuizPanel.Location = new Point(0, 88);
+            CreateQuizPanel.Name = "CreateQuizPanel";
+            CreateQuizPanel.Size = new Size(1465, 588);
+            CreateQuizPanel.TabIndex = 14;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label106.ForeColor = Color.DimGray;
+            label106.Location = new Point(258, 47);
+            label106.Name = "label106";
+            label106.Size = new Size(96, 19);
+            label106.TabIndex = 15;
+            label106.Text = "Create your quiz";
             // 
             // ProfilePanel
             // 
@@ -4329,26 +4349,6 @@
             label17.TabIndex = 32;
             label17.Text = "Performance Task 4";
             // 
-            // CreateQuizPanel
-            // 
-            CreateQuizPanel.BackColor = Color.White;
-            CreateQuizPanel.Controls.Add(label106);
-            CreateQuizPanel.Location = new Point(0, 88);
-            CreateQuizPanel.Name = "CreateQuizPanel";
-            CreateQuizPanel.Size = new Size(1465, 588);
-            CreateQuizPanel.TabIndex = 14;
-            // 
-            // label106
-            // 
-            label106.AutoSize = true;
-            label106.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label106.ForeColor = Color.DimGray;
-            label106.Location = new Point(258, 47);
-            label106.Name = "label106";
-            label106.Size = new Size(96, 19);
-            label106.TabIndex = 15;
-            label106.Text = "Create your quiz";
-            // 
             // UpdateTimer
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
@@ -4367,6 +4367,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            CreateQuizPanel.ResumeLayout(false);
+            CreateQuizPanel.PerformLayout();
             ProfilePanel.ResumeLayout(false);
             ProfilePanel.PerformLayout();
             panel44.ResumeLayout(false);
@@ -4449,8 +4451,6 @@
             panel15.PerformLayout();
             InputGradesPanel.ResumeLayout(false);
             InputGradesPanel.PerformLayout();
-            CreateQuizPanel.ResumeLayout(false);
-            CreateQuizPanel.PerformLayout();
             ResumeLayout(false);
         }
 

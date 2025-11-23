@@ -18,6 +18,56 @@ namespace ConnectEducation
         {
             InitializeComponent();
         }
+        private void addSubjects()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<SubjectModal>("Subjects");
+
+            var subjectProperties = new SubjectModal
+            {
+                Title = "Business Ethics and Social Responsibility",
+
+                NameHandout1 = "Introduction to Business Ethics",
+                NameHandout2 = "Principles and Theories of Ethics",
+                NameHandout3 = "Ethical Decision Making in Business",
+                NameHandout4 = "Corporate Social Responsibility (CSR) Concepts",
+                NameHandout5 = "Stakeholders and Ethical Responsibilities",
+                NameHandout6 = "Sustainability and Environmental Responsibility",
+                NameHandout7 = "Business Ethics in Marketing and Finance",
+                NameHandout8 = "Case Studies on Ethical Dilemmas and CSR Practices",
+
+                LinkHandout1 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout2 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout3 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout4 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout5 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout6 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout7 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                LinkHandout8 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+
+                Assignment1 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment2 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment3 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment4 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment5 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment6 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment7 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                Assignment8 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+
+                PerformanceTask1 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask2 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask3 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask4 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask5 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask6 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask7 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                PerformanceTask8 = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+
+            };
+            collection.InsertOne(subjectProperties);
+        }
         private void EnterBtn_Click(object sender, EventArgs e)
         {
             if (typeOfUserCb.SelectedItem == null)

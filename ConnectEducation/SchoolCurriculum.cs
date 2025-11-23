@@ -85,7 +85,7 @@ namespace ConnectEducation
             if (gradeLevel.ToLower() == "grade 11" && semester.ToLower() == "first semester")
             {
                 _Subject1 = "Oral Communication";
-                _Subject2 = "General Mathematics";
+                _Subject2 = "General Mathematics 1";
                 _Subject3 = "Earth and Life Science";
                 _Subject4 = "Empowerment Technologies";
                 _Subject5 = "Business Mathematics";
@@ -108,8 +108,8 @@ namespace ConnectEducation
             {
                 _Subject1 = "Applied Economics";
                 _Subject2 = "Business Finance";
-                _Subject3 = "Practical Research";
-                _Subject4 = "Inquiries, Investigations and Immersion";
+                _Subject3 = "Practical Research 1";
+                _Subject4 = "Inquiries, Investigations, and Immersion";
                 _Subject5 = "English for Academic and Professional Purposes";
                 _Subject6 = "Philosophy of the Human Person";
                 _Subject7 = "Media and Information Literacy";
@@ -120,7 +120,7 @@ namespace ConnectEducation
                 _Subject1 = "Fundamentals of Accounting 1";
                 _Subject2 = "Fundamentals of Accounting 2";
                 _Subject3 = "Business Enterprise Simulation";
-                _Subject4 = "Work Immersion";
+                _Subject4 = "Work Immersion 1";
                 _Subject5 = "Entrepreneurship";
                 _Subject6 = "Contemporary Philippine Arts from the Regions";
                 _Subject7 = "Introduction to World Religions";
@@ -137,7 +137,7 @@ namespace ConnectEducation
             {
                 _Subject1 = "Oral Communication";
                 _Subject2 = "Komunikasyon at Pananaliksik";
-                _Subject3 = "General Mathematics";
+                _Subject3 = "General Mathematics 1";
                 _Subject4 = "Earth and Life Science";
                 _Subject5 = "Creative Writing";
                 _Subject6 = "Introduction to World Religions and Belief Systems";

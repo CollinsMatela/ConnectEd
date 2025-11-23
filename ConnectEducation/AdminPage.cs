@@ -616,6 +616,7 @@ namespace ConnectEducation
                 GuardianLastnameTxt.Clear();
                 GuardianFirstnameTxt.Clear();
                 GuardianMiddleInitialTxt.Clear();
+                GuardianEmailTxt.Clear();
                 GuardianContactTxt.Clear();
                 GenderCb.SelectedIndex = -1;
                 StrandCb.SelectedIndex = -1;
