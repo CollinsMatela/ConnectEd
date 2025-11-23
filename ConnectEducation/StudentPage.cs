@@ -232,6 +232,11 @@ namespace ConnectEducation
             var gradeRecord = collection.Find(filter).FirstOrDefault();
             if (gradeRecord != null)
             {
+                if (gradeRecord.SubjectList == null || gradeRecord.SubjectList.Count == 0)
+                {
+                    MessageBox.Show("Grades are not yet available. Please check back later.");
+                    return; 
+                }
 
 
                 Label[] nameOfSubjectLabels = { Sub1Label, Sub2Label, Sub3Label, Sub4Label, Sub5Label, Sub6Label, Sub7Label, Sub8Label };
@@ -240,9 +245,9 @@ namespace ConnectEducation
 
                 if (QuarterSelectionCb.Text == "First Grade" || QuarterSelectionCb.Text == string.Empty)
                 {
+                    int i = 0;
                     foreach (var item in gradeRecord.SubjectList)
                     {
-                        int i = 0;
                         nameOfSubjectLabels[i].Text = item.Subject;
                         nameOfInstructorLabels[i].Text = item.TeacherFullname;
                         GradeLabels[i].Text = item.FinalGrade1;
@@ -251,9 +256,9 @@ namespace ConnectEducation
                 }
                 if (QuarterSelectionCb.Text == "Second Grade")
                 {
+                    int i = 0;
                     foreach (var item in gradeRecord.SubjectList)
                     {
-                        int i = 0;
                         nameOfSubjectLabels[i].Text = item.Subject;
                         nameOfInstructorLabels[i].Text = item.TeacherFullname;
                         GradeLabels[i].Text = item.FinalGrade2;

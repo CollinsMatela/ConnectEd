@@ -192,10 +192,10 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(StudentRegistrationPanel);
-            panel1.Controls.Add(TeacherRegistrationPanel);
             panel1.Controls.Add(CreateClassPanel);
             panel1.Controls.Add(AdminBoardPanel);
+            panel1.Controls.Add(StudentRegistrationPanel);
+            panel1.Controls.Add(TeacherRegistrationPanel);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1462, 738);
@@ -228,9 +228,9 @@
             StudentRegistrationPanel.Controls.Add(panel6);
             StudentRegistrationPanel.Controls.Add(panel7);
             StudentRegistrationPanel.Controls.Add(panel3);
-            StudentRegistrationPanel.Location = new Point(11, 75);
+            StudentRegistrationPanel.Location = new Point(0, 75);
             StudentRegistrationPanel.Name = "StudentRegistrationPanel";
-            StudentRegistrationPanel.Size = new Size(1439, 650);
+            StudentRegistrationPanel.Size = new Size(1462, 650);
             StudentRegistrationPanel.TabIndex = 7;
             // 
             // button1
@@ -849,9 +849,9 @@
             TeacherRegistrationPanel.Controls.Add(panel13);
             TeacherRegistrationPanel.Controls.Add(panel11);
             TeacherRegistrationPanel.Controls.Add(panel9);
-            TeacherRegistrationPanel.Location = new Point(11, 75);
+            TeacherRegistrationPanel.Location = new Point(0, 75);
             TeacherRegistrationPanel.Name = "TeacherRegistrationPanel";
-            TeacherRegistrationPanel.Size = new Size(1439, 650);
+            TeacherRegistrationPanel.Size = new Size(1462, 650);
             TeacherRegistrationPanel.TabIndex = 9;
             // 
             // BackTeacherPanel
@@ -1284,14 +1284,14 @@
             CreateClassPanel.Controls.Add(label42);
             CreateClassPanel.Controls.Add(panel16);
             CreateClassPanel.Controls.Add(panel19);
-            CreateClassPanel.Location = new Point(11, 76);
+            CreateClassPanel.Location = new Point(0, 76);
             CreateClassPanel.Name = "CreateClassPanel";
-            CreateClassPanel.Size = new Size(1439, 631);
+            CreateClassPanel.Size = new Size(1462, 631);
             CreateClassPanel.TabIndex = 13;
             // 
             // panel21
             // 
-            panel21.BackColor = Color.WhiteSmoke;
+            panel21.BackColor = Color.White;
             panel21.Controls.Add(AssignBtn);
             panel21.Location = new Point(738, 280);
             panel21.Name = "panel21";
@@ -1300,7 +1300,7 @@
             // 
             // AssignBtn
             // 
-            AssignBtn.BackColor = Color.LightGray;
+            AssignBtn.BackColor = Color.DodgerBlue;
             AssignBtn.FlatAppearance.BorderSize = 0;
             AssignBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             AssignBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
@@ -1317,7 +1317,7 @@
             // 
             // panel17
             // 
-            panel17.BackColor = Color.WhiteSmoke;
+            panel17.BackColor = Color.White;
             panel17.Controls.Add(label45);
             panel17.Controls.Add(panel18);
             panel17.Location = new Point(738, 50);
@@ -1450,7 +1450,6 @@
             ClassSectionsCb.Font = new Font("Segoe Fluent Icons", 12F);
             ClassSectionsCb.ForeColor = Color.DimGray;
             ClassSectionsCb.FormattingEnabled = true;
-            ClassSectionsCb.Items.AddRange(new object[] { "Grade 11", "Grade 12" });
             ClassSectionsCb.Location = new Point(243, 50);
             ClassSectionsCb.Name = "ClassSectionsCb";
             ClassSectionsCb.Size = new Size(209, 24);
@@ -1507,7 +1506,7 @@
             // 
             // panel16
             // 
-            panel16.BackColor = Color.WhiteSmoke;
+            panel16.BackColor = Color.White;
             panel16.Controls.Add(Class_SubjectBtn);
             panel16.Location = new Point(0, 280);
             panel16.Name = "panel16";
@@ -1516,7 +1515,7 @@
             // 
             // Class_SubjectBtn
             // 
-            Class_SubjectBtn.BackColor = Color.LightGray;
+            Class_SubjectBtn.BackColor = Color.DodgerBlue;
             Class_SubjectBtn.FlatAppearance.BorderSize = 0;
             Class_SubjectBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Class_SubjectBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
@@ -1533,7 +1532,7 @@
             // 
             // panel19
             // 
-            panel19.BackColor = Color.WhiteSmoke;
+            panel19.BackColor = Color.White;
             panel19.Controls.Add(label48);
             panel19.Controls.Add(panel20);
             panel19.Location = new Point(0, 50);

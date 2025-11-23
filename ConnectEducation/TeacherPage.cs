@@ -403,7 +403,7 @@ namespace ConnectEducation
             }
             else
             {
-                MessageBox.Show("No assigned subject!");
+                MessageBox.Show("Please wait for your assigned class and subject.");
             }
         }
         public TeacherPage(string teacherID, string teacherFullname, string teacherSubject, string teacherSection)

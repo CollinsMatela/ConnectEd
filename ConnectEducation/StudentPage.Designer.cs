@@ -359,7 +359,7 @@
             SubjectsPopUpPanel.Controls.Add(subject3);
             SubjectsPopUpPanel.Controls.Add(subject2);
             SubjectsPopUpPanel.Controls.Add(subject1);
-            SubjectsPopUpPanel.Location = new Point(957, 77);
+            SubjectsPopUpPanel.Location = new Point(957, 46);
             SubjectsPopUpPanel.Margin = new Padding(0);
             SubjectsPopUpPanel.Name = "SubjectsPopUpPanel";
             SubjectsPopUpPanel.Size = new Size(297, 267);
@@ -2601,9 +2601,9 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1463, 739);
             Controls.Add(panel1);
-            Controls.Add(SubjectsPanel);
             Controls.Add(GradingSystemPanel);
             Controls.Add(StudentProfilePanel);
+            Controls.Add(SubjectsPanel);
             Name = "StudentPage";
             Text = "Student Page";
             Load += StudentPage_Load;

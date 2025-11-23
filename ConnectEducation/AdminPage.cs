@@ -202,7 +202,7 @@ namespace ConnectEducation
 
                 SubjectCb.Items.Add("Applied Economics");
                 SubjectCb.Items.Add("Business Finance");
-                SubjectCb.Items.Add("Practical Research");
+                SubjectCb.Items.Add("Practical Research 1");
                 SubjectCb.Items.Add("Inquiries, Investigations and Immersion");
                 SubjectCb.Items.Add("English for Academic and Professional Purposes");
                 SubjectCb.Items.Add("Philosophy of the Human Person");
@@ -1250,6 +1250,7 @@ namespace ConnectEducation
 
             StrandAndGradeCb.Text = "";
             ClassSectionsCb.Text = "";
+            SelectSemesterCb.Text = "";
             ClassSectionsCb.Items.Clear();
             InstructorCb.Text = "";
             SubjectCb.Text = "";
