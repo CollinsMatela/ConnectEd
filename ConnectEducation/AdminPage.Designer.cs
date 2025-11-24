@@ -192,10 +192,10 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(TeacherRegistrationPanel);
             panel1.Controls.Add(CreateClassPanel);
             panel1.Controls.Add(AdminBoardPanel);
             panel1.Controls.Add(StudentRegistrationPanel);
-            panel1.Controls.Add(TeacherRegistrationPanel);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1462, 738);
@@ -254,7 +254,7 @@
             label32.AutoSize = true;
             label32.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label32.ForeColor = Color.DimGray;
-            label32.Location = new Point(3, 16);
+            label32.Location = new Point(27, 16);
             label32.Name = "label32";
             label32.Size = new Size(235, 19);
             label32.TabIndex = 35;
@@ -262,7 +262,7 @@
             // 
             // panel14
             // 
-            panel14.BackColor = Color.WhiteSmoke;
+            panel14.BackColor = Color.White;
             panel14.Controls.Add(SubmitBtn);
             panel14.Location = new Point(0, 530);
             panel14.Name = "panel14";
@@ -271,7 +271,7 @@
             // 
             // SubmitBtn
             // 
-            SubmitBtn.BackColor = Color.LightGray;
+            SubmitBtn.BackColor = Color.DodgerBlue;
             SubmitBtn.FlatAppearance.BorderColor = Color.White;
             SubmitBtn.FlatAppearance.BorderSize = 0;
             SubmitBtn.FlatAppearance.MouseDownBackColor = Color.LimeGreen;
@@ -874,7 +874,7 @@
             label35.AutoSize = true;
             label35.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label35.ForeColor = Color.DimGray;
-            label35.Location = new Point(3, 16);
+            label35.Location = new Point(29, 16);
             label35.Name = "label35";
             label35.Size = new Size(237, 19);
             label35.TabIndex = 21;
@@ -882,7 +882,7 @@
             // 
             // panel13
             // 
-            panel13.BackColor = Color.WhiteSmoke;
+            panel13.BackColor = Color.White;
             panel13.Controls.Add(SubmitTeacherInformationBtn);
             panel13.Location = new Point(0, 369);
             panel13.Name = "panel13";
@@ -891,7 +891,7 @@
             // 
             // SubmitTeacherInformationBtn
             // 
-            SubmitTeacherInformationBtn.BackColor = Color.LightGray;
+            SubmitTeacherInformationBtn.BackColor = Color.DodgerBlue;
             SubmitTeacherInformationBtn.FlatAppearance.BorderSize = 0;
             SubmitTeacherInformationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             SubmitTeacherInformationBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
@@ -1050,7 +1050,7 @@
             label39.AutoSize = true;
             label39.Font = new Font("Bahnschrift Condensed", 12F);
             label39.ForeColor = Color.DimGray;
-            label39.Location = new Point(29, 16);
+            label39.Location = new Point(29, 17);
             label39.Name = "label39";
             label39.Size = new Size(166, 19);
             label39.TabIndex = 20;
@@ -1498,7 +1498,7 @@
             label42.AutoSize = true;
             label42.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label42.ForeColor = Color.DimGray;
-            label42.Location = new Point(3, 16);
+            label42.Location = new Point(29, 15);
             label42.Name = "label42";
             label42.Size = new Size(206, 19);
             label42.TabIndex = 21;

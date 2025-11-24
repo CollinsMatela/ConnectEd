@@ -85,8 +85,8 @@ namespace ConnectEducation
             }
             finally
             {
-                mailMessage.Dispose(); // Release resources
-                                       // smtpClient.Dispose(); // Optional, if you're done with the client
+                mailMessage.Dispose(); 
+                                       
             }
         }
         private void updateDisplayValue()
@@ -445,6 +445,10 @@ namespace ConnectEducation
             ChangePasswordTxt.UseSystemPasswordChar = true;
             ConfirmPasswordTxt.UseSystemPasswordChar = true;
 
+            ClassAttendanceBtn.Visible = false;
+            StudentRecordBtn.Visible = false;
+            InputGradesBtn.Visible = false;
+
 
             displayRegisteredStudents();
             diplaySubjectsAndProperties();
@@ -534,6 +538,9 @@ namespace ConnectEducation
 
             if (student != null)
             {
+                ClassAttendanceBtn.Visible = true;
+                StudentRecordBtn.Visible = true;
+                InputGradesBtn.Visible = true;
 
                 studentIDLabel.Text = student.StudentId;
                 nameOfStudentLabel.Text = student.Fullname;

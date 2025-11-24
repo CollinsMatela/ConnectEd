@@ -502,8 +502,8 @@ namespace ConnectEducation
             {
                 Random random = new Random();
                 // Student information
-                string StudentID = "STUDENT" + DateTime.Now.ToString("MMddHHmm") + random.Next(10, 99);
-                string StudentPass = "ACC" + random.Next(10000, 99999);
+                string StudentID = "NO" + DateTime.Now.ToString("yy") + "-" + random.Next(10000, 99999);
+                string StudentPass = "password" + random.Next(10000, 99999);
                 string LastnameOfStudent = StudentLastnameTxt.Text.Trim();
                 string FirstnameOfStudent = StudentFirstnameTxt.Text;
                 string MiddlenameOfStudent = StudentMiddlenameTxt.Text;
@@ -810,8 +810,8 @@ namespace ConnectEducation
 
                 Random random = new Random();
                 // Store muna
-                string TeacherID = "TEACHER" + DateTime.Now.ToString("MMddHH") + random.Next(100, 999);
-                string TeacherPass = "ACC" + random.Next(10000, 99999);
+                string TeacherID = "NO" + DateTime.Now.ToString("dd") + "-" + random.Next(10000, 99999);
+                string TeacherPass = "password" + random.Next(10000, 99999);
                 string lastnameOfTeacher = LastnameOfTeacherTxt.Text;
                 string firstnameOfTeacher = FirstnameOfTeacherTxt.Text;
                 string middlenameOfTeacher = MiddlenameOfTeacherTxt.Text;

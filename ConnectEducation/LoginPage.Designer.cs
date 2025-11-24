@@ -155,8 +155,8 @@
             // 
             PasswordTxt.BackColor = Color.White;
             PasswordTxt.BorderStyle = BorderStyle.FixedSingle;
-            PasswordTxt.Font = new Font("Segoe Fluent Icons", 12F);
-            PasswordTxt.ForeColor = Color.DimGray;
+            PasswordTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordTxt.ForeColor = Color.Black;
             PasswordTxt.Location = new Point(137, 354);
             PasswordTxt.Name = "PasswordTxt";
             PasswordTxt.Size = new Size(232, 23);
