@@ -926,12 +926,12 @@ namespace ConnectEducation
 
                 Random random = new Random();
 
-                string ClassID = StrandOfClassCb.SelectedItem.ToString() + " " + SectionOfClassTxt.Text + random.Next(1000, 9999);
+                string ClassID = Guid.NewGuid().ToString();
                 string Strand = StrandOfClassCb.SelectedItem.ToString();
                 string GradeLevelOfClass = GradeLevelOfClassCb.SelectedItem.ToString();
                 string SectionOfClass = SectionOfClassTxt.Text;
-                string[] Teachers = ["Teacher1", "Teacher2", "Teacher3"];
-                string[] Students = ["Student1", "Student2", "Student3"];
+                string[] Teachers = [];
+                string[] Students = [];
                 DateTime CreatedTime = DateTime.Now;
 
                 //Insert to database
@@ -943,6 +943,15 @@ namespace ConnectEducation
                 {
 
                     var collection = database.GetCollection<ClassInformationModal>("Grade11_STEM");
+                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                    var result = collection.Find(filter).FirstOrDefault();
+                    if (result != null)
+                    {
+                        MessageBox.Show("The section is already existing.");
+                        SectionOfClassTxt.Text = "";
+                        SectionOfClassTxt.Focus();
+                        return;
+                    }
 
                     ClassInformationModal classProperties = new ClassInformationModal()
                     {
@@ -962,6 +971,15 @@ namespace ConnectEducation
                 {
 
                     var collection = database.GetCollection<ClassInformationModal>("Grade12_STEM");
+                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                    var result = collection.Find(filter).FirstOrDefault();
+                    if (result != null)
+                    {
+                        MessageBox.Show("The section is already existing.");
+                        SectionOfClassTxt.Text = "";
+                        SectionOfClassTxt.Focus();
+                        return;
+                    }
 
                     ClassInformationModal classProperties = new ClassInformationModal()
                     {
@@ -981,6 +999,15 @@ namespace ConnectEducation
                 {
 
                     var collection = database.GetCollection<ClassInformationModal>("Grade11_ABM");
+                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                    var result = collection.Find(filter).FirstOrDefault();
+                    if (result != null)
+                    {
+                        MessageBox.Show("The section is already existing.");
+                        SectionOfClassTxt.Text = "";
+                        SectionOfClassTxt.Focus();
+                        return;
+                    }
 
                     ClassInformationModal classProperties = new ClassInformationModal()
                     {
@@ -1000,6 +1027,15 @@ namespace ConnectEducation
                 {
 
                     var collection = database.GetCollection<ClassInformationModal>("Grade12_ABM");
+                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                    var result = collection.Find(filter).FirstOrDefault();
+                    if (result != null)
+                    {
+                        MessageBox.Show("The section is already existing.");
+                        SectionOfClassTxt.Text = "";
+                        SectionOfClassTxt.Focus();
+                        return;
+                    }
 
                     ClassInformationModal classProperties = new ClassInformationModal()
                     {
@@ -1063,6 +1099,10 @@ namespace ConnectEducation
                 StrandOfClassCb.SelectedIndex = -1;
                 GradeLevelOfClassCb.SelectedIndex = -1;
                 SectionOfClassTxt.Clear();
+
+                StrandAndGradeCb.Text = "";
+                ClassSectionsCb.Text = "";
+                ClassSectionsCb.Items.Clear();
 
             }
             catch (Exception ex)
