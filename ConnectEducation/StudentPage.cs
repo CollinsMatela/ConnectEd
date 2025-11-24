@@ -480,6 +480,7 @@ namespace ConnectEducation
 
         private void subject5_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject5.Text;
             subjectNameHeader.Text = nameOfText;
@@ -792,6 +793,7 @@ namespace ConnectEducation
 
         private void subject1_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject1.Text;
             subjectNameHeader.Text = nameOfText;
@@ -886,6 +888,7 @@ namespace ConnectEducation
 
         private void subject2_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject2.Text;
             subjectNameHeader.Text = nameOfText;
@@ -980,6 +983,7 @@ namespace ConnectEducation
 
         private void subject3_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject3.Text;
             subjectNameHeader.Text = nameOfText;
@@ -1074,6 +1078,7 @@ namespace ConnectEducation
 
         private void subject4_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject4.Text;
             subjectNameHeader.Text = nameOfText;
@@ -1168,6 +1173,7 @@ namespace ConnectEducation
 
         private void subject6_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject6.Text;
             subjectNameHeader.Text = nameOfText;
@@ -1262,6 +1268,7 @@ namespace ConnectEducation
 
         private void subject7_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject7.Text;
             subjectNameHeader.Text = nameOfText;
@@ -1356,6 +1363,7 @@ namespace ConnectEducation
 
         private void subject8_Click(object sender, EventArgs e)
         {
+            SubmissionCb.Text = "";
 
             string nameOfText = subject8.Text;
             subjectNameHeader.Text = nameOfText;
