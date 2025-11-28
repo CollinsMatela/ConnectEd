@@ -337,14 +337,14 @@
             btnSubject.BackColor = Color.WhiteSmoke;
             btnSubject.FlatAppearance.BorderSize = 0;
             btnSubject.FlatStyle = FlatStyle.Flat;
-            btnSubject.Font = new Font("Segoe Fluent Icons", 9.75F);
+            btnSubject.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubject.ForeColor = Color.Gray;
             btnSubject.Location = new Point(1220, 44);
             btnSubject.Margin = new Padding(0);
             btnSubject.Name = "btnSubject";
             btnSubject.Size = new Size(35, 24);
             btnSubject.TabIndex = 2;
-            btnSubject.Text = "V";
+            btnSubject.Text = "...";
             btnSubject.UseVisualStyleBackColor = false;
             btnSubject.Click += btnSubject_Click;
             // 
@@ -359,7 +359,7 @@
             SubjectsPopUpPanel.Controls.Add(subject3);
             SubjectsPopUpPanel.Controls.Add(subject2);
             SubjectsPopUpPanel.Controls.Add(subject1);
-            SubjectsPopUpPanel.Location = new Point(957, 47);
+            SubjectsPopUpPanel.Location = new Point(957, 45);
             SubjectsPopUpPanel.Margin = new Padding(0);
             SubjectsPopUpPanel.Name = "SubjectsPopUpPanel";
             SubjectsPopUpPanel.Size = new Size(297, 267);
@@ -860,7 +860,7 @@
             // 
             // SubmissionCb
             // 
-            SubmissionCb.BackColor = Color.White;
+            SubmissionCb.BackColor = Color.WhiteSmoke;
             SubmissionCb.FlatStyle = FlatStyle.Flat;
             SubmissionCb.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionCb.ForeColor = Color.DimGray;

@@ -35,6 +35,12 @@
             AdminBoardPanel = new Panel();
             label3 = new Label();
             panel15 = new Panel();
+            AnnouncementPanel = new Panel();
+            label60 = new Label();
+            CloseAnnouncementPanel = new Button();
+            AnnouncementRTB = new RichTextBox();
+            SendAnnouncementBtn = new Button();
+            AnnouncementBtn = new Button();
             label41 = new Label();
             LogoutBtn = new Button();
             label1 = new Label();
@@ -42,6 +48,34 @@
             CreateClassBtn = new Button();
             StudentRegistrationBtn = new Button();
             TeacherRegistrationBtn = new Button();
+            CreateClassPanel = new Panel();
+            Class_SubjectBtn = new Button();
+            AssignBtn = new Button();
+            panel17 = new Panel();
+            label45 = new Label();
+            panel18 = new Panel();
+            SelectSemesterCb = new ComboBox();
+            label59 = new Label();
+            SubjectCb = new ComboBox();
+            label49 = new Label();
+            InstructorCb = new ComboBox();
+            StrandAndGradeCb = new ComboBox();
+            ClassSectionsCb = new ComboBox();
+            label55 = new Label();
+            label46 = new Label();
+            label47 = new Label();
+            ClassBackBtn = new Button();
+            label42 = new Label();
+            panel16 = new Panel();
+            panel19 = new Panel();
+            label48 = new Label();
+            panel20 = new Panel();
+            StrandOfClassCb = new ComboBox();
+            label43 = new Label();
+            GradeLevelOfClassCb = new ComboBox();
+            label56 = new Label();
+            label57 = new Label();
+            SectionOfClassTxt = new TextBox();
             StudentRegistrationPanel = new Panel();
             SubmitBtn = new Button();
             button1 = new Button();
@@ -131,39 +165,17 @@
             MiddlenameOfTeacherTxt = new TextBox();
             FirstnameOfTeacherTxt = new TextBox();
             LastnameOfTeacherTxt = new TextBox();
-            CreateClassPanel = new Panel();
-            Class_SubjectBtn = new Button();
-            AssignBtn = new Button();
-            panel17 = new Panel();
-            label45 = new Label();
-            panel18 = new Panel();
-            SelectSemesterCb = new ComboBox();
-            label59 = new Label();
-            SubjectCb = new ComboBox();
-            label49 = new Label();
-            InstructorCb = new ComboBox();
-            StrandAndGradeCb = new ComboBox();
-            ClassSectionsCb = new ComboBox();
-            label55 = new Label();
-            label46 = new Label();
-            label47 = new Label();
-            ClassBackBtn = new Button();
-            label42 = new Label();
-            panel16 = new Panel();
-            panel19 = new Panel();
-            label48 = new Label();
-            panel20 = new Panel();
-            StrandOfClassCb = new ComboBox();
-            label43 = new Label();
-            GradeLevelOfClassCb = new ComboBox();
-            label56 = new Label();
-            label57 = new Label();
-            SectionOfClassTxt = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             AdminBoardPanel.SuspendLayout();
             panel15.SuspendLayout();
+            AnnouncementPanel.SuspendLayout();
+            CreateClassPanel.SuspendLayout();
+            panel17.SuspendLayout();
+            panel18.SuspendLayout();
+            panel19.SuspendLayout();
+            panel20.SuspendLayout();
             StudentRegistrationPanel.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -176,11 +188,6 @@
             panel12.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
-            CreateClassPanel.SuspendLayout();
-            panel17.SuspendLayout();
-            panel18.SuspendLayout();
-            panel19.SuspendLayout();
-            panel20.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -190,7 +197,6 @@
             panel1.Controls.Add(AdminBoardPanel);
             panel1.Controls.Add(StudentRegistrationPanel);
             panel1.Controls.Add(TeacherRegistrationPanel);
-            panel1.Controls.Add(CreateClassPanel);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1462, 738);
@@ -219,6 +225,7 @@
             AdminBoardPanel.BackColor = Color.WhiteSmoke;
             AdminBoardPanel.Controls.Add(label3);
             AdminBoardPanel.Controls.Add(panel15);
+            AdminBoardPanel.Controls.Add(CreateClassPanel);
             AdminBoardPanel.Location = new Point(0, 76);
             AdminBoardPanel.Name = "AdminBoardPanel";
             AdminBoardPanel.Size = new Size(1462, 662);
@@ -238,6 +245,8 @@
             // panel15
             // 
             panel15.BackColor = Color.WhiteSmoke;
+            panel15.Controls.Add(AnnouncementPanel);
+            panel15.Controls.Add(AnnouncementBtn);
             panel15.Controls.Add(label41);
             panel15.Controls.Add(LogoutBtn);
             panel15.Controls.Add(label1);
@@ -245,17 +254,108 @@
             panel15.Controls.Add(CreateClassBtn);
             panel15.Controls.Add(StudentRegistrationBtn);
             panel15.Controls.Add(TeacherRegistrationBtn);
-            panel15.Location = new Point(-11, 53);
+            panel15.Location = new Point(-11, 51);
             panel15.Name = "panel15";
-            panel15.Size = new Size(1473, 609);
+            panel15.Size = new Size(1473, 611);
             panel15.TabIndex = 13;
+            // 
+            // AnnouncementPanel
+            // 
+            AnnouncementPanel.BackColor = Color.White;
+            AnnouncementPanel.Controls.Add(label60);
+            AnnouncementPanel.Controls.Add(CloseAnnouncementPanel);
+            AnnouncementPanel.Controls.Add(AnnouncementRTB);
+            AnnouncementPanel.Controls.Add(SendAnnouncementBtn);
+            AnnouncementPanel.Location = new Point(313, 146);
+            AnnouncementPanel.Margin = new Padding(0);
+            AnnouncementPanel.Name = "AnnouncementPanel";
+            AnnouncementPanel.Size = new Size(861, 143);
+            AnnouncementPanel.TabIndex = 21;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label60.ForeColor = Color.DimGray;
+            label60.Location = new Point(13, 14);
+            label60.Name = "label60";
+            label60.Size = new Size(149, 16);
+            label60.TabIndex = 22;
+            label60.Text = "Type your Announcement";
+            // 
+            // CloseAnnouncementPanel
+            // 
+            CloseAnnouncementPanel.BackColor = Color.White;
+            CloseAnnouncementPanel.FlatAppearance.BorderColor = Color.Gainsboro;
+            CloseAnnouncementPanel.FlatStyle = FlatStyle.Flat;
+            CloseAnnouncementPanel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CloseAnnouncementPanel.ForeColor = Color.DimGray;
+            CloseAnnouncementPanel.Location = new Point(700, 88);
+            CloseAnnouncementPanel.Margin = new Padding(0);
+            CloseAnnouncementPanel.Name = "CloseAnnouncementPanel";
+            CloseAnnouncementPanel.Size = new Size(146, 35);
+            CloseAnnouncementPanel.TabIndex = 21;
+            CloseAnnouncementPanel.Text = "CLOSE";
+            CloseAnnouncementPanel.UseVisualStyleBackColor = false;
+            CloseAnnouncementPanel.Click += CloseAnnouncementPanel_Click;
+            // 
+            // AnnouncementRTB
+            // 
+            AnnouncementRTB.BackColor = Color.Gainsboro;
+            AnnouncementRTB.BorderStyle = BorderStyle.None;
+            AnnouncementRTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AnnouncementRTB.ForeColor = Color.DimGray;
+            AnnouncementRTB.Location = new Point(13, 43);
+            AnnouncementRTB.Name = "AnnouncementRTB";
+            AnnouncementRTB.Size = new Size(667, 80);
+            AnnouncementRTB.TabIndex = 19;
+            AnnouncementRTB.Text = "";
+            // 
+            // SendAnnouncementBtn
+            // 
+            SendAnnouncementBtn.BackColor = Color.DodgerBlue;
+            SendAnnouncementBtn.FlatAppearance.BorderSize = 0;
+            SendAnnouncementBtn.FlatStyle = FlatStyle.Flat;
+            SendAnnouncementBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SendAnnouncementBtn.ForeColor = Color.White;
+            SendAnnouncementBtn.Location = new Point(700, 43);
+            SendAnnouncementBtn.Margin = new Padding(0);
+            SendAnnouncementBtn.Name = "SendAnnouncementBtn";
+            SendAnnouncementBtn.Size = new Size(146, 35);
+            SendAnnouncementBtn.TabIndex = 20;
+            SendAnnouncementBtn.Text = "SEND";
+            SendAnnouncementBtn.UseVisualStyleBackColor = false;
+            SendAnnouncementBtn.Click += SendAnnouncementBtn_Click;
+            // 
+            // AnnouncementBtn
+            // 
+            AnnouncementBtn.BackColor = Color.White;
+            AnnouncementBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            AnnouncementBtn.FlatAppearance.BorderSize = 0;
+            AnnouncementBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            AnnouncementBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            AnnouncementBtn.FlatStyle = FlatStyle.Flat;
+            AnnouncementBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            AnnouncementBtn.ForeColor = Color.DimGray;
+            AnnouncementBtn.Image = (Image)resources.GetObject("AnnouncementBtn.Image");
+            AnnouncementBtn.ImageAlign = ContentAlignment.MiddleRight;
+            AnnouncementBtn.Location = new Point(313, 96);
+            AnnouncementBtn.Margin = new Padding(0);
+            AnnouncementBtn.Name = "AnnouncementBtn";
+            AnnouncementBtn.Padding = new Padding(20, 0, 20, 0);
+            AnnouncementBtn.Size = new Size(861, 50);
+            AnnouncementBtn.TabIndex = 18;
+            AnnouncementBtn.Text = "ANNOUNCEMENT\r\nDisplay school announcement\r\n\r\n\r\n";
+            AnnouncementBtn.TextAlign = ContentAlignment.MiddleLeft;
+            AnnouncementBtn.UseVisualStyleBackColor = false;
+            AnnouncementBtn.Click += AnnouncementBtn_Click;
             // 
             // label41
             // 
             label41.AutoSize = true;
             label41.Font = new Font("Bahnschrift Condensed", 12F);
             label41.ForeColor = Color.Black;
-            label41.Location = new Point(313, 293);
+            label41.Location = new Point(313, 463);
             label41.Name = "label41";
             label41.Size = new Size(114, 19);
             label41.TabIndex = 17;
@@ -267,13 +367,13 @@
             LogoutBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
             LogoutBtn.FlatAppearance.BorderSize = 0;
             LogoutBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LogoutBtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            LogoutBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
             LogoutBtn.FlatStyle = FlatStyle.Flat;
             LogoutBtn.Font = new Font("Segoe Fluent Icons", 12F);
             LogoutBtn.ForeColor = Color.DimGray;
             LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
             LogoutBtn.ImageAlign = ContentAlignment.MiddleRight;
-            LogoutBtn.Location = new Point(313, 329);
+            LogoutBtn.Location = new Point(313, 499);
             LogoutBtn.Name = "LogoutBtn";
             LogoutBtn.Padding = new Padding(20, 0, 20, 0);
             LogoutBtn.Size = new Size(861, 50);
@@ -288,7 +388,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Bahnschrift Condensed", 12F);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(313, 129);
+            label1.Location = new Point(313, 299);
             label1.Name = "label1";
             label1.Size = new Size(145, 19);
             label1.TabIndex = 15;
@@ -299,7 +399,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Bahnschrift Condensed", 12F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(313, 33);
+            label2.Location = new Point(313, 8);
             label2.Name = "label2";
             label2.Size = new Size(111, 19);
             label2.TabIndex = 14;
@@ -311,13 +411,13 @@
             CreateClassBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
             CreateClassBtn.FlatAppearance.BorderSize = 0;
             CreateClassBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            CreateClassBtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            CreateClassBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
             CreateClassBtn.FlatStyle = FlatStyle.Flat;
             CreateClassBtn.Font = new Font("Segoe Fluent Icons", 12F);
             CreateClassBtn.ForeColor = Color.DimGray;
             CreateClassBtn.Image = (Image)resources.GetObject("CreateClassBtn.Image");
             CreateClassBtn.ImageAlign = ContentAlignment.MiddleRight;
-            CreateClassBtn.Location = new Point(313, 62);
+            CreateClassBtn.Location = new Point(313, 37);
             CreateClassBtn.Name = "CreateClassBtn";
             CreateClassBtn.Padding = new Padding(20, 0, 20, 0);
             CreateClassBtn.Size = new Size(861, 50);
@@ -333,13 +433,13 @@
             StudentRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
             StudentRegistrationBtn.FlatAppearance.BorderSize = 0;
             StudentRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            StudentRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            StudentRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
             StudentRegistrationBtn.FlatStyle = FlatStyle.Flat;
             StudentRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
             StudentRegistrationBtn.ForeColor = Color.DimGray;
             StudentRegistrationBtn.Image = (Image)resources.GetObject("StudentRegistrationBtn.Image");
             StudentRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
-            StudentRegistrationBtn.Location = new Point(313, 158);
+            StudentRegistrationBtn.Location = new Point(313, 328);
             StudentRegistrationBtn.Name = "StudentRegistrationBtn";
             StudentRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
             StudentRegistrationBtn.Size = new Size(861, 50);
@@ -355,13 +455,13 @@
             TeacherRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
             TeacherRegistrationBtn.FlatAppearance.BorderSize = 0;
             TeacherRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            TeacherRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            TeacherRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
             TeacherRegistrationBtn.FlatStyle = FlatStyle.Flat;
             TeacherRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
             TeacherRegistrationBtn.ForeColor = Color.DimGray;
             TeacherRegistrationBtn.Image = (Image)resources.GetObject("TeacherRegistrationBtn.Image");
             TeacherRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
-            TeacherRegistrationBtn.Location = new Point(313, 223);
+            TeacherRegistrationBtn.Location = new Point(313, 393);
             TeacherRegistrationBtn.Name = "TeacherRegistrationBtn";
             TeacherRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
             TeacherRegistrationBtn.Size = new Size(861, 50);
@@ -370,6 +470,357 @@
             TeacherRegistrationBtn.TextAlign = ContentAlignment.MiddleLeft;
             TeacherRegistrationBtn.UseVisualStyleBackColor = false;
             TeacherRegistrationBtn.Click += TeacherRegistrationBtn_Click;
+            // 
+            // CreateClassPanel
+            // 
+            CreateClassPanel.BackColor = Color.WhiteSmoke;
+            CreateClassPanel.Controls.Add(Class_SubjectBtn);
+            CreateClassPanel.Controls.Add(AssignBtn);
+            CreateClassPanel.Controls.Add(panel17);
+            CreateClassPanel.Controls.Add(ClassBackBtn);
+            CreateClassPanel.Controls.Add(label42);
+            CreateClassPanel.Controls.Add(panel16);
+            CreateClassPanel.Controls.Add(panel19);
+            CreateClassPanel.Location = new Point(1, 51);
+            CreateClassPanel.Name = "CreateClassPanel";
+            CreateClassPanel.Size = new Size(1462, 662);
+            CreateClassPanel.TabIndex = 13;
+            // 
+            // Class_SubjectBtn
+            // 
+            Class_SubjectBtn.BackColor = Color.DodgerBlue;
+            Class_SubjectBtn.FlatAppearance.BorderSize = 0;
+            Class_SubjectBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Class_SubjectBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            Class_SubjectBtn.FlatStyle = FlatStyle.Flat;
+            Class_SubjectBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            Class_SubjectBtn.ForeColor = Color.White;
+            Class_SubjectBtn.Image = (Image)resources.GetObject("Class_SubjectBtn.Image");
+            Class_SubjectBtn.Location = new Point(1357, 51);
+            Class_SubjectBtn.Name = "Class_SubjectBtn";
+            Class_SubjectBtn.Size = new Size(79, 30);
+            Class_SubjectBtn.TabIndex = 26;
+            Class_SubjectBtn.UseVisualStyleBackColor = false;
+            Class_SubjectBtn.Click += Class_SubjectBtn_Click;
+            // 
+            // AssignBtn
+            // 
+            AssignBtn.BackColor = Color.DodgerBlue;
+            AssignBtn.FlatAppearance.BorderSize = 0;
+            AssignBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            AssignBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            AssignBtn.FlatStyle = FlatStyle.Flat;
+            AssignBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            AssignBtn.ForeColor = Color.White;
+            AssignBtn.Image = (Image)resources.GetObject("AssignBtn.Image");
+            AssignBtn.Location = new Point(1357, 309);
+            AssignBtn.Name = "AssignBtn";
+            AssignBtn.Size = new Size(79, 30);
+            AssignBtn.TabIndex = 26;
+            AssignBtn.UseVisualStyleBackColor = false;
+            AssignBtn.Click += AssignBtn_Click;
+            // 
+            // panel17
+            // 
+            panel17.BackColor = SystemColors.HotTrack;
+            panel17.Controls.Add(label45);
+            panel17.Controls.Add(panel18);
+            panel17.Location = new Point(29, 346);
+            panel17.Margin = new Padding(0);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1407, 211);
+            panel17.TabIndex = 21;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            label45.ForeColor = Color.White;
+            label45.Location = new Point(27, 16);
+            label45.Name = "label45";
+            label45.Size = new Size(171, 19);
+            label45.TabIndex = 20;
+            label45.Text = "Assign subject adviser";
+            // 
+            // panel18
+            // 
+            panel18.BackColor = Color.White;
+            panel18.Controls.Add(SelectSemesterCb);
+            panel18.Controls.Add(label59);
+            panel18.Controls.Add(SubjectCb);
+            panel18.Controls.Add(label49);
+            panel18.Controls.Add(InstructorCb);
+            panel18.Controls.Add(StrandAndGradeCb);
+            panel18.Controls.Add(ClassSectionsCb);
+            panel18.Controls.Add(label55);
+            panel18.Controls.Add(label46);
+            panel18.Controls.Add(label47);
+            panel18.Location = new Point(0, 56);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(1410, 155);
+            panel18.TabIndex = 1;
+            // 
+            // SelectSemesterCb
+            // 
+            SelectSemesterCb.AutoCompleteCustomSource.AddRange(new string[] { "First semester", "Second semester" });
+            SelectSemesterCb.BackColor = Color.WhiteSmoke;
+            SelectSemesterCb.FlatStyle = FlatStyle.Flat;
+            SelectSemesterCb.Font = new Font("Segoe Fluent Icons", 12F);
+            SelectSemesterCb.ForeColor = Color.DimGray;
+            SelectSemesterCb.FormattingEnabled = true;
+            SelectSemesterCb.Items.AddRange(new object[] { "First semester", "Second semester" });
+            SelectSemesterCb.Location = new Point(458, 50);
+            SelectSemesterCb.Name = "SelectSemesterCb";
+            SelectSemesterCb.Size = new Size(209, 24);
+            SelectSemesterCb.TabIndex = 21;
+            SelectSemesterCb.SelectedIndexChanged += SelectSemesterCb_SelectedIndexChanged;
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new Font("Segoe Fluent Icons", 12F);
+            label59.ForeColor = Color.DimGray;
+            label59.Location = new Point(456, 23);
+            label59.Name = "label59";
+            label59.Size = new Size(60, 16);
+            label59.TabIndex = 20;
+            label59.Text = "Semester";
+            // 
+            // SubjectCb
+            // 
+            SubjectCb.BackColor = Color.WhiteSmoke;
+            SubjectCb.FlatStyle = FlatStyle.Flat;
+            SubjectCb.Font = new Font("Segoe Fluent Icons", 12F);
+            SubjectCb.ForeColor = Color.DimGray;
+            SubjectCb.FormattingEnabled = true;
+            SubjectCb.Location = new Point(673, 50);
+            SubjectCb.Name = "SubjectCb";
+            SubjectCb.Size = new Size(423, 24);
+            SubjectCb.TabIndex = 19;
+            SubjectCb.SelectedIndexChanged += SubjectCb_SelectedIndexChanged;
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Segoe Fluent Icons", 12F);
+            label49.ForeColor = Color.DimGray;
+            label49.Location = new Point(672, 24);
+            label49.Name = "label49";
+            label49.Size = new Size(48, 16);
+            label49.TabIndex = 18;
+            label49.Text = "Subject";
+            // 
+            // InstructorCb
+            // 
+            InstructorCb.BackColor = Color.WhiteSmoke;
+            InstructorCb.FlatStyle = FlatStyle.Flat;
+            InstructorCb.Font = new Font("Segoe Fluent Icons", 12F);
+            InstructorCb.ForeColor = Color.DimGray;
+            InstructorCb.FormattingEnabled = true;
+            InstructorCb.Items.AddRange(new object[] { "Grade 11", "Grade 12" });
+            InstructorCb.Location = new Point(29, 50);
+            InstructorCb.Name = "InstructorCb";
+            InstructorCb.Size = new Size(209, 24);
+            InstructorCb.TabIndex = 17;
+            // 
+            // StrandAndGradeCb
+            // 
+            StrandAndGradeCb.BackColor = Color.WhiteSmoke;
+            StrandAndGradeCb.FlatStyle = FlatStyle.Flat;
+            StrandAndGradeCb.Font = new Font("Segoe Fluent Icons", 12F);
+            StrandAndGradeCb.ForeColor = Color.DimGray;
+            StrandAndGradeCb.FormattingEnabled = true;
+            StrandAndGradeCb.Items.AddRange(new object[] { "STEM - Grade 11", "STEM - Grade 12", "ABM - Grade 11", "ABM - Grade 12" });
+            StrandAndGradeCb.Location = new Point(243, 50);
+            StrandAndGradeCb.Name = "StrandAndGradeCb";
+            StrandAndGradeCb.Size = new Size(209, 24);
+            StrandAndGradeCb.TabIndex = 16;
+            StrandAndGradeCb.SelectedIndexChanged += StrandAndGradeCb_SelectedIndexChanged;
+            // 
+            // ClassSectionsCb
+            // 
+            ClassSectionsCb.BackColor = Color.WhiteSmoke;
+            ClassSectionsCb.FlatStyle = FlatStyle.Flat;
+            ClassSectionsCb.Font = new Font("Segoe Fluent Icons", 12F);
+            ClassSectionsCb.ForeColor = Color.DimGray;
+            ClassSectionsCb.FormattingEnabled = true;
+            ClassSectionsCb.Location = new Point(1102, 49);
+            ClassSectionsCb.Name = "ClassSectionsCb";
+            ClassSectionsCb.Size = new Size(209, 24);
+            ClassSectionsCb.TabIndex = 13;
+            ClassSectionsCb.SelectedIndexChanged += ClassSectionsCb_SelectedIndexChanged;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe Fluent Icons", 12F);
+            label55.ForeColor = Color.DimGray;
+            label55.Location = new Point(1100, 22);
+            label55.Name = "label55";
+            label55.Size = new Size(54, 16);
+            label55.TabIndex = 10;
+            label55.Text = "Sections";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Segoe Fluent Icons", 12F);
+            label46.ForeColor = Color.DimGray;
+            label46.Location = new Point(241, 23);
+            label46.Name = "label46";
+            label46.Size = new Size(90, 16);
+            label46.TabIndex = 15;
+            label46.Text = "Strand | Grade";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Segoe Fluent Icons", 12F);
+            label47.ForeColor = Color.DimGray;
+            label47.Location = new Point(29, 22);
+            label47.Name = "label47";
+            label47.Size = new Size(57, 16);
+            label47.TabIndex = 11;
+            label47.Text = "Instructor";
+            // 
+            // ClassBackBtn
+            // 
+            ClassBackBtn.BackColor = Color.Transparent;
+            ClassBackBtn.FlatAppearance.BorderSize = 0;
+            ClassBackBtn.FlatStyle = FlatStyle.Flat;
+            ClassBackBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ClassBackBtn.ForeColor = Color.DimGray;
+            ClassBackBtn.Image = (Image)resources.GetObject("ClassBackBtn.Image");
+            ClassBackBtn.Location = new Point(1357, 10);
+            ClassBackBtn.Name = "ClassBackBtn";
+            ClassBackBtn.Size = new Size(79, 30);
+            ClassBackBtn.TabIndex = 25;
+            ClassBackBtn.UseVisualStyleBackColor = false;
+            ClassBackBtn.Click += ClassBackBtn_Click;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Font = new Font("Bahnschrift SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label42.ForeColor = Color.DimGray;
+            label42.Location = new Point(29, 15);
+            label42.Name = "label42";
+            label42.Size = new Size(190, 25);
+            label42.TabIndex = 21;
+            label42.Text = "Class Management";
+            // 
+            // panel16
+            // 
+            panel16.BackColor = Color.WhiteSmoke;
+            panel16.Location = new Point(0, 574);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(1463, 88);
+            panel16.TabIndex = 3;
+            // 
+            // panel19
+            // 
+            panel19.BackColor = SystemColors.HotTrack;
+            panel19.Controls.Add(label48);
+            panel19.Controls.Add(panel20);
+            panel19.Location = new Point(29, 86);
+            panel19.Margin = new Padding(0);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(1407, 211);
+            panel19.TabIndex = 0;
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            label48.ForeColor = Color.White;
+            label48.Location = new Point(27, 16);
+            label48.Name = "label48";
+            label48.Size = new Size(100, 19);
+            label48.TabIndex = 20;
+            label48.Text = "Create class";
+            // 
+            // panel20
+            // 
+            panel20.BackColor = Color.White;
+            panel20.Controls.Add(StrandOfClassCb);
+            panel20.Controls.Add(label43);
+            panel20.Controls.Add(GradeLevelOfClassCb);
+            panel20.Controls.Add(label56);
+            panel20.Controls.Add(label57);
+            panel20.Controls.Add(SectionOfClassTxt);
+            panel20.Location = new Point(0, 56);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(1439, 155);
+            panel20.TabIndex = 1;
+            // 
+            // StrandOfClassCb
+            // 
+            StrandOfClassCb.BackColor = Color.WhiteSmoke;
+            StrandOfClassCb.FlatStyle = FlatStyle.Flat;
+            StrandOfClassCb.Font = new Font("Segoe Fluent Icons", 12F);
+            StrandOfClassCb.ForeColor = Color.DimGray;
+            StrandOfClassCb.FormattingEnabled = true;
+            StrandOfClassCb.Items.AddRange(new object[] { "STEM", "ABM" });
+            StrandOfClassCb.Location = new Point(27, 50);
+            StrandOfClassCb.Name = "StrandOfClassCb";
+            StrandOfClassCb.Size = new Size(209, 24);
+            StrandOfClassCb.TabIndex = 16;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe Fluent Icons", 12F);
+            label43.ForeColor = Color.DimGray;
+            label43.Location = new Point(25, 23);
+            label43.Name = "label43";
+            label43.Size = new Size(43, 16);
+            label43.TabIndex = 15;
+            label43.Text = "Strand";
+            // 
+            // GradeLevelOfClassCb
+            // 
+            GradeLevelOfClassCb.BackColor = Color.WhiteSmoke;
+            GradeLevelOfClassCb.FlatStyle = FlatStyle.Flat;
+            GradeLevelOfClassCb.Font = new Font("Segoe Fluent Icons", 12F);
+            GradeLevelOfClassCb.ForeColor = Color.DimGray;
+            GradeLevelOfClassCb.FormattingEnabled = true;
+            GradeLevelOfClassCb.Items.AddRange(new object[] { "Grade 11", "Grade 12" });
+            GradeLevelOfClassCb.Location = new Point(243, 50);
+            GradeLevelOfClassCb.Name = "GradeLevelOfClassCb";
+            GradeLevelOfClassCb.Size = new Size(209, 24);
+            GradeLevelOfClassCb.TabIndex = 13;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Segoe Fluent Icons", 12F);
+            label56.ForeColor = Color.DimGray;
+            label56.Location = new Point(458, 23);
+            label56.Name = "label56";
+            label56.Size = new Size(48, 16);
+            label56.TabIndex = 11;
+            label56.Text = "Section";
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.Font = new Font("Segoe Fluent Icons", 12F);
+            label57.ForeColor = Color.DimGray;
+            label57.Location = new Point(241, 23);
+            label57.Name = "label57";
+            label57.Size = new Size(75, 16);
+            label57.TabIndex = 10;
+            label57.Text = "Grade Level";
+            // 
+            // SectionOfClassTxt
+            // 
+            SectionOfClassTxt.BorderStyle = BorderStyle.FixedSingle;
+            SectionOfClassTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SectionOfClassTxt.ForeColor = Color.DimGray;
+            SectionOfClassTxt.Location = new Point(458, 50);
+            SectionOfClassTxt.Name = "SectionOfClassTxt";
+            SectionOfClassTxt.Size = new Size(211, 23);
+            SectionOfClassTxt.TabIndex = 1;
             // 
             // StudentRegistrationPanel
             // 
@@ -1428,357 +1879,6 @@
             LastnameOfTeacherTxt.Size = new Size(211, 23);
             LastnameOfTeacherTxt.TabIndex = 0;
             // 
-            // CreateClassPanel
-            // 
-            CreateClassPanel.BackColor = Color.WhiteSmoke;
-            CreateClassPanel.Controls.Add(Class_SubjectBtn);
-            CreateClassPanel.Controls.Add(AssignBtn);
-            CreateClassPanel.Controls.Add(panel17);
-            CreateClassPanel.Controls.Add(ClassBackBtn);
-            CreateClassPanel.Controls.Add(label42);
-            CreateClassPanel.Controls.Add(panel16);
-            CreateClassPanel.Controls.Add(panel19);
-            CreateClassPanel.Location = new Point(0, 76);
-            CreateClassPanel.Name = "CreateClassPanel";
-            CreateClassPanel.Size = new Size(1462, 662);
-            CreateClassPanel.TabIndex = 13;
-            // 
-            // Class_SubjectBtn
-            // 
-            Class_SubjectBtn.BackColor = Color.DodgerBlue;
-            Class_SubjectBtn.FlatAppearance.BorderSize = 0;
-            Class_SubjectBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Class_SubjectBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
-            Class_SubjectBtn.FlatStyle = FlatStyle.Flat;
-            Class_SubjectBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            Class_SubjectBtn.ForeColor = Color.White;
-            Class_SubjectBtn.Image = (Image)resources.GetObject("Class_SubjectBtn.Image");
-            Class_SubjectBtn.Location = new Point(1357, 51);
-            Class_SubjectBtn.Name = "Class_SubjectBtn";
-            Class_SubjectBtn.Size = new Size(79, 30);
-            Class_SubjectBtn.TabIndex = 26;
-            Class_SubjectBtn.UseVisualStyleBackColor = false;
-            Class_SubjectBtn.Click += Class_SubjectBtn_Click;
-            // 
-            // AssignBtn
-            // 
-            AssignBtn.BackColor = Color.DodgerBlue;
-            AssignBtn.FlatAppearance.BorderSize = 0;
-            AssignBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            AssignBtn.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
-            AssignBtn.FlatStyle = FlatStyle.Flat;
-            AssignBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            AssignBtn.ForeColor = Color.White;
-            AssignBtn.Image = (Image)resources.GetObject("AssignBtn.Image");
-            AssignBtn.Location = new Point(1357, 309);
-            AssignBtn.Name = "AssignBtn";
-            AssignBtn.Size = new Size(79, 30);
-            AssignBtn.TabIndex = 26;
-            AssignBtn.UseVisualStyleBackColor = false;
-            AssignBtn.Click += AssignBtn_Click;
-            // 
-            // panel17
-            // 
-            panel17.BackColor = SystemColors.HotTrack;
-            panel17.Controls.Add(label45);
-            panel17.Controls.Add(panel18);
-            panel17.Location = new Point(29, 346);
-            panel17.Margin = new Padding(0);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(1407, 211);
-            panel17.TabIndex = 21;
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
-            label45.ForeColor = Color.White;
-            label45.Location = new Point(27, 16);
-            label45.Name = "label45";
-            label45.Size = new Size(171, 19);
-            label45.TabIndex = 20;
-            label45.Text = "Assign subject adviser";
-            // 
-            // panel18
-            // 
-            panel18.BackColor = Color.White;
-            panel18.Controls.Add(SelectSemesterCb);
-            panel18.Controls.Add(label59);
-            panel18.Controls.Add(SubjectCb);
-            panel18.Controls.Add(label49);
-            panel18.Controls.Add(InstructorCb);
-            panel18.Controls.Add(StrandAndGradeCb);
-            panel18.Controls.Add(ClassSectionsCb);
-            panel18.Controls.Add(label55);
-            panel18.Controls.Add(label46);
-            panel18.Controls.Add(label47);
-            panel18.Location = new Point(0, 56);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(1410, 155);
-            panel18.TabIndex = 1;
-            // 
-            // SelectSemesterCb
-            // 
-            SelectSemesterCb.AutoCompleteCustomSource.AddRange(new string[] { "First semester", "Second semester" });
-            SelectSemesterCb.BackColor = Color.WhiteSmoke;
-            SelectSemesterCb.FlatStyle = FlatStyle.Flat;
-            SelectSemesterCb.Font = new Font("Segoe Fluent Icons", 12F);
-            SelectSemesterCb.ForeColor = Color.DimGray;
-            SelectSemesterCb.FormattingEnabled = true;
-            SelectSemesterCb.Items.AddRange(new object[] { "First semester", "Second semester" });
-            SelectSemesterCb.Location = new Point(458, 50);
-            SelectSemesterCb.Name = "SelectSemesterCb";
-            SelectSemesterCb.Size = new Size(209, 24);
-            SelectSemesterCb.TabIndex = 21;
-            SelectSemesterCb.SelectedIndexChanged += SelectSemesterCb_SelectedIndexChanged;
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new Font("Segoe Fluent Icons", 12F);
-            label59.ForeColor = Color.DimGray;
-            label59.Location = new Point(456, 23);
-            label59.Name = "label59";
-            label59.Size = new Size(60, 16);
-            label59.TabIndex = 20;
-            label59.Text = "Semester";
-            // 
-            // SubjectCb
-            // 
-            SubjectCb.BackColor = Color.WhiteSmoke;
-            SubjectCb.FlatStyle = FlatStyle.Flat;
-            SubjectCb.Font = new Font("Segoe Fluent Icons", 12F);
-            SubjectCb.ForeColor = Color.DimGray;
-            SubjectCb.FormattingEnabled = true;
-            SubjectCb.Location = new Point(673, 50);
-            SubjectCb.Name = "SubjectCb";
-            SubjectCb.Size = new Size(423, 24);
-            SubjectCb.TabIndex = 19;
-            SubjectCb.SelectedIndexChanged += SubjectCb_SelectedIndexChanged;
-            // 
-            // label49
-            // 
-            label49.AutoSize = true;
-            label49.Font = new Font("Segoe Fluent Icons", 12F);
-            label49.ForeColor = Color.DimGray;
-            label49.Location = new Point(672, 24);
-            label49.Name = "label49";
-            label49.Size = new Size(48, 16);
-            label49.TabIndex = 18;
-            label49.Text = "Subject";
-            // 
-            // InstructorCb
-            // 
-            InstructorCb.BackColor = Color.WhiteSmoke;
-            InstructorCb.FlatStyle = FlatStyle.Flat;
-            InstructorCb.Font = new Font("Segoe Fluent Icons", 12F);
-            InstructorCb.ForeColor = Color.DimGray;
-            InstructorCb.FormattingEnabled = true;
-            InstructorCb.Items.AddRange(new object[] { "Grade 11", "Grade 12" });
-            InstructorCb.Location = new Point(29, 50);
-            InstructorCb.Name = "InstructorCb";
-            InstructorCb.Size = new Size(209, 24);
-            InstructorCb.TabIndex = 17;
-            // 
-            // StrandAndGradeCb
-            // 
-            StrandAndGradeCb.BackColor = Color.WhiteSmoke;
-            StrandAndGradeCb.FlatStyle = FlatStyle.Flat;
-            StrandAndGradeCb.Font = new Font("Segoe Fluent Icons", 12F);
-            StrandAndGradeCb.ForeColor = Color.DimGray;
-            StrandAndGradeCb.FormattingEnabled = true;
-            StrandAndGradeCb.Items.AddRange(new object[] { "STEM - Grade 11", "STEM - Grade 12", "ABM - Grade 11", "ABM - Grade 12" });
-            StrandAndGradeCb.Location = new Point(243, 50);
-            StrandAndGradeCb.Name = "StrandAndGradeCb";
-            StrandAndGradeCb.Size = new Size(209, 24);
-            StrandAndGradeCb.TabIndex = 16;
-            StrandAndGradeCb.SelectedIndexChanged += StrandAndGradeCb_SelectedIndexChanged;
-            // 
-            // ClassSectionsCb
-            // 
-            ClassSectionsCb.BackColor = Color.WhiteSmoke;
-            ClassSectionsCb.FlatStyle = FlatStyle.Flat;
-            ClassSectionsCb.Font = new Font("Segoe Fluent Icons", 12F);
-            ClassSectionsCb.ForeColor = Color.DimGray;
-            ClassSectionsCb.FormattingEnabled = true;
-            ClassSectionsCb.Location = new Point(1102, 49);
-            ClassSectionsCb.Name = "ClassSectionsCb";
-            ClassSectionsCb.Size = new Size(209, 24);
-            ClassSectionsCb.TabIndex = 13;
-            ClassSectionsCb.SelectedIndexChanged += ClassSectionsCb_SelectedIndexChanged;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.Font = new Font("Segoe Fluent Icons", 12F);
-            label55.ForeColor = Color.DimGray;
-            label55.Location = new Point(1100, 22);
-            label55.Name = "label55";
-            label55.Size = new Size(54, 16);
-            label55.TabIndex = 10;
-            label55.Text = "Sections";
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.Font = new Font("Segoe Fluent Icons", 12F);
-            label46.ForeColor = Color.DimGray;
-            label46.Location = new Point(241, 23);
-            label46.Name = "label46";
-            label46.Size = new Size(90, 16);
-            label46.TabIndex = 15;
-            label46.Text = "Strand | Grade";
-            // 
-            // label47
-            // 
-            label47.AutoSize = true;
-            label47.Font = new Font("Segoe Fluent Icons", 12F);
-            label47.ForeColor = Color.DimGray;
-            label47.Location = new Point(29, 22);
-            label47.Name = "label47";
-            label47.Size = new Size(57, 16);
-            label47.TabIndex = 11;
-            label47.Text = "Instructor";
-            // 
-            // ClassBackBtn
-            // 
-            ClassBackBtn.BackColor = Color.Transparent;
-            ClassBackBtn.FlatAppearance.BorderSize = 0;
-            ClassBackBtn.FlatStyle = FlatStyle.Flat;
-            ClassBackBtn.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ClassBackBtn.ForeColor = Color.DimGray;
-            ClassBackBtn.Image = (Image)resources.GetObject("ClassBackBtn.Image");
-            ClassBackBtn.Location = new Point(1357, 10);
-            ClassBackBtn.Name = "ClassBackBtn";
-            ClassBackBtn.Size = new Size(79, 30);
-            ClassBackBtn.TabIndex = 25;
-            ClassBackBtn.UseVisualStyleBackColor = false;
-            ClassBackBtn.Click += ClassBackBtn_Click;
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Font = new Font("Bahnschrift SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label42.ForeColor = Color.DimGray;
-            label42.Location = new Point(29, 15);
-            label42.Name = "label42";
-            label42.Size = new Size(190, 25);
-            label42.TabIndex = 21;
-            label42.Text = "Class Management";
-            // 
-            // panel16
-            // 
-            panel16.BackColor = Color.WhiteSmoke;
-            panel16.Location = new Point(0, 574);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(1463, 88);
-            panel16.TabIndex = 3;
-            // 
-            // panel19
-            // 
-            panel19.BackColor = SystemColors.HotTrack;
-            panel19.Controls.Add(label48);
-            panel19.Controls.Add(panel20);
-            panel19.Location = new Point(29, 86);
-            panel19.Margin = new Padding(0);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(1407, 211);
-            panel19.TabIndex = 0;
-            // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
-            label48.ForeColor = Color.White;
-            label48.Location = new Point(27, 16);
-            label48.Name = "label48";
-            label48.Size = new Size(100, 19);
-            label48.TabIndex = 20;
-            label48.Text = "Create class";
-            // 
-            // panel20
-            // 
-            panel20.BackColor = Color.White;
-            panel20.Controls.Add(StrandOfClassCb);
-            panel20.Controls.Add(label43);
-            panel20.Controls.Add(GradeLevelOfClassCb);
-            panel20.Controls.Add(label56);
-            panel20.Controls.Add(label57);
-            panel20.Controls.Add(SectionOfClassTxt);
-            panel20.Location = new Point(0, 56);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(1439, 155);
-            panel20.TabIndex = 1;
-            // 
-            // StrandOfClassCb
-            // 
-            StrandOfClassCb.BackColor = Color.WhiteSmoke;
-            StrandOfClassCb.FlatStyle = FlatStyle.Flat;
-            StrandOfClassCb.Font = new Font("Segoe Fluent Icons", 12F);
-            StrandOfClassCb.ForeColor = Color.DimGray;
-            StrandOfClassCb.FormattingEnabled = true;
-            StrandOfClassCb.Items.AddRange(new object[] { "STEM", "ABM" });
-            StrandOfClassCb.Location = new Point(27, 50);
-            StrandOfClassCb.Name = "StrandOfClassCb";
-            StrandOfClassCb.Size = new Size(209, 24);
-            StrandOfClassCb.TabIndex = 16;
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Font = new Font("Segoe Fluent Icons", 12F);
-            label43.ForeColor = Color.DimGray;
-            label43.Location = new Point(25, 23);
-            label43.Name = "label43";
-            label43.Size = new Size(43, 16);
-            label43.TabIndex = 15;
-            label43.Text = "Strand";
-            // 
-            // GradeLevelOfClassCb
-            // 
-            GradeLevelOfClassCb.BackColor = Color.WhiteSmoke;
-            GradeLevelOfClassCb.FlatStyle = FlatStyle.Flat;
-            GradeLevelOfClassCb.Font = new Font("Segoe Fluent Icons", 12F);
-            GradeLevelOfClassCb.ForeColor = Color.DimGray;
-            GradeLevelOfClassCb.FormattingEnabled = true;
-            GradeLevelOfClassCb.Items.AddRange(new object[] { "Grade 11", "Grade 12" });
-            GradeLevelOfClassCb.Location = new Point(243, 50);
-            GradeLevelOfClassCb.Name = "GradeLevelOfClassCb";
-            GradeLevelOfClassCb.Size = new Size(209, 24);
-            GradeLevelOfClassCb.TabIndex = 13;
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.Font = new Font("Segoe Fluent Icons", 12F);
-            label56.ForeColor = Color.DimGray;
-            label56.Location = new Point(458, 23);
-            label56.Name = "label56";
-            label56.Size = new Size(48, 16);
-            label56.TabIndex = 11;
-            label56.Text = "Section";
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.Font = new Font("Segoe Fluent Icons", 12F);
-            label57.ForeColor = Color.DimGray;
-            label57.Location = new Point(241, 23);
-            label57.Name = "label57";
-            label57.Size = new Size(75, 16);
-            label57.TabIndex = 10;
-            label57.Text = "Grade Level";
-            // 
-            // SectionOfClassTxt
-            // 
-            SectionOfClassTxt.BorderStyle = BorderStyle.FixedSingle;
-            SectionOfClassTxt.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SectionOfClassTxt.ForeColor = Color.DimGray;
-            SectionOfClassTxt.Location = new Point(458, 50);
-            SectionOfClassTxt.Name = "SectionOfClassTxt";
-            SectionOfClassTxt.Size = new Size(211, 23);
-            SectionOfClassTxt.TabIndex = 1;
-            // 
             // AdminPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1795,6 +1895,18 @@
             AdminBoardPanel.PerformLayout();
             panel15.ResumeLayout(false);
             panel15.PerformLayout();
+            AnnouncementPanel.ResumeLayout(false);
+            AnnouncementPanel.PerformLayout();
+            CreateClassPanel.ResumeLayout(false);
+            CreateClassPanel.PerformLayout();
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel19.PerformLayout();
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
             StudentRegistrationPanel.ResumeLayout(false);
             StudentRegistrationPanel.PerformLayout();
             panel6.ResumeLayout(false);
@@ -1819,16 +1931,6 @@
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
-            CreateClassPanel.ResumeLayout(false);
-            CreateClassPanel.PerformLayout();
-            panel17.ResumeLayout(false);
-            panel17.PerformLayout();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
-            panel19.ResumeLayout(false);
-            panel19.PerformLayout();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1976,5 +2078,11 @@
         private ComboBox SelectSemesterCb;
         private Label label59;
         private PictureBox pictureBox1;
+        private Button AnnouncementBtn;
+        private Button SendAnnouncementBtn;
+        private RichTextBox AnnouncementRTB;
+        private Panel AnnouncementPanel;
+        private Label label60;
+        private Button CloseAnnouncementPanel;
     }
 }

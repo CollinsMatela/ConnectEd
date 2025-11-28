@@ -1175,7 +1175,7 @@ namespace ConnectEducation
         private void AdminPage_Load(object sender, EventArgs e)
         {
             displayRegisteredInstructor();
-
+            AnnouncementPanel.Visible = false;
         }
 
         private void AssignBtn_Click(object sender, EventArgs e)
@@ -1308,11 +1308,50 @@ namespace ConnectEducation
 
         private void ClassSectionsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void AnnouncementBtn_Click(object sender, EventArgs e)
+        {
+            AnnouncementPanel.Visible = !AnnouncementPanel.Visible;
+            AnnouncementRTB.Text = string.Empty;
+
+        }
+
+        private void CloseAnnouncementPanel_Click(object sender, EventArgs e)
+        {
+            AnnouncementPanel.Visible = false;
+        }
+
+        private void SendAnnouncementBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(AnnouncementRTB.Text))
+            {
+                MessageBox.Show("Please write your announcement.");
+                AnnouncementRTB.Focus();
+                return;
+            }
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<AnnouncementModel>("AnnouncementModel");
+            var insertAnnouncement = new AnnouncementModel()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Message = "ANNOUNCEMENT!: " + AnnouncementRTB.Text,
+                Time = DateTime.Now.ToString("dd/MM/yyyy")
+            };
+            DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                collection.InsertOne(insertAnnouncement);
+                MessageBox.Show("Announcement sent!");
+                AnnouncementRTB.Clear();
+            }
         }
     }
 
 
 
 
-}
+    }
