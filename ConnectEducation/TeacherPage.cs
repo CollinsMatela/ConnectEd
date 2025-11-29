@@ -85,8 +85,8 @@ namespace ConnectEducation
             }
             finally
             {
-                mailMessage.Dispose(); 
-                                       
+                mailMessage.Dispose();
+
             }
         }
         private void updateDisplayValue()
@@ -1165,6 +1165,12 @@ namespace ConnectEducation
 
         private void ChangePasswordBtn_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(QuizTitleCb.Text))
+            {
+                MessageBox.Show("PLease select question title.");
+                QuizTitleCb.Focus();
+                return;
+            }
             if (string.IsNullOrEmpty(ConfirmPasswordTxt.Text))
             {
                 MessageBox.Show("PLease enter your previous password.");
@@ -1193,5 +1199,90 @@ namespace ConnectEducation
             ConfirmPasswordTxt.Text = "";
             ChangePasswordTxt.Text = "";
         }
+
+        private void SubmitQuizBtn_Click(object sender, EventArgs e)
+        {
+            TextBox[] Questions = { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10};
+            TextBox[] AnswerKeys = { AnswerKey1, AnswerKey2, AnswerKey3, AnswerKey4, AnswerKey5, AnswerKey6, AnswerKey7, AnswerKey8, AnswerKey9, AnswerKey10 };
+
+            for (int i = 0; i < Questions.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(Questions[i].Text))
+                {
+                    MessageBox.Show($"Please fill Question #{i + 1}");
+                    Questions[i].Focus();
+                    return;
+                }
+            }
+
+            for (int i = 0; i < AnswerKeys.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(AnswerKeys[i].Text))
+                {
+                    MessageBox.Show($"Please fill Answer Key #{i + 1}");
+                    AnswerKeys[i].Focus();
+                    return;
+                }
+            }
+
+
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<QuizModel>("QuizModel");
+
+            var filter = Builders<QuizModel>.Filter.And(
+                        Builders<QuizModel>.Filter.Eq(q => q.SubjectName, teacherSubject),
+                        Builders<QuizModel>.Filter.Eq(q => q.Instructor, teacherFullname),
+                        Builders<QuizModel>.Filter.Eq(q => q.Section, teacherSection),
+                        Builders<QuizModel>.Filter.Eq(q => q.QuizTitle, QuizTitleCb.SelectedItem?.ToString() ?? "")
+                    );
+
+            var existingQuiz = collection.Find(filter).FirstOrDefault();
+            if (existingQuiz != null)
+            {
+                MessageBox.Show("The quiz is already exists!");
+                return;
+            }
+
+            string[] numbers = Enumerable.Range(1, 10).Select(num => num.ToString()).ToArray();
+            string[] questionTexts = Questions.Select(q => q.Text).ToArray();
+            string[] answerTexts = AnswerKeys.Select(a => a.Text).ToArray();
+
+            var insertQuiz = new QuizModel()
+            {
+             QuizId = Guid.NewGuid().ToString(),
+             QuizTitle = QuizTitleCb.SelectedItem?.ToString() ?? "",
+             Instructor = teacherFullname,
+             SubjectName = teacherSubject,
+             Section  = teacherSection,
+             Number = numbers,
+             Question = questionTexts,
+             AnswerKey = answerTexts,
+            };
+
+            DialogResult result = MessageBox.Show("Are you sure you want to save this quiz?","Confirm Save",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                collection.InsertOne(insertQuiz);
+                MessageBox.Show("Quiz saved successfully!");
+
+                foreach (var q in Questions) q.Clear();
+                foreach (var a in AnswerKeys) a.Clear();
+                QuizTitleCb.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Quiz not saved.");
+            }
+
+            
+
+
+
+        }
+
+
     }
-}
+    }
