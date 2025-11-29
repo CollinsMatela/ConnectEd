@@ -217,6 +217,11 @@
             label29 = new Label();
             label27 = new Label();
             label26 = new Label();
+            SidebarPanel = new Panel();
+            label45 = new Label();
+            pictureBox2 = new PictureBox();
+            News = new Label();
+            SystemLogListBox = new ListBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
@@ -247,6 +252,8 @@
             panel25.SuspendLayout();
             panel20.SuspendLayout();
             StudentProfilePanel.SuspendLayout();
+            SidebarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -279,7 +286,7 @@
             SubjectsBtn.FlatStyle = FlatStyle.Flat;
             SubjectsBtn.Font = new Font("Segoe Fluent Icons", 9.75F);
             SubjectsBtn.ForeColor = Color.Gray;
-            SubjectsBtn.Location = new Point(1, 79);
+            SubjectsBtn.Location = new Point(1, 83);
             SubjectsBtn.Name = "SubjectsBtn";
             SubjectsBtn.Size = new Size(95, 53);
             SubjectsBtn.TabIndex = 6;
@@ -294,7 +301,7 @@
             ProfileBtn.FlatStyle = FlatStyle.Flat;
             ProfileBtn.Font = new Font("Segoe Fluent Icons", 9.75F);
             ProfileBtn.ForeColor = Color.Gray;
-            ProfileBtn.Location = new Point(0, 194);
+            ProfileBtn.Location = new Point(0, 201);
             ProfileBtn.Name = "ProfileBtn";
             ProfileBtn.Size = new Size(95, 53);
             ProfileBtn.TabIndex = 5;
@@ -309,7 +316,7 @@
             btnGrades.FlatStyle = FlatStyle.Flat;
             btnGrades.Font = new Font("Segoe Fluent Icons", 9.75F);
             btnGrades.ForeColor = Color.Gray;
-            btnGrades.Location = new Point(1, 135);
+            btnGrades.Location = new Point(1, 142);
             btnGrades.Name = "btnGrades";
             btnGrades.Size = new Size(95, 53);
             btnGrades.TabIndex = 4;
@@ -324,7 +331,7 @@
             StudentLogoutBtn.FlatStyle = FlatStyle.Flat;
             StudentLogoutBtn.Font = new Font("Segoe Fluent Icons", 9.75F);
             StudentLogoutBtn.ForeColor = Color.Gray;
-            StudentLogoutBtn.Location = new Point(0, 253);
+            StudentLogoutBtn.Location = new Point(0, 260);
             StudentLogoutBtn.Name = "StudentLogoutBtn";
             StudentLogoutBtn.Size = new Size(95, 53);
             StudentLogoutBtn.TabIndex = 3;
@@ -339,7 +346,7 @@
             btnSubject.FlatStyle = FlatStyle.Flat;
             btnSubject.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubject.ForeColor = Color.Gray;
-            btnSubject.Location = new Point(1220, 44);
+            btnSubject.Location = new Point(1105, 44);
             btnSubject.Margin = new Padding(0);
             btnSubject.Name = "btnSubject";
             btnSubject.Size = new Size(35, 24);
@@ -359,7 +366,7 @@
             SubjectsPopUpPanel.Controls.Add(subject3);
             SubjectsPopUpPanel.Controls.Add(subject2);
             SubjectsPopUpPanel.Controls.Add(subject1);
-            SubjectsPopUpPanel.Location = new Point(957, 45);
+            SubjectsPopUpPanel.Location = new Point(846, 43);
             SubjectsPopUpPanel.Margin = new Padding(0);
             SubjectsPopUpPanel.Name = "SubjectsPopUpPanel";
             SubjectsPopUpPanel.Size = new Size(297, 267);
@@ -504,7 +511,7 @@
             panel7.Controls.Add(TitleOfHandout4);
             panel7.Controls.Add(label16);
             panel7.Controls.Add(LinkOfHandout4);
-            panel7.Location = new Point(694, 246);
+            panel7.Location = new Point(583, 246);
             panel7.Name = "panel7";
             panel7.Size = new Size(560, 150);
             panel7.TabIndex = 4;
@@ -617,7 +624,7 @@
             panel9.Controls.Add(TitleOfHandout3);
             panel9.Controls.Add(label19);
             panel9.Controls.Add(LinkOfHandout3);
-            panel9.Location = new Point(124, 246);
+            panel9.Location = new Point(13, 246);
             panel9.Name = "panel9";
             panel9.Size = new Size(564, 150);
             panel9.TabIndex = 4;
@@ -730,7 +737,7 @@
             panel15.Controls.Add(TitleOfHandout2);
             panel15.Controls.Add(label22);
             panel15.Controls.Add(LinkOfHandout2);
-            panel15.Location = new Point(694, 80);
+            panel15.Location = new Point(583, 80);
             panel15.Name = "panel15";
             panel15.Size = new Size(560, 150);
             panel15.TabIndex = 4;
@@ -851,10 +858,10 @@
             SubjectsPanel.Controls.Add(panel6);
             SubjectsPanel.Controls.Add(panel4);
             SubjectsPanel.Controls.Add(panel2);
-            SubjectsPanel.Location = new Point(94, 0);
+            SubjectsPanel.Location = new Point(93, 0);
             SubjectsPanel.Margin = new Padding(0);
             SubjectsPanel.Name = "SubjectsPanel";
-            SubjectsPanel.Size = new Size(1369, 740);
+            SubjectsPanel.Size = new Size(1310, 740);
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
@@ -866,7 +873,7 @@
             SubmissionCb.ForeColor = Color.DimGray;
             SubmissionCb.FormattingEnabled = true;
             SubmissionCb.Items.AddRange(new object[] { "Handout 1: Worksheet", "Handout 1: Performance Task", "Handout 2: Worksheet", "Handout 2: Performance Task", "Handout 3: Worksheet", "Handout 3: Performance Task", "Handout 4: Worksheet", "Handout 4: Performance Task", "Handout 5: Worksheet", "Handout 5: Performance Task", "Handout 6: Worksheet", "Handout 6: Performance Task", "Handout 7: Worksheet", "Handout 7: Performance Task", "Handout 8: Worksheet", "Handout 8: Performance Task" });
-            SubmissionCb.Location = new Point(998, 44);
+            SubmissionCb.Location = new Point(883, 44);
             SubmissionCb.Name = "SubmissionCb";
             SubmissionCb.Size = new Size(210, 24);
             SubmissionCb.TabIndex = 10;
@@ -877,7 +884,7 @@
             subjectNameHeader.AutoSize = true;
             subjectNameHeader.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             subjectNameHeader.ForeColor = Color.DimGray;
-            subjectNameHeader.Location = new Point(124, 40);
+            subjectNameHeader.Location = new Point(13, 40);
             subjectNameHeader.Name = "subjectNameHeader";
             subjectNameHeader.Size = new Size(146, 25);
             subjectNameHeader.TabIndex = 4;
@@ -890,7 +897,7 @@
             panel17.Controls.Add(TitleOfHandout1);
             panel17.Controls.Add(label25);
             panel17.Controls.Add(LinkOfHandout1);
-            panel17.Location = new Point(124, 80);
+            panel17.Location = new Point(13, 80);
             panel17.Name = "panel17";
             panel17.Size = new Size(564, 150);
             panel17.TabIndex = 4;
@@ -1003,7 +1010,7 @@
             panel13.Controls.Add(TitleOfHandout8);
             panel13.Controls.Add(label13);
             panel13.Controls.Add(LinkOfHandout8);
-            panel13.Location = new Point(695, 576);
+            panel13.Location = new Point(584, 576);
             panel13.Name = "panel13";
             panel13.Size = new Size(561, 150);
             panel13.TabIndex = 4;
@@ -1116,7 +1123,7 @@
             panel6.Controls.Add(TitleOfHandout7);
             panel6.Controls.Add(label10);
             panel6.Controls.Add(LinkOfHandout7);
-            panel6.Location = new Point(124, 576);
+            panel6.Location = new Point(13, 576);
             panel6.Name = "panel6";
             panel6.Size = new Size(564, 150);
             panel6.TabIndex = 4;
@@ -1229,7 +1236,7 @@
             panel4.Controls.Add(TitleOfHandout6);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(LinkOfHandout6);
-            panel4.Location = new Point(695, 411);
+            panel4.Location = new Point(584, 411);
             panel4.Name = "panel4";
             panel4.Size = new Size(560, 150);
             panel4.TabIndex = 4;
@@ -1342,7 +1349,7 @@
             panel2.Controls.Add(TitleOfHandout5);
             panel2.Controls.Add(asd);
             panel2.Controls.Add(LinkOfHandout5);
-            panel2.Location = new Point(124, 411);
+            panel2.Location = new Point(13, 411);
             panel2.Name = "panel2";
             panel2.Size = new Size(564, 150);
             panel2.TabIndex = 0;
@@ -1465,7 +1472,7 @@
             GradingSystemPanel.Location = new Point(94, 0);
             GradingSystemPanel.Margin = new Padding(0);
             GradingSystemPanel.Name = "GradingSystemPanel";
-            GradingSystemPanel.Size = new Size(1369, 740);
+            GradingSystemPanel.Size = new Size(1309, 740);
             GradingSystemPanel.TabIndex = 8;
             // 
             // QuarterSelectionCb
@@ -1476,7 +1483,7 @@
             QuarterSelectionCb.ForeColor = Color.DimGray;
             QuarterSelectionCb.FormattingEnabled = true;
             QuarterSelectionCb.Items.AddRange(new object[] { "First Grade", "Second Grade" });
-            QuarterSelectionCb.Location = new Point(1085, 42);
+            QuarterSelectionCb.Location = new Point(943, 42);
             QuarterSelectionCb.Name = "QuarterSelectionCb";
             QuarterSelectionCb.Size = new Size(200, 24);
             QuarterSelectionCb.TabIndex = 10;
@@ -1487,7 +1494,7 @@
             label57.AutoSize = true;
             label57.Font = new Font("Segoe Fluent Icons", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label57.ForeColor = Color.DimGray;
-            label57.Location = new Point(565, 695);
+            label57.Location = new Point(423, 695);
             label57.Name = "label57";
             label57.Size = new Size(720, 15);
             label57.TabIndex = 5;
@@ -1501,10 +1508,10 @@
             panel22.Controls.Add(label42);
             panel22.Controls.Add(Sub8Label);
             panel22.Controls.Add(label44);
-            panel22.Location = new Point(124, 618);
+            panel22.Location = new Point(10, 618);
             panel22.Margin = new Padding(0);
             panel22.Name = "panel22";
-            panel22.Size = new Size(1161, 73);
+            panel22.Size = new Size(1134, 73);
             panel22.TabIndex = 7;
             // 
             // TeacherNameLabel8
@@ -1523,7 +1530,7 @@
             GradeLabel8.AutoSize = true;
             GradeLabel8.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel8.ForeColor = Color.DimGray;
-            GradeLabel8.Location = new Point(1108, 39);
+            GradeLabel8.Location = new Point(1076, 39);
             GradeLabel8.Name = "GradeLabel8";
             GradeLabel8.Size = new Size(44, 19);
             GradeLabel8.TabIndex = 4;
@@ -1534,7 +1541,7 @@
             label42.AutoSize = true;
             label42.Font = new Font("Segoe Fluent Icons", 12F);
             label42.ForeColor = Color.DimGray;
-            label42.Location = new Point(1075, 10);
+            label42.Location = new Point(1043, 10);
             label42.Name = "label42";
             label42.Size = new Size(73, 16);
             label42.TabIndex = 3;
@@ -1570,10 +1577,10 @@
             panel21.Controls.Add(label38);
             panel21.Controls.Add(Sub4Label);
             panel21.Controls.Add(label40);
-            panel21.Location = new Point(124, 310);
+            panel21.Location = new Point(10, 310);
             panel21.Margin = new Padding(0);
             panel21.Name = "panel21";
-            panel21.Size = new Size(1161, 73);
+            panel21.Size = new Size(1134, 73);
             panel21.TabIndex = 5;
             // 
             // TeacherNameLabel4
@@ -1592,7 +1599,7 @@
             GradeLabel4.AutoSize = true;
             GradeLabel4.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel4.ForeColor = Color.DimGray;
-            GradeLabel4.Location = new Point(1108, 42);
+            GradeLabel4.Location = new Point(1076, 42);
             GradeLabel4.Name = "GradeLabel4";
             GradeLabel4.Size = new Size(44, 19);
             GradeLabel4.TabIndex = 4;
@@ -1603,7 +1610,7 @@
             label38.AutoSize = true;
             label38.Font = new Font("Segoe Fluent Icons", 12F);
             label38.ForeColor = Color.DimGray;
-            label38.Location = new Point(1075, 13);
+            label38.Location = new Point(1043, 13);
             label38.Name = "label38";
             label38.Size = new Size(73, 16);
             label38.TabIndex = 3;
@@ -1639,10 +1646,10 @@
             panel23.Controls.Add(label46);
             panel23.Controls.Add(Sub7Label);
             panel23.Controls.Add(label48);
-            panel23.Location = new Point(124, 541);
+            panel23.Location = new Point(10, 541);
             panel23.Margin = new Padding(0);
             panel23.Name = "panel23";
-            panel23.Size = new Size(1161, 73);
+            panel23.Size = new Size(1134, 73);
             panel23.TabIndex = 8;
             // 
             // TeacherNameLabel7
@@ -1661,7 +1668,7 @@
             GradeLabel7.AutoSize = true;
             GradeLabel7.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel7.ForeColor = Color.DimGray;
-            GradeLabel7.Location = new Point(1108, 42);
+            GradeLabel7.Location = new Point(1076, 42);
             GradeLabel7.Name = "GradeLabel7";
             GradeLabel7.Size = new Size(44, 19);
             GradeLabel7.TabIndex = 4;
@@ -1672,7 +1679,7 @@
             label46.AutoSize = true;
             label46.Font = new Font("Segoe Fluent Icons", 12F);
             label46.ForeColor = Color.DimGray;
-            label46.Location = new Point(1075, 13);
+            label46.Location = new Point(1043, 13);
             label46.Name = "label46";
             label46.Size = new Size(73, 16);
             label46.TabIndex = 3;
@@ -1708,10 +1715,10 @@
             panel19.Controls.Add(label34);
             panel19.Controls.Add(Sub3Label);
             panel19.Controls.Add(label36);
-            panel19.Location = new Point(124, 233);
+            panel19.Location = new Point(10, 233);
             panel19.Margin = new Padding(0);
             panel19.Name = "panel19";
-            panel19.Size = new Size(1161, 73);
+            panel19.Size = new Size(1134, 73);
             panel19.TabIndex = 5;
             // 
             // TeacherNameLabel3
@@ -1730,7 +1737,7 @@
             GradeLabel3.AutoSize = true;
             GradeLabel3.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel3.ForeColor = Color.DimGray;
-            GradeLabel3.Location = new Point(1108, 42);
+            GradeLabel3.Location = new Point(1076, 42);
             GradeLabel3.Name = "GradeLabel3";
             GradeLabel3.Size = new Size(44, 19);
             GradeLabel3.TabIndex = 4;
@@ -1741,7 +1748,7 @@
             label34.AutoSize = true;
             label34.Font = new Font("Segoe Fluent Icons", 12F);
             label34.ForeColor = Color.DimGray;
-            label34.Location = new Point(1075, 13);
+            label34.Location = new Point(1043, 13);
             label34.Name = "label34";
             label34.Size = new Size(73, 16);
             label34.TabIndex = 3;
@@ -1777,10 +1784,10 @@
             panel24.Controls.Add(label50);
             panel24.Controls.Add(Sub6Label);
             panel24.Controls.Add(label52);
-            panel24.Location = new Point(124, 465);
+            panel24.Location = new Point(10, 465);
             panel24.Margin = new Padding(0);
             panel24.Name = "panel24";
-            panel24.Size = new Size(1161, 73);
+            panel24.Size = new Size(1134, 73);
             panel24.TabIndex = 9;
             // 
             // TeacherNameLabel6
@@ -1799,7 +1806,7 @@
             GradeLabel6.AutoSize = true;
             GradeLabel6.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel6.ForeColor = Color.DimGray;
-            GradeLabel6.Location = new Point(1108, 42);
+            GradeLabel6.Location = new Point(1076, 42);
             GradeLabel6.Name = "GradeLabel6";
             GradeLabel6.Size = new Size(44, 19);
             GradeLabel6.TabIndex = 4;
@@ -1810,7 +1817,7 @@
             label50.AutoSize = true;
             label50.Font = new Font("Segoe Fluent Icons", 12F);
             label50.ForeColor = Color.DimGray;
-            label50.Location = new Point(1075, 13);
+            label50.Location = new Point(1043, 13);
             label50.Name = "label50";
             label50.Size = new Size(73, 16);
             label50.TabIndex = 3;
@@ -1846,10 +1853,10 @@
             panel3.Controls.Add(label30);
             panel3.Controls.Add(Sub2Label);
             panel3.Controls.Add(label32);
-            panel3.Location = new Point(124, 157);
+            panel3.Location = new Point(10, 157);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1161, 73);
+            panel3.Size = new Size(1134, 73);
             panel3.TabIndex = 5;
             // 
             // TeacherNameLabel2
@@ -1869,7 +1876,7 @@
             GradeLabel2.AutoSize = true;
             GradeLabel2.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel2.ForeColor = Color.DimGray;
-            GradeLabel2.Location = new Point(1108, 42);
+            GradeLabel2.Location = new Point(1076, 42);
             GradeLabel2.Name = "GradeLabel2";
             GradeLabel2.Size = new Size(44, 19);
             GradeLabel2.TabIndex = 4;
@@ -1880,7 +1887,7 @@
             label30.AutoSize = true;
             label30.Font = new Font("Segoe Fluent Icons", 12F);
             label30.ForeColor = Color.DimGray;
-            label30.Location = new Point(1075, 13);
+            label30.Location = new Point(1043, 13);
             label30.Name = "label30";
             label30.Size = new Size(73, 16);
             label30.TabIndex = 3;
@@ -1916,10 +1923,10 @@
             panel25.Controls.Add(label54);
             panel25.Controls.Add(Sub5Label);
             panel25.Controls.Add(label56);
-            panel25.Location = new Point(124, 388);
+            panel25.Location = new Point(10, 388);
             panel25.Margin = new Padding(0);
             panel25.Name = "panel25";
-            panel25.Size = new Size(1161, 73);
+            panel25.Size = new Size(1134, 73);
             panel25.TabIndex = 6;
             // 
             // TeacherNameLabel5
@@ -1938,7 +1945,7 @@
             GradeLabel5.AutoSize = true;
             GradeLabel5.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel5.ForeColor = Color.DimGray;
-            GradeLabel5.Location = new Point(1108, 39);
+            GradeLabel5.Location = new Point(1076, 39);
             GradeLabel5.Name = "GradeLabel5";
             GradeLabel5.Size = new Size(44, 19);
             GradeLabel5.TabIndex = 4;
@@ -1949,7 +1956,7 @@
             label54.AutoSize = true;
             label54.Font = new Font("Segoe Fluent Icons", 12F);
             label54.ForeColor = Color.DimGray;
-            label54.Location = new Point(1075, 10);
+            label54.Location = new Point(1043, 10);
             label54.Name = "label54";
             label54.Size = new Size(73, 16);
             label54.TabIndex = 3;
@@ -1982,7 +1989,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label21.ForeColor = Color.DimGray;
-            label21.Location = new Point(124, 40);
+            label21.Location = new Point(10, 40);
             label21.Name = "label21";
             label21.Size = new Size(79, 25);
             label21.TabIndex = 4;
@@ -1996,10 +2003,10 @@
             panel20.Controls.Add(label24);
             panel20.Controls.Add(Sub1Label);
             panel20.Controls.Add(label28);
-            panel20.Location = new Point(124, 80);
+            panel20.Location = new Point(10, 80);
             panel20.Margin = new Padding(0);
             panel20.Name = "panel20";
-            panel20.Size = new Size(1161, 73);
+            panel20.Size = new Size(1134, 73);
             panel20.TabIndex = 4;
             // 
             // TeacherNameLabel1
@@ -2019,7 +2026,7 @@
             GradeLabel1.AutoSize = true;
             GradeLabel1.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold);
             GradeLabel1.ForeColor = Color.DimGray;
-            GradeLabel1.Location = new Point(1108, 41);
+            GradeLabel1.Location = new Point(1076, 41);
             GradeLabel1.Name = "GradeLabel1";
             GradeLabel1.Size = new Size(44, 19);
             GradeLabel1.TabIndex = 4;
@@ -2030,7 +2037,7 @@
             label24.AutoSize = true;
             label24.Font = new Font("Segoe Fluent Icons", 12F);
             label24.ForeColor = Color.DimGray;
-            label24.Location = new Point(1075, 12);
+            label24.Location = new Point(1043, 12);
             label24.Name = "label24";
             label24.Size = new Size(73, 16);
             label24.TabIndex = 3;
@@ -2107,7 +2114,7 @@
             StudentProfilePanel.Controls.Add(label26);
             StudentProfilePanel.Location = new Point(94, 0);
             StudentProfilePanel.Name = "StudentProfilePanel";
-            StudentProfilePanel.Size = new Size(1370, 740);
+            StudentProfilePanel.Size = new Size(1309, 740);
             StudentProfilePanel.TabIndex = 11;
             // 
             // PasswordUpdateBtn
@@ -2116,7 +2123,7 @@
             PasswordUpdateBtn.FlatStyle = FlatStyle.Flat;
             PasswordUpdateBtn.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PasswordUpdateBtn.ForeColor = Color.White;
-            PasswordUpdateBtn.Location = new Point(1232, 276);
+            PasswordUpdateBtn.Location = new Point(1068, 276);
             PasswordUpdateBtn.Name = "PasswordUpdateBtn";
             PasswordUpdateBtn.Size = new Size(53, 23);
             PasswordUpdateBtn.TabIndex = 50;
@@ -2130,7 +2137,7 @@
             NewPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
             NewPasswordTxt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NewPasswordTxt.ForeColor = Color.Black;
-            NewPasswordTxt.Location = new Point(1075, 276);
+            NewPasswordTxt.Location = new Point(911, 276);
             NewPasswordTxt.Name = "NewPasswordTxt";
             NewPasswordTxt.Size = new Size(151, 23);
             NewPasswordTxt.TabIndex = 49;
@@ -2141,7 +2148,7 @@
             ConfirmPasswordTxt.BorderStyle = BorderStyle.FixedSingle;
             ConfirmPasswordTxt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ConfirmPasswordTxt.ForeColor = Color.Black;
-            ConfirmPasswordTxt.Location = new Point(1075, 228);
+            ConfirmPasswordTxt.Location = new Point(911, 228);
             ConfirmPasswordTxt.Name = "ConfirmPasswordTxt";
             ConfirmPasswordTxt.Size = new Size(151, 23);
             ConfirmPasswordTxt.TabIndex = 48;
@@ -2149,7 +2156,7 @@
             // AccountPasswordTxt
             // 
             AccountPasswordTxt.BorderStyle = BorderStyle.None;
-            AccountPasswordTxt.Location = new Point(1075, 178);
+            AccountPasswordTxt.Location = new Point(911, 178);
             AccountPasswordTxt.Name = "AccountPasswordTxt";
             AccountPasswordTxt.Size = new Size(151, 16);
             AccountPasswordTxt.TabIndex = 47;
@@ -2159,7 +2166,7 @@
             ProfileGuardianEmail.AutoSize = true;
             ProfileGuardianEmail.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileGuardianEmail.ForeColor = Color.DimGray;
-            ProfileGuardianEmail.Location = new Point(629, 501);
+            ProfileGuardianEmail.Location = new Point(577, 501);
             ProfileGuardianEmail.Name = "ProfileGuardianEmail";
             ProfileGuardianEmail.Size = new Size(42, 16);
             ProfileGuardianEmail.TabIndex = 46;
@@ -2170,7 +2177,7 @@
             ProfileGuardianContactNumber.AutoSize = true;
             ProfileGuardianContactNumber.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileGuardianContactNumber.ForeColor = Color.DimGray;
-            ProfileGuardianContactNumber.Location = new Point(629, 454);
+            ProfileGuardianContactNumber.Location = new Point(577, 454);
             ProfileGuardianContactNumber.Name = "ProfileGuardianContactNumber";
             ProfileGuardianContactNumber.Size = new Size(101, 16);
             ProfileGuardianContactNumber.TabIndex = 45;
@@ -2181,7 +2188,7 @@
             ProfileGuardianRelationship.AutoSize = true;
             ProfileGuardianRelationship.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileGuardianRelationship.ForeColor = Color.DimGray;
-            ProfileGuardianRelationship.Location = new Point(629, 407);
+            ProfileGuardianRelationship.Location = new Point(577, 407);
             ProfileGuardianRelationship.Name = "ProfileGuardianRelationship";
             ProfileGuardianRelationship.Size = new Size(79, 16);
             ProfileGuardianRelationship.TabIndex = 44;
@@ -2192,7 +2199,7 @@
             ProfileGuardianName.AutoSize = true;
             ProfileGuardianName.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileGuardianName.ForeColor = Color.DimGray;
-            ProfileGuardianName.Location = new Point(629, 364);
+            ProfileGuardianName.Location = new Point(577, 364);
             ProfileGuardianName.Name = "ProfileGuardianName";
             ProfileGuardianName.Size = new Size(44, 16);
             ProfileGuardianName.TabIndex = 43;
@@ -2203,7 +2210,7 @@
             ProfileAccountIdentification.AutoSize = true;
             ProfileAccountIdentification.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileAccountIdentification.ForeColor = Color.DimGray;
-            ProfileAccountIdentification.Location = new Point(1075, 137);
+            ProfileAccountIdentification.Location = new Point(911, 137);
             ProfileAccountIdentification.Name = "ProfileAccountIdentification";
             ProfileAccountIdentification.Size = new Size(127, 16);
             ProfileAccountIdentification.TabIndex = 42;
@@ -2214,7 +2221,7 @@
             ProfileSection.AutoSize = true;
             ProfileSection.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileSection.ForeColor = Color.DimGray;
-            ProfileSection.Location = new Point(615, 271);
+            ProfileSection.Location = new Point(563, 271);
             ProfileSection.Name = "ProfileSection";
             ProfileSection.Size = new Size(51, 16);
             ProfileSection.TabIndex = 40;
@@ -2225,7 +2232,7 @@
             ProfileSemester.AutoSize = true;
             ProfileSemester.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileSemester.ForeColor = Color.DimGray;
-            ProfileSemester.Location = new Point(615, 224);
+            ProfileSemester.Location = new Point(563, 224);
             ProfileSemester.Name = "ProfileSemester";
             ProfileSemester.Size = new Size(63, 16);
             ProfileSemester.TabIndex = 39;
@@ -2236,7 +2243,7 @@
             ProfileStrand.AutoSize = true;
             ProfileStrand.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileStrand.ForeColor = Color.DimGray;
-            ProfileStrand.Location = new Point(615, 177);
+            ProfileStrand.Location = new Point(563, 177);
             ProfileStrand.Name = "ProfileStrand";
             ProfileStrand.Size = new Size(46, 16);
             ProfileStrand.TabIndex = 38;
@@ -2247,7 +2254,7 @@
             ProfileGradeLevel.AutoSize = true;
             ProfileGradeLevel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ProfileGradeLevel.ForeColor = Color.DimGray;
-            ProfileGradeLevel.Location = new Point(615, 134);
+            ProfileGradeLevel.Location = new Point(563, 134);
             ProfileGradeLevel.Name = "ProfileGradeLevel";
             ProfileGradeLevel.Size = new Size(78, 16);
             ProfileGradeLevel.TabIndex = 37;
@@ -2335,7 +2342,7 @@
             label62.AutoSize = true;
             label62.Font = new Font("Segoe Fluent Icons", 9.75F);
             label62.ForeColor = Color.DimGray;
-            label62.Location = new Point(934, 274);
+            label62.Location = new Point(770, 274);
             label62.Name = "label62";
             label62.Size = new Size(76, 13);
             label62.TabIndex = 29;
@@ -2346,7 +2353,7 @@
             label63.AutoSize = true;
             label63.Font = new Font("Segoe Fluent Icons", 9.75F);
             label63.ForeColor = Color.DimGray;
-            label63.Location = new Point(934, 227);
+            label63.Location = new Point(770, 227);
             label63.Name = "label63";
             label63.Size = new Size(89, 13);
             label63.TabIndex = 28;
@@ -2357,7 +2364,7 @@
             label64.AutoSize = true;
             label64.Font = new Font("Segoe Fluent Icons", 9.75F);
             label64.ForeColor = Color.DimGray;
-            label64.Location = new Point(934, 180);
+            label64.Location = new Point(770, 180);
             label64.Name = "label64";
             label64.Size = new Size(91, 13);
             label64.TabIndex = 27;
@@ -2368,7 +2375,7 @@
             label65.AutoSize = true;
             label65.Font = new Font("Segoe Fluent Icons", 9.75F);
             label65.ForeColor = Color.DimGray;
-            label65.Location = new Point(934, 137);
+            label65.Location = new Point(770, 137);
             label65.Name = "label65";
             label65.Size = new Size(102, 13);
             label65.TabIndex = 26;
@@ -2379,7 +2386,7 @@
             label66.AutoSize = true;
             label66.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label66.ForeColor = Color.DimGray;
-            label66.Location = new Point(934, 94);
+            label66.Location = new Point(770, 94);
             label66.Name = "label66";
             label66.Size = new Size(117, 16);
             label66.TabIndex = 25;
@@ -2390,7 +2397,7 @@
             label58.AutoSize = true;
             label58.Font = new Font("Segoe Fluent Icons", 9.75F);
             label58.ForeColor = Color.DimGray;
-            label58.Location = new Point(508, 504);
+            label58.Location = new Point(456, 504);
             label58.Name = "label58";
             label58.Size = new Size(33, 13);
             label58.TabIndex = 24;
@@ -2401,7 +2408,7 @@
             label59.AutoSize = true;
             label59.Font = new Font("Segoe Fluent Icons", 9.75F);
             label59.ForeColor = Color.DimGray;
-            label59.Location = new Point(508, 457);
+            label59.Location = new Point(456, 457);
             label59.Name = "label59";
             label59.Size = new Size(80, 13);
             label59.TabIndex = 23;
@@ -2412,7 +2419,7 @@
             label60.AutoSize = true;
             label60.Font = new Font("Segoe Fluent Icons", 9.75F);
             label60.ForeColor = Color.DimGray;
-            label60.Location = new Point(508, 410);
+            label60.Location = new Point(456, 410);
             label60.Name = "label60";
             label60.Size = new Size(61, 13);
             label60.TabIndex = 22;
@@ -2423,7 +2430,7 @@
             label61.AutoSize = true;
             label61.Font = new Font("Segoe Fluent Icons", 9.75F);
             label61.ForeColor = Color.DimGray;
-            label61.Location = new Point(508, 367);
+            label61.Location = new Point(456, 367);
             label61.Name = "label61";
             label61.Size = new Size(35, 13);
             label61.TabIndex = 21;
@@ -2434,7 +2441,7 @@
             label47.AutoSize = true;
             label47.Font = new Font("Segoe Fluent Icons", 9.75F);
             label47.ForeColor = Color.DimGray;
-            label47.Location = new Point(506, 274);
+            label47.Location = new Point(454, 274);
             label47.Name = "label47";
             label47.Size = new Size(41, 13);
             label47.TabIndex = 19;
@@ -2445,7 +2452,7 @@
             label49.AutoSize = true;
             label49.Font = new Font("Segoe Fluent Icons", 9.75F);
             label49.ForeColor = Color.DimGray;
-            label49.Location = new Point(506, 227);
+            label49.Location = new Point(454, 227);
             label49.Name = "label49";
             label49.Size = new Size(50, 13);
             label49.TabIndex = 18;
@@ -2456,7 +2463,7 @@
             label51.AutoSize = true;
             label51.Font = new Font("Segoe Fluent Icons", 9.75F);
             label51.ForeColor = Color.DimGray;
-            label51.Location = new Point(506, 180);
+            label51.Location = new Point(454, 180);
             label51.Name = "label51";
             label51.Size = new Size(37, 13);
             label51.TabIndex = 17;
@@ -2467,7 +2474,7 @@
             label53.AutoSize = true;
             label53.Font = new Font("Segoe Fluent Icons", 9.75F);
             label53.ForeColor = Color.DimGray;
-            label53.Location = new Point(506, 137);
+            label53.Location = new Point(454, 137);
             label53.Name = "label53";
             label53.Size = new Size(62, 13);
             label53.TabIndex = 16;
@@ -2478,7 +2485,7 @@
             label55.AutoSize = true;
             label55.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label55.ForeColor = Color.DimGray;
-            label55.Location = new Point(506, 94);
+            label55.Location = new Point(454, 94);
             label55.Name = "label55";
             label55.Size = new Size(128, 16);
             label55.TabIndex = 15;
@@ -2489,7 +2496,7 @@
             label37.AutoSize = true;
             label37.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label37.ForeColor = Color.DimGray;
-            label37.Location = new Point(508, 319);
+            label37.Location = new Point(456, 319);
             label37.Name = "label37";
             label37.Size = new Size(170, 16);
             label37.TabIndex = 14;
@@ -2594,12 +2601,75 @@
             label26.TabIndex = 5;
             label26.Text = "Profile";
             // 
+            // SidebarPanel
+            // 
+            SidebarPanel.BackColor = Color.White;
+            SidebarPanel.Controls.Add(label45);
+            SidebarPanel.Controls.Add(pictureBox2);
+            SidebarPanel.Controls.Add(News);
+            SidebarPanel.Controls.Add(SystemLogListBox);
+            SidebarPanel.Dock = DockStyle.Right;
+            SidebarPanel.Location = new Point(1403, 0);
+            SidebarPanel.Margin = new Padding(0);
+            SidebarPanel.Name = "SidebarPanel";
+            SidebarPanel.Size = new Size(60, 739);
+            SidebarPanel.TabIndex = 11;
+            SidebarPanel.MouseEnter += SidebarPanel_MouseEnter;
+            SidebarPanel.MouseLeave += SidebarPanel_MouseLeave;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label45.ForeColor = Color.DimGray;
+            label45.Location = new Point(67, 35);
+            label45.Name = "label45";
+            label45.Size = new Size(59, 25);
+            label45.TabIndex = 11;
+            label45.Text = "More";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(19, 35);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(24, 33);
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
+            // 
+            // News
+            // 
+            News.AutoSize = true;
+            News.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            News.ForeColor = Color.DimGray;
+            News.Location = new Point(68, 83);
+            News.Name = "News";
+            News.Size = new Size(58, 13);
+            News.TabIndex = 4;
+            News.Text = "System Log";
+            // 
+            // SystemLogListBox
+            // 
+            SystemLogListBox.BackColor = Color.White;
+            SystemLogListBox.BorderStyle = BorderStyle.FixedSingle;
+            SystemLogListBox.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SystemLogListBox.ForeColor = Color.Black;
+            SystemLogListBox.FormattingEnabled = true;
+            SystemLogListBox.HorizontalScrollbar = true;
+            SystemLogListBox.ItemHeight = 12;
+            SystemLogListBox.Location = new Point(68, 108);
+            SystemLogListBox.Name = "SystemLogListBox";
+            SystemLogListBox.Size = new Size(665, 134);
+            SystemLogListBox.TabIndex = 0;
+            SystemLogListBox.MouseEnter += SystemLogListBox_MouseEnter;
+            // 
             // StudentPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1463, 739);
+            Controls.Add(SidebarPanel);
             Controls.Add(panel1);
             Controls.Add(SubjectsPanel);
             Controls.Add(GradingSystemPanel);
@@ -2664,6 +2734,9 @@
             panel20.PerformLayout();
             StudentProfilePanel.ResumeLayout(false);
             StudentProfilePanel.PerformLayout();
+            SidebarPanel.ResumeLayout(false);
+            SidebarPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -2821,7 +2894,7 @@
         private Label label29;
         private Label label27;
         private Label label26;
-        private Label label45;
+        private Label News;
         private Label label47;
         private Label label49;
         private Label label51;
@@ -2866,5 +2939,9 @@
         private Button PasswordUpdateBtn;
         private TextBox NewPasswordTxt;
         private TextBox ConfirmPasswordTxt;
+        private Panel SidebarPanel;
+        private ListBox SystemLogListBox;
+        private Label label45;
+        private PictureBox pictureBox2;
     }
 }

@@ -14,6 +14,22 @@ namespace ConnectEducation
         private string IdOfStudent, FullnameOfStudent, StrandOfStudent, GradeLevelOfStudent, SemesterOfStudent, SectionOfStudent;
         private string link;
 
+        private void displaySystemLog()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<AnnouncementModel>("AnnouncementModel");
+            var result = collection.Find(_ => true).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var announcement in result)
+                {
+                    SystemLogListBox.Items.Add("ATTENTION! - " + announcement.Message);
+                    SystemLogListBox.Items.Add("");
+                }
+            }
+        }
         private void displayProfileInformation()
         {
             var connectionString = "mongodb://localhost:27017";
@@ -235,7 +251,7 @@ namespace ConnectEducation
                 if (gradeRecord.SubjectList == null || gradeRecord.SubjectList.Count == 0)
                 {
                     MessageBox.Show("Grades are not yet available. Please check back later.");
-                    return; 
+                    return;
                 }
 
 
@@ -411,6 +427,7 @@ namespace ConnectEducation
             ConfirmPasswordTxt.UseSystemPasswordChar = true;
             NewPasswordTxt.UseSystemPasswordChar = true;
             displayProfileInformation();
+            displaySystemLog();
 
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;
@@ -1579,7 +1596,24 @@ namespace ConnectEducation
             ConfirmPasswordTxt.Text = "";
             NewPasswordTxt.Text = "";
         }
-    
-    
-}
+
+        private void SidebarPanel_MouseEnter(object sender, EventArgs e)
+        {
+            SidebarPanel.Width = 787;
+
+        }
+        private void SidebarPanel_MouseLeave(object sender, EventArgs e)
+        {
+            Point cursorPos = SidebarPanel.PointToClient(Cursor.Position);
+            if (!SidebarPanel.ClientRectangle.Contains(cursorPos))
+            {
+                SidebarPanel.Width = 60; // collapse
+            }
+        }
+
+        private void SystemLogListBox_MouseEnter(object sender, EventArgs e)
+        {
+            SidebarPanel.Width = 787;
+        }
+    }
 }
