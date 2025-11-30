@@ -1681,17 +1681,72 @@ namespace ConnectEducation
             SidebarPanel.Width = 787;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void CloseQuizBtn_Click(object sender, EventArgs e)
         {
+
+            Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
+            DialogResult result = MessageBox.Show("Do you want to close this quiz?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                foreach (var q in questionaire)
+                {
+                    q.Text = string.Empty;
+                }
+                QuizPanel.Visible = false;
+                QuizTitleLabel.Text = string.Empty;
+                QuizIdLabel.Text = string.Empty;
+                QuizDeadlineLabel.Text = string.Empty;
+            }
+
+
 
         }
 
         private void QuizListView_Click(object sender, EventArgs e)
         {
             if (QuizListView.SelectedItems.Count == 0)
-            {  return; }
+            { return; }
+
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            
 
             ListViewItem selectedItem = QuizListView.SelectedItems[0];
+
+            string quizName = selectedItem.SubItems[1].Text;
+            string nameOfInstructor = selectedItem.SubItems[3].Text;
+
+            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+            var filterTeacher = Builders<TeacherInformationModal>.Filter.Eq(z => z.Fullname, nameOfInstructor);
+            var Teacher = collection.Find(filterTeacher).FirstOrDefault();
+            if (Teacher != null)
+            {
+                string TeacherId = Teacher.TeacherID;
+                string TeacherSubject = Teacher.Subject;
+                string TeacherSection = Teacher.Section;
+
+                var collection2 = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                var studentFilter = Builders<TeachersStudentRecords>.Filter.And(
+                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, TeacherId),
+                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
+                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, TeacherSubject),
+                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, TeacherSection)
+                          );
+                var studentRecord = collection2.Find(studentFilter).FirstOrDefault();
+                if (studentRecord != null)
+                {
+                    var existingQuiz = studentRecord.ActivityRecord.FirstOrDefault(a => a.ActivityType == quizName);
+
+                    if (existingQuiz != null && !string.IsNullOrWhiteSpace(existingQuiz.Score))
+                    {
+                        MessageBox.Show("You already took this quiz.", "Quiz Taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
+            }
 
             // Ask for confirmation
             DialogResult result = MessageBox.Show("Do you want to open this quiz?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1704,18 +1759,15 @@ namespace ConnectEducation
                 StudentProfilePanel.Visible = false;
                 SidebarPanel.Width = 60;
 
-                
-                string quizId = selectedItem.SubItems[0].Text; // assuming first column is the ID
 
-                // Connect to MongoDB
-                var connectionString = "mongodb://localhost:27017";
-                var client = new MongoClient(connectionString);
-                var database = client.GetDatabase("ConnectED");
-                var collection = database.GetCollection<QuizModel>("QuizModel");
+                string quizId = selectedItem.SubItems[0].Text; // assuming first column is the ID
+                
+
+                var collection3 = database.GetCollection<QuizModel>("QuizModel");
 
                 // Find the quiz by ID
-                var filter = Builders<QuizModel>.Filter.Eq(z => z.QuizId, quizId);
-                var quiz = collection.Find(filter).FirstOrDefault();
+                var filter3 = Builders<QuizModel>.Filter.Eq(z => z.QuizId, quizId);
+                var quiz = collection3.Find(filter3).FirstOrDefault();
 
                 if (quiz != null)
                 {
@@ -1725,8 +1777,8 @@ namespace ConnectEducation
 
                     string quizIdentification = quiz.QuizId;
                     string quizTitle = quiz.QuizTitle;
-                    string [] questionsArr = quiz.Question;
-                    string [] answers = quiz.AnswerKey;
+                    string[] questionsArr = quiz.Question;
+                    string[] answers = quiz.AnswerKey;
                     string deadline = quiz.Deadline;
 
                     Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
@@ -1741,6 +1793,65 @@ namespace ConnectEducation
                     MessageBox.Show("Quiz not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void SubmitQuizBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show("Are you sure to submit?","Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmation == DialogResult.Yes)
+            {
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<QuizModel>("QuizModel");
+                var filter = Builders<QuizModel>.Filter.Eq(z => z.QuizId, QuizIdLabel.Text);
+                var result = collection.Find(filter).FirstOrDefault();
+
+                TextBox[] AnswerOfStudent = { AnswerNo1, AnswerNo2, AnswerNo3, AnswerNo4, AnswerNo5, AnswerNo6, AnswerNo7, AnswerNo8, AnswerNo9, AnswerNo10 };
+                int quizScore = 0;
+
+                if (result != null)
+                {
+                    string[] answerKeys = result.AnswerKey;
+
+                    for (int i = 0; i < AnswerOfStudent.Length && i < answerKeys.Length; i++)
+                    {
+                        if (AnswerOfStudent[i].Text.Trim().ToLower() == answerKeys[i].Trim().ToLower())
+                        {
+                            quizScore++;
+                        }
+                    }
+                    MessageBox.Show("You score " + quizScore + " out of 10.");
+
+                    string Instructor = result.Instructor;
+
+                    var collection2 = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                    var filter2 = Builders<TeachersStudentRecords>.Filter.And(
+                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, result.InstructorId),
+                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
+                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, result.SubjectName),
+                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, result.Section),
+                                  Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord,x => x.ActivityType == QuizTitleLabel.Text)
+                                  );// TeacherId, Section,StudentId, Subject
+
+                    var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", quizScore.ToString());
+                    collection2.UpdateOne(filter2, update);
+
+                }
+                Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
+
+                    foreach (var q in questionaire)
+                    {
+                        q.Text = string.Empty;
+                    }
+                    QuizPanel.Visible = false;
+                    QuizTitleLabel.Text = string.Empty;
+                    QuizIdLabel.Text = string.Empty;
+                    QuizDeadlineLabel.Text = string.Empty;
+                
+
+            }
+            
         }
     }
 }

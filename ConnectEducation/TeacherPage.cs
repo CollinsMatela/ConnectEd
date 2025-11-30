@@ -1262,6 +1262,7 @@ namespace ConnectEducation
             {
              QuizId = Guid.NewGuid().ToString(),
              QuizTitle = QuizTitleCb.SelectedItem?.ToString() ?? "",
+             InstructorId = teacherID,
              Instructor = teacherFullname,
              SubjectName = teacherSubject,
              Section  = teacherSection,

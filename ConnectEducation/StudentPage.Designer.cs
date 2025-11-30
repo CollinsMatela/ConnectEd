@@ -225,19 +225,20 @@
             News = new Label();
             SystemLogListBox = new ListBox();
             QuizPanel = new Panel();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            QuizDeadlineLabel = new Label();
+            AnswerNo10 = new TextBox();
+            AnswerNo9 = new TextBox();
+            AnswerNo8 = new TextBox();
+            AnswerNo7 = new TextBox();
+            AnswerNo6 = new TextBox();
+            AnswerNo5 = new TextBox();
+            AnswerNo4 = new TextBox();
+            AnswerNo3 = new TextBox();
+            AnswerNo2 = new TextBox();
             QuizTitleLabel = new Label();
             QuizIdLabel = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            CloseQuizBtn = new Button();
+            SubmitQuizBtn = new Button();
             QuestionLabel10 = new Label();
             label82 = new Label();
             QuestionLabel9 = new Label();
@@ -256,11 +257,10 @@
             label76 = new Label();
             QuestionLabel2 = new Label();
             label74 = new Label();
-            textBox1 = new TextBox();
+            AnswerNo1 = new TextBox();
             QuestionLabel1 = new Label();
             label71 = new Label();
             label68 = new Label();
-            QuizDeadlineLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
@@ -2729,19 +2729,19 @@
             // 
             QuizPanel.BackColor = Color.White;
             QuizPanel.Controls.Add(QuizDeadlineLabel);
-            QuizPanel.Controls.Add(textBox10);
-            QuizPanel.Controls.Add(textBox9);
-            QuizPanel.Controls.Add(textBox8);
-            QuizPanel.Controls.Add(textBox7);
-            QuizPanel.Controls.Add(textBox6);
-            QuizPanel.Controls.Add(textBox5);
-            QuizPanel.Controls.Add(textBox4);
-            QuizPanel.Controls.Add(textBox3);
-            QuizPanel.Controls.Add(textBox2);
+            QuizPanel.Controls.Add(AnswerNo10);
+            QuizPanel.Controls.Add(AnswerNo9);
+            QuizPanel.Controls.Add(AnswerNo8);
+            QuizPanel.Controls.Add(AnswerNo7);
+            QuizPanel.Controls.Add(AnswerNo6);
+            QuizPanel.Controls.Add(AnswerNo5);
+            QuizPanel.Controls.Add(AnswerNo4);
+            QuizPanel.Controls.Add(AnswerNo3);
+            QuizPanel.Controls.Add(AnswerNo2);
             QuizPanel.Controls.Add(QuizTitleLabel);
             QuizPanel.Controls.Add(QuizIdLabel);
-            QuizPanel.Controls.Add(button2);
-            QuizPanel.Controls.Add(button1);
+            QuizPanel.Controls.Add(CloseQuizBtn);
+            QuizPanel.Controls.Add(SubmitQuizBtn);
             QuizPanel.Controls.Add(QuestionLabel10);
             QuizPanel.Controls.Add(label82);
             QuizPanel.Controls.Add(QuestionLabel9);
@@ -2760,7 +2760,7 @@
             QuizPanel.Controls.Add(label76);
             QuizPanel.Controls.Add(QuestionLabel2);
             QuizPanel.Controls.Add(label74);
-            QuizPanel.Controls.Add(textBox1);
+            QuizPanel.Controls.Add(AnswerNo1);
             QuizPanel.Controls.Add(QuestionLabel1);
             QuizPanel.Controls.Add(label71);
             QuizPanel.Controls.Add(label68);
@@ -2769,77 +2769,88 @@
             QuizPanel.Size = new Size(1298, 740);
             QuizPanel.TabIndex = 11;
             // 
-            // textBox10
+            // QuizDeadlineLabel
             // 
-            textBox10.Location = new Point(171, 473);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(215, 30);
-            textBox10.TabIndex = 40;
+            QuizDeadlineLabel.AutoSize = true;
+            QuizDeadlineLabel.Font = new Font("Segoe Fluent Icons", 9F);
+            QuizDeadlineLabel.ForeColor = Color.DimGray;
+            QuizDeadlineLabel.Location = new Point(1068, 63);
+            QuizDeadlineLabel.Name = "QuizDeadlineLabel";
+            QuizDeadlineLabel.Size = new Size(64, 12);
+            QuizDeadlineLabel.TabIndex = 41;
+            QuizDeadlineLabel.Text = "Quiz Deadline";
             // 
-            // textBox9
+            // AnswerNo10
             // 
-            textBox9.Location = new Point(171, 438);
-            textBox9.Multiline = true;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(215, 30);
-            textBox9.TabIndex = 39;
+            AnswerNo10.Location = new Point(171, 473);
+            AnswerNo10.Multiline = true;
+            AnswerNo10.Name = "AnswerNo10";
+            AnswerNo10.Size = new Size(215, 30);
+            AnswerNo10.TabIndex = 40;
             // 
-            // textBox8
+            // AnswerNo9
             // 
-            textBox8.Location = new Point(171, 403);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(215, 30);
-            textBox8.TabIndex = 38;
+            AnswerNo9.Location = new Point(171, 438);
+            AnswerNo9.Multiline = true;
+            AnswerNo9.Name = "AnswerNo9";
+            AnswerNo9.Size = new Size(215, 30);
+            AnswerNo9.TabIndex = 39;
             // 
-            // textBox7
+            // AnswerNo8
             // 
-            textBox7.Location = new Point(171, 367);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(215, 30);
-            textBox7.TabIndex = 37;
+            AnswerNo8.Location = new Point(171, 403);
+            AnswerNo8.Multiline = true;
+            AnswerNo8.Name = "AnswerNo8";
+            AnswerNo8.Size = new Size(215, 30);
+            AnswerNo8.TabIndex = 38;
             // 
-            // textBox6
+            // AnswerNo7
             // 
-            textBox6.Location = new Point(171, 333);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(215, 30);
-            textBox6.TabIndex = 36;
+            AnswerNo7.Location = new Point(171, 367);
+            AnswerNo7.Multiline = true;
+            AnswerNo7.Name = "AnswerNo7";
+            AnswerNo7.Size = new Size(215, 30);
+            AnswerNo7.TabIndex = 37;
             // 
-            // textBox5
+            // AnswerNo6
             // 
-            textBox5.Location = new Point(171, 298);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(215, 30);
-            textBox5.TabIndex = 35;
+            AnswerNo6.Location = new Point(171, 333);
+            AnswerNo6.Multiline = true;
+            AnswerNo6.Name = "AnswerNo6";
+            AnswerNo6.Size = new Size(215, 30);
+            AnswerNo6.TabIndex = 36;
             // 
-            // textBox4
+            // AnswerNo5
             // 
-            textBox4.Location = new Point(171, 260);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(215, 30);
-            textBox4.TabIndex = 34;
+            AnswerNo5.Location = new Point(171, 298);
+            AnswerNo5.Multiline = true;
+            AnswerNo5.Name = "AnswerNo5";
+            AnswerNo5.Size = new Size(215, 30);
+            AnswerNo5.TabIndex = 35;
             // 
-            // textBox3
+            // AnswerNo4
             // 
-            textBox3.Location = new Point(171, 222);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(215, 30);
-            textBox3.TabIndex = 33;
+            AnswerNo4.Location = new Point(171, 260);
+            AnswerNo4.Multiline = true;
+            AnswerNo4.Name = "AnswerNo4";
+            AnswerNo4.Size = new Size(215, 30);
+            AnswerNo4.TabIndex = 34;
             // 
-            // textBox2
+            // AnswerNo3
             // 
-            textBox2.Location = new Point(171, 184);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(215, 30);
-            textBox2.TabIndex = 32;
+            AnswerNo3.Location = new Point(171, 222);
+            AnswerNo3.Multiline = true;
+            AnswerNo3.Name = "AnswerNo3";
+            AnswerNo3.Size = new Size(215, 30);
+            AnswerNo3.TabIndex = 33;
+            // 
+            // AnswerNo2
+            // 
+            AnswerNo2.Location = new Point(171, 184);
+            AnswerNo2.Multiline = true;
+            AnswerNo2.Name = "AnswerNo2";
+            AnswerNo2.Size = new Size(215, 30);
+            AnswerNo2.TabIndex = 32;
             // 
             // QuizTitleLabel
             // 
@@ -2863,32 +2874,33 @@
             QuizIdLabel.TabIndex = 2;
             QuizIdLabel.Text = "Quiz Id";
             // 
-            // button2
+            // CloseQuizBtn
             // 
-            button2.BackColor = Color.WhiteSmoke;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.DimGray;
-            button2.Location = new Point(957, 586);
-            button2.Name = "button2";
-            button2.Size = new Size(209, 30);
-            button2.TabIndex = 4;
-            button2.Text = "CLOSE";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            CloseQuizBtn.BackColor = Color.WhiteSmoke;
+            CloseQuizBtn.FlatAppearance.BorderSize = 0;
+            CloseQuizBtn.FlatStyle = FlatStyle.Flat;
+            CloseQuizBtn.ForeColor = Color.DimGray;
+            CloseQuizBtn.Location = new Point(957, 586);
+            CloseQuizBtn.Name = "CloseQuizBtn";
+            CloseQuizBtn.Size = new Size(209, 30);
+            CloseQuizBtn.TabIndex = 4;
+            CloseQuizBtn.Text = "CLOSE";
+            CloseQuizBtn.UseVisualStyleBackColor = false;
+            CloseQuizBtn.Click += CloseQuizBtn_Click;
             // 
-            // button1
+            // SubmitQuizBtn
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(957, 550);
-            button1.Name = "button1";
-            button1.Size = new Size(209, 30);
-            button1.TabIndex = 3;
-            button1.Text = "SUBMIT";
-            button1.UseVisualStyleBackColor = false;
+            SubmitQuizBtn.BackColor = Color.DodgerBlue;
+            SubmitQuizBtn.FlatAppearance.BorderSize = 0;
+            SubmitQuizBtn.FlatStyle = FlatStyle.Flat;
+            SubmitQuizBtn.ForeColor = Color.White;
+            SubmitQuizBtn.Location = new Point(957, 550);
+            SubmitQuizBtn.Name = "SubmitQuizBtn";
+            SubmitQuizBtn.Size = new Size(209, 30);
+            SubmitQuizBtn.TabIndex = 3;
+            SubmitQuizBtn.Text = "SUBMIT";
+            SubmitQuizBtn.UseVisualStyleBackColor = false;
+            SubmitQuizBtn.Click += SubmitQuizBtn_Click;
             // 
             // QuestionLabel10
             // 
@@ -3088,13 +3100,13 @@
             label74.TabIndex = 6;
             label74.Text = "2.";
             // 
-            // textBox1
+            // AnswerNo1
             // 
-            textBox1.Location = new Point(171, 148);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(215, 30);
-            textBox1.TabIndex = 5;
+            AnswerNo1.Location = new Point(171, 148);
+            AnswerNo1.Multiline = true;
+            AnswerNo1.Name = "AnswerNo1";
+            AnswerNo1.Size = new Size(215, 30);
+            AnswerNo1.TabIndex = 5;
             // 
             // QuestionLabel1
             // 
@@ -3128,17 +3140,6 @@
             label68.Size = new Size(149, 25);
             label68.TabIndex = 0;
             label68.Text = "Take your Quiz";
-            // 
-            // QuizDeadlineLabel
-            // 
-            QuizDeadlineLabel.AutoSize = true;
-            QuizDeadlineLabel.Font = new Font("Segoe Fluent Icons", 9F);
-            QuizDeadlineLabel.ForeColor = Color.DimGray;
-            QuizDeadlineLabel.Location = new Point(1068, 63);
-            QuizDeadlineLabel.Name = "QuizDeadlineLabel";
-            QuizDeadlineLabel.Size = new Size(64, 12);
-            QuizDeadlineLabel.TabIndex = 41;
-            QuizDeadlineLabel.Text = "Quiz Deadline";
             // 
             // StudentPage
             // 
@@ -3443,18 +3444,18 @@
         private Label QuestionLabel3;
         private Label label76;
         private Label QuestionLabel2;
-        private TextBox textBox1;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox AnswerNo1;
+        private Button CloseQuizBtn;
+        private Button SubmitQuizBtn;
+        private TextBox AnswerNo5;
+        private TextBox AnswerNo4;
+        private TextBox AnswerNo3;
+        private TextBox AnswerNo2;
+        private TextBox AnswerNo10;
+        private TextBox AnswerNo9;
+        private TextBox AnswerNo8;
+        private TextBox AnswerNo7;
+        private TextBox AnswerNo6;
         private Label QuizDeadlineLabel;
     }
 }
