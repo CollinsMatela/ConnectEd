@@ -4,6 +4,7 @@ using System.Collections;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using System.Globalization;
 
 namespace ConnectEducation
 {
@@ -13,6 +14,66 @@ namespace ConnectEducation
         private string FirstSubject, SecondSubject, ThirdSubject, FourthSubject, FifthSubject, SixthSubject, SeventhSubject, EightSubject;
         private string IdOfStudent, FullnameOfStudent, StrandOfStudent, GradeLevelOfStudent, SemesterOfStudent, SectionOfStudent;
         private string link;
+
+        private void QuizListBoxProperties()
+        {
+            QuizListView.View = View.Details;      // table mode
+            QuizListView.FullRowSelect = true;
+            QuizListView.GridLines = true;
+
+            QuizListView.Columns.Add("", 0);
+            QuizListView.Columns.Add("Title", 50);
+            QuizListView.Columns.Add("Subject", 250);
+            QuizListView.Columns.Add("Instructor", 150);
+            QuizListView.Columns.Add("Section", 100);
+            QuizListView.Columns.Add("Deadline", 120);
+        }
+        private void LoadQuizzes()
+        {
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<QuizModel>("QuizModel");
+            var filter = Builders<QuizModel>.Filter.Eq(z => z.Section, SectionOfStudent);
+            var quizzes = collection.Find(filter).ToList();
+
+            QuizListView.Items.Clear();
+
+            foreach (var quiz in quizzes)
+            {
+                // 1. Skip NULL or empty deadlines
+                if (string.IsNullOrEmpty(quiz.Deadline))
+                {
+                    continue;
+                }
+
+                // 2. Try parse using exact format dd/MM/yyyy
+                if (!DateTime.TryParseExact(
+                        quiz.Deadline,
+                        "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out DateTime quizDeadline))
+                {
+                    continue; // skip invalid formats
+                }
+
+                // 3. Skip if deadline already passed
+                if (quizDeadline < DateTime.Today)
+                {
+                    continue;
+                }
+
+
+                ListViewItem item = new ListViewItem(quiz.QuizId);
+                item.SubItems.Add(quiz.QuizTitle);
+                item.SubItems.Add(quiz.SubjectName);
+                item.SubItems.Add(quiz.Instructor);
+                item.SubItems.Add(quiz.Section);
+                item.SubItems.Add(quiz.Deadline);   // make sure string format
+
+                QuizListView.Items.Add(item);
+            }
+        }
 
         private void displaySystemLog()
         {
@@ -428,6 +489,9 @@ namespace ConnectEducation
             NewPasswordTxt.UseSystemPasswordChar = true;
             displayProfileInformation();
             displaySystemLog();
+
+            QuizListBoxProperties();
+            LoadQuizzes();
 
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;

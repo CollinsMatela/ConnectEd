@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ConnectEducation
@@ -1165,12 +1166,7 @@ namespace ConnectEducation
 
         private void ChangePasswordBtn_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(QuizTitleCb.Text))
-            {
-                MessageBox.Show("PLease select question title.");
-                QuizTitleCb.Focus();
-                return;
-            }
+            
             if (string.IsNullOrEmpty(ConfirmPasswordTxt.Text))
             {
                 MessageBox.Show("PLease enter your previous password.");
@@ -1204,6 +1200,19 @@ namespace ConnectEducation
         {
             TextBox[] Questions = { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10};
             TextBox[] AnswerKeys = { AnswerKey1, AnswerKey2, AnswerKey3, AnswerKey4, AnswerKey5, AnswerKey6, AnswerKey7, AnswerKey8, AnswerKey9, AnswerKey10 };
+
+            if (string.IsNullOrEmpty(QuizTitleCb.Text))
+            {
+                MessageBox.Show("PLease select question title.");
+                QuizTitleCb.Focus();
+                return;
+            }
+
+            if (DeadlineDatePicker.Value < DateTime.Today)
+            {
+                MessageBox.Show("Deadline cannot be in the past.");
+                return;
+            }
 
             for (int i = 0; i < Questions.Length; i++)
             {
@@ -1259,6 +1268,7 @@ namespace ConnectEducation
              Number = numbers,
              Question = questionTexts,
              AnswerKey = answerTexts,
+             Deadline = DeadlineDatePicker.Value.ToString("dd/MM/yyyy"),
             };
 
             DialogResult result = MessageBox.Show("Are you sure you want to save this quiz?","Confirm Save",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
@@ -1271,6 +1281,7 @@ namespace ConnectEducation
                 foreach (var q in Questions) q.Clear();
                 foreach (var a in AnswerKeys) a.Clear();
                 QuizTitleCb.Text = string.Empty;
+                DeadlineDatePicker.Value = DateTime.Now;
             }
             else
             {

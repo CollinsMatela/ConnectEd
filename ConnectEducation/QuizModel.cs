@@ -21,5 +21,6 @@ namespace ConnectEducation
         public string [] Number { get; set; }
         public string [] Question { get; set; }
         public string [] AnswerKey { get; set; }
+        public string Deadline { get; set; }
     }
 }

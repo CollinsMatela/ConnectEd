@@ -40,6 +40,10 @@
             ActionCb = new ComboBox();
             SubjectNameLabel = new Label();
             CreateQuizPanel = new Panel();
+            label133 = new Label();
+            DeadlineDatePicker = new DateTimePicker();
+            label132 = new Label();
+            QuizTitleCb = new ComboBox();
             SubmitQuizBtn = new Button();
             label131 = new Label();
             AnswerKey10 = new TextBox();
@@ -387,8 +391,6 @@
             label102 = new Label();
             button6 = new Button();
             UpdateTimer = new System.Windows.Forms.Timer(components);
-            QuizTitleCb = new ComboBox();
-            label132 = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -544,6 +546,8 @@
             // CreateQuizPanel
             // 
             CreateQuizPanel.BackColor = Color.White;
+            CreateQuizPanel.Controls.Add(label133);
+            CreateQuizPanel.Controls.Add(DeadlineDatePicker);
             CreateQuizPanel.Controls.Add(label132);
             CreateQuizPanel.Controls.Add(QuizTitleCb);
             CreateQuizPanel.Controls.Add(SubmitQuizBtn);
@@ -584,6 +588,44 @@
             CreateQuizPanel.Name = "CreateQuizPanel";
             CreateQuizPanel.Size = new Size(1465, 588);
             CreateQuizPanel.TabIndex = 14;
+            // 
+            // label133
+            // 
+            label133.AutoSize = true;
+            label133.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label133.ForeColor = Color.DimGray;
+            label133.Location = new Point(996, 62);
+            label133.Name = "label133";
+            label133.Size = new Size(59, 12);
+            label133.TabIndex = 51;
+            label133.Text = "Set Deadline";
+            // 
+            // DeadlineDatePicker
+            // 
+            DeadlineDatePicker.Location = new Point(996, 81);
+            DeadlineDatePicker.Name = "DeadlineDatePicker";
+            DeadlineDatePicker.Size = new Size(200, 23);
+            DeadlineDatePicker.TabIndex = 50;
+            // 
+            // label132
+            // 
+            label132.AutoSize = true;
+            label132.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label132.ForeColor = Color.DimGray;
+            label132.Location = new Point(364, 62);
+            label132.Name = "label132";
+            label132.Size = new Size(45, 12);
+            label132.TabIndex = 49;
+            label132.Text = "Quiz Title";
+            // 
+            // QuizTitleCb
+            // 
+            QuizTitleCb.FormattingEnabled = true;
+            QuizTitleCb.Items.AddRange(new object[] { "Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4", "Quiz 5", "Quiz 6", "Quiz 7", "Quiz 8", "Quiz 9", "Quiz 10" });
+            QuizTitleCb.Location = new Point(363, 81);
+            QuizTitleCb.Name = "QuizTitleCb";
+            QuizTitleCb.Size = new Size(121, 23);
+            QuizTitleCb.TabIndex = 48;
             // 
             // SubmitQuizBtn
             // 
@@ -4728,26 +4770,6 @@
             // 
             UpdateTimer.Tick += UpdateTimer_Tick;
             // 
-            // QuizTitleCb
-            // 
-            QuizTitleCb.FormattingEnabled = true;
-            QuizTitleCb.Items.AddRange(new object[] { "Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4", "Quiz 5", "Quiz 6", "Quiz 7", "Quiz 8", "Quiz 9", "Quiz 10" });
-            QuizTitleCb.Location = new Point(363, 81);
-            QuizTitleCb.Name = "QuizTitleCb";
-            QuizTitleCb.Size = new Size(121, 23);
-            QuizTitleCb.TabIndex = 48;
-            // 
-            // label132
-            // 
-            label132.AutoSize = true;
-            label132.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label132.ForeColor = Color.DimGray;
-            label132.Location = new Point(364, 62);
-            label132.Name = "label132";
-            label132.Size = new Size(45, 12);
-            label132.TabIndex = 49;
-            label132.Text = "Quiz Title";
-            // 
             // TeacherPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -5211,5 +5233,7 @@
         private Button SubmitQuizBtn;
         private ComboBox QuizTitleCb;
         private Label label132;
+        private Label label133;
+        private DateTimePicker DeadlineDatePicker;
     }
 }

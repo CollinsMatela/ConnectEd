@@ -218,12 +218,12 @@
             label27 = new Label();
             label26 = new Label();
             SidebarPanel = new Panel();
+            QuizListView = new ListView();
+            label67 = new Label();
             label45 = new Label();
             pictureBox2 = new PictureBox();
             News = new Label();
             SystemLogListBox = new ListBox();
-            label67 = new Label();
-            QuizListBox = new ListBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
@@ -2606,20 +2606,39 @@
             // SidebarPanel
             // 
             SidebarPanel.BackColor = Color.White;
+            SidebarPanel.Controls.Add(QuizListView);
             SidebarPanel.Controls.Add(label67);
-            SidebarPanel.Controls.Add(QuizListBox);
             SidebarPanel.Controls.Add(label45);
             SidebarPanel.Controls.Add(pictureBox2);
             SidebarPanel.Controls.Add(News);
             SidebarPanel.Controls.Add(SystemLogListBox);
             SidebarPanel.Dock = DockStyle.Right;
-            SidebarPanel.Location = new Point(1403, 0);
+            SidebarPanel.Location = new Point(677, 0);
             SidebarPanel.Margin = new Padding(0);
             SidebarPanel.Name = "SidebarPanel";
-            SidebarPanel.Size = new Size(60, 739);
+            SidebarPanel.Size = new Size(786, 739);
             SidebarPanel.TabIndex = 11;
             SidebarPanel.MouseEnter += SidebarPanel_MouseEnter;
             SidebarPanel.MouseLeave += SidebarPanel_MouseLeave;
+            // 
+            // QuizListView
+            // 
+            QuizListView.Location = new Point(67, 283);
+            QuizListView.Name = "QuizListView";
+            QuizListView.Size = new Size(666, 131);
+            QuizListView.TabIndex = 15;
+            QuizListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label67.ForeColor = Color.DimGray;
+            label67.Location = new Point(68, 260);
+            label67.Name = "label67";
+            label67.Size = new Size(41, 13);
+            label67.TabIndex = 14;
+            label67.Text = "Quizzes";
             // 
             // label45
             // 
@@ -2666,31 +2685,6 @@
             SystemLogListBox.Size = new Size(665, 134);
             SystemLogListBox.TabIndex = 0;
             SystemLogListBox.MouseEnter += SystemLogListBox_MouseEnter;
-            // 
-            // label67
-            // 
-            label67.AutoSize = true;
-            label67.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label67.ForeColor = Color.DimGray;
-            label67.Location = new Point(68, 260);
-            label67.Name = "label67";
-            label67.Size = new Size(41, 13);
-            label67.TabIndex = 14;
-            label67.Text = "Quizzes";
-            // 
-            // QuizListBox
-            // 
-            QuizListBox.BackColor = Color.White;
-            QuizListBox.BorderStyle = BorderStyle.FixedSingle;
-            QuizListBox.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            QuizListBox.ForeColor = Color.Black;
-            QuizListBox.FormattingEnabled = true;
-            QuizListBox.HorizontalScrollbar = true;
-            QuizListBox.ItemHeight = 12;
-            QuizListBox.Location = new Point(68, 285);
-            QuizListBox.Name = "QuizListBox";
-            QuizListBox.Size = new Size(665, 134);
-            QuizListBox.TabIndex = 13;
             // 
             // StudentPage
             // 
@@ -2973,6 +2967,6 @@
         private Label label45;
         private PictureBox pictureBox2;
         private Label label67;
-        private ListBox QuizListBox;
+        private ListView QuizListView;
     }
 }
