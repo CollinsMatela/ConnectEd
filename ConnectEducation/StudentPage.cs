@@ -451,6 +451,7 @@ namespace ConnectEducation
             string Grade = GradeLevelOfStudent;
             string Semester = SemesterOfStudent;
 
+            QuizPanel.Visible = false;
             SubjectsPanel.Visible = false;
             GradingSystemPanel.Visible = false;
             StudentProfilePanel.Visible = false;
@@ -1678,6 +1679,68 @@ namespace ConnectEducation
         private void SystemLogListBox_MouseEnter(object sender, EventArgs e)
         {
             SidebarPanel.Width = 787;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuizListView_Click(object sender, EventArgs e)
+        {
+            if (QuizListView.SelectedItems.Count == 0)
+            {  return; }
+
+            ListViewItem selectedItem = QuizListView.SelectedItems[0];
+
+            // Ask for confirmation
+            DialogResult result = MessageBox.Show("Do you want to open this quiz?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                QuizPanel.Visible = true;
+                SubjectsPanel.Visible = false;
+                GradingSystemPanel.Visible = false;
+                StudentProfilePanel.Visible = false;
+                SidebarPanel.Width = 60;
+
+                
+                string quizId = selectedItem.SubItems[0].Text; // assuming first column is the ID
+
+                // Connect to MongoDB
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<QuizModel>("QuizModel");
+
+                // Find the quiz by ID
+                var filter = Builders<QuizModel>.Filter.Eq(z => z.QuizId, quizId);
+                var quiz = collection.Find(filter).FirstOrDefault();
+
+                if (quiz != null)
+                {
+                    QuizTitleLabel.Text = quiz.QuizTitle;
+                    QuizIdLabel.Text = quiz.QuizId;
+                    QuizDeadlineLabel.Text = quiz.Deadline;
+
+                    string quizIdentification = quiz.QuizId;
+                    string quizTitle = quiz.QuizTitle;
+                    string [] questionsArr = quiz.Question;
+                    string [] answers = quiz.AnswerKey;
+                    string deadline = quiz.Deadline;
+
+                    Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
+
+                    for (int i = 0; i < questionaire.Length && i < questionsArr.Length; i++)
+                    {
+                        questionaire[i].Text = questionsArr[i];
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quiz not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

@@ -224,6 +224,43 @@
             pictureBox2 = new PictureBox();
             News = new Label();
             SystemLogListBox = new ListBox();
+            QuizPanel = new Panel();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            QuizTitleLabel = new Label();
+            QuizIdLabel = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            QuestionLabel10 = new Label();
+            label82 = new Label();
+            QuestionLabel9 = new Label();
+            label84 = new Label();
+            QuestionLabel8 = new Label();
+            label86 = new Label();
+            QuestionLabel7 = new Label();
+            label88 = new Label();
+            QuestionLabel6 = new Label();
+            label90 = new Label();
+            QuestionLabel5 = new Label();
+            label80 = new Label();
+            QuestionLabel4 = new Label();
+            label78 = new Label();
+            QuestionLabel3 = new Label();
+            label76 = new Label();
+            QuestionLabel2 = new Label();
+            label74 = new Label();
+            textBox1 = new TextBox();
+            QuestionLabel1 = new Label();
+            label71 = new Label();
+            label68 = new Label();
+            QuizDeadlineLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SubjectsPopUpPanel.SuspendLayout();
@@ -256,6 +293,7 @@
             StudentProfilePanel.SuspendLayout();
             SidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            QuizPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -290,7 +328,7 @@
             SubjectsBtn.ForeColor = Color.Gray;
             SubjectsBtn.Location = new Point(1, 83);
             SubjectsBtn.Name = "SubjectsBtn";
-            SubjectsBtn.Size = new Size(95, 53);
+            SubjectsBtn.Size = new Size(94, 53);
             SubjectsBtn.TabIndex = 6;
             SubjectsBtn.Text = "Subjects";
             SubjectsBtn.UseVisualStyleBackColor = false;
@@ -320,7 +358,7 @@
             btnGrades.ForeColor = Color.Gray;
             btnGrades.Location = new Point(1, 142);
             btnGrades.Name = "btnGrades";
-            btnGrades.Size = new Size(95, 53);
+            btnGrades.Size = new Size(94, 53);
             btnGrades.TabIndex = 4;
             btnGrades.Text = "Grades";
             btnGrades.UseVisualStyleBackColor = false;
@@ -863,7 +901,7 @@
             SubjectsPanel.Location = new Point(93, 0);
             SubjectsPanel.Margin = new Padding(0);
             SubjectsPanel.Name = "SubjectsPanel";
-            SubjectsPanel.Size = new Size(1310, 740);
+            SubjectsPanel.Size = new Size(1299, 740);
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
@@ -1474,7 +1512,7 @@
             GradingSystemPanel.Location = new Point(94, 0);
             GradingSystemPanel.Margin = new Padding(0);
             GradingSystemPanel.Name = "GradingSystemPanel";
-            GradingSystemPanel.Size = new Size(1309, 740);
+            GradingSystemPanel.Size = new Size(1298, 740);
             GradingSystemPanel.TabIndex = 8;
             // 
             // QuarterSelectionCb
@@ -2116,7 +2154,7 @@
             StudentProfilePanel.Controls.Add(label26);
             StudentProfilePanel.Location = new Point(94, 0);
             StudentProfilePanel.Name = "StudentProfilePanel";
-            StudentProfilePanel.Size = new Size(1309, 740);
+            StudentProfilePanel.Size = new Size(1298, 740);
             StudentProfilePanel.TabIndex = 11;
             // 
             // PasswordUpdateBtn
@@ -2613,10 +2651,10 @@
             SidebarPanel.Controls.Add(News);
             SidebarPanel.Controls.Add(SystemLogListBox);
             SidebarPanel.Dock = DockStyle.Right;
-            SidebarPanel.Location = new Point(677, 0);
+            SidebarPanel.Location = new Point(1403, 0);
             SidebarPanel.Margin = new Padding(0);
             SidebarPanel.Name = "SidebarPanel";
-            SidebarPanel.Size = new Size(786, 739);
+            SidebarPanel.Size = new Size(60, 739);
             SidebarPanel.TabIndex = 11;
             SidebarPanel.MouseEnter += SidebarPanel_MouseEnter;
             SidebarPanel.MouseLeave += SidebarPanel_MouseLeave;
@@ -2628,6 +2666,7 @@
             QuizListView.Size = new Size(666, 131);
             QuizListView.TabIndex = 15;
             QuizListView.UseCompatibleStateImageBehavior = false;
+            QuizListView.Click += QuizListView_Click;
             // 
             // label67
             // 
@@ -2686,6 +2725,421 @@
             SystemLogListBox.TabIndex = 0;
             SystemLogListBox.MouseEnter += SystemLogListBox_MouseEnter;
             // 
+            // QuizPanel
+            // 
+            QuizPanel.BackColor = Color.White;
+            QuizPanel.Controls.Add(QuizDeadlineLabel);
+            QuizPanel.Controls.Add(textBox10);
+            QuizPanel.Controls.Add(textBox9);
+            QuizPanel.Controls.Add(textBox8);
+            QuizPanel.Controls.Add(textBox7);
+            QuizPanel.Controls.Add(textBox6);
+            QuizPanel.Controls.Add(textBox5);
+            QuizPanel.Controls.Add(textBox4);
+            QuizPanel.Controls.Add(textBox3);
+            QuizPanel.Controls.Add(textBox2);
+            QuizPanel.Controls.Add(QuizTitleLabel);
+            QuizPanel.Controls.Add(QuizIdLabel);
+            QuizPanel.Controls.Add(button2);
+            QuizPanel.Controls.Add(button1);
+            QuizPanel.Controls.Add(QuestionLabel10);
+            QuizPanel.Controls.Add(label82);
+            QuizPanel.Controls.Add(QuestionLabel9);
+            QuizPanel.Controls.Add(label84);
+            QuizPanel.Controls.Add(QuestionLabel8);
+            QuizPanel.Controls.Add(label86);
+            QuizPanel.Controls.Add(QuestionLabel7);
+            QuizPanel.Controls.Add(label88);
+            QuizPanel.Controls.Add(QuestionLabel6);
+            QuizPanel.Controls.Add(label90);
+            QuizPanel.Controls.Add(QuestionLabel5);
+            QuizPanel.Controls.Add(label80);
+            QuizPanel.Controls.Add(QuestionLabel4);
+            QuizPanel.Controls.Add(label78);
+            QuizPanel.Controls.Add(QuestionLabel3);
+            QuizPanel.Controls.Add(label76);
+            QuizPanel.Controls.Add(QuestionLabel2);
+            QuizPanel.Controls.Add(label74);
+            QuizPanel.Controls.Add(textBox1);
+            QuizPanel.Controls.Add(QuestionLabel1);
+            QuizPanel.Controls.Add(label71);
+            QuizPanel.Controls.Add(label68);
+            QuizPanel.Location = new Point(94, 0);
+            QuizPanel.Name = "QuizPanel";
+            QuizPanel.Size = new Size(1298, 740);
+            QuizPanel.TabIndex = 11;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(171, 473);
+            textBox10.Multiline = true;
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(215, 30);
+            textBox10.TabIndex = 40;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(171, 438);
+            textBox9.Multiline = true;
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(215, 30);
+            textBox9.TabIndex = 39;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(171, 403);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(215, 30);
+            textBox8.TabIndex = 38;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(171, 367);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(215, 30);
+            textBox7.TabIndex = 37;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(171, 333);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(215, 30);
+            textBox6.TabIndex = 36;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(171, 298);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(215, 30);
+            textBox5.TabIndex = 35;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(171, 260);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(215, 30);
+            textBox4.TabIndex = 34;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(171, 222);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(215, 30);
+            textBox3.TabIndex = 33;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(171, 184);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(215, 30);
+            textBox2.TabIndex = 32;
+            // 
+            // QuizTitleLabel
+            // 
+            QuizTitleLabel.AutoSize = true;
+            QuizTitleLabel.Font = new Font("Segoe Fluent Icons", 9F);
+            QuizTitleLabel.ForeColor = Color.DimGray;
+            QuizTitleLabel.Location = new Point(171, 59);
+            QuizTitleLabel.Name = "QuizTitleLabel";
+            QuizTitleLabel.Size = new Size(45, 12);
+            QuizTitleLabel.TabIndex = 1;
+            QuizTitleLabel.Text = "Quiz Title";
+            // 
+            // QuizIdLabel
+            // 
+            QuizIdLabel.AutoSize = true;
+            QuizIdLabel.Font = new Font("Segoe Fluent Icons", 9F);
+            QuizIdLabel.ForeColor = Color.DimGray;
+            QuizIdLabel.Location = new Point(247, 59);
+            QuizIdLabel.Name = "QuizIdLabel";
+            QuizIdLabel.Size = new Size(36, 12);
+            QuizIdLabel.TabIndex = 2;
+            QuizIdLabel.Text = "Quiz Id";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.WhiteSmoke;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.DimGray;
+            button2.Location = new Point(957, 586);
+            button2.Name = "button2";
+            button2.Size = new Size(209, 30);
+            button2.TabIndex = 4;
+            button2.Text = "CLOSE";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DodgerBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(957, 550);
+            button1.Name = "button1";
+            button1.Size = new Size(209, 30);
+            button1.TabIndex = 3;
+            button1.Text = "SUBMIT";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // QuestionLabel10
+            // 
+            QuestionLabel10.AutoSize = true;
+            QuestionLabel10.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel10.ForeColor = Color.DimGray;
+            QuestionLabel10.Location = new Point(417, 489);
+            QuestionLabel10.Name = "QuestionLabel10";
+            QuestionLabel10.Size = new Size(79, 19);
+            QuestionLabel10.TabIndex = 31;
+            QuestionLabel10.Text = "Question Text";
+            // 
+            // label82
+            // 
+            label82.AutoSize = true;
+            label82.Font = new Font("Segoe Fluent Icons", 12F);
+            label82.ForeColor = Color.DimGray;
+            label82.Location = new Point(393, 488);
+            label82.Name = "label82";
+            label82.Size = new Size(24, 16);
+            label82.TabIndex = 30;
+            label82.Text = "10.";
+            // 
+            // QuestionLabel9
+            // 
+            QuestionLabel9.AutoSize = true;
+            QuestionLabel9.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel9.ForeColor = Color.DimGray;
+            QuestionLabel9.Location = new Point(416, 453);
+            QuestionLabel9.Name = "QuestionLabel9";
+            QuestionLabel9.Size = new Size(79, 19);
+            QuestionLabel9.TabIndex = 28;
+            QuestionLabel9.Text = "Question Text";
+            // 
+            // label84
+            // 
+            label84.AutoSize = true;
+            label84.Font = new Font("Segoe Fluent Icons", 12F);
+            label84.ForeColor = Color.DimGray;
+            label84.Location = new Point(392, 452);
+            label84.Name = "label84";
+            label84.Size = new Size(17, 16);
+            label84.TabIndex = 27;
+            label84.Text = "9.";
+            // 
+            // QuestionLabel8
+            // 
+            QuestionLabel8.AutoSize = true;
+            QuestionLabel8.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel8.ForeColor = Color.DimGray;
+            QuestionLabel8.Location = new Point(417, 416);
+            QuestionLabel8.Name = "QuestionLabel8";
+            QuestionLabel8.Size = new Size(79, 19);
+            QuestionLabel8.TabIndex = 25;
+            QuestionLabel8.Text = "Question Text";
+            // 
+            // label86
+            // 
+            label86.AutoSize = true;
+            label86.Font = new Font("Segoe Fluent Icons", 12F);
+            label86.ForeColor = Color.DimGray;
+            label86.Location = new Point(393, 415);
+            label86.Name = "label86";
+            label86.Size = new Size(17, 16);
+            label86.TabIndex = 24;
+            label86.Text = "8.";
+            // 
+            // QuestionLabel7
+            // 
+            QuestionLabel7.AutoSize = true;
+            QuestionLabel7.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel7.ForeColor = Color.DimGray;
+            QuestionLabel7.Location = new Point(416, 382);
+            QuestionLabel7.Name = "QuestionLabel7";
+            QuestionLabel7.Size = new Size(79, 19);
+            QuestionLabel7.TabIndex = 22;
+            QuestionLabel7.Text = "Question Text";
+            // 
+            // label88
+            // 
+            label88.AutoSize = true;
+            label88.Font = new Font("Segoe Fluent Icons", 12F);
+            label88.ForeColor = Color.DimGray;
+            label88.Location = new Point(392, 381);
+            label88.Name = "label88";
+            label88.Size = new Size(17, 16);
+            label88.TabIndex = 21;
+            label88.Text = "7.";
+            // 
+            // QuestionLabel6
+            // 
+            QuestionLabel6.AutoSize = true;
+            QuestionLabel6.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel6.ForeColor = Color.DimGray;
+            QuestionLabel6.Location = new Point(416, 347);
+            QuestionLabel6.Name = "QuestionLabel6";
+            QuestionLabel6.Size = new Size(79, 19);
+            QuestionLabel6.TabIndex = 19;
+            QuestionLabel6.Text = "Question Text";
+            // 
+            // label90
+            // 
+            label90.AutoSize = true;
+            label90.Font = new Font("Segoe Fluent Icons", 12F);
+            label90.ForeColor = Color.DimGray;
+            label90.Location = new Point(392, 346);
+            label90.Name = "label90";
+            label90.Size = new Size(17, 16);
+            label90.TabIndex = 18;
+            label90.Text = "6.";
+            // 
+            // QuestionLabel5
+            // 
+            QuestionLabel5.AutoSize = true;
+            QuestionLabel5.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel5.ForeColor = Color.DimGray;
+            QuestionLabel5.Location = new Point(416, 313);
+            QuestionLabel5.Name = "QuestionLabel5";
+            QuestionLabel5.Size = new Size(79, 19);
+            QuestionLabel5.TabIndex = 16;
+            QuestionLabel5.Text = "Question Text";
+            // 
+            // label80
+            // 
+            label80.AutoSize = true;
+            label80.Font = new Font("Segoe Fluent Icons", 12F);
+            label80.ForeColor = Color.DimGray;
+            label80.Location = new Point(392, 312);
+            label80.Name = "label80";
+            label80.Size = new Size(17, 16);
+            label80.TabIndex = 15;
+            label80.Text = "5.";
+            // 
+            // QuestionLabel4
+            // 
+            QuestionLabel4.AutoSize = true;
+            QuestionLabel4.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel4.ForeColor = Color.DimGray;
+            QuestionLabel4.Location = new Point(416, 275);
+            QuestionLabel4.Name = "QuestionLabel4";
+            QuestionLabel4.Size = new Size(79, 19);
+            QuestionLabel4.TabIndex = 13;
+            QuestionLabel4.Text = "Question Text";
+            // 
+            // label78
+            // 
+            label78.AutoSize = true;
+            label78.Font = new Font("Segoe Fluent Icons", 12F);
+            label78.ForeColor = Color.DimGray;
+            label78.Location = new Point(392, 274);
+            label78.Name = "label78";
+            label78.Size = new Size(17, 16);
+            label78.TabIndex = 12;
+            label78.Text = "4.";
+            // 
+            // QuestionLabel3
+            // 
+            QuestionLabel3.AutoSize = true;
+            QuestionLabel3.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel3.ForeColor = Color.DimGray;
+            QuestionLabel3.Location = new Point(416, 238);
+            QuestionLabel3.Name = "QuestionLabel3";
+            QuestionLabel3.Size = new Size(79, 19);
+            QuestionLabel3.TabIndex = 10;
+            QuestionLabel3.Text = "Question Text";
+            // 
+            // label76
+            // 
+            label76.AutoSize = true;
+            label76.Font = new Font("Segoe Fluent Icons", 12F);
+            label76.ForeColor = Color.DimGray;
+            label76.Location = new Point(392, 237);
+            label76.Name = "label76";
+            label76.Size = new Size(17, 16);
+            label76.TabIndex = 9;
+            label76.Text = "3.";
+            // 
+            // QuestionLabel2
+            // 
+            QuestionLabel2.AutoSize = true;
+            QuestionLabel2.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel2.ForeColor = Color.DimGray;
+            QuestionLabel2.Location = new Point(416, 199);
+            QuestionLabel2.Name = "QuestionLabel2";
+            QuestionLabel2.Size = new Size(79, 19);
+            QuestionLabel2.TabIndex = 7;
+            QuestionLabel2.Text = "Question Text";
+            // 
+            // label74
+            // 
+            label74.AutoSize = true;
+            label74.Font = new Font("Segoe Fluent Icons", 12F);
+            label74.ForeColor = Color.DimGray;
+            label74.Location = new Point(392, 198);
+            label74.Name = "label74";
+            label74.Size = new Size(17, 16);
+            label74.TabIndex = 6;
+            label74.Text = "2.";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(171, 148);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(215, 30);
+            textBox1.TabIndex = 5;
+            // 
+            // QuestionLabel1
+            // 
+            QuestionLabel1.AutoSize = true;
+            QuestionLabel1.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel1.ForeColor = Color.DimGray;
+            QuestionLabel1.Location = new Point(416, 163);
+            QuestionLabel1.Name = "QuestionLabel1";
+            QuestionLabel1.Size = new Size(88, 19);
+            QuestionLabel1.TabIndex = 4;
+            QuestionLabel1.Text = "QuestionLabel1";
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.Font = new Font("Segoe Fluent Icons", 12F);
+            label71.ForeColor = Color.DimGray;
+            label71.Location = new Point(392, 162);
+            label71.Name = "label71";
+            label71.Size = new Size(17, 16);
+            label71.TabIndex = 3;
+            label71.Text = "1.";
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label68.ForeColor = Color.DimGray;
+            label68.Location = new Point(12, 50);
+            label68.Name = "label68";
+            label68.Size = new Size(149, 25);
+            label68.TabIndex = 0;
+            label68.Text = "Take your Quiz";
+            // 
+            // QuizDeadlineLabel
+            // 
+            QuizDeadlineLabel.AutoSize = true;
+            QuizDeadlineLabel.Font = new Font("Segoe Fluent Icons", 9F);
+            QuizDeadlineLabel.ForeColor = Color.DimGray;
+            QuizDeadlineLabel.Location = new Point(1068, 63);
+            QuizDeadlineLabel.Name = "QuizDeadlineLabel";
+            QuizDeadlineLabel.Size = new Size(64, 12);
+            QuizDeadlineLabel.TabIndex = 41;
+            QuizDeadlineLabel.Text = "Quiz Deadline";
+            // 
             // StudentPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2694,6 +3148,7 @@
             ClientSize = new Size(1463, 739);
             Controls.Add(SidebarPanel);
             Controls.Add(panel1);
+            Controls.Add(QuizPanel);
             Controls.Add(SubjectsPanel);
             Controls.Add(GradingSystemPanel);
             Controls.Add(StudentProfilePanel);
@@ -2760,6 +3215,8 @@
             SidebarPanel.ResumeLayout(false);
             SidebarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            QuizPanel.ResumeLayout(false);
+            QuizPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2948,11 +3405,7 @@
         private Label ProfileGender;
         private Label ProfileAge;
         private Label ProfileStudentName;
-        private Label label81;
-        private Label label82;
-        private Label label83;
-        private Label label84;
-        private Label label79;
+        private Label QuestionLabel5;
         private Label ProfileAccountIdentification;
         private Label ProfileGuardianEmail;
         private Label ProfileGuardianContactNumber;
@@ -2968,5 +3421,40 @@
         private PictureBox pictureBox2;
         private Label label67;
         private ListView QuizListView;
+        private Panel QuizPanel;
+        private Label QuizIdLabel;
+        private Label QuizTitleLabel;
+        private Label label68;
+        private Label QuestionLabel1;
+        private Label label71;
+        private Label QuestionLabel10;
+        private Label label82;
+        private Label QuestionLabel9;
+        private Label label84;
+        private Label QuestionLabel8;
+        private Label label86;
+        private Label QuestionLabel7;
+        private Label label88;
+        private Label QuestionLabel6;
+        private Label label90;
+        private Label label80;
+        private Label QuestionLabel4;
+        private Label label78;
+        private Label QuestionLabel3;
+        private Label label76;
+        private Label QuestionLabel2;
+        private TextBox textBox1;
+        private Button button2;
+        private Button button1;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox10;
+        private TextBox textBox9;
+        private TextBox textBox8;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private Label QuizDeadlineLabel;
     }
 }
