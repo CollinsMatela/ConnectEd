@@ -23,5 +23,7 @@ namespace ConnectEducation
         public string [] Question { get; set; }
         public string [] AnswerKey { get; set; }
         public string Deadline { get; set; }
+
+        public List<string> StudentsWhoTook { get; set; } = new List<string>();
     }
 }

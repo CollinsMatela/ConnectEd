@@ -210,6 +210,7 @@ namespace ConnectEducation
             var recordCollection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
 
             int countOfStudent = 0;
+
             foreach (var student in AllStudents)
             {
 
@@ -1270,6 +1271,7 @@ namespace ConnectEducation
              Question = questionTexts,
              AnswerKey = answerTexts,
              Deadline = DeadlineDatePicker.Value.ToString("dd/MM/yyyy"),
+             StudentsWhoTook = [] 
             };
 
             DialogResult result = MessageBox.Show("Are you sure you want to save this quiz?","Confirm Save",MessageBoxButtons.YesNo,MessageBoxIcon.Question);

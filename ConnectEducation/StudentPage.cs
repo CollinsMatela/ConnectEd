@@ -1715,37 +1715,20 @@ namespace ConnectEducation
 
             ListViewItem selectedItem = QuizListView.SelectedItems[0];
 
+            string getQuizId = selectedItem.SubItems[0].Text;
             string quizName = selectedItem.SubItems[1].Text;
             string nameOfInstructor = selectedItem.SubItems[3].Text;
 
-            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-            var filterTeacher = Builders<TeacherInformationModal>.Filter.Eq(z => z.Fullname, nameOfInstructor);
-            var Teacher = collection.Find(filterTeacher).FirstOrDefault();
-            if (Teacher != null)
+            var collection = database.GetCollection<QuizModel>("QuizModel");
+            var QuizFilter = Builders<QuizModel>.Filter.Eq(z => z.QuizId, getQuizId);
+            var QuizProperties = collection.Find(QuizFilter).FirstOrDefault();
+            if (QuizProperties != null)
             {
-                string TeacherId = Teacher.TeacherID;
-                string TeacherSubject = Teacher.Subject;
-                string TeacherSection = Teacher.Section;
-
-                var collection2 = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-                var studentFilter = Builders<TeachersStudentRecords>.Filter.And(
-                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, TeacherId),
-                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
-                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, TeacherSubject),
-                          Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, TeacherSection)
-                          );
-                var studentRecord = collection2.Find(studentFilter).FirstOrDefault();
-                if (studentRecord != null)
+                if (QuizProperties.StudentsWhoTook.Contains(IdOfStudent))
                 {
-                    var existingQuiz = studentRecord.ActivityRecord.FirstOrDefault(a => a.ActivityType == quizName);
-
-                    if (existingQuiz != null && !string.IsNullOrWhiteSpace(existingQuiz.Score))
-                    {
-                        MessageBox.Show("You already took this quiz.", "Quiz Taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                    MessageBox.Show("You already took this quiz.", "Quiz Taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-
             }
 
             // Ask for confirmation
@@ -1822,6 +1805,8 @@ namespace ConnectEducation
                         }
                     }
                     MessageBox.Show("You score " + quizScore + " out of 10.");
+                    var ListWhoTookTheQuiz = Builders<QuizModel>.Update.AddToSet(z => z.StudentsWhoTook, IdOfStudent);
+                    collection.UpdateOne(filter,ListWhoTookTheQuiz);
 
                     string Instructor = result.Instructor;
 
@@ -1836,6 +1821,8 @@ namespace ConnectEducation
 
                     var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", quizScore.ToString());
                     collection2.UpdateOne(filter2, update);
+
+                    
 
                 }
                 Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
