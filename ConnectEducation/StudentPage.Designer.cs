@@ -2651,10 +2651,10 @@
             SidebarPanel.Controls.Add(News);
             SidebarPanel.Controls.Add(SystemLogListBox);
             SidebarPanel.Dock = DockStyle.Right;
-            SidebarPanel.Location = new Point(1403, 0);
+            SidebarPanel.Location = new Point(864, 0);
             SidebarPanel.Margin = new Padding(0);
             SidebarPanel.Name = "SidebarPanel";
-            SidebarPanel.Size = new Size(60, 739);
+            SidebarPanel.Size = new Size(599, 739);
             SidebarPanel.TabIndex = 11;
             SidebarPanel.MouseEnter += SidebarPanel_MouseEnter;
             SidebarPanel.MouseLeave += SidebarPanel_MouseLeave;
@@ -2666,6 +2666,7 @@
             QuizListView.Size = new Size(666, 131);
             QuizListView.TabIndex = 15;
             QuizListView.UseCompatibleStateImageBehavior = false;
+            QuizListView.SelectedIndexChanged += QuizListView_SelectedIndexChanged;
             QuizListView.Click += QuizListView_Click;
             // 
             // label67

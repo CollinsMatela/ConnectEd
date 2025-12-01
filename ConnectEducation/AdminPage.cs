@@ -500,131 +500,136 @@ namespace ConnectEducation
 
             try
             {
-                Random random = new Random();
-                // Student information
-                string StudentID = "NO" + DateTime.Now.ToString("yy") + "-" + random.Next(10000, 99999);
-                string StudentPass = "password" + random.Next(10000, 99999);
-                string LastnameOfStudent = StudentLastnameTxt.Text.Trim();
-                string FirstnameOfStudent = StudentFirstnameTxt.Text;
-                string MiddlenameOfStudent = StudentMiddlenameTxt.Text;
-                string AgeOfStudent = AgeTxt.Text;
-                string HomeAddressOfStudent = HomeAddressTxt.Text;
-                string ContactOfStudent = ContactTxt.Text;
-                string EmailOfStudent = EmailAddressTxt.Text;
-                string GenderOfStudent = GenderCb.SelectedItem.ToString();
-                DateTime BirthOfStudent = DateOfBirthDtp.Value.Date;
-
-                // Academic Information
-                string StrandOfStudent = StrandCb.SelectedItem.ToString();
-                string GradeLevelOfStudent = GradeLevelCb.SelectedItem.ToString();
-                string SemesterOfStudent = SemesterCb.SelectedItem.ToString();
-                string SectionOfStudent = SectionCb.SelectedItem.ToString();
-
-                // Parents Information
-                string GuardianLastname = GuardianLastnameTxt.Text;
-                string GuardianFirstname = GuardianFirstnameTxt.Text;
-                string GuardianMiddleInitial = GuardianMiddleInitialTxt.Text;
-                string GuardianRelationship = RelationshipCb.SelectedItem.ToString();
-                string GuardianContact = ContactTxt.Text;
-                string GuardianEmail = GuardianEmailTxt.Text;
-
-                DateTime CreatedAt = DateTime.Now.Date;
-
-                //Insert to database
-                var connectionString = "mongodb://localhost:27017";
-                var client = new MongoClient(connectionString);
-                var database = client.GetDatabase("ConnectED");
-                var collection = database.GetCollection<StudentModal>("StudentModal");
-
-                var studentProperties = new StudentModal
+                DialogResult mess = MessageBox.Show("Are you sure to resgister a student", "Confirm", MessageBoxButtons.YesNo);
+                if (mess == DialogResult.Yes)
                 {
-                    StudentId = StudentID,
-                    StudentPassword = StudentPass,
-                    Lastname = LastnameOfStudent,
-                    Firstname = FirstnameOfStudent,
-                    Middlename = MiddlenameOfStudent,
-                    Fullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent,
-                    Age = AgeOfStudent,
-                    HomeAddress = HomeAddressOfStudent,
-                    Contact = ContactOfStudent,
-                    Email = EmailOfStudent,
-                    Gender = GenderOfStudent,
-                    DateOfBirth = BirthOfStudent,
+                    Random random = new Random();
+                    // Student information
+                    string StudentID = "NO" + DateTime.Now.ToString("yy") + "-" + random.Next(10000, 99999);
+                    string StudentPass = "password" + random.Next(10000, 99999);
+                    string LastnameOfStudent = StudentLastnameTxt.Text.Trim();
+                    string FirstnameOfStudent = StudentFirstnameTxt.Text;
+                    string MiddlenameOfStudent = StudentMiddlenameTxt.Text;
+                    string AgeOfStudent = AgeTxt.Text;
+                    string HomeAddressOfStudent = HomeAddressTxt.Text;
+                    string ContactOfStudent = ContactTxt.Text;
+                    string EmailOfStudent = EmailAddressTxt.Text;
+                    string GenderOfStudent = GenderCb.SelectedItem.ToString();
+                    DateTime BirthOfStudent = DateOfBirthDtp.Value.Date;
 
-                    Strand = StrandOfStudent,
-                    GradeLevel = GradeLevelOfStudent,
-                    Semester = SemesterOfStudent,
-                    Section = SectionOfStudent,
+                    // Academic Information
+                    string StrandOfStudent = StrandCb.SelectedItem.ToString();
+                    string GradeLevelOfStudent = GradeLevelCb.SelectedItem.ToString();
+                    string SemesterOfStudent = SemesterCb.SelectedItem.ToString();
+                    string SectionOfStudent = SectionCb.SelectedItem.ToString();
 
-                    GuardianLastname = GuardianLastname,
-                    GuardianFirstname = GuardianFirstname,
-                    GuardianMiddleInitial = GuardianMiddleInitial,
-                    GuardianRelationship = GuardianRelationship,
-                    GuardianContact = GuardianContact,
-                    GuardianEmail = GuardianEmail,
+                    // Parents Information
+                    string GuardianLastname = GuardianLastnameTxt.Text;
+                    string GuardianFirstname = GuardianFirstnameTxt.Text;
+                    string GuardianMiddleInitial = GuardianMiddleInitialTxt.Text;
+                    string GuardianRelationship = RelationshipCb.SelectedItem.ToString();
+                    string GuardianContact = ContactTxt.Text;
+                    string GuardianEmail = GuardianEmailTxt.Text;
 
-                    CreatedAt = CreatedAt
-                };
+                    DateTime CreatedAt = DateTime.Now.Date;
 
-                string StudentFullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent;
+                    //Insert to database
+                    var connectionString = "mongodb://localhost:27017";
+                    var client = new MongoClient(connectionString);
+                    var database = client.GetDatabase("ConnectED");
+                    var collection = database.GetCollection<StudentModal>("StudentModal");
 
-                // Put the name of student to the list of students section
-                string nameOfTable = "";
+                    var studentProperties = new StudentModal
+                    {
+                        StudentId = StudentID,
+                        StudentPassword = StudentPass,
+                        Lastname = LastnameOfStudent,
+                        Firstname = FirstnameOfStudent,
+                        Middlename = MiddlenameOfStudent,
+                        Fullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent,
+                        Age = AgeOfStudent,
+                        HomeAddress = HomeAddressOfStudent,
+                        Contact = ContactOfStudent,
+                        Email = EmailOfStudent,
+                        Gender = GenderOfStudent,
+                        DateOfBirth = BirthOfStudent,
 
-                if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "STEM") { nameOfTable = "Grade11_STEM"; }
-                else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "STEM") { nameOfTable = "Grade12_STEM"; }
-                else if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "ABM") { nameOfTable = "Grade11_ABM"; }
-                else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "ABM") { nameOfTable = "Grade12_ABM"; }
-                else if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "HUMSS") { nameOfTable = "Grade11_HUMSS"; }
-                else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "HUMSS") { nameOfTable = "Grade12_HUMSS"; }
-                else { return; }
+                        Strand = StrandOfStudent,
+                        GradeLevel = GradeLevelOfStudent,
+                        Semester = SemesterOfStudent,
+                        Section = SectionOfStudent,
+
+                        GuardianLastname = GuardianLastname,
+                        GuardianFirstname = GuardianFirstname,
+                        GuardianMiddleInitial = GuardianMiddleInitial,
+                        GuardianRelationship = GuardianRelationship,
+                        GuardianContact = GuardianContact,
+                        GuardianEmail = GuardianEmail,
+
+                        CreatedAt = CreatedAt
+                    };
+
+                    string StudentFullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent;
+
+                    // Put the name of student to the list of students section
+                    string nameOfTable = "";
+
+                    if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "STEM") { nameOfTable = "Grade11_STEM"; }
+                    else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "STEM") { nameOfTable = "Grade12_STEM"; }
+                    else if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "ABM") { nameOfTable = "Grade11_ABM"; }
+                    else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "ABM") { nameOfTable = "Grade12_ABM"; }
+                    else if (GradeLevelOfStudent == "Grade 11" && StrandOfStudent == "HUMSS") { nameOfTable = "Grade11_HUMSS"; }
+                    else if (GradeLevelOfStudent == "Grade 12" && StrandOfStudent == "HUMSS") { nameOfTable = "Grade12_HUMSS"; }
+                    else { return; }
                 ;
 
-                var collection2 = database.GetCollection<ClassInformationModal>(nameOfTable);
-                var sectionFilter = Builders<ClassInformationModal>.Filter.Eq(x => x.Section, SectionOfStudent); // find the object same as the section of student
-                var update = Builders<ClassInformationModal>.Update.AddToSet(x => x.Students, StudentFullname); // added name of student to the object
-                var result = collection2.UpdateOneAsync(sectionFilter, update);
+                    var collection2 = database.GetCollection<ClassInformationModal>(nameOfTable);
+                    var sectionFilter = Builders<ClassInformationModal>.Filter.Eq(x => x.Section, SectionOfStudent); // find the object same as the section of student
+                    var update = Builders<ClassInformationModal>.Update.AddToSet(x => x.Students, StudentFullname); // added name of student to the object
+                    var result = collection2.UpdateOneAsync(sectionFilter, update);
 
-                var collection3 = database.GetCollection<StudentGrades>("StudentGrades");
+                    var collection3 = database.GetCollection<StudentGrades>("StudentGrades");
 
-                var GradeRecordProperties = new StudentGrades
-                {
-                    recordID = Guid.NewGuid().ToString(),
-                    StudentID = StudentID,
-                    StudentFullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent,
-                    StudentSection = SectionOfStudent,
-                    SubjectList = new List<GradeRecording> { }
-
-
-                };
-
-                // Insert student information to database
-                collection3.InsertOne(GradeRecordProperties);
-                collection.InsertOne(studentProperties);
-                MessageBox.Show("Auto - Generated Account for " + StudentFullname + "\n\n" + "Username: " + StudentID + "\n" + "Password: " + StudentPass);
-                MessageBox.Show("Successfully added a student");
+                    var GradeRecordProperties = new StudentGrades
+                    {
+                        recordID = Guid.NewGuid().ToString(),
+                        StudentID = StudentID,
+                        StudentFullname = LastnameOfStudent + " " + FirstnameOfStudent + " " + MiddlenameOfStudent,
+                        StudentSection = SectionOfStudent,
+                        SubjectList = new List<GradeRecording> { }
 
 
+                    };
 
-                StudentLastnameTxt.Clear();
-                StudentFirstnameTxt.Clear();
-                StudentMiddlenameTxt.Clear();
-                AgeTxt.Clear();
-                HomeAddressTxt.Clear();
-                ContactTxt.Clear();
-                EmailAddressTxt.Clear();
-                GuardianLastnameTxt.Clear();
-                GuardianFirstnameTxt.Clear();
-                GuardianMiddleInitialTxt.Clear();
-                GuardianEmailTxt.Clear();
-                GuardianContactTxt.Clear();
-                GenderCb.SelectedIndex = -1;
-                StrandCb.SelectedIndex = -1;
-                GradeLevelCb.SelectedIndex = -1;
-                SemesterCb.SelectedIndex = -1;
-                SectionCb.SelectedIndex = -1;
-                RelationshipCb.SelectedIndex = -1;
-                DateOfBirthDtp.Value = DateTime.Now;
+                    // Insert student information to database
+                    collection3.InsertOne(GradeRecordProperties);
+                    collection.InsertOne(studentProperties);
+                    MessageBox.Show("Auto - Generated Account for " + StudentFullname + "\n\n" + "Username: " + StudentID + "\n" + "Password: " + StudentPass);
+                    MessageBox.Show("Successfully added a student");
+
+
+
+                    StudentLastnameTxt.Clear();
+                    StudentFirstnameTxt.Clear();
+                    StudentMiddlenameTxt.Clear();
+                    AgeTxt.Clear();
+                    HomeAddressTxt.Clear();
+                    ContactTxt.Clear();
+                    EmailAddressTxt.Clear();
+                    GuardianLastnameTxt.Clear();
+                    GuardianFirstnameTxt.Clear();
+                    GuardianMiddleInitialTxt.Clear();
+                    GuardianEmailTxt.Clear();
+                    GuardianContactTxt.Clear();
+                    GenderCb.SelectedIndex = -1;
+                    StrandCb.SelectedIndex = -1;
+                    GradeLevelCb.SelectedIndex = -1;
+                    SemesterCb.SelectedIndex = -1;
+                    SectionCb.SelectedIndex = -1;
+                    RelationshipCb.SelectedIndex = -1;
+                    DateOfBirthDtp.Value = DateTime.Now;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -808,76 +813,83 @@ namespace ConnectEducation
                     return;
                 }
 
-                Random random = new Random();
-                // Store muna
-                string TeacherID = "NO" + DateTime.Now.ToString("dd") + "-" + random.Next(10000, 99999);
-                string TeacherPass = "password" + random.Next(10000, 99999);
-                string lastnameOfTeacher = LastnameOfTeacherTxt.Text;
-                string firstnameOfTeacher = FirstnameOfTeacherTxt.Text;
-                string middlenameOfTeacher = MiddlenameOfTeacherTxt.Text;
-                string ageOfTeacher = AgeOfTeacherTxt.Text;
-                string genderOfTeacher = GenderOfTeacherCb.SelectedItem.ToString();
-                DateTime birthOfTeacher = BirthOfTeacherDtp.Value.Date;
-                string homeAddressOfTeacher = HomeAddressOfTeacherTxt.Text;
-                string contactOfTeacher = ContactOfTeacherTxt.Text;
-                string emailOfTeacher = EmailOfTeacherTxt.Text;
+                DialogResult mess2 = MessageBox.Show("Are you sure to register a instructor", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                string educAttainmentOfTeacher = EducAttainmentCb.SelectedItem.ToString();
-                string prcIDOfTeacher = PrcIDOfTeacherTxt.Text;
-                string courseOfTeacher = CourseOfTeacherCb.SelectedItem.ToString();
-                string schoolOfTeacher = SchoolOfTeacherTxt.Text;
-
-
-
-                //Insert to database
-                var connectionString = "mongodb://localhost:27017";
-                var client = new MongoClient(connectionString);
-                var database = client.GetDatabase("ConnectED");
-                var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-
-                TeacherInformationModal teacherProperties = new TeacherInformationModal()
+                if (mess2 == DialogResult.Yes)
                 {
-                    TeacherID = TeacherID,
-                    TeacherPassword = TeacherPass,
-                    Subject = "",
-                    Section = "",
-                    Lastname = lastnameOfTeacher,
-                    Firstname = firstnameOfTeacher,
-                    Middlename = middlenameOfTeacher,
-                    Fullname = lastnameOfTeacher + " " + firstnameOfTeacher + " " + middlenameOfTeacher,
-                    Age = ageOfTeacher,
-                    Gender = genderOfTeacher,
-                    BirthDate = birthOfTeacher,
-                    HomeAddress = homeAddressOfTeacher,
-                    Contact = contactOfTeacher,
-                    Email = emailOfTeacher,
-                    EducAttainment = educAttainmentOfTeacher,
-                    PrcID = prcIDOfTeacher,
-                    Course = courseOfTeacher,
-                    School = schoolOfTeacher
-                };
+                    Random random = new Random();
+                    // Store muna
+                    string TeacherID = "NO" + DateTime.Now.ToString("dd") + "-" + random.Next(10000, 99999);
+                    string TeacherPass = "password" + random.Next(10000, 99999);
+                    string lastnameOfTeacher = LastnameOfTeacherTxt.Text;
+                    string firstnameOfTeacher = FirstnameOfTeacherTxt.Text;
+                    string middlenameOfTeacher = MiddlenameOfTeacherTxt.Text;
+                    string ageOfTeacher = AgeOfTeacherTxt.Text;
+                    string genderOfTeacher = GenderOfTeacherCb.SelectedItem.ToString();
+                    DateTime birthOfTeacher = BirthOfTeacherDtp.Value.Date;
+                    string homeAddressOfTeacher = HomeAddressOfTeacherTxt.Text;
+                    string contactOfTeacher = ContactOfTeacherTxt.Text;
+                    string emailOfTeacher = EmailOfTeacherTxt.Text;
 
-                collection.InsertOne(teacherProperties);
-                MessageBox.Show("Auto - Generated Account" + "\n\n" + "Username: " + TeacherID + "\n" + "Password: " + TeacherPass);
-                MessageBox.Show("Teacher information saved successfully!");
+                    string educAttainmentOfTeacher = EducAttainmentCb.SelectedItem.ToString();
+                    string prcIDOfTeacher = PrcIDOfTeacherTxt.Text;
+                    string courseOfTeacher = CourseOfTeacherCb.SelectedItem.ToString();
+                    string schoolOfTeacher = SchoolOfTeacherTxt.Text;
 
-                LastnameOfTeacherTxt.Text = "";
-                FirstnameOfTeacherTxt.Text = "";
-                MiddlenameOfTeacherTxt.Text = "";
-                AgeOfTeacherTxt.Text = "";
-                HomeAddressOfTeacherTxt.Text = "";
-                ContactOfTeacherTxt.Text = "";
-                EmailOfTeacherTxt.Text = "";
-                PrcIDOfTeacherTxt.Text = "";
-                SchoolOfTeacherTxt.Text = "";
 
-                GenderOfTeacherCb.Text = "";
-                EducAttainmentCb.Text = "";
-                CourseOfTeacherCb.Text = "";
 
-                BirthOfTeacherDtp.Value = DateTime.Today;
+                    //Insert to database
+                    var connectionString = "mongodb://localhost:27017";
+                    var client = new MongoClient(connectionString);
+                    var database = client.GetDatabase("ConnectED");
+                    var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
 
-                displayRegisteredInstructor();
+                    TeacherInformationModal teacherProperties = new TeacherInformationModal()
+                    {
+                        TeacherID = TeacherID,
+                        TeacherPassword = TeacherPass,
+                        Subject = "",
+                        Section = "",
+                        Lastname = lastnameOfTeacher,
+                        Firstname = firstnameOfTeacher,
+                        Middlename = middlenameOfTeacher,
+                        Fullname = lastnameOfTeacher + " " + firstnameOfTeacher + " " + middlenameOfTeacher,
+                        Age = ageOfTeacher,
+                        Gender = genderOfTeacher,
+                        BirthDate = birthOfTeacher,
+                        HomeAddress = homeAddressOfTeacher,
+                        Contact = contactOfTeacher,
+                        Email = emailOfTeacher,
+                        EducAttainment = educAttainmentOfTeacher,
+                        PrcID = prcIDOfTeacher,
+                        Course = courseOfTeacher,
+                        School = schoolOfTeacher
+                    };
+
+                    collection.InsertOne(teacherProperties);
+                    MessageBox.Show("Auto - Generated Account" + "\n\n" + "Username: " + TeacherID + "\n" + "Password: " + TeacherPass);
+                    MessageBox.Show("Teacher information saved successfully!");
+
+                    LastnameOfTeacherTxt.Text = "";
+                    FirstnameOfTeacherTxt.Text = "";
+                    MiddlenameOfTeacherTxt.Text = "";
+                    AgeOfTeacherTxt.Text = "";
+                    HomeAddressOfTeacherTxt.Text = "";
+                    ContactOfTeacherTxt.Text = "";
+                    EmailOfTeacherTxt.Text = "";
+                    PrcIDOfTeacherTxt.Text = "";
+                    SchoolOfTeacherTxt.Text = "";
+
+                    GenderOfTeacherCb.Text = "";
+                    EducAttainmentCb.Text = "";
+                    CourseOfTeacherCb.Text = "";
+
+                    BirthOfTeacherDtp.Value = DateTime.Today;
+
+                    displayRegisteredInstructor();
+                }
+
+               
 
             }
             catch (Exception ex)
@@ -923,186 +935,191 @@ namespace ConnectEducation
                     return;
                 }
 
-
-                Random random = new Random();
-
-                string ClassID = Guid.NewGuid().ToString();
-                string Strand = StrandOfClassCb.SelectedItem.ToString();
-                string GradeLevelOfClass = GradeLevelOfClassCb.SelectedItem.ToString();
-                string SectionOfClass = SectionOfClassTxt.Text;
-                string[] Teachers = [];
-                string[] Students = [];
-                DateTime CreatedTime = DateTime.Now;
-
-                //Insert to database
-                var connectionString = "mongodb://localhost:27017";
-                var client = new MongoClient(connectionString);
-                var database = client.GetDatabase("ConnectED");
-
-                if (Strand.ToString() == "STEM" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 STEM
+                DialogResult mess2 = MessageBox.Show("Are you sure to create a class", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (mess2 == DialogResult.Yes)
                 {
+                    Random random = new Random();
 
-                    var collection = database.GetCollection<ClassInformationModal>("Grade11_STEM");
-                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
-                    var result = collection.Find(filter).FirstOrDefault();
-                    if (result != null)
+                    string ClassID = Guid.NewGuid().ToString();
+                    string Strand = StrandOfClassCb.SelectedItem.ToString();
+                    string GradeLevelOfClass = GradeLevelOfClassCb.SelectedItem.ToString();
+                    string SectionOfClass = SectionOfClassTxt.Text;
+                    string[] Teachers = [];
+                    string[] Students = [];
+                    DateTime CreatedTime = DateTime.Now;
+
+                    //Insert to database
+                    var connectionString = "mongodb://localhost:27017";
+                    var client = new MongoClient(connectionString);
+                    var database = client.GetDatabase("ConnectED");
+
+                    if (Strand.ToString() == "STEM" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 STEM
                     {
-                        MessageBox.Show("The section is already existing.");
-                        SectionOfClassTxt.Text = "";
-                        SectionOfClassTxt.Focus();
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade11_STEM");
+                        var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                        var result = collection.Find(filter).FirstOrDefault();
+                        if (result != null)
+                        {
+                            MessageBox.Show("The section is already existing.");
+                            SectionOfClassTxt.Text = "";
+                            SectionOfClassTxt.Focus();
+                            return;
+                        }
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a Grade 11 STEM new class!.");
+                    }
+                    else if (Strand.ToString() == "STEM" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 STEM
+                    {
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade12_STEM");
+                        var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                        var result = collection.Find(filter).FirstOrDefault();
+                        if (result != null)
+                        {
+                            MessageBox.Show("The section is already existing.");
+                            SectionOfClassTxt.Text = "";
+                            SectionOfClassTxt.Focus();
+                            return;
+                        }
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a Grade 12 STEM new class!.");
+                    }
+                    else if (Strand.ToString() == "ABM" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 ABM
+                    {
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade11_ABM");
+                        var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                        var result = collection.Find(filter).FirstOrDefault();
+                        if (result != null)
+                        {
+                            MessageBox.Show("The section is already existing.");
+                            SectionOfClassTxt.Text = "";
+                            SectionOfClassTxt.Focus();
+                            return;
+                        }
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a Grade 11 ABM new class!.");
+                    }
+                    else if (Strand.ToString() == "ABM" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 ABM
+                    {
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade12_ABM");
+                        var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
+                        var result = collection.Find(filter).FirstOrDefault();
+                        if (result != null)
+                        {
+                            MessageBox.Show("The section is already existing.");
+                            SectionOfClassTxt.Text = "";
+                            SectionOfClassTxt.Focus();
+                            return;
+                        }
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a Grade 12 ABM new class!.");
+                    }
+                    else if (Strand.ToString() == "HUMSS" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 HUMSS
+                    {
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade11_HUMSS");
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a new Grade 11 HUMSS class!.");
+                    }
+                    else if (Strand.ToString() == "HUMSS" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 HUMSS
+                    {
+
+                        var collection = database.GetCollection<ClassInformationModal>("Grade12_HUMSS");
+
+                        ClassInformationModal classProperties = new ClassInformationModal()
+                        {
+                            ClassID = ClassID,
+                            Strand = Strand,
+                            GradeLevel = GradeLevelOfClass,
+                            Section = SectionOfClass,
+                            Teacher = Teachers,
+                            Students = Students,
+                            CreateAt = CreatedTime,
+                        };
+
+                        collection.InsertOne(classProperties);
+                        MessageBox.Show("Successfully created a new Grade 12 HUMSS class!.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not match strand or grade level!");
                         return;
                     }
 
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
 
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a Grade 11 STEM new class!.");
-                }
-                else if (Strand.ToString() == "STEM" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 STEM
-                {
+                    StrandOfClassCb.SelectedIndex = -1;
+                    GradeLevelOfClassCb.SelectedIndex = -1;
+                    SectionOfClassTxt.Clear();
 
-                    var collection = database.GetCollection<ClassInformationModal>("Grade12_STEM");
-                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
-                    var result = collection.Find(filter).FirstOrDefault();
-                    if (result != null)
-                    {
-                        MessageBox.Show("The section is already existing.");
-                        SectionOfClassTxt.Text = "";
-                        SectionOfClassTxt.Focus();
-                        return;
-                    }
-
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
-
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a Grade 12 STEM new class!.");
-                }
-                else if (Strand.ToString() == "ABM" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 ABM
-                {
-
-                    var collection = database.GetCollection<ClassInformationModal>("Grade11_ABM");
-                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
-                    var result = collection.Find(filter).FirstOrDefault();
-                    if (result != null)
-                    {
-                        MessageBox.Show("The section is already existing.");
-                        SectionOfClassTxt.Text = "";
-                        SectionOfClassTxt.Focus();
-                        return;
-                    }
-
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
-
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a Grade 11 ABM new class!.");
-                }
-                else if (Strand.ToString() == "ABM" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 ABM
-                {
-
-                    var collection = database.GetCollection<ClassInformationModal>("Grade12_ABM");
-                    var filter = Builders<ClassInformationModal>.Filter.Eq(z => z.Section, SectionOfClass);
-                    var result = collection.Find(filter).FirstOrDefault();
-                    if (result != null)
-                    {
-                        MessageBox.Show("The section is already existing.");
-                        SectionOfClassTxt.Text = "";
-                        SectionOfClassTxt.Focus();
-                        return;
-                    }
-
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
-
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a Grade 12 ABM new class!.");
-                }
-                else if (Strand.ToString() == "HUMSS" && GradeLevelOfClass.ToString() == "Grade 11") // Grade 11 HUMSS
-                {
-
-                    var collection = database.GetCollection<ClassInformationModal>("Grade11_HUMSS");
-
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
-
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a new Grade 11 HUMSS class!.");
-                }
-                else if (Strand.ToString() == "HUMSS" && GradeLevelOfClass.ToString() == "Grade 12") // Grade 12 HUMSS
-                {
-
-                    var collection = database.GetCollection<ClassInformationModal>("Grade12_HUMSS");
-
-                    ClassInformationModal classProperties = new ClassInformationModal()
-                    {
-                        ClassID = ClassID,
-                        Strand = Strand,
-                        GradeLevel = GradeLevelOfClass,
-                        Section = SectionOfClass,
-                        Teacher = Teachers,
-                        Students = Students,
-                        CreateAt = CreatedTime,
-                    };
-
-                    collection.InsertOne(classProperties);
-                    MessageBox.Show("Successfully created a new Grade 12 HUMSS class!.");
-                }
-                else
-                {
-                    MessageBox.Show("Not match strand or grade level!");
-                    return;
+                    StrandAndGradeCb.Text = "";
+                    ClassSectionsCb.Text = "";
+                    ClassSectionsCb.Items.Clear();
                 }
 
-
-                StrandOfClassCb.SelectedIndex = -1;
-                GradeLevelOfClassCb.SelectedIndex = -1;
-                SectionOfClassTxt.Clear();
-
-                StrandAndGradeCb.Text = "";
-                ClassSectionsCb.Text = "";
-                ClassSectionsCb.Items.Clear();
+                
 
             }
             catch (Exception ex)
@@ -1201,99 +1218,104 @@ namespace ConnectEducation
                 return;
             }
 
-            string strandAndGrade = StrandAndGradeCb.Text;
-            string classSection = ClassSectionsCb.Text;
-            string Instructor = InstructorCb.Text; // fullname
-            string Subject = SubjectCb.Text;
-
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-
-            var teacherCollection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-
-            var filter = Builders<TeacherInformationModal>.Filter.And(
-                Builders<TeacherInformationModal>.Filter.Eq(z => z.Subject, Subject),
-                Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, classSection)
-            );
-
-            bool exists = teacherCollection.Find(filter).Any();
-
-            if (exists)
+            DialogResult mess2 = MessageBox.Show("Are you sure to assign the instructor", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (mess2 == DialogResult.Yes)
             {
-                MessageBox.Show("The selected subject is already assigned to another instructor.");
-                SubjectCb.Focus();
-                return;
-            }
+                string strandAndGrade = StrandAndGradeCb.Text;
+                string classSection = ClassSectionsCb.Text;
+                string Instructor = InstructorCb.Text; // fullname
+                string Subject = SubjectCb.Text;
 
-            string nameOfTable = "";
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
 
-            if (strandAndGrade == "STEM - Grade 11") { nameOfTable = "Grade11_STEM"; }
-            else if (strandAndGrade == "STEM - Grade 12") { nameOfTable = "Grade12_STEM"; }
-            else if (strandAndGrade == "ABM - Grade 11") { nameOfTable = "Grade11_ABM"; }
-            else if (strandAndGrade == "ABM - Grade 12") { nameOfTable = "Grade12_ABM"; }
-            else if (strandAndGrade == "HUMSS - Grade 11") { nameOfTable = "Grade11_HUMSS"; }
-            else if (strandAndGrade == "HUMSS - Grade 12") { nameOfTable = "Grade12_HUMSS"; }
-            else { return; }
+                var teacherCollection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+
+                var filter = Builders<TeacherInformationModal>.Filter.And(
+                    Builders<TeacherInformationModal>.Filter.Eq(z => z.Subject, Subject),
+                    Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, classSection)
+                );
+
+                bool exists = teacherCollection.Find(filter).Any();
+
+                if (exists)
+                {
+                    MessageBox.Show("The selected subject is already assigned to another instructor.");
+                    SubjectCb.Focus();
+                    return;
+                }
+
+                string nameOfTable = "";
+
+                if (strandAndGrade == "STEM - Grade 11") { nameOfTable = "Grade11_STEM"; }
+                else if (strandAndGrade == "STEM - Grade 12") { nameOfTable = "Grade12_STEM"; }
+                else if (strandAndGrade == "ABM - Grade 11") { nameOfTable = "Grade11_ABM"; }
+                else if (strandAndGrade == "ABM - Grade 12") { nameOfTable = "Grade12_ABM"; }
+                else if (strandAndGrade == "HUMSS - Grade 11") { nameOfTable = "Grade11_HUMSS"; }
+                else if (strandAndGrade == "HUMSS - Grade 12") { nameOfTable = "Grade12_HUMSS"; }
+                else { return; }
             ;
 
-            var collection2 = database.GetCollection<ClassInformationModal>(nameOfTable);
-            var sectionFilter = Builders<ClassInformationModal>.Filter.Eq(x => x.Section, classSection); // find the object same as the section of student
-            var update = Builders<ClassInformationModal>.Update.AddToSet(x => x.Teacher, Instructor); // added name of student to the object
-            var result = collection2.UpdateOneAsync(sectionFilter, update);
+                var collection2 = database.GetCollection<ClassInformationModal>(nameOfTable);
+                var sectionFilter = Builders<ClassInformationModal>.Filter.Eq(x => x.Section, classSection); // find the object same as the section of student
+                var update = Builders<ClassInformationModal>.Update.AddToSet(x => x.Teacher, Instructor); // added name of student to the object
+                var result = collection2.UpdateOneAsync(sectionFilter, update);
 
-            var collection4 = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-            var teacher_filter = Builders<TeacherInformationModal>.Filter.Eq(x => x.Fullname, Instructor);
-            var teacherInformation = collection4.Find(teacher_filter).FirstOrDefault();
+                var collection4 = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+                var teacher_filter = Builders<TeacherInformationModal>.Filter.Eq(x => x.Fullname, Instructor);
+                var teacherInformation = collection4.Find(teacher_filter).FirstOrDefault();
 
-            if (teacherInformation != null)
-            {
-                if (!string.IsNullOrEmpty(teacherInformation.Subject))
+                if (teacherInformation != null)
                 {
+                    if (!string.IsNullOrEmpty(teacherInformation.Subject))
+                    {
 
-                    MessageBox.Show("Instructor " + teacherInformation.Fullname + " is already assigned to section: " + teacherInformation.Section + ".");
-                    InstructorCb.Focus();
+                        MessageBox.Show("Instructor " + teacherInformation.Fullname + " is already assigned to section: " + teacherInformation.Section + ".");
+                        InstructorCb.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Instructor did not found in database.");
                     return;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Instructor did not found in database.");
-                return;
-            }
-            var updateSection = Builders<TeacherInformationModal>.Update.Set(x => x.Section, classSection);
-            var results = collection4.UpdateOneAsync(teacher_filter, updateSection);
+                var updateSection = Builders<TeacherInformationModal>.Update.Set(x => x.Section, classSection);
+                var results = collection4.UpdateOneAsync(teacher_filter, updateSection);
 
-            var collection3 = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
-            var teacherFilter = Builders<TeacherInformationModal>.Filter.Eq(x => x.Fullname, Instructor);
-            var teacher = collection3.Find(teacherFilter).FirstOrDefault();
+                var collection3 = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+                var teacherFilter = Builders<TeacherInformationModal>.Filter.Eq(x => x.Fullname, Instructor);
+                var teacher = collection3.Find(teacherFilter).FirstOrDefault();
 
-            if (teacher != null)
-            {
-                if (!string.IsNullOrEmpty(teacher.Subject))
+                if (teacher != null)
                 {
+                    if (!string.IsNullOrEmpty(teacher.Subject))
+                    {
 
-                    MessageBox.Show("Instructor " + teacher.Fullname + " is already assigned to subject: " + teacher.Subject + "\n" + "Please select other instructor.");
-                    InstructorCb.Focus();
+                        MessageBox.Show("Instructor " + teacher.Fullname + " is already assigned to subject: " + teacher.Subject + "\n" + "Please select other instructor.");
+                        InstructorCb.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Instructor did not found in database.");
                     return;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Instructor did not found in database.");
-                return;
-            }
-            var updateSubject = Builders<TeacherInformationModal>.Update.Set(x => x.Subject, Subject);
-            var executeUpdateTeacherSubject = collection3.UpdateOneAsync(teacherFilter, updateSubject);
+                var updateSubject = Builders<TeacherInformationModal>.Update.Set(x => x.Subject, Subject);
+                var executeUpdateTeacherSubject = collection3.UpdateOneAsync(teacherFilter, updateSubject);
 
-            MessageBox.Show("Instructor " + Instructor + " is successfully appointed as one of instructors of class " + classSection + " as " + Subject + " instructor.");
+                MessageBox.Show("Instructor " + Instructor + " is successfully appointed as one of instructors of class " + classSection + " as " + Subject + " instructor.");
 
-            StrandAndGradeCb.Text = "";
-            ClassSectionsCb.Text = "";
-            SelectSemesterCb.Text = "";
-            ClassSectionsCb.Items.Clear();
-            InstructorCb.Text = "";
-            SubjectCb.Text = "";
+                StrandAndGradeCb.Text = "";
+                ClassSectionsCb.Text = "";
+                SelectSemesterCb.Text = "";
+                ClassSectionsCb.Items.Clear();
+                InstructorCb.Text = "";
+                SubjectCb.Text = "";
+            }
+            
         }
 
         private void SubjectCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -1331,6 +1353,7 @@ namespace ConnectEducation
                 AnnouncementRTB.Focus();
                 return;
             }
+            
             var connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ConnectED");

@@ -1711,7 +1711,7 @@ namespace ConnectEducation
             var connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ConnectED");
-            
+
 
             ListViewItem selectedItem = QuizListView.SelectedItems[0];
 
@@ -1761,7 +1761,7 @@ namespace ConnectEducation
 
 
                 string quizId = selectedItem.SubItems[0].Text; // assuming first column is the ID
-                
+
 
                 var collection3 = database.GetCollection<QuizModel>("QuizModel");
 
@@ -1797,7 +1797,7 @@ namespace ConnectEducation
 
         private void SubmitQuizBtn_Click(object sender, EventArgs e)
         {
-            DialogResult confirmation = MessageBox.Show("Are you sure to submit?","Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirmation = MessageBox.Show("Are you sure to submit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirmation == DialogResult.Yes)
             {
                 var connectionString = "mongodb://localhost:27017";
@@ -1831,7 +1831,7 @@ namespace ConnectEducation
                                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
                                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, result.SubjectName),
                                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, result.Section),
-                                  Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord,x => x.ActivityType == QuizTitleLabel.Text)
+                                  Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, x => x.ActivityType == QuizTitleLabel.Text)
                                   );// TeacherId, Section,StudentId, Subject
 
                     var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", quizScore.ToString());
@@ -1840,18 +1840,23 @@ namespace ConnectEducation
                 }
                 Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
 
-                    foreach (var q in questionaire)
-                    {
-                        q.Text = string.Empty;
-                    }
-                    QuizPanel.Visible = false;
-                    QuizTitleLabel.Text = string.Empty;
-                    QuizIdLabel.Text = string.Empty;
-                    QuizDeadlineLabel.Text = string.Empty;
-                
+                foreach (var q in questionaire)
+                {
+                    q.Text = string.Empty;
+                }
+                QuizPanel.Visible = false;
+                QuizTitleLabel.Text = string.Empty;
+                QuizIdLabel.Text = string.Empty;
+                QuizDeadlineLabel.Text = string.Empty;
+
 
             }
-            
+
+        }
+
+        private void QuizListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

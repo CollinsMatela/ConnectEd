@@ -32,22 +32,6 @@
             panel1 = new Panel();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
-            AdminBoardPanel = new Panel();
-            label3 = new Label();
-            panel15 = new Panel();
-            AnnouncementPanel = new Panel();
-            label60 = new Label();
-            CloseAnnouncementPanel = new Button();
-            AnnouncementRTB = new RichTextBox();
-            SendAnnouncementBtn = new Button();
-            AnnouncementBtn = new Button();
-            label41 = new Label();
-            LogoutBtn = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            CreateClassBtn = new Button();
-            StudentRegistrationBtn = new Button();
-            TeacherRegistrationBtn = new Button();
             CreateClassPanel = new Panel();
             Class_SubjectBtn = new Button();
             AssignBtn = new Button();
@@ -76,6 +60,22 @@
             label56 = new Label();
             label57 = new Label();
             SectionOfClassTxt = new TextBox();
+            AdminBoardPanel = new Panel();
+            label3 = new Label();
+            panel15 = new Panel();
+            AnnouncementPanel = new Panel();
+            label60 = new Label();
+            CloseAnnouncementPanel = new Button();
+            AnnouncementRTB = new RichTextBox();
+            SendAnnouncementBtn = new Button();
+            AnnouncementBtn = new Button();
+            label41 = new Label();
+            LogoutBtn = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            CreateClassBtn = new Button();
+            StudentRegistrationBtn = new Button();
+            TeacherRegistrationBtn = new Button();
             StudentRegistrationPanel = new Panel();
             SubmitBtn = new Button();
             button1 = new Button();
@@ -168,14 +168,14 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            AdminBoardPanel.SuspendLayout();
-            panel15.SuspendLayout();
-            AnnouncementPanel.SuspendLayout();
             CreateClassPanel.SuspendLayout();
             panel17.SuspendLayout();
             panel18.SuspendLayout();
             panel19.SuspendLayout();
             panel20.SuspendLayout();
+            AdminBoardPanel.SuspendLayout();
+            panel15.SuspendLayout();
+            AnnouncementPanel.SuspendLayout();
             StudentRegistrationPanel.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -197,6 +197,7 @@
             panel1.Controls.Add(AdminBoardPanel);
             panel1.Controls.Add(StudentRegistrationPanel);
             panel1.Controls.Add(TeacherRegistrationPanel);
+            panel1.Controls.Add(CreateClassPanel);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1462, 738);
@@ -220,257 +221,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // AdminBoardPanel
-            // 
-            AdminBoardPanel.BackColor = Color.WhiteSmoke;
-            AdminBoardPanel.Controls.Add(label3);
-            AdminBoardPanel.Controls.Add(panel15);
-            AdminBoardPanel.Controls.Add(CreateClassPanel);
-            AdminBoardPanel.Location = new Point(0, 76);
-            AdminBoardPanel.Name = "AdminBoardPanel";
-            AdminBoardPanel.Size = new Size(1462, 662);
-            AdminBoardPanel.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(302, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(116, 19);
-            label3.TabIndex = 6;
-            label3.Text = "Admin control panel";
-            // 
-            // panel15
-            // 
-            panel15.BackColor = Color.WhiteSmoke;
-            panel15.Controls.Add(AnnouncementPanel);
-            panel15.Controls.Add(AnnouncementBtn);
-            panel15.Controls.Add(label41);
-            panel15.Controls.Add(LogoutBtn);
-            panel15.Controls.Add(label1);
-            panel15.Controls.Add(label2);
-            panel15.Controls.Add(CreateClassBtn);
-            panel15.Controls.Add(StudentRegistrationBtn);
-            panel15.Controls.Add(TeacherRegistrationBtn);
-            panel15.Location = new Point(-11, 51);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(1473, 611);
-            panel15.TabIndex = 13;
-            // 
-            // AnnouncementPanel
-            // 
-            AnnouncementPanel.BackColor = Color.White;
-            AnnouncementPanel.Controls.Add(label60);
-            AnnouncementPanel.Controls.Add(CloseAnnouncementPanel);
-            AnnouncementPanel.Controls.Add(AnnouncementRTB);
-            AnnouncementPanel.Controls.Add(SendAnnouncementBtn);
-            AnnouncementPanel.Location = new Point(313, 146);
-            AnnouncementPanel.Margin = new Padding(0);
-            AnnouncementPanel.Name = "AnnouncementPanel";
-            AnnouncementPanel.Size = new Size(861, 143);
-            AnnouncementPanel.TabIndex = 21;
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label60.ForeColor = Color.DimGray;
-            label60.Location = new Point(13, 14);
-            label60.Name = "label60";
-            label60.Size = new Size(149, 16);
-            label60.TabIndex = 22;
-            label60.Text = "Type your Announcement";
-            // 
-            // CloseAnnouncementPanel
-            // 
-            CloseAnnouncementPanel.BackColor = Color.White;
-            CloseAnnouncementPanel.FlatAppearance.BorderColor = Color.Gainsboro;
-            CloseAnnouncementPanel.FlatStyle = FlatStyle.Flat;
-            CloseAnnouncementPanel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CloseAnnouncementPanel.ForeColor = Color.DimGray;
-            CloseAnnouncementPanel.Location = new Point(700, 88);
-            CloseAnnouncementPanel.Margin = new Padding(0);
-            CloseAnnouncementPanel.Name = "CloseAnnouncementPanel";
-            CloseAnnouncementPanel.Size = new Size(146, 35);
-            CloseAnnouncementPanel.TabIndex = 21;
-            CloseAnnouncementPanel.Text = "CLOSE";
-            CloseAnnouncementPanel.UseVisualStyleBackColor = false;
-            CloseAnnouncementPanel.Click += CloseAnnouncementPanel_Click;
-            // 
-            // AnnouncementRTB
-            // 
-            AnnouncementRTB.BackColor = Color.Gainsboro;
-            AnnouncementRTB.BorderStyle = BorderStyle.None;
-            AnnouncementRTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AnnouncementRTB.ForeColor = Color.DimGray;
-            AnnouncementRTB.Location = new Point(13, 43);
-            AnnouncementRTB.Name = "AnnouncementRTB";
-            AnnouncementRTB.Size = new Size(667, 80);
-            AnnouncementRTB.TabIndex = 19;
-            AnnouncementRTB.Text = "";
-            // 
-            // SendAnnouncementBtn
-            // 
-            SendAnnouncementBtn.BackColor = Color.DodgerBlue;
-            SendAnnouncementBtn.FlatAppearance.BorderSize = 0;
-            SendAnnouncementBtn.FlatStyle = FlatStyle.Flat;
-            SendAnnouncementBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SendAnnouncementBtn.ForeColor = Color.White;
-            SendAnnouncementBtn.Location = new Point(700, 43);
-            SendAnnouncementBtn.Margin = new Padding(0);
-            SendAnnouncementBtn.Name = "SendAnnouncementBtn";
-            SendAnnouncementBtn.Size = new Size(146, 35);
-            SendAnnouncementBtn.TabIndex = 20;
-            SendAnnouncementBtn.Text = "SEND";
-            SendAnnouncementBtn.UseVisualStyleBackColor = false;
-            SendAnnouncementBtn.Click += SendAnnouncementBtn_Click;
-            // 
-            // AnnouncementBtn
-            // 
-            AnnouncementBtn.BackColor = Color.White;
-            AnnouncementBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            AnnouncementBtn.FlatAppearance.BorderSize = 0;
-            AnnouncementBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            AnnouncementBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
-            AnnouncementBtn.FlatStyle = FlatStyle.Flat;
-            AnnouncementBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            AnnouncementBtn.ForeColor = Color.DimGray;
-            AnnouncementBtn.Image = (Image)resources.GetObject("AnnouncementBtn.Image");
-            AnnouncementBtn.ImageAlign = ContentAlignment.MiddleRight;
-            AnnouncementBtn.Location = new Point(313, 96);
-            AnnouncementBtn.Margin = new Padding(0);
-            AnnouncementBtn.Name = "AnnouncementBtn";
-            AnnouncementBtn.Padding = new Padding(20, 0, 20, 0);
-            AnnouncementBtn.Size = new Size(861, 50);
-            AnnouncementBtn.TabIndex = 18;
-            AnnouncementBtn.Text = "ANNOUNCEMENT\r\nDisplay school announcement\r\n\r\n\r\n";
-            AnnouncementBtn.TextAlign = ContentAlignment.MiddleLeft;
-            AnnouncementBtn.UseVisualStyleBackColor = false;
-            AnnouncementBtn.Click += AnnouncementBtn_Click;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Bahnschrift Condensed", 12F);
-            label41.ForeColor = Color.Black;
-            label41.Location = new Point(313, 463);
-            label41.Name = "label41";
-            label41.Size = new Size(114, 19);
-            label41.TabIndex = 17;
-            label41.Text = "Setting Components";
-            // 
-            // LogoutBtn
-            // 
-            LogoutBtn.BackColor = Color.White;
-            LogoutBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            LogoutBtn.FlatAppearance.BorderSize = 0;
-            LogoutBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LogoutBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
-            LogoutBtn.FlatStyle = FlatStyle.Flat;
-            LogoutBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            LogoutBtn.ForeColor = Color.DimGray;
-            LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
-            LogoutBtn.ImageAlign = ContentAlignment.MiddleRight;
-            LogoutBtn.Location = new Point(313, 499);
-            LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Padding = new Padding(20, 0, 20, 0);
-            LogoutBtn.Size = new Size(861, 50);
-            LogoutBtn.TabIndex = 16;
-            LogoutBtn.Text = "LOGOUT\r\nReturn to login";
-            LogoutBtn.TextAlign = ContentAlignment.MiddleLeft;
-            LogoutBtn.UseVisualStyleBackColor = false;
-            LogoutBtn.Click += LogoutBtn_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Bahnschrift Condensed", 12F);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(313, 299);
-            label1.Name = "label1";
-            label1.Size = new Size(145, 19);
-            label1.TabIndex = 15;
-            label1.Text = "Registration Management";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Bahnschrift Condensed", 12F);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(313, 8);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 19);
-            label2.TabIndex = 14;
-            label2.Text = "Class Management";
-            // 
-            // CreateClassBtn
-            // 
-            CreateClassBtn.BackColor = Color.White;
-            CreateClassBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            CreateClassBtn.FlatAppearance.BorderSize = 0;
-            CreateClassBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            CreateClassBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
-            CreateClassBtn.FlatStyle = FlatStyle.Flat;
-            CreateClassBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            CreateClassBtn.ForeColor = Color.DimGray;
-            CreateClassBtn.Image = (Image)resources.GetObject("CreateClassBtn.Image");
-            CreateClassBtn.ImageAlign = ContentAlignment.MiddleRight;
-            CreateClassBtn.Location = new Point(313, 37);
-            CreateClassBtn.Name = "CreateClassBtn";
-            CreateClassBtn.Padding = new Padding(20, 0, 20, 0);
-            CreateClassBtn.Size = new Size(861, 50);
-            CreateClassBtn.TabIndex = 12;
-            CreateClassBtn.Text = "MANAGEMENT\r\nClass Creation and Assigning Instructor (Subject/Section)\r\n\r\n\r\n";
-            CreateClassBtn.TextAlign = ContentAlignment.MiddleLeft;
-            CreateClassBtn.UseVisualStyleBackColor = false;
-            CreateClassBtn.Click += CreateClassBtn_Click;
-            // 
-            // StudentRegistrationBtn
-            // 
-            StudentRegistrationBtn.BackColor = Color.White;
-            StudentRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            StudentRegistrationBtn.FlatAppearance.BorderSize = 0;
-            StudentRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            StudentRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
-            StudentRegistrationBtn.FlatStyle = FlatStyle.Flat;
-            StudentRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            StudentRegistrationBtn.ForeColor = Color.DimGray;
-            StudentRegistrationBtn.Image = (Image)resources.GetObject("StudentRegistrationBtn.Image");
-            StudentRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
-            StudentRegistrationBtn.Location = new Point(313, 328);
-            StudentRegistrationBtn.Name = "StudentRegistrationBtn";
-            StudentRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
-            StudentRegistrationBtn.Size = new Size(861, 50);
-            StudentRegistrationBtn.TabIndex = 7;
-            StudentRegistrationBtn.Text = "REGISTER STUDENTS\r\nIt manage the registration of student information";
-            StudentRegistrationBtn.TextAlign = ContentAlignment.MiddleLeft;
-            StudentRegistrationBtn.UseVisualStyleBackColor = false;
-            StudentRegistrationBtn.Click += StudentRegistrationBtn_Click;
-            // 
-            // TeacherRegistrationBtn
-            // 
-            TeacherRegistrationBtn.BackColor = Color.White;
-            TeacherRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            TeacherRegistrationBtn.FlatAppearance.BorderSize = 0;
-            TeacherRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            TeacherRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
-            TeacherRegistrationBtn.FlatStyle = FlatStyle.Flat;
-            TeacherRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
-            TeacherRegistrationBtn.ForeColor = Color.DimGray;
-            TeacherRegistrationBtn.Image = (Image)resources.GetObject("TeacherRegistrationBtn.Image");
-            TeacherRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
-            TeacherRegistrationBtn.Location = new Point(313, 393);
-            TeacherRegistrationBtn.Name = "TeacherRegistrationBtn";
-            TeacherRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
-            TeacherRegistrationBtn.Size = new Size(861, 50);
-            TeacherRegistrationBtn.TabIndex = 8;
-            TeacherRegistrationBtn.Text = "REGISTER INSTRUCTOR\r\nIt manage the registration of instructor information";
-            TeacherRegistrationBtn.TextAlign = ContentAlignment.MiddleLeft;
-            TeacherRegistrationBtn.UseVisualStyleBackColor = false;
-            TeacherRegistrationBtn.Click += TeacherRegistrationBtn_Click;
-            // 
             // CreateClassPanel
             // 
             CreateClassPanel.BackColor = Color.WhiteSmoke;
@@ -481,9 +231,9 @@
             CreateClassPanel.Controls.Add(label42);
             CreateClassPanel.Controls.Add(panel16);
             CreateClassPanel.Controls.Add(panel19);
-            CreateClassPanel.Location = new Point(1, 51);
+            CreateClassPanel.Location = new Point(1, 75);
             CreateClassPanel.Name = "CreateClassPanel";
-            CreateClassPanel.Size = new Size(1462, 662);
+            CreateClassPanel.Size = new Size(1462, 667);
             CreateClassPanel.TabIndex = 13;
             // 
             // Class_SubjectBtn
@@ -821,6 +571,256 @@
             SectionOfClassTxt.Name = "SectionOfClassTxt";
             SectionOfClassTxt.Size = new Size(211, 23);
             SectionOfClassTxt.TabIndex = 1;
+            // 
+            // AdminBoardPanel
+            // 
+            AdminBoardPanel.BackColor = Color.WhiteSmoke;
+            AdminBoardPanel.Controls.Add(label3);
+            AdminBoardPanel.Controls.Add(panel15);
+            AdminBoardPanel.Location = new Point(1, 75);
+            AdminBoardPanel.Name = "AdminBoardPanel";
+            AdminBoardPanel.Size = new Size(1461, 663);
+            AdminBoardPanel.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(311, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 19);
+            label3.TabIndex = 6;
+            label3.Text = "Admin control panel";
+            // 
+            // panel15
+            // 
+            panel15.BackColor = Color.WhiteSmoke;
+            panel15.Controls.Add(AnnouncementPanel);
+            panel15.Controls.Add(AnnouncementBtn);
+            panel15.Controls.Add(label41);
+            panel15.Controls.Add(LogoutBtn);
+            panel15.Controls.Add(label1);
+            panel15.Controls.Add(label2);
+            panel15.Controls.Add(CreateClassBtn);
+            panel15.Controls.Add(StudentRegistrationBtn);
+            panel15.Controls.Add(TeacherRegistrationBtn);
+            panel15.Location = new Point(0, 47);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1462, 615);
+            panel15.TabIndex = 13;
+            // 
+            // AnnouncementPanel
+            // 
+            AnnouncementPanel.BackColor = Color.White;
+            AnnouncementPanel.Controls.Add(label60);
+            AnnouncementPanel.Controls.Add(CloseAnnouncementPanel);
+            AnnouncementPanel.Controls.Add(AnnouncementRTB);
+            AnnouncementPanel.Controls.Add(SendAnnouncementBtn);
+            AnnouncementPanel.Location = new Point(313, 146);
+            AnnouncementPanel.Margin = new Padding(0);
+            AnnouncementPanel.Name = "AnnouncementPanel";
+            AnnouncementPanel.Size = new Size(861, 143);
+            AnnouncementPanel.TabIndex = 21;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label60.ForeColor = Color.DimGray;
+            label60.Location = new Point(13, 14);
+            label60.Name = "label60";
+            label60.Size = new Size(149, 16);
+            label60.TabIndex = 22;
+            label60.Text = "Type your Announcement";
+            // 
+            // CloseAnnouncementPanel
+            // 
+            CloseAnnouncementPanel.BackColor = Color.White;
+            CloseAnnouncementPanel.FlatAppearance.BorderColor = Color.Gainsboro;
+            CloseAnnouncementPanel.FlatStyle = FlatStyle.Flat;
+            CloseAnnouncementPanel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CloseAnnouncementPanel.ForeColor = Color.DimGray;
+            CloseAnnouncementPanel.Location = new Point(700, 88);
+            CloseAnnouncementPanel.Margin = new Padding(0);
+            CloseAnnouncementPanel.Name = "CloseAnnouncementPanel";
+            CloseAnnouncementPanel.Size = new Size(146, 35);
+            CloseAnnouncementPanel.TabIndex = 21;
+            CloseAnnouncementPanel.Text = "CLOSE";
+            CloseAnnouncementPanel.UseVisualStyleBackColor = false;
+            CloseAnnouncementPanel.Click += CloseAnnouncementPanel_Click;
+            // 
+            // AnnouncementRTB
+            // 
+            AnnouncementRTB.BackColor = Color.Gainsboro;
+            AnnouncementRTB.BorderStyle = BorderStyle.None;
+            AnnouncementRTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AnnouncementRTB.ForeColor = Color.DimGray;
+            AnnouncementRTB.Location = new Point(13, 43);
+            AnnouncementRTB.Name = "AnnouncementRTB";
+            AnnouncementRTB.Size = new Size(667, 80);
+            AnnouncementRTB.TabIndex = 19;
+            AnnouncementRTB.Text = "";
+            // 
+            // SendAnnouncementBtn
+            // 
+            SendAnnouncementBtn.BackColor = Color.DodgerBlue;
+            SendAnnouncementBtn.FlatAppearance.BorderSize = 0;
+            SendAnnouncementBtn.FlatStyle = FlatStyle.Flat;
+            SendAnnouncementBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SendAnnouncementBtn.ForeColor = Color.White;
+            SendAnnouncementBtn.Location = new Point(700, 43);
+            SendAnnouncementBtn.Margin = new Padding(0);
+            SendAnnouncementBtn.Name = "SendAnnouncementBtn";
+            SendAnnouncementBtn.Size = new Size(146, 35);
+            SendAnnouncementBtn.TabIndex = 20;
+            SendAnnouncementBtn.Text = "SEND";
+            SendAnnouncementBtn.UseVisualStyleBackColor = false;
+            SendAnnouncementBtn.Click += SendAnnouncementBtn_Click;
+            // 
+            // AnnouncementBtn
+            // 
+            AnnouncementBtn.BackColor = Color.White;
+            AnnouncementBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            AnnouncementBtn.FlatAppearance.BorderSize = 0;
+            AnnouncementBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            AnnouncementBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            AnnouncementBtn.FlatStyle = FlatStyle.Flat;
+            AnnouncementBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            AnnouncementBtn.ForeColor = Color.DimGray;
+            AnnouncementBtn.Image = (Image)resources.GetObject("AnnouncementBtn.Image");
+            AnnouncementBtn.ImageAlign = ContentAlignment.MiddleRight;
+            AnnouncementBtn.Location = new Point(313, 96);
+            AnnouncementBtn.Margin = new Padding(0);
+            AnnouncementBtn.Name = "AnnouncementBtn";
+            AnnouncementBtn.Padding = new Padding(20, 0, 20, 0);
+            AnnouncementBtn.Size = new Size(861, 50);
+            AnnouncementBtn.TabIndex = 18;
+            AnnouncementBtn.Text = "ANNOUNCEMENT\r\nDisplay school announcement\r\n\r\n\r\n";
+            AnnouncementBtn.TextAlign = ContentAlignment.MiddleLeft;
+            AnnouncementBtn.UseVisualStyleBackColor = false;
+            AnnouncementBtn.Click += AnnouncementBtn_Click;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Bahnschrift Condensed", 12F);
+            label41.ForeColor = Color.Black;
+            label41.Location = new Point(313, 463);
+            label41.Name = "label41";
+            label41.Size = new Size(114, 19);
+            label41.TabIndex = 17;
+            label41.Text = "Setting Components";
+            // 
+            // LogoutBtn
+            // 
+            LogoutBtn.BackColor = Color.White;
+            LogoutBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            LogoutBtn.FlatAppearance.BorderSize = 0;
+            LogoutBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            LogoutBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            LogoutBtn.FlatStyle = FlatStyle.Flat;
+            LogoutBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            LogoutBtn.ForeColor = Color.DimGray;
+            LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
+            LogoutBtn.ImageAlign = ContentAlignment.MiddleRight;
+            LogoutBtn.Location = new Point(313, 499);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Padding = new Padding(20, 0, 20, 0);
+            LogoutBtn.Size = new Size(861, 50);
+            LogoutBtn.TabIndex = 16;
+            LogoutBtn.Text = "LOGOUT\r\nReturn to login";
+            LogoutBtn.TextAlign = ContentAlignment.MiddleLeft;
+            LogoutBtn.UseVisualStyleBackColor = false;
+            LogoutBtn.Click += LogoutBtn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Bahnschrift Condensed", 12F);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(313, 299);
+            label1.Name = "label1";
+            label1.Size = new Size(145, 19);
+            label1.TabIndex = 15;
+            label1.Text = "Registration Management";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Bahnschrift Condensed", 12F);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(313, 8);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 19);
+            label2.TabIndex = 14;
+            label2.Text = "Class Management";
+            // 
+            // CreateClassBtn
+            // 
+            CreateClassBtn.BackColor = Color.White;
+            CreateClassBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            CreateClassBtn.FlatAppearance.BorderSize = 0;
+            CreateClassBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            CreateClassBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            CreateClassBtn.FlatStyle = FlatStyle.Flat;
+            CreateClassBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            CreateClassBtn.ForeColor = Color.DimGray;
+            CreateClassBtn.Image = (Image)resources.GetObject("CreateClassBtn.Image");
+            CreateClassBtn.ImageAlign = ContentAlignment.MiddleRight;
+            CreateClassBtn.Location = new Point(313, 37);
+            CreateClassBtn.Name = "CreateClassBtn";
+            CreateClassBtn.Padding = new Padding(20, 0, 20, 0);
+            CreateClassBtn.Size = new Size(861, 50);
+            CreateClassBtn.TabIndex = 12;
+            CreateClassBtn.Text = "MANAGEMENT\r\nClass Creation and Assigning Instructor (Subject/Section)\r\n\r\n\r\n";
+            CreateClassBtn.TextAlign = ContentAlignment.MiddleLeft;
+            CreateClassBtn.UseVisualStyleBackColor = false;
+            CreateClassBtn.Click += CreateClassBtn_Click;
+            // 
+            // StudentRegistrationBtn
+            // 
+            StudentRegistrationBtn.BackColor = Color.White;
+            StudentRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            StudentRegistrationBtn.FlatAppearance.BorderSize = 0;
+            StudentRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            StudentRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            StudentRegistrationBtn.FlatStyle = FlatStyle.Flat;
+            StudentRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            StudentRegistrationBtn.ForeColor = Color.DimGray;
+            StudentRegistrationBtn.Image = (Image)resources.GetObject("StudentRegistrationBtn.Image");
+            StudentRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
+            StudentRegistrationBtn.Location = new Point(313, 328);
+            StudentRegistrationBtn.Name = "StudentRegistrationBtn";
+            StudentRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
+            StudentRegistrationBtn.Size = new Size(861, 50);
+            StudentRegistrationBtn.TabIndex = 7;
+            StudentRegistrationBtn.Text = "REGISTER STUDENTS\r\nIt manage the registration of student information";
+            StudentRegistrationBtn.TextAlign = ContentAlignment.MiddleLeft;
+            StudentRegistrationBtn.UseVisualStyleBackColor = false;
+            StudentRegistrationBtn.Click += StudentRegistrationBtn_Click;
+            // 
+            // TeacherRegistrationBtn
+            // 
+            TeacherRegistrationBtn.BackColor = Color.White;
+            TeacherRegistrationBtn.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            TeacherRegistrationBtn.FlatAppearance.BorderSize = 0;
+            TeacherRegistrationBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            TeacherRegistrationBtn.FlatAppearance.MouseOverBackColor = Color.AliceBlue;
+            TeacherRegistrationBtn.FlatStyle = FlatStyle.Flat;
+            TeacherRegistrationBtn.Font = new Font("Segoe Fluent Icons", 12F);
+            TeacherRegistrationBtn.ForeColor = Color.DimGray;
+            TeacherRegistrationBtn.Image = (Image)resources.GetObject("TeacherRegistrationBtn.Image");
+            TeacherRegistrationBtn.ImageAlign = ContentAlignment.MiddleRight;
+            TeacherRegistrationBtn.Location = new Point(313, 393);
+            TeacherRegistrationBtn.Name = "TeacherRegistrationBtn";
+            TeacherRegistrationBtn.Padding = new Padding(20, 0, 20, 0);
+            TeacherRegistrationBtn.Size = new Size(861, 50);
+            TeacherRegistrationBtn.TabIndex = 8;
+            TeacherRegistrationBtn.Text = "REGISTER INSTRUCTOR\r\nIt manage the registration of instructor information";
+            TeacherRegistrationBtn.TextAlign = ContentAlignment.MiddleLeft;
+            TeacherRegistrationBtn.UseVisualStyleBackColor = false;
+            TeacherRegistrationBtn.Click += TeacherRegistrationBtn_Click;
             // 
             // StudentRegistrationPanel
             // 
@@ -1454,9 +1454,9 @@
             TeacherRegistrationPanel.Controls.Add(panel13);
             TeacherRegistrationPanel.Controls.Add(panel11);
             TeacherRegistrationPanel.Controls.Add(panel9);
-            TeacherRegistrationPanel.Location = new Point(0, 75);
+            TeacherRegistrationPanel.Location = new Point(1, 75);
             TeacherRegistrationPanel.Name = "TeacherRegistrationPanel";
-            TeacherRegistrationPanel.Size = new Size(1462, 663);
+            TeacherRegistrationPanel.Size = new Size(1461, 663);
             TeacherRegistrationPanel.TabIndex = 9;
             // 
             // SubmitTeacherInformationBtn
@@ -1891,12 +1891,6 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            AdminBoardPanel.ResumeLayout(false);
-            AdminBoardPanel.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            AnnouncementPanel.ResumeLayout(false);
-            AnnouncementPanel.PerformLayout();
             CreateClassPanel.ResumeLayout(false);
             CreateClassPanel.PerformLayout();
             panel17.ResumeLayout(false);
@@ -1907,6 +1901,12 @@
             panel19.PerformLayout();
             panel20.ResumeLayout(false);
             panel20.PerformLayout();
+            AdminBoardPanel.ResumeLayout(false);
+            AdminBoardPanel.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
+            AnnouncementPanel.ResumeLayout(false);
+            AnnouncementPanel.PerformLayout();
             StudentRegistrationPanel.ResumeLayout(false);
             StudentRegistrationPanel.PerformLayout();
             panel6.ResumeLayout(false);
