@@ -133,73 +133,78 @@ namespace ConnectEducation
             string Worksheet = "Worksheet";
             string PerformanceTask = "Performance Task";
 
-            foreach (var handouts in HandoutNumber)
+            DialogResult res = MessageBox.Show("Are you sure to update score?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
-                if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == Worksheet)
+
+                foreach (var handouts in HandoutNumber)
                 {
-                    if (int.Parse(ScoreTxt.Text) > 50)
+                    if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == Worksheet)
                     {
-                        MessageBox.Show("The score maximum limit for Worksheet is 50.");
-                        ScoreTxt.Focus();
-                        ScoreTxt.Text = "";
-                        return;
-                    }
-                    else if (int.Parse(ScoreTxt.Text) < 1)
-                    {
-                        MessageBox.Show("The score minimum limit for Worksheet is 1.");
-                        ScoreTxt.Focus();
-                        ScoreTxt.Text = "";
-                        return;
-                    }
+                        if (int.Parse(ScoreTxt.Text) > 50)
+                        {
+                            MessageBox.Show("The score maximum limit for Worksheet is 50.");
+                            ScoreTxt.Focus();
+                            ScoreTxt.Text = "";
+                            return;
+                        }
+                        else if (int.Parse(ScoreTxt.Text) < 1)
+                        {
+                            MessageBox.Show("The score minimum limit for Worksheet is 1.");
+                            ScoreTxt.Focus();
+                            ScoreTxt.Text = "";
+                            return;
+                        }
 
+                    }
                 }
-            }
-            foreach (var handouts in HandoutNumber)
-            {
-                if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == PerformanceTask)
+                foreach (var handouts in HandoutNumber)
                 {
-                    if (int.Parse(ScoreTxt.Text) > 100)
+                    if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == PerformanceTask)
                     {
-                        MessageBox.Show("The score maximum limit for Performance Task is 100.");
-                        ScoreTxt.Focus();
-                        ScoreTxt.Text = "";
-                        return;
-                    }
-                    else if (int.Parse(ScoreTxt.Text) < 1)
-                    {
-                        MessageBox.Show("The score minimum limit for Performance Task is 1.");
-                        ScoreTxt.Focus();
-                        ScoreTxt.Text = "";
-                        return;
-                    }
+                        if (int.Parse(ScoreTxt.Text) > 100)
+                        {
+                            MessageBox.Show("The score maximum limit for Performance Task is 100.");
+                            ScoreTxt.Focus();
+                            ScoreTxt.Text = "";
+                            return;
+                        }
+                        else if (int.Parse(ScoreTxt.Text) < 1)
+                        {
+                            MessageBox.Show("The score minimum limit for Performance Task is 1.");
+                            ScoreTxt.Focus();
+                            ScoreTxt.Text = "";
+                            return;
+                        }
 
+                    }
                 }
+
+                string selectedTypeOfActivity = type;
+                string scoreValue = ScoreTxt.Text;
+
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                var filter = Builders<TeachersStudentRecords>.Filter.And(
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, instructorId),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, subject),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentID),
+                       Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, a => a.ActivityType == selectedTypeOfActivity)
+                );
+                // Update
+                var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", scoreValue);
+                collection.UpdateOne(filter, update);
+                // Delete
+                var collection2 = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+                var filter2 = Builders<ActivitySubmission>.Filter.Eq(z => z.SubmissionId, SubmissionIDLabel.Text);
+                var delete = collection2.FindOneAndDelete(filter2);
+
+                MessageBox.Show("Successfully added " + scoreValue + " to " + selectedTypeOfActivity);
+
+                this.Close();
             }
-
-            string selectedTypeOfActivity = type;
-            string scoreValue = ScoreTxt.Text;
-
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-            var filter = Builders<TeachersStudentRecords>.Filter.And(
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, instructorId),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, subject),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentID),
-                   Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, a => a.ActivityType == selectedTypeOfActivity)
-            );
-            // Update
-            var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", scoreValue);
-            collection.UpdateOne(filter, update);
-            // Delete
-            var collection2 = database.GetCollection<ActivitySubmission>("ActivitySubmission");
-            var filter2 = Builders<ActivitySubmission>.Filter.Eq(z => z.SubmissionId, SubmissionIDLabel.Text);
-            var delete = collection2.FindOneAndDelete(filter2);
-
-            MessageBox.Show("Successfully added "+ scoreValue + " to " + selectedTypeOfActivity);
-
-            this.Close();
         }
 
 

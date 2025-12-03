@@ -904,26 +904,30 @@ namespace ConnectEducation
             string selectedTypeOfActivity = TypeOfActivityCb.Text;
             string scoreValue = ScoreTxt.Text;
 
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-            var filter = Builders<TeachersStudentRecords>.Filter.And(
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
-                   Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, a => a.ActivityType == selectedTypeOfActivity)
-            );
+            DialogResult res2 = MessageBox.Show("Are you sure to update the score of student", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res2 == DialogResult.Yes)
+            {
 
-            var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", scoreValue);
-            collection.UpdateOne(filter, update);
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                var filter = Builders<TeachersStudentRecords>.Filter.And(
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
+                       Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, a => a.ActivityType == selectedTypeOfActivity)
+                );
 
-            MessageBox.Show("Successfully update " + selectedTypeOfActivity);
-            updateDisplayValue();
-            TypeOfActivityCb.Text = "";
-            ScoreTxt.Text = "";
-            UpdatePanel.Visible = false;
+                var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", scoreValue);
+                collection.UpdateOne(filter, update);
 
+                MessageBox.Show("Successfully update " + selectedTypeOfActivity);
+                updateDisplayValue();
+                TypeOfActivityCb.Text = "";
+                ScoreTxt.Text = "";
+                UpdatePanel.Visible = false;
+            }
         }
 
         private void SelectQuarterCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -954,11 +958,13 @@ namespace ConnectEducation
             if (studentRecord != null)
             {
                 List<string> Activities = new List<string>();
+               
 
                 foreach (var activitiesObjectArray in studentRecord.ActivityRecord)
                 {
                     Activities.Add(activitiesObjectArray.Score);
                 }
+
 
 
                 if (Activities.Count < 26)
@@ -983,6 +989,8 @@ namespace ConnectEducation
                     PTScore2.Text = Activities[17];
                     PTScore3.Text = Activities[18];
                     PTScore4.Text = Activities[19];
+
+                    ExamScore.Text = Activities[24];
                 }
                 ;
                 if (selected_quarter == "Second Quarter")
@@ -1001,6 +1009,8 @@ namespace ConnectEducation
                     PTScore2.Text = Activities[21];
                     PTScore3.Text = Activities[22];
                     PTScore4.Text = Activities[23];
+
+                    ExamScore.Text = Activities[25];
                 }
                 ;
 
@@ -1054,26 +1064,30 @@ namespace ConnectEducation
             string selectedWeeks = SelectWeeksCb.Text;
             string selectedAttendance = SelectAttendanceCb.Text;
 
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-            var filter = Builders<TeachersStudentRecords>.Filter.And(
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
-                   Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.AttendanceRecord, a => a.WeekNumber == selectedWeeks)
-            );
+            DialogResult res3 = MessageBox.Show("Are you sure to update the attendance of student", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res3 == DialogResult.Yes)
+            {
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                var filter = Builders<TeachersStudentRecords>.Filter.And(
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
+                       Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.AttendanceRecord, a => a.WeekNumber == selectedWeeks)
+                );
 
-            var update = Builders<TeachersStudentRecords>.Update.Set("AttendanceRecord.$.Status", selectedAttendance);
-            collection.UpdateOne(filter, update);
-            sendEmailMessage();
+                var update = Builders<TeachersStudentRecords>.Update.Set("AttendanceRecord.$.Status", selectedAttendance);
+                collection.UpdateOne(filter, update);
+                sendEmailMessage();
 
-            MessageBox.Show("Successfully update week " + selectedWeeks);
-            updateDisplayValue();
-            SelectWeeksCb.Text = "";
-            SelectAttendanceCb.Text = "";
-            AttendanceUpdatePanel.Visible = false;
+                MessageBox.Show("Successfully update week " + selectedWeeks);
+                updateDisplayValue();
+                SelectWeeksCb.Text = "";
+                SelectAttendanceCb.Text = "";
+                AttendanceUpdatePanel.Visible = false;
+            }
         }
 
         private void AttendanceUpdateDropDownBtn_Click(object sender, EventArgs e)
@@ -1094,58 +1108,111 @@ namespace ConnectEducation
                 return;
             }
 
-            var connectionString = "mongodb://localhost:27017";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ConnectED");
-            var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-            var filter = Builders<TeachersStudentRecords>.Filter.And(
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
-                   Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
-                   Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.GradeRecord, a => a.Quarter == SelectQuarterCb.Text)
-            );
-            var update = Builders<TeachersStudentRecords>.Update.Set("GradeRecord.$.Grade", ResultLabel.Text);
-
-            var collection2 = database.GetCollection<StudentGrades>("StudentGrades");
-            var filter2 = Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text);
-
-            GradeRecording fillGradeRecord = null;
-
-            if (SelectQuarterCb.Text == "First Quarter")
-            {
-                fillGradeRecord = new GradeRecording
-                {
-                    Subject = teacherSubject,
-                    TeacherID = teacherID,
-                    TeacherFullname = teacherFullname,
-                    FinalGrade1 = ResultLabel.Text
-                };
-                if (fillGradeRecord != null)
-                {
-
-                    var updateExam1 = Builders<StudentGrades>.Update.Push(z => z.SubjectList, fillGradeRecord);
-                    collection2.UpdateOne(filter2, updateExam1);
-                }
-            }
-            else if (SelectQuarterCb.Text == "Second Quarter")
+            DialogResult res = MessageBox.Show("Are you sure to submit the grade of student?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
 
-                var filterUpdate = Builders<StudentGrades>.Filter.And(
-                    Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text),
-                    Builders<StudentGrades>.Filter.ElemMatch(z => z.SubjectList, x => x.Subject == teacherSubject)
+                var connectionString = "mongodb://localhost:27017";
+                var client = new MongoClient(connectionString);
+                var database = client.GetDatabase("ConnectED");
+                var collection = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                var collection2 = database.GetCollection<StudentGrades>("StudentGrades");
+                var filter2 = Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text);
+
+                var filter = Builders<TeachersStudentRecords>.Filter.And(
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, teacherID),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, teacherSubject),
+                       Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentIDLabel.Text),
+                       Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.GradeRecord, a => a.Quarter == SelectQuarterCb.Text)
                 );
+                var update = Builders<TeachersStudentRecords>.Update.Set("GradeRecord.$.Grade", ResultLabel.Text);
 
 
-                var updateExam2 = Builders<StudentGrades>.Update.Set("SubjectList.$.FinalGrade2", ResultLabel.Text);
 
-                var result = collection2.UpdateOne(filterUpdate, updateExam2);
+                //GradeRecording fillGradeRecord = null;
 
+                //if (SelectQuarterCb.Text == "First Quarter")
+                //{
+                //    fillGradeRecord = new GradeRecording
+                //    {
+                //        Subject = teacherSubject,
+                //        TeacherID = teacherID,
+                //        TeacherFullname = teacherFullname,
+                //        FinalGrade1 = ResultLabel.Text
+                //    };
+                //    if (fillGradeRecord != null)
+                //    {
+
+                //        var updateExam1 = Builders<StudentGrades>.Update.Push(z => z.SubjectList, fillGradeRecord);
+                //        collection2.UpdateOne(filter2, updateExam1);
+                //    }
+                //}
+                if (SelectQuarterCb.Text == "First Quarter")
+                {
+                    // Check if subject already exists in SubjectList
+                    var checkSubject = Builders<StudentGrades>.Filter.And(
+                        Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text),
+                        Builders<StudentGrades>.Filter.ElemMatch(z => z.SubjectList, x => x.Subject == teacherSubject)
+                    );
+
+                    var existingSubject = collection2.Find(checkSubject).FirstOrDefault();
+
+                    if (existingSubject == null)
+                    {
+                        // Subject does NOT exist → Push new object
+                        GradeRecording fillGradeRecord = new GradeRecording
+                        {
+                            Subject = teacherSubject,
+                            TeacherID = teacherID,
+                            TeacherFullname = teacherFullname,
+                            FinalGrade1 = ResultLabel.Text,
+                            FinalGrade2 = null
+                        };
+
+                        var pushNew = Builders<StudentGrades>.Update.Push(z => z.SubjectList, fillGradeRecord);
+                        collection2.UpdateOne(filter2, pushNew);
+                    }
+                    else
+                    {
+                        // Subject exists → Update only FinalGrade1
+                        var updateExisting = Builders<StudentGrades>.Update
+                            .Set("SubjectList.$.FinalGrade1", ResultLabel.Text);
+
+                        collection2.UpdateOne(checkSubject, updateExisting);
+                    }
+                }
+                //else if (SelectQuarterCb.Text == "Second Quarter")
+                //{
+
+                //    var filterUpdate = Builders<StudentGrades>.Filter.And(
+                //        Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text),
+                //        Builders<StudentGrades>.Filter.ElemMatch(z => z.SubjectList, x => x.Subject == teacherSubject)
+                //    );
+
+
+                //    var updateExam2 = Builders<StudentGrades>.Update.Set("SubjectList.$.FinalGrade2", ResultLabel.Text);
+
+                //    var result = collection2.UpdateOne(filterUpdate, updateExam2);
+
+                //}
+                else if (SelectQuarterCb.Text == "Second Quarter")
+                {
+                    var filterUpdate = Builders<StudentGrades>.Filter.And(
+                        Builders<StudentGrades>.Filter.Eq(z => z.StudentID, studentIDLabel.Text),
+                        Builders<StudentGrades>.Filter.ElemMatch(z => z.SubjectList, x => x.Subject == teacherSubject)
+                    );
+
+                    var updateExam2 = Builders<StudentGrades>.Update
+                        .Set("SubjectList.$.FinalGrade2", ResultLabel.Text);
+
+                    collection2.UpdateOne(filterUpdate, updateExam2);
+                }
+
+
+                collection.UpdateOne(filter, update);
+                MessageBox.Show("Successfully saved a grade for " + SelectQuarterCb.Text);
+                ResultLabel.Text = "00.00";
             }
-
-
-            collection.UpdateOne(filter, update);
-            MessageBox.Show("Successfully saved a grade for " + SelectQuarterCb.Text);
-            ResultLabel.Text = "00.00";
         }
 
         private void label89_Click(object sender, EventArgs e)

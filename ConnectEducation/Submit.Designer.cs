@@ -118,7 +118,7 @@
             btnSubmit.BackColor = Color.DodgerBlue;
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Bahnschrift SemiCondensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmit.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubmit.ForeColor = Color.White;
             btnSubmit.Location = new Point(1164, 556);
             btnSubmit.Name = "btnSubmit";

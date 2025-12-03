@@ -141,6 +141,11 @@ namespace ConnectEducation
                          Builders<TeacherInformationModal>.Filter.Eq(z => z.Section, SectionOfStudent)
                          );
             var result = collection.Find(filter).FirstOrDefault();
+            if (result == null)
+            {
+                MessageBox.Show("No assigned instructor please wait temporarily.");
+                return;
+            }
             if (result != null)
             {
                 string subject = subjectNameHeader.Text;

@@ -78,60 +78,65 @@ namespace ConnectEducation
 
             try
             {
-                var client = new MongoClient("mongodb://localhost:27017");
-                var database = client.GetDatabase("ConnectED");
-                var collection = database.GetCollection<ActivitySubmission>("ActivitySubmission");
-                var filter = Builders<ActivitySubmission>.Filter.And(
-                             Builders<ActivitySubmission>.Filter.Eq(z => z.Subject, nameOfSubject),
-                             Builders<ActivitySubmission>.Filter.Eq(z => z.Section, sectionOfStudent),
-                             Builders<ActivitySubmission>.Filter.Eq(z => z.Handout, selectedHandout),
-                             Builders<ActivitySubmission>.Filter.Eq(z => z.TypeOfActivity, selectedActivity)
-
-                );
-
-                var result = collection.Find(filter).FirstOrDefault();
-
-                if (result != null)
+                DialogResult res = MessageBox.Show("Are you sure to submit your work?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
                 {
-                    MessageBox.Show("The " + selectedHandout + " " + selectedActivity + " is already provided!");
-                    this.Close();
-                    return;
-                }
-                else
-                {
-                    var gridFS = new GridFSBucket(database);
-                    var submissions = database.GetCollection<ActivitySubmission>("ActivitySubmission");
-                    var fileIds = new List<ObjectId>();
 
-                    foreach (string filePath in ListBoxFiles.Items)
+
+                    var client = new MongoClient("mongodb://localhost:27017");
+                    var database = client.GetDatabase("ConnectED");
+                    var collection = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+                    var filter = Builders<ActivitySubmission>.Filter.And(
+                                 Builders<ActivitySubmission>.Filter.Eq(z => z.Subject, nameOfSubject),
+                                 Builders<ActivitySubmission>.Filter.Eq(z => z.Section, sectionOfStudent),
+                                 Builders<ActivitySubmission>.Filter.Eq(z => z.Handout, selectedHandout),
+                                 Builders<ActivitySubmission>.Filter.Eq(z => z.TypeOfActivity, selectedActivity)
+
+                    );
+
+                    var result = collection.Find(filter).FirstOrDefault();
+
+                    if (result != null)
                     {
-                        using (var fs = new FileStream(filePath, FileMode.Open))
-                        {
-                            var id = gridFS.UploadFromStream(Path.GetFileName(filePath), fs);
-                            fileIds.Add(id);
-                        }
+                        MessageBox.Show("The " + selectedHandout + " " + selectedActivity + " is already provided!");
+                        this.Close();
+                        return;
                     }
-
-                    var submissionCollection = new ActivitySubmission
+                    else
                     {
-                        SubmissionId = Guid.NewGuid().ToString(),
-                        Subject = nameOfSubject,
-                        Instructor = nameOfSubjectTeacher,
-                        InstructorId = IdOfInstructor,
-                        StudentId = IdOfStudent,
-                        Student = nameOfStudent,
-                        Section = sectionOfStudent,
-                        Handout = selectedHandout,
-                        TypeOfActivity = selectedActivity,
-                        AnswerTextField = AnswerTxt.Text,
-                        Files = fileIds,
-                        Time = DateTime.Now,
-                    };
+                        var gridFS = new GridFSBucket(database);
+                        var submissions = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+                        var fileIds = new List<ObjectId>();
 
-                    submissions.InsertOne(submissionCollection);
-                    MessageBox.Show("Files submitted successfully!");
+                        foreach (string filePath in ListBoxFiles.Items)
+                        {
+                            using (var fs = new FileStream(filePath, FileMode.Open))
+                            {
+                                var id = gridFS.UploadFromStream(Path.GetFileName(filePath), fs);
+                                fileIds.Add(id);
+                            }
+                        }
+
+                        var submissionCollection = new ActivitySubmission
+                        {
+                            SubmissionId = Guid.NewGuid().ToString(),
+                            Subject = nameOfSubject,
+                            Instructor = nameOfSubjectTeacher,
+                            InstructorId = IdOfInstructor,
+                            StudentId = IdOfStudent,
+                            Student = nameOfStudent,
+                            Section = sectionOfStudent,
+                            Handout = selectedHandout,
+                            TypeOfActivity = selectedActivity,
+                            AnswerTextField = AnswerTxt.Text,
+                            Files = fileIds,
+                            Time = DateTime.Now,
+                        };
+
+                        submissions.InsertOne(submissionCollection);
+                        MessageBox.Show("Files submitted successfully!");
+                    }
                 }
-
             }
 
             catch (Exception ex)

@@ -817,6 +817,19 @@ namespace ConnectEducation
 
                 if (mess2 == DialogResult.Yes)
                 {
+                    var connectionString = "mongodb://localhost:27017";
+                    var client = new MongoClient(connectionString);
+                    var database = client.GetDatabase("ConnectED");
+                    var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+
+                    var PRCfilter = Builders<TeacherInformationModal>.Filter.Eq(z => z.PrcID, PrcIDOfTeacherTxt.Text);
+                    var existingPRC = collection.Find(PRCfilter).FirstOrDefault();
+                    if (existingPRC != null)
+                    {
+                        MessageBox.Show("The PRC Identifiction of instructor existing. Please validate the ID");
+                        PrcIDOfTeacherTxt.Focus();
+                        return;
+                    }
                     Random random = new Random();
                     // Store muna
                     string TeacherID = "NO" + DateTime.Now.ToString("dd") + "-" + random.Next(10000, 99999);
@@ -839,10 +852,6 @@ namespace ConnectEducation
 
 
                     //Insert to database
-                    var connectionString = "mongodb://localhost:27017";
-                    var client = new MongoClient(connectionString);
-                    var database = client.GetDatabase("ConnectED");
-                    var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
 
                     TeacherInformationModal teacherProperties = new TeacherInformationModal()
                     {
@@ -1192,7 +1201,7 @@ namespace ConnectEducation
         private void AdminPage_Load(object sender, EventArgs e)
         {
             displayRegisteredInstructor();
-            AnnouncementPanel.Visible = false;
+            
         }
 
         private void AssignBtn_Click(object sender, EventArgs e)
