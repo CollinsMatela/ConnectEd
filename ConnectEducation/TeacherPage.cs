@@ -318,7 +318,8 @@ namespace ConnectEducation
             var filter = Builders<ActivitySubmission>.Filter.And(
                          Builders<ActivitySubmission>.Filter.Eq(z => z.Subject, teacherSubject),
                          Builders<ActivitySubmission>.Filter.Eq(z => z.Instructor, teacherFullname),
-                         Builders<ActivitySubmission>.Filter.Eq(z => z.Section, teacherSection)
+                         Builders<ActivitySubmission>.Filter.Eq(z => z.Section, teacherSection),
+                         Builders<ActivitySubmission>.Filter.Eq(z => z.IsChecked, false)
                 );
             var submissions = collection.Find(filter).ToList();
 

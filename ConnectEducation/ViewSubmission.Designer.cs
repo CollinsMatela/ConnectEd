@@ -42,6 +42,9 @@
             FilesListBox = new ListBox();
             ScoreUpdateBtn = new Button();
             ScoreTxt = new TextBox();
+            panel2 = new Panel();
+            label1 = new Label();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // SubmissionSubjectLabel
@@ -49,7 +52,7 @@
             SubmissionSubjectLabel.AutoSize = true;
             SubmissionSubjectLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionSubjectLabel.ForeColor = Color.DimGray;
-            SubmissionSubjectLabel.Location = new Point(36, 140);
+            SubmissionSubjectLabel.Location = new Point(15, 11);
             SubmissionSubjectLabel.Name = "SubmissionSubjectLabel";
             SubmissionSubjectLabel.Size = new Size(48, 19);
             SubmissionSubjectLabel.TabIndex = 0;
@@ -60,7 +63,7 @@
             SubmissionStudentLabel.AutoSize = true;
             SubmissionStudentLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionStudentLabel.ForeColor = Color.DimGray;
-            SubmissionStudentLabel.Location = new Point(36, 45);
+            SubmissionStudentLabel.Location = new Point(36, 34);
             SubmissionStudentLabel.Name = "SubmissionStudentLabel";
             SubmissionStudentLabel.Size = new Size(39, 19);
             SubmissionStudentLabel.TabIndex = 1;
@@ -69,46 +72,46 @@
             // SubmissionSectionLabel
             // 
             SubmissionSectionLabel.AutoSize = true;
-            SubmissionSectionLabel.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubmissionSectionLabel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionSectionLabel.ForeColor = Color.DimGray;
-            SubmissionSectionLabel.Location = new Point(36, 75);
+            SubmissionSectionLabel.Location = new Point(36, 64);
             SubmissionSectionLabel.Name = "SubmissionSectionLabel";
-            SubmissionSectionLabel.Size = new Size(38, 13);
+            SubmissionSectionLabel.Size = new Size(48, 16);
             SubmissionSectionLabel.TabIndex = 2;
             SubmissionSectionLabel.Text = "Section";
             // 
             // SubmissionHandoutLabel
             // 
             SubmissionHandoutLabel.AutoSize = true;
-            SubmissionHandoutLabel.Font = new Font("Segoe Fluent Icons", 9.75F);
+            SubmissionHandoutLabel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionHandoutLabel.ForeColor = Color.DimGray;
-            SubmissionHandoutLabel.Location = new Point(36, 170);
+            SubmissionHandoutLabel.Location = new Point(15, 40);
             SubmissionHandoutLabel.Name = "SubmissionHandoutLabel";
-            SubmissionHandoutLabel.Size = new Size(42, 13);
+            SubmissionHandoutLabel.Size = new Size(54, 16);
             SubmissionHandoutLabel.TabIndex = 3;
             SubmissionHandoutLabel.Text = "Handout";
             // 
             // SubmissionActivityLabel
             // 
             SubmissionActivityLabel.AutoSize = true;
-            SubmissionActivityLabel.Font = new Font("Segoe Fluent Icons", 9.75F);
+            SubmissionActivityLabel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionActivityLabel.ForeColor = Color.DimGray;
-            SubmissionActivityLabel.Location = new Point(94, 170);
+            SubmissionActivityLabel.Location = new Point(73, 40);
             SubmissionActivityLabel.Name = "SubmissionActivityLabel";
-            SubmissionActivityLabel.Size = new Size(40, 13);
+            SubmissionActivityLabel.Size = new Size(42, 16);
             SubmissionActivityLabel.TabIndex = 4;
             SubmissionActivityLabel.Text = "Activity";
             // 
             // SubmissionDateLabel
             // 
             SubmissionDateLabel.AutoSize = true;
-            SubmissionDateLabel.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubmissionDateLabel.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionDateLabel.ForeColor = Color.DimGray;
-            SubmissionDateLabel.Location = new Point(446, 140);
+            SubmissionDateLabel.Location = new Point(367, 14);
             SubmissionDateLabel.Name = "SubmissionDateLabel";
-            SubmissionDateLabel.Size = new Size(33, 19);
+            SubmissionDateLabel.Size = new Size(69, 16);
             SubmissionDateLabel.TabIndex = 5;
-            SubmissionDateLabel.Text = "Date";
+            SubmissionDateLabel.Text = "99/99/9999";
             // 
             // SubmissionTextRTB
             // 
@@ -116,9 +119,9 @@
             SubmissionTextRTB.BorderStyle = BorderStyle.None;
             SubmissionTextRTB.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SubmissionTextRTB.ForeColor = Color.DimGray;
-            SubmissionTextRTB.Location = new Point(94, 206);
+            SubmissionTextRTB.Location = new Point(72, 139);
             SubmissionTextRTB.Name = "SubmissionTextRTB";
-            SubmissionTextRTB.Size = new Size(470, 142);
+            SubmissionTextRTB.Size = new Size(492, 142);
             SubmissionTextRTB.TabIndex = 6;
             SubmissionTextRTB.Text = "";
             SubmissionTextRTB.TextChanged += richTextBox1_TextChanged;
@@ -126,29 +129,29 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe Fluent Icons", 12F);
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(36, 206);
+            label7.Location = new Point(36, 139);
             label7.Name = "label7";
-            label7.Size = new Size(48, 19);
+            label7.Size = new Size(30, 16);
             label7.TabIndex = 8;
-            label7.Text = "Subject";
+            label7.Text = "Text";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe Fluent Icons", 12F);
             label8.ForeColor = Color.DimGray;
-            label8.Location = new Point(36, 367);
+            label8.Location = new Point(36, 300);
             label8.Name = "label8";
-            label8.Size = new Size(34, 19);
+            label8.Size = new Size(33, 16);
             label8.TabIndex = 9;
             label8.Text = "Files";
             // 
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.Location = new Point(-1, 544);
+            panel1.Location = new Point(-1, 477);
             panel1.Name = "panel1";
             panel1.Size = new Size(625, 55);
             panel1.TabIndex = 10;
@@ -158,7 +161,7 @@
             SubmissionIDLabel.AutoSize = true;
             SubmissionIDLabel.Font = new Font("Segoe Fluent Icons", 9.75F);
             SubmissionIDLabel.ForeColor = Color.DimGray;
-            SubmissionIDLabel.Location = new Point(388, 75);
+            SubmissionIDLabel.Location = new Point(128, 107);
             SubmissionIDLabel.Name = "SubmissionIDLabel";
             SubmissionIDLabel.Size = new Size(60, 13);
             SubmissionIDLabel.TabIndex = 12;
@@ -166,13 +169,13 @@
             // 
             // FilesListBox
             // 
-            FilesListBox.BorderStyle = BorderStyle.None;
+            FilesListBox.BorderStyle = BorderStyle.FixedSingle;
             FilesListBox.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FilesListBox.ForeColor = Color.DimGray;
+            FilesListBox.ForeColor = Color.DodgerBlue;
             FilesListBox.FormattingEnabled = true;
-            FilesListBox.Location = new Point(94, 367);
+            FilesListBox.Location = new Point(75, 300);
             FilesListBox.Name = "FilesListBox";
-            FilesListBox.Size = new Size(470, 144);
+            FilesListBox.Size = new Size(489, 50);
             FilesListBox.TabIndex = 11;
             FilesListBox.SelectedIndexChanged += FilesListBox_SelectedIndexChanged;
             // 
@@ -182,9 +185,9 @@
             ScoreUpdateBtn.FlatStyle = FlatStyle.Flat;
             ScoreUpdateBtn.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ScoreUpdateBtn.ForeColor = Color.White;
-            ScoreUpdateBtn.Location = new Point(514, 46);
+            ScoreUpdateBtn.Location = new Point(445, 36);
             ScoreUpdateBtn.Name = "ScoreUpdateBtn";
-            ScoreUpdateBtn.Size = new Size(50, 24);
+            ScoreUpdateBtn.Size = new Size(67, 30);
             ScoreUpdateBtn.TabIndex = 12;
             ScoreUpdateBtn.Text = "Score";
             ScoreUpdateBtn.UseVisualStyleBackColor = false;
@@ -192,38 +195,61 @@
             // 
             // ScoreTxt
             // 
-            ScoreTxt.BackColor = Color.WhiteSmoke;
-            ScoreTxt.BorderStyle = BorderStyle.None;
+            ScoreTxt.BackColor = Color.White;
+            ScoreTxt.BorderStyle = BorderStyle.FixedSingle;
             ScoreTxt.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ScoreTxt.ForeColor = Color.DimGray;
-            ScoreTxt.Location = new Point(473, 46);
+            ScoreTxt.Location = new Point(404, 36);
             ScoreTxt.Name = "ScoreTxt";
-            ScoreTxt.Size = new Size(35, 23);
+            ScoreTxt.Size = new Size(35, 30);
             ScoreTxt.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.WhiteSmoke;
+            panel2.Controls.Add(SubmissionSubjectLabel);
+            panel2.Controls.Add(ScoreTxt);
+            panel2.Controls.Add(SubmissionHandoutLabel);
+            panel2.Controls.Add(ScoreUpdateBtn);
+            panel2.Controls.Add(SubmissionActivityLabel);
+            panel2.Controls.Add(SubmissionDateLabel);
+            panel2.Location = new Point(36, 380);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(528, 81);
+            panel2.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(36, 104);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 19);
+            label1.TabIndex = 16;
+            label1.Text = "Submission ID:";
             // 
             // ViewSubmission
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(619, 597);
+            ClientSize = new Size(619, 529);
             Controls.Add(SubmissionIDLabel);
-            Controls.Add(ScoreTxt);
-            Controls.Add(ScoreUpdateBtn);
+            Controls.Add(label1);
+            Controls.Add(panel2);
             Controls.Add(FilesListBox);
             Controls.Add(panel1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(SubmissionTextRTB);
-            Controls.Add(SubmissionDateLabel);
-            Controls.Add(SubmissionActivityLabel);
-            Controls.Add(SubmissionHandoutLabel);
             Controls.Add(SubmissionSectionLabel);
             Controls.Add(SubmissionStudentLabel);
-            Controls.Add(SubmissionSubjectLabel);
             Name = "ViewSubmission";
             Text = "ViewSubmission";
             Load += ViewSubmission_Load;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,5 +270,7 @@
         private Label SubmissionIDLabel;
         private Button ScoreUpdateBtn;
         private TextBox ScoreTxt;
+        private Panel panel2;
+        private Label label1;
     }
 }

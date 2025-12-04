@@ -22,7 +22,7 @@ namespace ConnectEducation
         public string AnswerTextField {  get; set; }
         public List<ObjectId> Files {  get; set; }
         public DateTime Time { get; set; }
-
+        public bool IsChecked { get; set; } = false;
 
     }
 }

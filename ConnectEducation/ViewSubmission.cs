@@ -129,58 +129,101 @@ namespace ConnectEducation
                 ScoreTxt.Focus();
                 return;
             }
+
             string[] HandoutNumber = { "Handout 1", "Handout 2", "Handout 3", "Handout 4", "Handout 5", "Handout 6", "Handout 7", "Handout 8" };
-            string Worksheet = "Worksheet";
-            string PerformanceTask = "Performance Task";
+            string[] Worksheet = { "WorkSheet 1", "WorkSheet 2", "WorkSheet 3", "WorkSheet 4", "WorkSheet 5", "WorkSheet 6", "WorkSheet 7", "WorkSheet 8" };
+            string[] PerformanceTask = { "Performance Task 1", "Performance Task 2", "Performance Task 3", "Performance Task 4", "Performance Task 5", "Performance Task 6", "Performance Task 7", "Performance Task 8" };
 
-            DialogResult res = MessageBox.Show("Are you sure to update score?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
+            // For WorkSheets
+            //int i = 0;
+            //foreach (var handouts in HandoutNumber)
+            //{
+            //    if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == Worksheet[i++])
+            //    {
+            //        if (int.Parse(ScoreTxt.Text) > 50)
+            //        {
+            //            MessageBox.Show("The score maximum limit for Worksheet is 50.");
+            //            ScoreTxt.Focus();
+            //            ScoreTxt.Text = "";
+            //            return;
+            //        }
+            //        else if (int.Parse(ScoreTxt.Text) < 1)
+            //        {
+            //            MessageBox.Show("The score minimum limit for Worksheet is 1.");
+            //            ScoreTxt.Focus();
+            //            ScoreTxt.Text = "";
+            //            return;
+            //        }
+
+            //    }
+            //}
+            for (int i = 0; i < HandoutNumber.Length; i++)
             {
-
-                foreach (var handouts in HandoutNumber)
+                if (SubmissionHandoutLabel.Text == HandoutNumber[i] &&
+                    SubmissionActivityLabel.Text == Worksheet[i])
                 {
-                    if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == Worksheet)
+                    if (int.Parse(ScoreTxt.Text) > 50)
                     {
-                        if (int.Parse(ScoreTxt.Text) > 50)
-                        {
-                            MessageBox.Show("The score maximum limit for Worksheet is 50.");
-                            ScoreTxt.Focus();
-                            ScoreTxt.Text = "";
-                            return;
-                        }
-                        else if (int.Parse(ScoreTxt.Text) < 1)
-                        {
-                            MessageBox.Show("The score minimum limit for Worksheet is 1.");
-                            ScoreTxt.Focus();
-                            ScoreTxt.Text = "";
-                            return;
-                        }
-
+                        MessageBox.Show("The score maximum limit for Worksheet is 50.");
+                        ScoreTxt.Focus();
+                        ScoreTxt.Text = "";
+                        return;
+                    }
+                    else if (int.Parse(ScoreTxt.Text) < 1)
+                    {
+                        MessageBox.Show("The score minimum limit for Worksheet is 1.");
+                        ScoreTxt.Focus();
+                        ScoreTxt.Text = "";
+                        return;
                     }
                 }
-                foreach (var handouts in HandoutNumber)
-                {
-                    if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == PerformanceTask)
-                    {
-                        if (int.Parse(ScoreTxt.Text) > 100)
-                        {
-                            MessageBox.Show("The score maximum limit for Performance Task is 100.");
-                            ScoreTxt.Focus();
-                            ScoreTxt.Text = "";
-                            return;
-                        }
-                        else if (int.Parse(ScoreTxt.Text) < 1)
-                        {
-                            MessageBox.Show("The score minimum limit for Performance Task is 1.");
-                            ScoreTxt.Focus();
-                            ScoreTxt.Text = "";
-                            return;
-                        }
+            }
+            // For Performance task
+            //int z = 0;
+            //    foreach (var handouts in HandoutNumber)
+            //    {
+            //        if (SubmissionHandoutLabel.Text == handouts && SubmissionActivityLabel.Text == PerformanceTask[z++])
+            //        {
+            //            if (int.Parse(ScoreTxt.Text) > 100)
+            //            {
+            //                MessageBox.Show("The score maximum limit for Performance Task is 100.");
+            //                ScoreTxt.Focus();
+            //                ScoreTxt.Text = "";
+            //                return;
+            //            }
+            //            else if (int.Parse(ScoreTxt.Text) < 1)
+            //            {
+            //                MessageBox.Show("The score minimum limit for Performance Task is 1.");
+            //                ScoreTxt.Focus();
+            //                ScoreTxt.Text = "";
+            //                return;
+            //            }
 
+            //        }
+            //    }
+            for (int z = 0; z < HandoutNumber.Length; z++)
+            {
+                if (SubmissionHandoutLabel.Text == HandoutNumber[z] &&
+                    SubmissionActivityLabel.Text == PerformanceTask[z])
+                {
+                    if (int.Parse(ScoreTxt.Text) > 100)
+                    {
+                        MessageBox.Show("The score maximum limit for Performance Task is 100.");
+                        ScoreTxt.Focus();
+                        ScoreTxt.Text = "";
+                        return;
+                    }
+                    else if (int.Parse(ScoreTxt.Text) < 1)
+                    {
+                        MessageBox.Show("The score minimum limit for Performance Task is 1.");
+                        ScoreTxt.Focus();
+                        ScoreTxt.Text = "";
+                        return;
                     }
                 }
+            }
 
-                string selectedTypeOfActivity = type;
+            string selectedTypeOfActivity = type;
                 string scoreValue = ScoreTxt.Text;
 
                 var connectionString = "mongodb://localhost:27017";
@@ -193,15 +236,19 @@ namespace ConnectEducation
                        Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, studentID),
                        Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, a => a.ActivityType == selectedTypeOfActivity)
                 );
+            DialogResult res = MessageBox.Show("Are you sure to update score?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
                 // Update
                 var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", scoreValue);
                 collection.UpdateOne(filter, update);
-                // Delete
+                // to check
                 var collection2 = database.GetCollection<ActivitySubmission>("ActivitySubmission");
                 var filter2 = Builders<ActivitySubmission>.Filter.Eq(z => z.SubmissionId, SubmissionIDLabel.Text);
-                var delete = collection2.FindOneAndDelete(filter2);
+                var checkUpdate = Builders<ActivitySubmission>.Update.Set(z => z.IsChecked, true);
+                var delete = collection2.UpdateOne(filter2, checkUpdate);
 
-                MessageBox.Show("Successfully added " + scoreValue + " to " + selectedTypeOfActivity);
+                MessageBox.Show("Successfully added " + scoreValue + " to " + selectedTypeOfActivity + ", Submission marked as checked!");
 
                 this.Close();
             }

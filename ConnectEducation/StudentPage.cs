@@ -1669,7 +1669,7 @@ namespace ConnectEducation
 
         private void SidebarPanel_MouseEnter(object sender, EventArgs e)
         {
-            SidebarPanel.Width = 787;
+            SidebarPanel.Width = 900;
 
         }
         private void SidebarPanel_MouseLeave(object sender, EventArgs e)
@@ -1683,7 +1683,7 @@ namespace ConnectEducation
 
         private void SystemLogListBox_MouseEnter(object sender, EventArgs e)
         {
-            SidebarPanel.Width = 787;
+            SidebarPanel.Width = 900;
         }
 
         private void CloseQuizBtn_Click(object sender, EventArgs e)

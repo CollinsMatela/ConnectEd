@@ -75,6 +75,31 @@ namespace ConnectEducation
                 MessageBox.Show("Please provide text or file.");
                 return;
             }
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+
+            var existingSubmissionFilter = Builders<ActivitySubmission>.Filter.And(
+                                        Builders<ActivitySubmission>.Filter.Eq(z => z.Subject, nameOfSubject),
+                                        Builders<ActivitySubmission>.Filter.Eq(z => z.Section, sectionOfStudent),
+                                        Builders<ActivitySubmission>.Filter.Eq(z => z.Handout, selectedHandout),
+                                        Builders<ActivitySubmission>.Filter.Eq(z => z.TypeOfActivity, selectedActivity),
+                                        Builders<ActivitySubmission>.Filter.Eq(z => z.StudentId, IdOfStudent)
+                                    );
+            var existingResult = collection.Find(existingSubmissionFilter).FirstOrDefault();
+            if (existingResult != null)
+            {
+                if (existingResult.IsChecked)
+                {
+                    MessageBox.Show("This activity has already been graded. You cannot resubmit.");
+                }
+                else
+                {
+                    MessageBox.Show("You have already submitted this activity.");
+                }
+                return;
+            }
+
 
             try
             {
@@ -83,9 +108,8 @@ namespace ConnectEducation
                 {
 
 
-                    var client = new MongoClient("mongodb://localhost:27017");
-                    var database = client.GetDatabase("ConnectED");
-                    var collection = database.GetCollection<ActivitySubmission>("ActivitySubmission");
+                    
+                    
                     var filter = Builders<ActivitySubmission>.Filter.And(
                                  Builders<ActivitySubmission>.Filter.Eq(z => z.Subject, nameOfSubject),
                                  Builders<ActivitySubmission>.Filter.Eq(z => z.Section, sectionOfStudent),
@@ -131,6 +155,7 @@ namespace ConnectEducation
                             AnswerTextField = AnswerTxt.Text,
                             Files = fileIds,
                             Time = DateTime.Now,
+                            IsChecked = false,
                         };
 
                         submissions.InsertOne(submissionCollection);
