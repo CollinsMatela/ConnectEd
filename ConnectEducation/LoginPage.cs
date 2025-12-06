@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,41 @@ namespace ConnectEducation
         {
             InitializeComponent();
         }
+        private void MakeRoundPanel(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(panel.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(panel.Width - radius, panel.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, panel.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+        }
+        private void SetRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetRoundedTextbox(TextBox txt, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(txt.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(txt.Width - radius, txt.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, txt.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            txt.Region = new Region(path);
+        }
+
         private void addSubjects()
         {
             var connectionString = "mongodb://localhost:27017";
@@ -204,7 +240,17 @@ namespace ConnectEducation
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            PasswordTxt.UseSystemPasswordChar = true;
+
+            MakeRoundPanel(loginPanel, 20);
+            SetRoundedButton(EnterBtn, 10);
+            SetRoundedButton(ExBtn, 30);
+
+
+        }
+
+        private void ExBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
