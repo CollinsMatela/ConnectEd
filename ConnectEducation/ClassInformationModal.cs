@@ -20,6 +20,7 @@ namespace ConnectEducation
         public string Section { get; set; }
         public string [] Teacher { get; set; }
         public string  [] Students  { get; set; }
+        public int Capacity { get; set; }
         public DateTime CreateAt { get; set; }
     }
 }

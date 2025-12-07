@@ -343,8 +343,14 @@ namespace ConnectEducation
 
         private void StudentRegistrationBtn_Click(object sender, EventArgs e)
         {
+            //AdminBoardPanel.Visible = false;
+            //StudentRegistrationPanel.Visible = true;
+
+            TeacherRegistrationPanel.Visible = false;
             AdminBoardPanel.Visible = false;
+            CreateClassPanel.Visible = false;
             StudentRegistrationPanel.Visible = true;
+            AssignPanel.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -694,8 +700,10 @@ namespace ConnectEducation
                     SectionCb.SelectedIndex = -1;
                     RelationshipCb.SelectedIndex = -1;
                     DateOfBirthDtp.Value = DateTime.Now;
+
+                    totalNumberOfStudent();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -720,7 +728,10 @@ namespace ConnectEducation
         {
             TeacherRegistrationPanel.Visible = true;
             AdminBoardPanel.Visible = false;
+            CreateClassPanel.Visible = false;
             StudentRegistrationPanel.Visible = false;
+            AssignPanel.Visible = false;
+
         }
 
         private void SubmitTeacherInformationBtn_Click(object sender, EventArgs e)
@@ -962,9 +973,10 @@ namespace ConnectEducation
                     BirthOfTeacherDtp.Value = DateTime.Today;
 
                     displayRegisteredInstructor();
+                    totalNumberOfTeacher();
                 }
 
-               
+
 
             }
             catch (Exception ex)
@@ -979,6 +991,7 @@ namespace ConnectEducation
             AdminBoardPanel.Visible = false;
             TeacherRegistrationPanel.Visible = false;
             StudentRegistrationPanel.Visible = false;
+            AssignPanel.Visible = false;
         }
 
         private void ClassBackBtn_Click(object sender, EventArgs e)
@@ -1009,6 +1022,25 @@ namespace ConnectEducation
                     SectionOfClassTxt.Focus();
                     return;
                 }
+                if (string.IsNullOrEmpty(CapacityTxt.Text))
+                {
+                    MessageBox.Show("Enter capacity of section.");
+                    CapacityTxt.Focus();
+                    return;
+                }
+                if (!CapacityTxt.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Capacity must contain only numbers.");
+                    CapacityTxt.Focus();
+                    return;
+                }
+                if (int.Parse(CapacityTxt.Text) < 15 || int.Parse(CapacityTxt.Text) > 40)
+                {
+                    MessageBox.Show("Capacity must be between 15 and 40.");
+                    CapacityTxt.Focus();
+                    return;
+                }
+
 
                 DialogResult mess2 = MessageBox.Show("Are you sure to create a class", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (mess2 == DialogResult.Yes)
@@ -1021,6 +1053,7 @@ namespace ConnectEducation
                     string SectionOfClass = SectionOfClassTxt.Text;
                     string[] Teachers = [];
                     string[] Students = [];
+                    int Capacity = int.Parse(CapacityTxt.Text);
                     DateTime CreatedTime = DateTime.Now;
 
                     //Insert to database
@@ -1050,6 +1083,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1078,6 +1112,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1106,6 +1141,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1134,6 +1170,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1153,6 +1190,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1172,6 +1210,7 @@ namespace ConnectEducation
                             Section = SectionOfClass,
                             Teacher = Teachers,
                             Students = Students,
+                            Capacity = Capacity,
                             CreateAt = CreatedTime,
                         };
 
@@ -1188,13 +1227,14 @@ namespace ConnectEducation
                     StrandOfClassCb.SelectedIndex = -1;
                     GradeLevelOfClassCb.SelectedIndex = -1;
                     SectionOfClassTxt.Clear();
+                    CapacityTxt.Clear();
 
                     StrandAndGradeCb.Text = "";
                     ClassSectionsCb.Text = "";
                     ClassSectionsCb.Items.Clear();
                 }
 
-                
+
 
             }
             catch (Exception ex)
@@ -1263,16 +1303,43 @@ namespace ConnectEducation
             displaySubjects();
 
         }
+        private void totalNumberOfStudent()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<StudentModal>("StudentModal");
+            long count = collection.CountDocuments(_ => true);
+
+            TotalStudentLabel.Text = count.ToString();
+        }
+        private void totalNumberOfTeacher()
+        {
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ConnectED");
+            var collection = database.GetCollection<TeacherInformationModal>("TeacherInformationModal");
+            long count = collection.CountDocuments(_ => true);
+
+            TotalInstructorLabel.Text = count.ToString();
+        }
 
         private void AdminPage_Load(object sender, EventArgs e)
         {
             displayRegisteredInstructor();
+            // CARDS
+            totalNumberOfStudent();
+            totalNumberOfTeacher();
 
             // ADMIN CONTROL PANEL
+            MakeRoundPanel(InstructorTotalCard, 20);
+            MakeRoundPanel(StudentTotalCard, 20);
+
             SetRoundedButton(StudentRegistrationBtn, 20);
             SetRoundedButton(TeacherRegistrationBtn, 20);
             SetRoundedButton(CreateClassBtn, 20);
             SetRoundedButton(LogoutBtn, 20);
+            SetRoundedButton(AssigningInstructorBtn, 20);
             SetRoundedButton(SendAnnouncementBtn, 10);
             SetRoundedButton(CloseAnnouncementPanel, 10);
             SetTopRoundedButton(AnnouncementBtn, 20);
@@ -1298,6 +1365,42 @@ namespace ConnectEducation
             SetRoundedTextBox(GuardianMiddleInitialTxt, 10);
             SetRoundedTextBox(GuardianContactTxt, 10);
             SetRoundedTextBox(GuardianEmailTxt, 10);
+
+            // TEACHER REGISTRATION
+            MakeRoundPanel(TeacherPersonalInformationPanel, 20);
+            MakeRoundPanel(TeacherEducBackgroundPanel, 20);
+
+            SetRoundedButton(SubmitTeacherInformationBtn, 20);
+            SetRoundedButton(BackTeacherPanel, 20);
+
+            SetRoundedTextBox(LastnameOfTeacherTxt, 10);
+            SetRoundedTextBox(FirstnameOfTeacherTxt, 10);
+            SetRoundedTextBox(MiddlenameOfTeacherTxt, 10);
+            SetRoundedTextBox(AgeOfTeacherTxt, 10);
+            SetRoundedTextBox(HomeAddressOfTeacherTxt, 10);
+            SetRoundedTextBox(ContactOfTeacherTxt, 10);
+            SetRoundedTextBox(EmailOfTeacherTxt, 10);
+
+            SetRoundedTextBox(PrcIDOfTeacherTxt, 10);
+            SetRoundedTextBox(SchoolOfTeacherTxt, 10);
+
+            // CREATE CLASS
+            MakeRoundPanel(ClassCreatePanel, 20);
+
+            SetRoundedButton(ClassBackBtn, 20);
+            SetRoundedButton(Class_SubjectBtn, 20);
+
+            SetRoundedTextBox(SectionOfClassTxt, 10);
+            SetRoundedTextBox(CapacityTxt, 10);
+
+            // ASSIGN CLASS
+            MakeRoundPanel(AssPanel, 20);
+
+            SetRoundedButton(AssignBtn, 20);
+            SetRoundedButton(AssignBackBtn, 20);
+
+
+
 
         }
 
@@ -1421,7 +1524,7 @@ namespace ConnectEducation
                 InstructorCb.Text = "";
                 SubjectCb.Text = "";
             }
-            
+
         }
 
         private void SubjectCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -1459,7 +1562,7 @@ namespace ConnectEducation
                 AnnouncementRTB.Focus();
                 return;
             }
-            
+
             var connectionString = "mongodb://localhost:27017";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ConnectED");
@@ -1478,9 +1581,27 @@ namespace ConnectEducation
                 AnnouncementRTB.Clear();
             }
         }
+
+        private void AssigningInstructorBtn_Click(object sender, EventArgs e)
+        {
+            AssignPanel.Visible = true;
+            CreateClassPanel.Visible = false;
+            AdminBoardPanel.Visible = false;
+            TeacherRegistrationPanel.Visible = false;
+            StudentRegistrationPanel.Visible = false;
+        }
+
+        private void AssignBackBtn_Click(object sender, EventArgs e)
+        {
+            AssignPanel.Visible = false;
+            CreateClassPanel.Visible = false;
+            AdminBoardPanel.Visible = true;
+            TeacherRegistrationPanel.Visible = false;
+            StudentRegistrationPanel.Visible = false;
+        }
     }
 
 
 
 
-    }
+}
