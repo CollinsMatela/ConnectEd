@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,6 +25,71 @@ namespace ConnectEducation
         {
             InitializeComponent();
         }
+
+        private void MakeRoundPanel(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(panel.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(panel.Width - radius, panel.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, panel.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+        }
+        private void SetRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetTopRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(btn.Width, radius, btn.Width, btn.Height);
+            path.AddLine(btn.Width, btn.Height, 0, btn.Height);
+            path.AddLine(0, btn.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetRoundedRichTextBox(RichTextBox rtb, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(rtb.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(rtb.Width, radius, rtb.Width, rtb.Height);
+            path.AddLine(rtb.Width, rtb.Height, 0, rtb.Height);
+            path.AddLine(0, rtb.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            rtb.Region = new Region(path);
+        }
+        private void SetRoundedTextBox(TextBox txt, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(txt.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(txt.Width - radius, txt.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, txt.Height - radius, radius, radius, 90, 90);
+
+            path.CloseFigure();
+
+            txt.Region = new Region(path);
+        }
+
+
         private void checkAvailabilityOfSubjectForInstructors()
         {
             var connectionString = "mongodb://localhost:27017";
@@ -1201,7 +1267,38 @@ namespace ConnectEducation
         private void AdminPage_Load(object sender, EventArgs e)
         {
             displayRegisteredInstructor();
-            
+
+            // ADMIN CONTROL PANEL
+            SetRoundedButton(StudentRegistrationBtn, 20);
+            SetRoundedButton(TeacherRegistrationBtn, 20);
+            SetRoundedButton(CreateClassBtn, 20);
+            SetRoundedButton(LogoutBtn, 20);
+            SetRoundedButton(SendAnnouncementBtn, 10);
+            SetRoundedButton(CloseAnnouncementPanel, 10);
+            SetTopRoundedButton(AnnouncementBtn, 20);
+            SetRoundedRichTextBox(AnnouncementRTB, 10);
+            // STUDENT REGISTRATION
+            MakeRoundPanel(PersonalInformationPanel, 20);
+            MakeRoundPanel(GuardianInformationPanel, 20);
+            MakeRoundPanel(AcademinInformationPanel, 20);
+
+            SetRoundedButton(SubmitBtn, 20);
+            SetRoundedButton(button1, 20);
+
+            SetRoundedTextBox(StudentLastnameTxt, 10);
+            SetRoundedTextBox(StudentFirstnameTxt, 10);
+            SetRoundedTextBox(StudentMiddlenameTxt, 10);
+            SetRoundedTextBox(AgeTxt, 10);
+            SetRoundedTextBox(HomeAddressTxt, 10);
+            SetRoundedTextBox(ContactTxt, 10);
+            SetRoundedTextBox(EmailAddressTxt, 10);
+
+            SetRoundedTextBox(GuardianLastnameTxt, 10);
+            SetRoundedTextBox(GuardianFirstnameTxt, 10);
+            SetRoundedTextBox(GuardianMiddleInitialTxt, 10);
+            SetRoundedTextBox(GuardianContactTxt, 10);
+            SetRoundedTextBox(GuardianEmailTxt, 10);
+
         }
 
         private void AssignBtn_Click(object sender, EventArgs e)
