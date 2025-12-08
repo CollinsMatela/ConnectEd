@@ -15,6 +15,104 @@ namespace ConnectEducation
         private string IdOfStudent, FullnameOfStudent, StrandOfStudent, GradeLevelOfStudent, SemesterOfStudent, SectionOfStudent;
         private string link;
 
+        private void MakeRoundPanel(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(panel.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(panel.Width - radius, panel.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, panel.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+        }
+        private void SetRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetTopRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(btn.Width, radius, btn.Width, btn.Height);
+            path.AddLine(btn.Width, btn.Height, 0, btn.Height);
+            path.AddLine(0, btn.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetRoundedRichTextBox(RichTextBox rtb, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(rtb.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(rtb.Width, radius, rtb.Width, rtb.Height);
+            path.AddLine(rtb.Width, rtb.Height, 0, rtb.Height);
+            path.AddLine(0, rtb.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            rtb.Region = new Region(path);
+        }
+        private void SetRoundedTextBox(TextBox txt, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(txt.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(txt.Width - radius, txt.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, txt.Height - radius, radius, radius, 90, 90);
+
+            path.CloseFigure();
+
+            txt.Region = new Region(path);
+        }
+        private async void UpdateUI()
+        {
+            Panel[] HandoutPanels = { handoutPanel1, handoutPanel2, handoutPanel3, handoutPanel4, handoutPanel5, handoutPanel6, handoutPanel7, handoutPanel8 };
+
+            foreach (var subPanel in HandoutPanels)
+            {
+                subPanel.Visible = false;
+            }
+
+            foreach (var subPanel in HandoutPanels)
+            {
+                subPanel.Visible = true;
+                MakeRoundPanel(subPanel, 20);
+
+                await Task.Delay(500);
+            }
+            
+        }
+        private async void UpdateGradesPanelUI()
+        {
+            Panel[] GradePanels = { GradePanel1, GradePanel2, GradePanel3, GradePanel4, GradePanel5, GradePanel6, GradePanel7, GradePanel8 };
+
+            foreach (var subPanel in GradePanels)
+            {
+                subPanel.Visible = false;
+            }
+
+            foreach (var subPanel in GradePanels)
+            {
+                subPanel.Visible = true;
+                MakeRoundPanel(subPanel, 20);
+
+                await Task.Delay(500);
+            }
+
+        }
         private void QuizListBoxProperties()
         {
             QuizListView.View = View.Details;      // table mode
@@ -498,6 +596,7 @@ namespace ConnectEducation
 
             QuizListBoxProperties();
             LoadQuizzes();
+            
 
             FirstSubject = schoolCurriculum._Subject1;
             SecondSubject = schoolCurriculum._Subject2;
@@ -567,6 +666,7 @@ namespace ConnectEducation
 
         private void subject5_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject5.Text;
@@ -667,6 +767,7 @@ namespace ConnectEducation
             StudentProfilePanel.Visible = false;
             //displayNameOfSubjectsInGradesPanel();
             displayGrades();
+            UpdateGradesPanelUI();
 
         }
 
@@ -880,6 +981,7 @@ namespace ConnectEducation
 
         private void subject1_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject1.Text;
@@ -975,6 +1077,7 @@ namespace ConnectEducation
 
         private void subject2_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject2.Text;
@@ -1070,6 +1173,7 @@ namespace ConnectEducation
 
         private void subject3_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject3.Text;
@@ -1165,6 +1269,7 @@ namespace ConnectEducation
 
         private void subject4_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject4.Text;
@@ -1260,6 +1365,7 @@ namespace ConnectEducation
 
         private void subject6_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject6.Text;
@@ -1355,6 +1461,7 @@ namespace ConnectEducation
 
         private void subject7_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject7.Text;
@@ -1450,6 +1557,7 @@ namespace ConnectEducation
 
         private void subject8_Click(object sender, EventArgs e)
         {
+            UpdateUI();
             SubmissionCb.Text = "";
 
             string nameOfText = subject8.Text;
@@ -1560,6 +1668,8 @@ namespace ConnectEducation
             SubjectsPanel.Visible = true;
             GradingSystemPanel.Visible = false;
             StudentProfilePanel.Visible = false;
+
+            UpdateUI();
         }
 
         private void TeacherNameLabel1_Click(object sender, EventArgs e)
