@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -20,6 +21,141 @@ namespace ConnectEducation
     {
         private string teacherID, teacherFullname, teacherSubject, teacherSection;
 
+        private void UpdateUI()
+        {
+            // Panels
+            MakeRoundPanel(ProfileSubPanel, 20);
+            MakeRoundPanel(UserPanel, 20);
+
+            Panel[] HandoutPanels = { HandoutSubPanel1, HandoutSubPanel2, HandoutSubPanel3, HandoutSubPanel4, HandoutSubPanel5, HandoutSubPanel6, HandoutSubPanel7, HandoutSubPanel8 };
+            foreach (var panel in HandoutPanels)
+            {
+                MakeRoundPanel(panel, 20);
+            }
+            MakeRoundPanel(StudentRecordPanel, 20);
+            MakeRoundPanel(StudentCardPanel, 20);
+            MakeRoundPanel(StudentCardPanel2, 20);
+            MakeRoundPanel(StudentCardPanel3, 20);
+            MakeRoundPanel(ClassAttendancePanel, 20);
+
+            Panel[] AttendancePanels = { AttendancePanel1, AttendancePanel2, AttendancePanel3, AttendancePanel4, AttendancePanel5, AttendancePanel6, AttendancePanel7, AttendancePanel8 };
+            foreach (var panel in AttendancePanels)
+            {
+                MakeRoundPanel(panel, 20);
+            }
+            MakeRoundPanel(InputGradesPanel, 20);
+
+            Panel[] RecordPanels = { RecordSubPanel1, RecordSubPanel2, RecordSubPanel3, RecordSubPanel4, RecordSubPanel5, RecordSubPanel6, RecordSubPanel7, RecordSubPanel8 };
+            foreach (var panel in RecordPanels)
+            {
+                MakeRoundPanel(panel, 20);
+            }
+            MakeRoundPanel(QuizSubPanel1, 20);
+            MakeRoundPanel(QuizSubPanel2, 20);
+
+            // Buttons
+            SetRoundedButton(ChangePasswordBtn, 10);
+            SetRoundedButton(InputGradesBtn, 20);
+            SetRoundedButton(StudentRecordBtn, 20);
+            SetRoundedButton(ClassAttendanceBtn, 20);
+            SetRoundedButton(AttendanceUpdateBtn, 10);
+            SetRoundedButton(AttendanceCloseBtn, 10);
+            SetRoundedButton(AttendanceUpdateDropDownBtn, 10);
+            SetRoundedButton(button2, 10);
+            SetRoundedButton(SaveBtn, 10);
+            SetRoundedButton(UpdateBtn, 10);
+            SetRoundedButton(CloseUpdatePanelBtn, 10);
+            SetRoundedButton(UpdatePanelBtn, 10);
+            SetRoundedButton(SubmitQuizBtn, 10);
+
+
+        }
+        private void MakeRoundPanel(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(panel.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(panel.Width - radius, panel.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, panel.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+        }
+        private void SetRoundedListBox(ListBox lb, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(lb.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(lb.Width - radius, lb.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, lb.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            lb.Region = new Region(path);
+        }
+        private void SetRoundedListView(ListView lv, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(lv.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(lv.Width - radius, lv.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, lv.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            lv.Region = new Region(path);
+        }
+        private void SetRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetTopRoundedButton(Button btn, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(btn.Width, radius, btn.Width, btn.Height);
+            path.AddLine(btn.Width, btn.Height, 0, btn.Height);
+            path.AddLine(0, btn.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
+        }
+        private void SetRoundedRichTextBox(RichTextBox rtb, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(rtb.Width - radius, 0, radius, radius, 270, 90);
+            path.AddLine(rtb.Width, radius, rtb.Width, rtb.Height);
+            path.AddLine(rtb.Width, rtb.Height, 0, rtb.Height);
+            path.AddLine(0, rtb.Height, 0, radius);
+
+            path.CloseAllFigures();
+
+            rtb.Region = new Region(path);
+        }
+        private void SetRoundedTextBox(TextBox txt, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(txt.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(txt.Width - radius, txt.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, txt.Height - radius, radius, radius, 90, 90);
+
+            path.CloseFigure();
+
+            txt.Region = new Region(path);
+        }
         private void displayProfileInformation()
         {
             var connectionString = "mongodb://localhost:27017";
@@ -459,6 +595,7 @@ namespace ConnectEducation
             columnOfSubmissionListView();
             displaySubmissions();
             displayProfileInformation();
+            UpdateUI();
 
 
         }

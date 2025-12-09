@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA2CAYAAACbZ/oUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAADwBJREFUaEPtWgmQXVWZ7pBR0VEcozHp7vfuOeffzn339ZY0hhjAFhihWZJBMIaR
+        vAAADrwBlbxySQAADwBJREFUaEPtWgmQXVWZ7pBR0VEcozHp7vfuOeffzn339ZY0hhjAFhihWZJBMIaR
         BGRJQI2BKKLIEpTFjIIgsguIMaAmIDAYQAbBcVwYQQky5YAlyzigJqEQEVFZ0tb3cm58uUYrm6lYlb/q
         Vve7991zzn/Ov3z/97+Oju2yXbbLRsqoLMteF0J4k/d+WlEU72o2m7PM7J0i8rYYYxwcHHxZ9aW/K4kx
         voaZZ5jZF0TkERFZraojf+kSkedU9Xsicqaq7rJgwYIdqmNukxJj7GXmK0Xk2aTIC8x8v6peGWP8EBH9
@@ -191,7 +191,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAABZhJREFUaEPtWkmIXFUU7Y5z1IhD1MaWqv73nPeLhk7QjgMubEFBBEVFQd0oqFkk
+        DAAACwwBP0AiyAAABZhJREFUaEPtWkmIXFUU7Y5z1IhD1MaWqv73nPeLhk7QjgMubEFBBEVFQd0oqFkk
         johTHHAAFRUJ6EJExWGhKzeSLJKFC9GtiIIxOCsaojGDQxLNoBx5Ld23fvWfqqoj1oGz++/c94d3xz80
         NMAAAwwwwP8QrVbreABnk7wOwLMk1wH4AsAWAH8C+MPMfgSwEcBaAM+QvDpN02UAFnm9AxbNZrNhZqt1
         cyS3k9xH8q+C1LVbSW4k+cj4+PhxXv9AwTDJswA8B+DXjBupxKi1muRS2fBG5wUTExPHknyJ5Da/4S5x
@@ -216,6 +216,39 @@
         H9RcP7bJG8tB9e7M5kGTdw2jY1s3LyOrwn1KKvSbVNdDTw0MqydlZqsAVJ5HZVBad9YagfYa2pxGlnFy
         oarJO7eOjH/Z6o9btZeW1y4E+glVS5o8yHEBuBvAG0oN5cnVAgawS91FNdzUg1JbRp0KFe+V69kBBhhg
         gAH+4/gbmoOk3th1MIcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ClassAttendanceBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAASlJREFUSEvtlCFLRUEQhVcRwSCiYDCYNChoUUxiEZ7BZLH6M16Tm+7unHNn7y+y
+        GjQYDYLCK4qIKGJS4co+VpHF+PYieD84aQ4cZndmjOno6PjLqOqiqq4URTGR1rJC8grAM8mjtJYVkhck
+        G5LvJA+bphlLPVkQkVWSgxj+oqq91sJJbgO4D+EAbq21W6knGyT3ADyEcBG5A7DxXSyKYrKqqjVV3cwh
+        kscAPmLnNySXhsEA9gG8xv9oQ+d1XS8Y59wugKdfDLl0UpblfHjqcRGZcc7N5hDJ/tdTkzzz3s/9GIM8
+        hB0O6xRDB9ba5dQzcuLsPMbQ6zDAqWfkANghGU7mcIedc+upJwskL2Pom4j0jDGtXa3T0CmAg7SWFe/9
+        FIDp1u5zR8f/5hOiNnk27bzeCAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="StudentRecordBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAASlJREFUSEvtlCFLRUEQhVcRwSCiYDCYNChoUUxiEZ7BZLH6M16Tm+7unHNn7y+y
+        GjQYDYLCK4qIKGJS4co+VpHF+PYieD84aQ4cZndmjOno6PjLqOqiqq4URTGR1rJC8grAM8mjtJYVkhck
+        G5LvJA+bphlLPVkQkVWSgxj+oqq91sJJbgO4D+EAbq21W6knGyT3ADyEcBG5A7DxXSyKYrKqqjVV3cwh
+        kscAPmLnNySXhsEA9gG8xv9oQ+d1XS8Y59wugKdfDLl0UpblfHjqcRGZcc7N5hDJ/tdTkzzz3s/9GIM8
+        hB0O6xRDB9ba5dQzcuLsPMbQ6zDAqWfkANghGU7mcIedc+upJwskL2Pom4j0jDGtXa3T0CmAg7SWFe/9
+        FIDp1u5zR8f/5hOiNnk27bzeCAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="InputGradesBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAASlJREFUSEvtlCFLRUEQhVcRwSCiYDCYNChoUUxiEZ7BZLH6M16Tm+7unHNn7y+y
+        GjQYDYLCK4qIKGJS4co+VpHF+PYieD84aQ4cZndmjOno6PjLqOqiqq4URTGR1rJC8grAM8mjtJYVkhck
+        G5LvJA+bphlLPVkQkVWSgxj+oqq91sJJbgO4D+EAbq21W6knGyT3ADyEcBG5A7DxXSyKYrKqqjVV3cwh
+        kscAPmLnNySXhsEA9gG8xv9oQ+d1XS8Y59wugKdfDLl0UpblfHjqcRGZcc7N5hDJ/tdTkzzz3s/9GIM8
+        hB0O6xRDB9ba5dQzcuLsPMbQ6zDAqWfkANghGU7mcIedc+upJwskL2Pom4j0jDGtXa3T0CmAg7SWFe/9
+        FIDp1u5zR8f/5hOiNnk27bzeCAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="UpdateTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

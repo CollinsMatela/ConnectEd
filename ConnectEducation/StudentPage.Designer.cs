@@ -3198,7 +3198,9 @@
             Controls.Add(SubjectsPanel);
             Controls.Add(GradingSystemPanel);
             Controls.Add(StudentProfilePanel);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "StudentPage";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Student Page";
             Load += StudentPage_Load;
             panel1.ResumeLayout(false);
