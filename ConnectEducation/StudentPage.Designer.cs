@@ -148,41 +148,43 @@
             News = new Label();
             SystemLogListBox = new ListBox();
             QuizPanel = new Panel();
-            QuizDeadlineLabel = new Label();
+            QuizSubPanel = new Panel();
+            InstructionLabel = new Label();
+            AnswerNo1 = new TextBox();
+            label71 = new Label();
             AnswerNo10 = new TextBox();
-            AnswerNo9 = new TextBox();
-            AnswerNo8 = new TextBox();
-            AnswerNo7 = new TextBox();
-            AnswerNo6 = new TextBox();
-            AnswerNo5 = new TextBox();
-            AnswerNo4 = new TextBox();
-            AnswerNo3 = new TextBox();
-            AnswerNo2 = new TextBox();
-            QuizTitleLabel = new Label();
-            QuizIdLabel = new Label();
+            QuestionLabel1 = new Label();
             CloseQuizBtn = new Button();
+            AnswerNo9 = new TextBox();
             SubmitQuizBtn = new Button();
+            label74 = new Label();
+            AnswerNo8 = new TextBox();
+            QuestionLabel2 = new Label();
+            AnswerNo7 = new TextBox();
+            label76 = new Label();
+            AnswerNo6 = new TextBox();
+            QuestionLabel3 = new Label();
+            AnswerNo5 = new TextBox();
+            label78 = new Label();
+            AnswerNo4 = new TextBox();
+            QuestionLabel4 = new Label();
+            AnswerNo3 = new TextBox();
+            label80 = new Label();
+            AnswerNo2 = new TextBox();
+            QuestionLabel5 = new Label();
+            label90 = new Label();
+            QuestionLabel6 = new Label();
+            label88 = new Label();
+            QuestionLabel7 = new Label();
             QuestionLabel10 = new Label();
+            label86 = new Label();
             label82 = new Label();
+            QuestionLabel8 = new Label();
             QuestionLabel9 = new Label();
             label84 = new Label();
-            QuestionLabel8 = new Label();
-            label86 = new Label();
-            QuestionLabel7 = new Label();
-            label88 = new Label();
-            QuestionLabel6 = new Label();
-            label90 = new Label();
-            QuestionLabel5 = new Label();
-            label80 = new Label();
-            QuestionLabel4 = new Label();
-            label78 = new Label();
-            QuestionLabel3 = new Label();
-            label76 = new Label();
-            QuestionLabel2 = new Label();
-            label74 = new Label();
-            AnswerNo1 = new TextBox();
-            QuestionLabel1 = new Label();
-            label71 = new Label();
+            QuizDeadlineLabel = new Label();
+            QuizTitleLabel = new Label();
+            QuizIdLabel = new Label();
             label68 = new Label();
             handoutPanel5 = new Panel();
             label6 = new Label();
@@ -262,8 +264,6 @@
             subject1 = new Button();
             label69 = new Label();
             SubjectsPanel = new Panel();
-            QuizSubPanel = new Panel();
-            InstructionLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             GradingSystemPanel.SuspendLayout();
@@ -287,6 +287,7 @@
             UserIconPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             QuizPanel.SuspendLayout();
+            QuizSubPanel.SuspendLayout();
             handoutPanel5.SuspendLayout();
             handoutPanel6.SuspendLayout();
             handoutPanel7.SuspendLayout();
@@ -297,7 +298,6 @@
             handoutPanel1.SuspendLayout();
             SubjectsPopUpPanel.SuspendLayout();
             SubjectsPanel.SuspendLayout();
-            QuizSubPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -1713,6 +1713,386 @@
             QuizPanel.Size = new Size(1306, 740);
             QuizPanel.TabIndex = 11;
             // 
+            // QuizSubPanel
+            // 
+            QuizSubPanel.BackColor = Color.White;
+            QuizSubPanel.Controls.Add(InstructionLabel);
+            QuizSubPanel.Controls.Add(AnswerNo1);
+            QuizSubPanel.Controls.Add(label71);
+            QuizSubPanel.Controls.Add(AnswerNo10);
+            QuizSubPanel.Controls.Add(QuestionLabel1);
+            QuizSubPanel.Controls.Add(CloseQuizBtn);
+            QuizSubPanel.Controls.Add(AnswerNo9);
+            QuizSubPanel.Controls.Add(SubmitQuizBtn);
+            QuizSubPanel.Controls.Add(label74);
+            QuizSubPanel.Controls.Add(AnswerNo8);
+            QuizSubPanel.Controls.Add(QuestionLabel2);
+            QuizSubPanel.Controls.Add(AnswerNo7);
+            QuizSubPanel.Controls.Add(label76);
+            QuizSubPanel.Controls.Add(AnswerNo6);
+            QuizSubPanel.Controls.Add(QuestionLabel3);
+            QuizSubPanel.Controls.Add(AnswerNo5);
+            QuizSubPanel.Controls.Add(label78);
+            QuizSubPanel.Controls.Add(AnswerNo4);
+            QuizSubPanel.Controls.Add(QuestionLabel4);
+            QuizSubPanel.Controls.Add(AnswerNo3);
+            QuizSubPanel.Controls.Add(label80);
+            QuizSubPanel.Controls.Add(AnswerNo2);
+            QuizSubPanel.Controls.Add(QuestionLabel5);
+            QuizSubPanel.Controls.Add(label90);
+            QuizSubPanel.Controls.Add(QuestionLabel6);
+            QuizSubPanel.Controls.Add(label88);
+            QuizSubPanel.Controls.Add(QuestionLabel7);
+            QuizSubPanel.Controls.Add(QuestionLabel10);
+            QuizSubPanel.Controls.Add(label86);
+            QuizSubPanel.Controls.Add(label82);
+            QuizSubPanel.Controls.Add(QuestionLabel8);
+            QuizSubPanel.Controls.Add(QuestionLabel9);
+            QuizSubPanel.Controls.Add(label84);
+            QuizSubPanel.Location = new Point(320, 87);
+            QuizSubPanel.Name = "QuizSubPanel";
+            QuizSubPanel.Size = new Size(751, 604);
+            QuizSubPanel.TabIndex = 42;
+            // 
+            // InstructionLabel
+            // 
+            InstructionLabel.AutoSize = true;
+            InstructionLabel.Font = new Font("Bahnschrift SemiCondensed", 12F);
+            InstructionLabel.ForeColor = Color.FromArgb(25, 25, 25);
+            InstructionLabel.Location = new Point(34, 24);
+            InstructionLabel.Name = "InstructionLabel";
+            InstructionLabel.Size = new Size(78, 19);
+            InstructionLabel.TabIndex = 41;
+            InstructionLabel.Text = "Instruction";
+            // 
+            // AnswerNo1
+            // 
+            AnswerNo1.Location = new Point(34, 92);
+            AnswerNo1.Multiline = true;
+            AnswerNo1.Name = "AnswerNo1";
+            AnswerNo1.Size = new Size(215, 30);
+            AnswerNo1.TabIndex = 5;
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.Font = new Font("Bahnschrift Condensed", 12F);
+            label71.ForeColor = Color.FromArgb(25, 25, 25);
+            label71.Location = new Point(299, 104);
+            label71.Name = "label71";
+            label71.Size = new Size(16, 19);
+            label71.TabIndex = 3;
+            label71.Text = "1.";
+            // 
+            // AnswerNo10
+            // 
+            AnswerNo10.Location = new Point(34, 421);
+            AnswerNo10.Multiline = true;
+            AnswerNo10.Name = "AnswerNo10";
+            AnswerNo10.Size = new Size(215, 30);
+            AnswerNo10.TabIndex = 40;
+            // 
+            // QuestionLabel1
+            // 
+            QuestionLabel1.AutoSize = true;
+            QuestionLabel1.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel1.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel1.Location = new Point(346, 103);
+            QuestionLabel1.Name = "QuestionLabel1";
+            QuestionLabel1.Size = new Size(88, 19);
+            QuestionLabel1.TabIndex = 4;
+            QuestionLabel1.Text = "QuestionLabel1";
+            // 
+            // CloseQuizBtn
+            // 
+            CloseQuizBtn.BackColor = Color.WhiteSmoke;
+            CloseQuizBtn.FlatAppearance.BorderSize = 0;
+            CloseQuizBtn.FlatStyle = FlatStyle.Flat;
+            CloseQuizBtn.ForeColor = Color.DimGray;
+            CloseQuizBtn.Location = new Point(36, 531);
+            CloseQuizBtn.Name = "CloseQuizBtn";
+            CloseQuizBtn.Size = new Size(684, 50);
+            CloseQuizBtn.TabIndex = 4;
+            CloseQuizBtn.Text = "CLOSE";
+            CloseQuizBtn.UseVisualStyleBackColor = false;
+            CloseQuizBtn.Click += CloseQuizBtn_Click;
+            // 
+            // AnswerNo9
+            // 
+            AnswerNo9.Location = new Point(34, 382);
+            AnswerNo9.Multiline = true;
+            AnswerNo9.Name = "AnswerNo9";
+            AnswerNo9.Size = new Size(215, 30);
+            AnswerNo9.TabIndex = 39;
+            // 
+            // SubmitQuizBtn
+            // 
+            SubmitQuizBtn.BackColor = Color.FromArgb(25, 25, 25);
+            SubmitQuizBtn.FlatAppearance.BorderSize = 0;
+            SubmitQuizBtn.FlatStyle = FlatStyle.Flat;
+            SubmitQuizBtn.ForeColor = Color.White;
+            SubmitQuizBtn.Location = new Point(34, 473);
+            SubmitQuizBtn.Name = "SubmitQuizBtn";
+            SubmitQuizBtn.Size = new Size(686, 50);
+            SubmitQuizBtn.TabIndex = 3;
+            SubmitQuizBtn.Text = "SUBMIT";
+            SubmitQuizBtn.UseVisualStyleBackColor = false;
+            SubmitQuizBtn.Click += SubmitQuizBtn_Click;
+            // 
+            // label74
+            // 
+            label74.AutoSize = true;
+            label74.Font = new Font("Bahnschrift Condensed", 12F);
+            label74.ForeColor = Color.FromArgb(25, 25, 25);
+            label74.Location = new Point(297, 139);
+            label74.Name = "label74";
+            label74.Size = new Size(18, 19);
+            label74.TabIndex = 6;
+            label74.Text = "2.";
+            // 
+            // AnswerNo8
+            // 
+            AnswerNo8.Location = new Point(34, 346);
+            AnswerNo8.Multiline = true;
+            AnswerNo8.Name = "AnswerNo8";
+            AnswerNo8.Size = new Size(215, 30);
+            AnswerNo8.TabIndex = 38;
+            // 
+            // QuestionLabel2
+            // 
+            QuestionLabel2.AutoSize = true;
+            QuestionLabel2.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel2.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel2.Location = new Point(346, 139);
+            QuestionLabel2.Name = "QuestionLabel2";
+            QuestionLabel2.Size = new Size(79, 19);
+            QuestionLabel2.TabIndex = 7;
+            QuestionLabel2.Text = "Question Text";
+            // 
+            // AnswerNo7
+            // 
+            AnswerNo7.Location = new Point(34, 311);
+            AnswerNo7.Multiline = true;
+            AnswerNo7.Name = "AnswerNo7";
+            AnswerNo7.Size = new Size(215, 30);
+            AnswerNo7.TabIndex = 37;
+            // 
+            // label76
+            // 
+            label76.AutoSize = true;
+            label76.Font = new Font("Bahnschrift Condensed", 12F);
+            label76.ForeColor = Color.FromArgb(25, 25, 25);
+            label76.Location = new Point(297, 179);
+            label76.Name = "label76";
+            label76.Size = new Size(18, 19);
+            label76.TabIndex = 9;
+            label76.Text = "3.";
+            // 
+            // AnswerNo6
+            // 
+            AnswerNo6.Location = new Point(34, 276);
+            AnswerNo6.Multiline = true;
+            AnswerNo6.Name = "AnswerNo6";
+            AnswerNo6.Size = new Size(215, 30);
+            AnswerNo6.TabIndex = 36;
+            // 
+            // QuestionLabel3
+            // 
+            QuestionLabel3.AutoSize = true;
+            QuestionLabel3.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel3.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel3.Location = new Point(346, 178);
+            QuestionLabel3.Name = "QuestionLabel3";
+            QuestionLabel3.Size = new Size(79, 19);
+            QuestionLabel3.TabIndex = 10;
+            QuestionLabel3.Text = "Question Text";
+            // 
+            // AnswerNo5
+            // 
+            AnswerNo5.Location = new Point(34, 241);
+            AnswerNo5.Multiline = true;
+            AnswerNo5.Name = "AnswerNo5";
+            AnswerNo5.Size = new Size(215, 30);
+            AnswerNo5.TabIndex = 35;
+            // 
+            // label78
+            // 
+            label78.AutoSize = true;
+            label78.Font = new Font("Bahnschrift Condensed", 12F);
+            label78.ForeColor = Color.FromArgb(25, 25, 25);
+            label78.Location = new Point(297, 215);
+            label78.Name = "label78";
+            label78.Size = new Size(19, 19);
+            label78.TabIndex = 12;
+            label78.Text = "4.";
+            // 
+            // AnswerNo4
+            // 
+            AnswerNo4.Location = new Point(34, 204);
+            AnswerNo4.Multiline = true;
+            AnswerNo4.Name = "AnswerNo4";
+            AnswerNo4.Size = new Size(215, 30);
+            AnswerNo4.TabIndex = 34;
+            // 
+            // QuestionLabel4
+            // 
+            QuestionLabel4.AutoSize = true;
+            QuestionLabel4.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel4.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel4.Location = new Point(346, 215);
+            QuestionLabel4.Name = "QuestionLabel4";
+            QuestionLabel4.Size = new Size(79, 19);
+            QuestionLabel4.TabIndex = 13;
+            QuestionLabel4.Text = "Question Text";
+            // 
+            // AnswerNo3
+            // 
+            AnswerNo3.Location = new Point(34, 165);
+            AnswerNo3.Multiline = true;
+            AnswerNo3.Name = "AnswerNo3";
+            AnswerNo3.Size = new Size(215, 30);
+            AnswerNo3.TabIndex = 33;
+            // 
+            // label80
+            // 
+            label80.AutoSize = true;
+            label80.Font = new Font("Bahnschrift Condensed", 12F);
+            label80.ForeColor = Color.FromArgb(25, 25, 25);
+            label80.Location = new Point(297, 253);
+            label80.Name = "label80";
+            label80.Size = new Size(19, 19);
+            label80.TabIndex = 15;
+            label80.Text = "5.";
+            // 
+            // AnswerNo2
+            // 
+            AnswerNo2.Location = new Point(34, 127);
+            AnswerNo2.Multiline = true;
+            AnswerNo2.Name = "AnswerNo2";
+            AnswerNo2.Size = new Size(215, 30);
+            AnswerNo2.TabIndex = 32;
+            // 
+            // QuestionLabel5
+            // 
+            QuestionLabel5.AutoSize = true;
+            QuestionLabel5.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel5.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel5.Location = new Point(346, 253);
+            QuestionLabel5.Name = "QuestionLabel5";
+            QuestionLabel5.Size = new Size(79, 19);
+            QuestionLabel5.TabIndex = 16;
+            QuestionLabel5.Text = "Question Text";
+            // 
+            // label90
+            // 
+            label90.AutoSize = true;
+            label90.Font = new Font("Bahnschrift Condensed", 12F);
+            label90.ForeColor = Color.FromArgb(25, 25, 25);
+            label90.Location = new Point(297, 287);
+            label90.Name = "label90";
+            label90.Size = new Size(18, 19);
+            label90.TabIndex = 18;
+            label90.Text = "6.";
+            // 
+            // QuestionLabel6
+            // 
+            QuestionLabel6.AutoSize = true;
+            QuestionLabel6.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel6.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel6.Location = new Point(346, 287);
+            QuestionLabel6.Name = "QuestionLabel6";
+            QuestionLabel6.Size = new Size(79, 19);
+            QuestionLabel6.TabIndex = 19;
+            QuestionLabel6.Text = "Question Text";
+            // 
+            // label88
+            // 
+            label88.AutoSize = true;
+            label88.Font = new Font("Bahnschrift Condensed", 12F);
+            label88.ForeColor = Color.FromArgb(25, 25, 25);
+            label88.Location = new Point(297, 322);
+            label88.Name = "label88";
+            label88.Size = new Size(18, 19);
+            label88.TabIndex = 21;
+            label88.Text = "7.";
+            // 
+            // QuestionLabel7
+            // 
+            QuestionLabel7.AutoSize = true;
+            QuestionLabel7.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel7.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel7.Location = new Point(346, 322);
+            QuestionLabel7.Name = "QuestionLabel7";
+            QuestionLabel7.Size = new Size(79, 19);
+            QuestionLabel7.TabIndex = 22;
+            QuestionLabel7.Text = "Question Text";
+            // 
+            // QuestionLabel10
+            // 
+            QuestionLabel10.AutoSize = true;
+            QuestionLabel10.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel10.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel10.Location = new Point(347, 429);
+            QuestionLabel10.Name = "QuestionLabel10";
+            QuestionLabel10.Size = new Size(79, 19);
+            QuestionLabel10.TabIndex = 31;
+            QuestionLabel10.Text = "Question Text";
+            // 
+            // label86
+            // 
+            label86.AutoSize = true;
+            label86.Font = new Font("Bahnschrift Condensed", 12F);
+            label86.ForeColor = Color.FromArgb(25, 25, 25);
+            label86.Location = new Point(296, 355);
+            label86.Name = "label86";
+            label86.Size = new Size(19, 19);
+            label86.TabIndex = 24;
+            label86.Text = "8.";
+            // 
+            // label82
+            // 
+            label82.AutoSize = true;
+            label82.Font = new Font("Bahnschrift Condensed", 12F);
+            label82.ForeColor = Color.FromArgb(25, 25, 25);
+            label82.Location = new Point(297, 429);
+            label82.Name = "label82";
+            label82.Size = new Size(23, 19);
+            label82.TabIndex = 30;
+            label82.Text = "10.";
+            // 
+            // QuestionLabel8
+            // 
+            QuestionLabel8.AutoSize = true;
+            QuestionLabel8.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel8.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel8.Location = new Point(347, 356);
+            QuestionLabel8.Name = "QuestionLabel8";
+            QuestionLabel8.Size = new Size(79, 19);
+            QuestionLabel8.TabIndex = 25;
+            QuestionLabel8.Text = "Question Text";
+            // 
+            // QuestionLabel9
+            // 
+            QuestionLabel9.AutoSize = true;
+            QuestionLabel9.Font = new Font("Bahnschrift Condensed", 12F);
+            QuestionLabel9.ForeColor = Color.FromArgb(25, 25, 25);
+            QuestionLabel9.Location = new Point(346, 393);
+            QuestionLabel9.Name = "QuestionLabel9";
+            QuestionLabel9.Size = new Size(79, 19);
+            QuestionLabel9.TabIndex = 28;
+            QuestionLabel9.Text = "Question Text";
+            // 
+            // label84
+            // 
+            label84.AutoSize = true;
+            label84.Font = new Font("Bahnschrift Condensed", 12F);
+            label84.ForeColor = Color.FromArgb(25, 25, 25);
+            label84.Location = new Point(297, 391);
+            label84.Name = "label84";
+            label84.Size = new Size(18, 19);
+            label84.TabIndex = 27;
+            label84.Text = "9.";
+            // 
             // QuizDeadlineLabel
             // 
             QuizDeadlineLabel.AutoSize = true;
@@ -1723,78 +2103,6 @@
             QuizDeadlineLabel.Size = new Size(64, 12);
             QuizDeadlineLabel.TabIndex = 41;
             QuizDeadlineLabel.Text = "Quiz Deadline";
-            // 
-            // AnswerNo10
-            // 
-            AnswerNo10.Location = new Point(34, 421);
-            AnswerNo10.Multiline = true;
-            AnswerNo10.Name = "AnswerNo10";
-            AnswerNo10.Size = new Size(215, 30);
-            AnswerNo10.TabIndex = 40;
-            // 
-            // AnswerNo9
-            // 
-            AnswerNo9.Location = new Point(34, 382);
-            AnswerNo9.Multiline = true;
-            AnswerNo9.Name = "AnswerNo9";
-            AnswerNo9.Size = new Size(215, 30);
-            AnswerNo9.TabIndex = 39;
-            // 
-            // AnswerNo8
-            // 
-            AnswerNo8.Location = new Point(34, 346);
-            AnswerNo8.Multiline = true;
-            AnswerNo8.Name = "AnswerNo8";
-            AnswerNo8.Size = new Size(215, 30);
-            AnswerNo8.TabIndex = 38;
-            // 
-            // AnswerNo7
-            // 
-            AnswerNo7.Location = new Point(34, 311);
-            AnswerNo7.Multiline = true;
-            AnswerNo7.Name = "AnswerNo7";
-            AnswerNo7.Size = new Size(215, 30);
-            AnswerNo7.TabIndex = 37;
-            // 
-            // AnswerNo6
-            // 
-            AnswerNo6.Location = new Point(34, 276);
-            AnswerNo6.Multiline = true;
-            AnswerNo6.Name = "AnswerNo6";
-            AnswerNo6.Size = new Size(215, 30);
-            AnswerNo6.TabIndex = 36;
-            // 
-            // AnswerNo5
-            // 
-            AnswerNo5.Location = new Point(34, 241);
-            AnswerNo5.Multiline = true;
-            AnswerNo5.Name = "AnswerNo5";
-            AnswerNo5.Size = new Size(215, 30);
-            AnswerNo5.TabIndex = 35;
-            // 
-            // AnswerNo4
-            // 
-            AnswerNo4.Location = new Point(34, 204);
-            AnswerNo4.Multiline = true;
-            AnswerNo4.Name = "AnswerNo4";
-            AnswerNo4.Size = new Size(215, 30);
-            AnswerNo4.TabIndex = 34;
-            // 
-            // AnswerNo3
-            // 
-            AnswerNo3.Location = new Point(34, 165);
-            AnswerNo3.Multiline = true;
-            AnswerNo3.Name = "AnswerNo3";
-            AnswerNo3.Size = new Size(215, 30);
-            AnswerNo3.TabIndex = 33;
-            // 
-            // AnswerNo2
-            // 
-            AnswerNo2.Location = new Point(34, 127);
-            AnswerNo2.Multiline = true;
-            AnswerNo2.Name = "AnswerNo2";
-            AnswerNo2.Size = new Size(215, 30);
-            AnswerNo2.TabIndex = 32;
             // 
             // QuizTitleLabel
             // 
@@ -1817,262 +2125,6 @@
             QuizIdLabel.Size = new Size(36, 12);
             QuizIdLabel.TabIndex = 2;
             QuizIdLabel.Text = "Quiz Id";
-            // 
-            // CloseQuizBtn
-            // 
-            CloseQuizBtn.BackColor = Color.WhiteSmoke;
-            CloseQuizBtn.FlatAppearance.BorderSize = 0;
-            CloseQuizBtn.FlatStyle = FlatStyle.Flat;
-            CloseQuizBtn.ForeColor = Color.DimGray;
-            CloseQuizBtn.Location = new Point(36, 531);
-            CloseQuizBtn.Name = "CloseQuizBtn";
-            CloseQuizBtn.Size = new Size(684, 50);
-            CloseQuizBtn.TabIndex = 4;
-            CloseQuizBtn.Text = "CLOSE";
-            CloseQuizBtn.UseVisualStyleBackColor = false;
-            CloseQuizBtn.Click += CloseQuizBtn_Click;
-            // 
-            // SubmitQuizBtn
-            // 
-            SubmitQuizBtn.BackColor = Color.FromArgb(25, 25, 25);
-            SubmitQuizBtn.FlatAppearance.BorderSize = 0;
-            SubmitQuizBtn.FlatStyle = FlatStyle.Flat;
-            SubmitQuizBtn.ForeColor = Color.White;
-            SubmitQuizBtn.Location = new Point(34, 473);
-            SubmitQuizBtn.Name = "SubmitQuizBtn";
-            SubmitQuizBtn.Size = new Size(686, 50);
-            SubmitQuizBtn.TabIndex = 3;
-            SubmitQuizBtn.Text = "SUBMIT";
-            SubmitQuizBtn.UseVisualStyleBackColor = false;
-            SubmitQuizBtn.Click += SubmitQuizBtn_Click;
-            // 
-            // QuestionLabel10
-            // 
-            QuestionLabel10.AutoSize = true;
-            QuestionLabel10.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel10.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel10.Location = new Point(347, 429);
-            QuestionLabel10.Name = "QuestionLabel10";
-            QuestionLabel10.Size = new Size(93, 19);
-            QuestionLabel10.TabIndex = 31;
-            QuestionLabel10.Text = "Question Text";
-            // 
-            // label82
-            // 
-            label82.AutoSize = true;
-            label82.Font = new Font("Bahnschrift Condensed", 12F);
-            label82.ForeColor = Color.FromArgb(25, 25, 25);
-            label82.Location = new Point(297, 429);
-            label82.Name = "label82";
-            label82.Size = new Size(23, 19);
-            label82.TabIndex = 30;
-            label82.Text = "10.";
-            // 
-            // QuestionLabel9
-            // 
-            QuestionLabel9.AutoSize = true;
-            QuestionLabel9.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel9.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel9.Location = new Point(346, 393);
-            QuestionLabel9.Name = "QuestionLabel9";
-            QuestionLabel9.Size = new Size(93, 19);
-            QuestionLabel9.TabIndex = 28;
-            QuestionLabel9.Text = "Question Text";
-            // 
-            // label84
-            // 
-            label84.AutoSize = true;
-            label84.Font = new Font("Bahnschrift Condensed", 12F);
-            label84.ForeColor = Color.FromArgb(25, 25, 25);
-            label84.Location = new Point(297, 391);
-            label84.Name = "label84";
-            label84.Size = new Size(18, 19);
-            label84.TabIndex = 27;
-            label84.Text = "9.";
-            // 
-            // QuestionLabel8
-            // 
-            QuestionLabel8.AutoSize = true;
-            QuestionLabel8.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel8.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel8.Location = new Point(347, 356);
-            QuestionLabel8.Name = "QuestionLabel8";
-            QuestionLabel8.Size = new Size(93, 19);
-            QuestionLabel8.TabIndex = 25;
-            QuestionLabel8.Text = "Question Text";
-            // 
-            // label86
-            // 
-            label86.AutoSize = true;
-            label86.Font = new Font("Bahnschrift Condensed", 12F);
-            label86.ForeColor = Color.FromArgb(25, 25, 25);
-            label86.Location = new Point(296, 355);
-            label86.Name = "label86";
-            label86.Size = new Size(19, 19);
-            label86.TabIndex = 24;
-            label86.Text = "8.";
-            // 
-            // QuestionLabel7
-            // 
-            QuestionLabel7.AutoSize = true;
-            QuestionLabel7.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel7.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel7.Location = new Point(346, 322);
-            QuestionLabel7.Name = "QuestionLabel7";
-            QuestionLabel7.Size = new Size(93, 19);
-            QuestionLabel7.TabIndex = 22;
-            QuestionLabel7.Text = "Question Text";
-            // 
-            // label88
-            // 
-            label88.AutoSize = true;
-            label88.Font = new Font("Bahnschrift Condensed", 12F);
-            label88.ForeColor = Color.FromArgb(25, 25, 25);
-            label88.Location = new Point(297, 322);
-            label88.Name = "label88";
-            label88.Size = new Size(18, 19);
-            label88.TabIndex = 21;
-            label88.Text = "7.";
-            // 
-            // QuestionLabel6
-            // 
-            QuestionLabel6.AutoSize = true;
-            QuestionLabel6.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel6.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel6.Location = new Point(346, 287);
-            QuestionLabel6.Name = "QuestionLabel6";
-            QuestionLabel6.Size = new Size(93, 19);
-            QuestionLabel6.TabIndex = 19;
-            QuestionLabel6.Text = "Question Text";
-            // 
-            // label90
-            // 
-            label90.AutoSize = true;
-            label90.Font = new Font("Bahnschrift Condensed", 12F);
-            label90.ForeColor = Color.FromArgb(25, 25, 25);
-            label90.Location = new Point(297, 287);
-            label90.Name = "label90";
-            label90.Size = new Size(18, 19);
-            label90.TabIndex = 18;
-            label90.Text = "6.";
-            // 
-            // QuestionLabel5
-            // 
-            QuestionLabel5.AutoSize = true;
-            QuestionLabel5.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel5.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel5.Location = new Point(346, 253);
-            QuestionLabel5.Name = "QuestionLabel5";
-            QuestionLabel5.Size = new Size(93, 19);
-            QuestionLabel5.TabIndex = 16;
-            QuestionLabel5.Text = "Question Text";
-            // 
-            // label80
-            // 
-            label80.AutoSize = true;
-            label80.Font = new Font("Bahnschrift Condensed", 12F);
-            label80.ForeColor = Color.FromArgb(25, 25, 25);
-            label80.Location = new Point(297, 253);
-            label80.Name = "label80";
-            label80.Size = new Size(19, 19);
-            label80.TabIndex = 15;
-            label80.Text = "5.";
-            // 
-            // QuestionLabel4
-            // 
-            QuestionLabel4.AutoSize = true;
-            QuestionLabel4.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel4.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel4.Location = new Point(346, 215);
-            QuestionLabel4.Name = "QuestionLabel4";
-            QuestionLabel4.Size = new Size(93, 19);
-            QuestionLabel4.TabIndex = 13;
-            QuestionLabel4.Text = "Question Text";
-            // 
-            // label78
-            // 
-            label78.AutoSize = true;
-            label78.Font = new Font("Bahnschrift Condensed", 12F);
-            label78.ForeColor = Color.FromArgb(25, 25, 25);
-            label78.Location = new Point(297, 215);
-            label78.Name = "label78";
-            label78.Size = new Size(19, 19);
-            label78.TabIndex = 12;
-            label78.Text = "4.";
-            // 
-            // QuestionLabel3
-            // 
-            QuestionLabel3.AutoSize = true;
-            QuestionLabel3.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel3.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel3.Location = new Point(346, 178);
-            QuestionLabel3.Name = "QuestionLabel3";
-            QuestionLabel3.Size = new Size(93, 19);
-            QuestionLabel3.TabIndex = 10;
-            QuestionLabel3.Text = "Question Text";
-            // 
-            // label76
-            // 
-            label76.AutoSize = true;
-            label76.Font = new Font("Bahnschrift Condensed", 12F);
-            label76.ForeColor = Color.FromArgb(25, 25, 25);
-            label76.Location = new Point(297, 179);
-            label76.Name = "label76";
-            label76.Size = new Size(18, 19);
-            label76.TabIndex = 9;
-            label76.Text = "3.";
-            // 
-            // QuestionLabel2
-            // 
-            QuestionLabel2.AutoSize = true;
-            QuestionLabel2.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel2.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel2.Location = new Point(346, 139);
-            QuestionLabel2.Name = "QuestionLabel2";
-            QuestionLabel2.Size = new Size(93, 19);
-            QuestionLabel2.TabIndex = 7;
-            QuestionLabel2.Text = "Question Text";
-            // 
-            // label74
-            // 
-            label74.AutoSize = true;
-            label74.Font = new Font("Bahnschrift Condensed", 12F);
-            label74.ForeColor = Color.FromArgb(25, 25, 25);
-            label74.Location = new Point(297, 139);
-            label74.Name = "label74";
-            label74.Size = new Size(18, 19);
-            label74.TabIndex = 6;
-            label74.Text = "2.";
-            // 
-            // AnswerNo1
-            // 
-            AnswerNo1.Location = new Point(34, 92);
-            AnswerNo1.Multiline = true;
-            AnswerNo1.Name = "AnswerNo1";
-            AnswerNo1.Size = new Size(215, 30);
-            AnswerNo1.TabIndex = 5;
-            // 
-            // QuestionLabel1
-            // 
-            QuestionLabel1.AutoSize = true;
-            QuestionLabel1.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            QuestionLabel1.ForeColor = Color.FromArgb(25, 25, 25);
-            QuestionLabel1.Location = new Point(346, 103);
-            QuestionLabel1.Name = "QuestionLabel1";
-            QuestionLabel1.Size = new Size(104, 19);
-            QuestionLabel1.TabIndex = 4;
-            QuestionLabel1.Text = "QuestionLabel1";
-            // 
-            // label71
-            // 
-            label71.AutoSize = true;
-            label71.Font = new Font("Bahnschrift Condensed", 12F);
-            label71.ForeColor = Color.FromArgb(25, 25, 25);
-            label71.Location = new Point(299, 104);
-            label71.Name = "label71";
-            label71.Size = new Size(16, 19);
-            label71.TabIndex = 3;
-            label71.Text = "1.";
             // 
             // label68
             // 
@@ -3134,58 +3186,6 @@
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
-            // QuizSubPanel
-            // 
-            QuizSubPanel.BackColor = Color.White;
-            QuizSubPanel.Controls.Add(InstructionLabel);
-            QuizSubPanel.Controls.Add(AnswerNo1);
-            QuizSubPanel.Controls.Add(label71);
-            QuizSubPanel.Controls.Add(AnswerNo10);
-            QuizSubPanel.Controls.Add(QuestionLabel1);
-            QuizSubPanel.Controls.Add(CloseQuizBtn);
-            QuizSubPanel.Controls.Add(AnswerNo9);
-            QuizSubPanel.Controls.Add(SubmitQuizBtn);
-            QuizSubPanel.Controls.Add(label74);
-            QuizSubPanel.Controls.Add(AnswerNo8);
-            QuizSubPanel.Controls.Add(QuestionLabel2);
-            QuizSubPanel.Controls.Add(AnswerNo7);
-            QuizSubPanel.Controls.Add(label76);
-            QuizSubPanel.Controls.Add(AnswerNo6);
-            QuizSubPanel.Controls.Add(QuestionLabel3);
-            QuizSubPanel.Controls.Add(AnswerNo5);
-            QuizSubPanel.Controls.Add(label78);
-            QuizSubPanel.Controls.Add(AnswerNo4);
-            QuizSubPanel.Controls.Add(QuestionLabel4);
-            QuizSubPanel.Controls.Add(AnswerNo3);
-            QuizSubPanel.Controls.Add(label80);
-            QuizSubPanel.Controls.Add(AnswerNo2);
-            QuizSubPanel.Controls.Add(QuestionLabel5);
-            QuizSubPanel.Controls.Add(label90);
-            QuizSubPanel.Controls.Add(QuestionLabel6);
-            QuizSubPanel.Controls.Add(label88);
-            QuizSubPanel.Controls.Add(QuestionLabel7);
-            QuizSubPanel.Controls.Add(QuestionLabel10);
-            QuizSubPanel.Controls.Add(label86);
-            QuizSubPanel.Controls.Add(label82);
-            QuizSubPanel.Controls.Add(QuestionLabel8);
-            QuizSubPanel.Controls.Add(QuestionLabel9);
-            QuizSubPanel.Controls.Add(label84);
-            QuizSubPanel.Location = new Point(320, 87);
-            QuizSubPanel.Name = "QuizSubPanel";
-            QuizSubPanel.Size = new Size(751, 604);
-            QuizSubPanel.TabIndex = 42;
-            // 
-            // InstructionLabel
-            // 
-            InstructionLabel.AutoSize = true;
-            InstructionLabel.Font = new Font("Bahnschrift SemiCondensed", 12F);
-            InstructionLabel.ForeColor = Color.FromArgb(25, 25, 25);
-            InstructionLabel.Location = new Point(34, 24);
-            InstructionLabel.Name = "InstructionLabel";
-            InstructionLabel.Size = new Size(78, 19);
-            InstructionLabel.TabIndex = 41;
-            InstructionLabel.Text = "Instruction";
-            // 
             // StudentPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -3241,6 +3241,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             QuizPanel.ResumeLayout(false);
             QuizPanel.PerformLayout();
+            QuizSubPanel.ResumeLayout(false);
+            QuizSubPanel.PerformLayout();
             handoutPanel5.ResumeLayout(false);
             handoutPanel5.PerformLayout();
             handoutPanel6.ResumeLayout(false);
@@ -3260,8 +3262,6 @@
             SubjectsPopUpPanel.ResumeLayout(false);
             SubjectsPanel.ResumeLayout(false);
             SubjectsPanel.PerformLayout();
-            QuizSubPanel.ResumeLayout(false);
-            QuizSubPanel.PerformLayout();
             ResumeLayout(false);
         }
 
