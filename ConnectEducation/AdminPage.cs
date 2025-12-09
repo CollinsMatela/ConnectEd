@@ -1570,7 +1570,7 @@ namespace ConnectEducation
             var insertAnnouncement = new AnnouncementModel()
             {
                 Id = Guid.NewGuid().ToString(),
-                Message = "ANNOUNCEMENT!: " + AnnouncementRTB.Text,
+                Message = AnnouncementRTB.Text,
                 Time = DateTime.Now.ToString("dd/MM/yyyy")
             };
             DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

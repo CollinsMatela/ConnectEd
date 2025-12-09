@@ -27,6 +27,30 @@ namespace ConnectEducation
 
             panel.Region = new Region(path);
         }
+        private void SetRoundedListBox(ListBox lb, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(lb.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(lb.Width - radius, lb.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, lb.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            lb.Region = new Region(path);
+        }
+        private void SetRoundedListView(ListView lv, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(lv.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(lv.Width - radius, lv.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, lv.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            lv.Region = new Region(path);
+        }
         private void SetRoundedButton(Button btn, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -184,8 +208,8 @@ namespace ConnectEducation
             {
                 foreach (var announcement in result)
                 {
-                    SystemLogListBox.Items.Add("ATTENTION! - " + announcement.Message);
-                    SystemLogListBox.Items.Add("");
+                    SystemLogListBox.Items.Add("     - - - - - - - - - - - - - - - - - - - - - - - - -");
+                    SystemLogListBox.Items.Add("     Announcement! - " + announcement.Message + "     | " + announcement.Time.ToString());
                 }
             }
         }
@@ -220,6 +244,9 @@ namespace ConnectEducation
 
                 ProfileAccountIdentification.Text = result.StudentId;
                 AccountPasswordTxt.Text = result.StudentPassword;
+
+                UsernameLabel.Text = result.Fullname;
+                UserProgramLabel.Text = result.Strand + " " + result.GradeLevel;
             }
         }
         private void submission()
@@ -549,6 +576,21 @@ namespace ConnectEducation
         }
         private void StudentPage_Load(object sender, EventArgs e)
         {
+            SetRoundedListBox(SystemLogListBox, 20);
+            SetRoundedListView(QuizListView, 20);
+            SetRoundedButton(StudentLogoutBtn, 20);
+            MakeRoundPanel(UserIconPanel, 20);
+
+            MakeRoundPanel(ProfilePersonalPanel, 20);
+            MakeRoundPanel(ProfileAcademicPanel, 20);
+            MakeRoundPanel(ProfileParentPanel, 20);
+            MakeRoundPanel(ProfileAccountPanel, 20);
+            SetRoundedButton(PasswordUpdateBtn, 10);
+
+            MakeRoundPanel(QuizSubPanel, 20);
+            SetRoundedButton(SubmitQuizBtn, 10);
+            SetRoundedButton(CloseQuizBtn, 10);
+
             string StudentName = FullnameOfStudent;
             string Strand = StrandOfStudent;
             string Grade = GradeLevelOfStudent;
