@@ -1914,6 +1914,8 @@ namespace ConnectEducation
                     QuizTitleLabel.Text = quiz.QuizTitle;
                     QuizIdLabel.Text = quiz.QuizId;
                     QuizDeadlineLabel.Text = quiz.Deadline;
+                    InstructionLabel.Text = quiz.Instruction;
+                    ScoreTypeLabel.Text = quiz.typeOfScoring ? "Two points each" : "One point each";
 
                     string quizIdentification = quiz.QuizId;
                     string quizTitle = quiz.QuizTitle;
@@ -1954,49 +1956,75 @@ namespace ConnectEducation
                 {
                     string[] answerKeys = result.AnswerKey;
 
-                    for (int i = 0; i < AnswerOfStudent.Length && i < answerKeys.Length; i++)
+                    if (result.typeOfScoring == true)
                     {
-                        if (AnswerOfStudent[i].Text.Trim().ToLower() == answerKeys[i].Trim().ToLower())
+                        for (int i = 0; i < AnswerOfStudent.Length && i < answerKeys.Length; i++)
                         {
-                            quizScore++;
+                            if (AnswerOfStudent[i].Text.Trim().ToLower() == answerKeys[i].Trim().ToLower())
+                            {
+                                quizScore += 2;
+                            }
+                        }
+                        MessageBox.Show("You score " + quizScore + " out of 20.");
+                    }
+                    else
+                    {
+                        if (result.typeOfScoring == false)
+                        {
+                            for (int i = 0; i < AnswerOfStudent.Length && i < answerKeys.Length; i++)
+                            {
+                                if (AnswerOfStudent[i].Text.Trim().ToLower() == answerKeys[i].Trim().ToLower())
+                                {
+                                    quizScore++;
+                                }
+                            }
+                            MessageBox.Show("You score " + quizScore + " out of 10.");
                         }
                     }
-                    MessageBox.Show("You score " + quizScore + " out of 10.");
-                    var ListWhoTookTheQuiz = Builders<QuizModel>.Update.AddToSet(z => z.StudentsWhoTook, IdOfStudent);
-                    collection.UpdateOne(filter,ListWhoTookTheQuiz);
 
-                    string Instructor = result.Instructor;
+                        var ListWhoTookTheQuiz = Builders<QuizModel>.Update.AddToSet(z => z.StudentsWhoTook, IdOfStudent);
+                        collection.UpdateOne(filter, ListWhoTookTheQuiz);
 
-                    var collection2 = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
-                    var filter2 = Builders<TeachersStudentRecords>.Filter.And(
-                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, result.InstructorId),
-                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
-                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, result.SubjectName),
-                                  Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, result.Section),
-                                  Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, x => x.ActivityType == QuizTitleLabel.Text)
-                                  );// TeacherId, Section,StudentId, Subject
+                        string Instructor = result.Instructor;
 
-                    var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", quizScore.ToString());
-                    collection2.UpdateOne(filter2, update);
+                        var collection2 = database.GetCollection<TeachersStudentRecords>("TeachersStudentRecords");
+                        var filter2 = Builders<TeachersStudentRecords>.Filter.And(
+                                      Builders<TeachersStudentRecords>.Filter.Eq(z => z.TeacherId, result.InstructorId),
+                                      Builders<TeachersStudentRecords>.Filter.Eq(z => z.StudentId, IdOfStudent),
+                                      Builders<TeachersStudentRecords>.Filter.Eq(z => z.Subject, result.SubjectName),
+                                      Builders<TeachersStudentRecords>.Filter.Eq(z => z.Section, result.Section),
+                                      Builders<TeachersStudentRecords>.Filter.ElemMatch(z => z.ActivityRecord, x => x.ActivityType == QuizTitleLabel.Text)
+                                      );// TeacherId, Section,StudentId, Subject
 
-                    
+                        int FinalScore = result.typeOfScoring ? quizScore / 2 : quizScore;
+
+                        var update = Builders<TeachersStudentRecords>.Update.Set("ActivityRecord.$.Score", FinalScore.ToString());
+                        collection2.UpdateOne(filter2, update);
+
+
+
+                    }
+                    Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
+
+                    foreach (var q in questionaire)
+                    {
+                        q.Text = string.Empty;
+                    }
+                    QuizPanel.Visible = false;
+                    QuizTitleLabel.Text = string.Empty;
+                    QuizIdLabel.Text = string.Empty;
+                    QuizDeadlineLabel.Text = string.Empty;
+
+                    foreach (var answerfield in AnswerOfStudent)
+                    {
+                        answerfield.Text = string.Empty;
+                    }
+
 
                 }
-                Label[] questionaire = { QuestionLabel1, QuestionLabel2, QuestionLabel3, QuestionLabel4, QuestionLabel5, QuestionLabel6, QuestionLabel7, QuestionLabel8, QuestionLabel9, QuestionLabel10 };
-
-                foreach (var q in questionaire)
-                {
-                    q.Text = string.Empty;
-                }
-                QuizPanel.Visible = false;
-                QuizTitleLabel.Text = string.Empty;
-                QuizIdLabel.Text = string.Empty;
-                QuizDeadlineLabel.Text = string.Empty;
-
 
             }
-
-        }
+        
 
         private void QuizListView_SelectedIndexChanged(object sender, EventArgs e)
         {

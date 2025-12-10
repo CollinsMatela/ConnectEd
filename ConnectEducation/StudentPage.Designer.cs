@@ -264,6 +264,7 @@
             subject1 = new Button();
             label69 = new Label();
             SubjectsPanel = new Panel();
+            ScoreTypeLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             GradingSystemPanel.SuspendLayout();
@@ -1716,6 +1717,7 @@
             // QuizSubPanel
             // 
             QuizSubPanel.BackColor = Color.White;
+            QuizSubPanel.Controls.Add(ScoreTypeLabel);
             QuizSubPanel.Controls.Add(InstructionLabel);
             QuizSubPanel.Controls.Add(AnswerNo1);
             QuizSubPanel.Controls.Add(label71);
@@ -3186,6 +3188,17 @@
             SubjectsPanel.TabIndex = 2;
             SubjectsPanel.Paint += panel3_Paint;
             // 
+            // ScoreTypeLabel
+            // 
+            ScoreTypeLabel.AutoSize = true;
+            ScoreTypeLabel.Font = new Font("Bahnschrift SemiCondensed", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ScoreTypeLabel.ForeColor = Color.FromArgb(25, 25, 25);
+            ScoreTypeLabel.Location = new Point(36, 47);
+            ScoreTypeLabel.Name = "ScoreTypeLabel";
+            ScoreTypeLabel.Size = new Size(53, 13);
+            ScoreTypeLabel.TabIndex = 42;
+            ScoreTypeLabel.Text = "Score type";
+            // 
             // StudentPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -3506,5 +3519,6 @@
         private Panel ProfileAccountPanel;
         private Panel QuizSubPanel;
         private Label InstructionLabel;
+        private Label ScoreTypeLabel;
     }
 }

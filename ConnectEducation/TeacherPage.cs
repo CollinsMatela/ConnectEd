@@ -1409,7 +1409,13 @@ namespace ConnectEducation
 
             if (string.IsNullOrEmpty(QuizTitleCb.Text))
             {
-                MessageBox.Show("PLease select question title.");
+                MessageBox.Show("Please select question title.");
+                QuizTitleCb.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(InstructionTxt.Text))
+            {
+                MessageBox.Show("Type instruction for this quiz.");
                 QuizTitleCb.Focus();
                 return;
             }
@@ -1464,15 +1470,22 @@ namespace ConnectEducation
             string[] questionTexts = Questions.Select(q => q.Text).ToArray();
             string[] answerTexts = AnswerKeys.Select(a => a.Text).ToArray();
 
+            bool points = false;
+            if (TwoPointsRB.Checked)
+            {
+                points = true;
+            }
             var insertQuiz = new QuizModel()
             {
              QuizId = Guid.NewGuid().ToString(),
              QuizTitle = QuizTitleCb.SelectedItem?.ToString() ?? "",
+             typeOfScoring = points,
              InstructorId = teacherID,
              Instructor = teacherFullname,
              SubjectName = teacherSubject,
              Section  = teacherSection,
              Number = numbers,
+             Instruction = InstructionTxt.Text,
              Question = questionTexts,
              AnswerKey = answerTexts,
              Deadline = DeadlineDatePicker.Value.ToString("dd/MM/yyyy"),
@@ -1489,7 +1502,10 @@ namespace ConnectEducation
                 foreach (var q in Questions) q.Clear();
                 foreach (var a in AnswerKeys) a.Clear();
                 QuizTitleCb.Text = string.Empty;
+                InstructionTxt.Text = string.Empty;
                 DeadlineDatePicker.Value = DateTime.Now;
+                TwoPointsRB.Checked = false;
+                points = false;
             }
             else
             {

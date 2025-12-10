@@ -15,11 +15,13 @@ namespace ConnectEducation
         public string Id { get; set; }
         public string QuizId { get; set; }
         public string QuizTitle { get; set; }
+        public bool typeOfScoring { get; set; }
         public string InstructorId { get; set; }
         public string Instructor { get; set; }
         public string SubjectName { get; set; }
         public string Section { get; set; }
         public string [] Number { get; set; }
+        public string Instruction { get; set; }
         public string [] Question { get; set; }
         public string [] AnswerKey { get; set; }
         public string Deadline { get; set; }
